@@ -183,6 +183,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BookInfo.h" />
     <ClInclude Include="BookInven.h" />
     <ClInclude Include="BookInvenDlg.h" />
     <ClInclude Include="Resource.h" />
