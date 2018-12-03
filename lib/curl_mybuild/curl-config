@@ -68,7 +68,7 @@ while test $# -gt 0; do
 
     case "$1" in
     --built-shared)
-        echo yes
+        echo no
         ;;
 
     --ca)
@@ -171,7 +171,7 @@ while test $# -gt 0; do
         ;;
 
     --static-libs)
-        if test "Xno" != "Xno" ; then
+        if test "Xyes" != "Xno" ; then
           echo C:/Program Files (x86)/CURL/lib/libcurl.lib /machine:X86  -lwldap32 -lwinmm -lws2_32 -ladvapi32
         else
           echo "curl was built with static libraries disabled" >&2

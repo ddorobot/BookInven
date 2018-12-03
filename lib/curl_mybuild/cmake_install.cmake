@@ -83,7 +83,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/lib/cmake_install.cmake")
   include("C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/src/cmake_install.cmake")
-  include("C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/tests/cmake_install.cmake")
 
 endif()
 

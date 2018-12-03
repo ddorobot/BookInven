@@ -51,9 +51,10 @@ if(_IMPORT_PREFIX STREQUAL "/")
 endif()
 
 # Create imported target CURL::libcurl
-add_library(CURL::libcurl SHARED IMPORTED)
+add_library(CURL::libcurl STATIC IMPORTED)
 
 set_target_properties(CURL::libcurl PROPERTIES
+  INTERFACE_COMPILE_DEFINITIONS "CURL_STATICLIB"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_LINK_LIBRARIES "wldap32;winmm;ws2_32;advapi32"
 )

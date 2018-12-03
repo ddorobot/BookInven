@@ -77,7 +77,7 @@
 #define USE_WIN32_LDAP 1
 
 /* when not building a shared library */
-/* #undef CURL_STATICLIB */
+#define CURL_STATICLIB 1
 
 /* your Entropy Gathering Daemon socket pathname */
 /* #undef EGD_SOCKET */

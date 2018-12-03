@@ -8,12 +8,12 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 # Import target "CURL::libcurl" for configuration "Debug"
 set_property(TARGET CURL::libcurl APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(CURL::libcurl PROPERTIES
-  IMPORTED_IMPLIB_DEBUG "${_IMPORT_PREFIX}/lib/libcurl-d_imp.lib"
-  IMPORTED_LOCATION_DEBUG "${_IMPORT_PREFIX}/bin/libcurl-d.dll"
+  IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "C;RC"
+  IMPORTED_LOCATION_DEBUG "${_IMPORT_PREFIX}/lib/libcurl-d.lib"
   )
 
 list(APPEND _IMPORT_CHECK_TARGETS CURL::libcurl )
-list(APPEND _IMPORT_CHECK_FILES_FOR_CURL::libcurl "${_IMPORT_PREFIX}/lib/libcurl-d_imp.lib" "${_IMPORT_PREFIX}/bin/libcurl-d.dll" )
+list(APPEND _IMPORT_CHECK_FILES_FOR_CURL::libcurl "${_IMPORT_PREFIX}/lib/libcurl-d.lib" )
 
 # Import target "CURL::curl" for configuration "Debug"
 set_property(TARGET CURL::curl APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)

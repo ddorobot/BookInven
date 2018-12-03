@@ -24,11 +24,6 @@
     <CustomBuild Include="C:\Users\박주홍\Desktop\BookInven\lib\libexpat\expat\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\박주홍\Desktop\BookInven\lib\libexpat\expat\lib\libexpat.def">
-      <Filter>Source Files</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Source Files">
       <UniqueIdentifier>{CA23DBB9-F49D-32B3-B65B-D6219D91C11E}</UniqueIdentifier>
     </Filter>
