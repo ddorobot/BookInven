@@ -10,9 +10,9 @@
 #include <wininet.h>
 
 #pragma comment(lib, "wldap32.lib")
-#pragma comment(lib, "expat.lib")
-#pragma comment(lib, "libcurl_imp.lib")
 #pragma comment(lib, "wininet.lib")
+#pragma comment(lib, "expat.lib")
+#pragma comment(lib, "libcurl.lib")
 
 enum {
 	ERROR_ARGS = 1,

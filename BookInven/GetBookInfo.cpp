@@ -71,8 +71,8 @@ std::string GetBookInfo::GetISBNInfo(const UINT nChar)
 }
 
 BookInfo GetBookInfo::GetInfo(const std::string isbn)
-{
-	BookInfo info;
+{ 
+	BookInfo info; 
 
 	info = m_cls_get_bookinfo_using_url.Run(isbn);
 
