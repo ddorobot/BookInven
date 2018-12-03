@@ -2,6 +2,8 @@
 
 #include <string>
 
+#define ISBN_CODE_SIZE		13 
+
 typedef struct BookInfo {
 	std::string isbn;
 	std::string name;

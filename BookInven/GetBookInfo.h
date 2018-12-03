@@ -3,6 +3,8 @@
 #include "BookInfo.h"
 
 #include <string>
+#include <vector>
+#include <deque>
 
 #include <boost/thread.hpp>
 
@@ -14,12 +16,23 @@
 
 #include "boost\system\error_code.hpp"
 
+#include "Utility.h"
+
+typedef struct StreamInfo {
+	UINT nChar;
+	boost::posix_time::ptime gettime;
+} StreamInfo;
+
+
 class GetBookInfo
 {
 public:
 	GetBookInfo();
 	~GetBookInfo();
 
-	BookInfo GetInfo(const std::string str);
+	std::string GetISBNInfo(const UINT nChar);
+
+private:
+	std::deque<StreamInfo> m_strem;
 };
 
