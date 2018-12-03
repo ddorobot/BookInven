@@ -4,3 +4,6 @@
 [submodule "lib/curl"]
 	path = lib/curl
 	url = https://github.com/curl/curl
+[submodule "lib/libexpat"]
+	path = lib/libexpat
+	url = https://github.com/libexpat/libexpat
