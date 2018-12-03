@@ -7,3 +7,6 @@
 [submodule "lib/libexpat"]
 	path = lib/libexpat
 	url = https://github.com/libexpat/libexpat
+[submodule "lib/sqlite_static"]
+	path = lib/sqlite_static
+	url = https://github.com/ddorobot/sqlite_static
