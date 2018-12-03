@@ -52,7 +52,6 @@ void CGetBookInfoUsingUrl::endElement(void *userData, const XML_Char *name)
 
 	std::string tag_name = name;
 
-#if 0
 	if (g_p_me != NULL)
 	{
 		if (tag_name == "TITLE")
@@ -106,7 +105,6 @@ void CGetBookInfoUsingUrl::endElement(void *userData, const XML_Char *name)
 			if (data != NULL) delete[] data;
 		}
 	}
-#endif
 }
 
 size_t CGetBookInfoUsingUrl::parseStreamCallback(void *contents, size_t length, size_t nmemb, void *userp)
