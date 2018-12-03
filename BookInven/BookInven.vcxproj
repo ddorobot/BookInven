@@ -190,6 +190,7 @@
     <ClInclude Include="BookInfo.h" />
     <ClInclude Include="BookInven.h" />
     <ClInclude Include="BookInvenDlg.h" />
+    <ClInclude Include="CGetBookInfoUsingUrl.h" />
     <ClInclude Include="GetBookInfo.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -199,6 +200,7 @@
   <ItemGroup>
     <ClCompile Include="BookInven.cpp" />
     <ClCompile Include="BookInvenDlg.cpp" />
+    <ClCompile Include="CGetBookInfoUsingUrl.cpp" />
     <ClCompile Include="GetBookInfo.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

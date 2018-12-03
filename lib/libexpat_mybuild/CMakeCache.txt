@@ -21,7 +21,7 @@ BUILD_doc:BOOL=OFF
 BUILD_examples:BOOL=ON
 
 //build a shared expat library
-BUILD_shared:BOOL=OFF
+BUILD_shared:BOOL=ON
 
 //build the tests for expat library
 BUILD_tests:BOOL=ON

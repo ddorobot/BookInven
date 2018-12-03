@@ -18,15 +18,7 @@
 
 #include "Utility.h"
 
-#include <expat.h>
-#include <curl/curl.h>
-
-#include <wininet.h>
-
-#pragma comment(lib, "wldap32.lib")
-#pragma comment(lib, "wininet.lib")
-#pragma comment(lib, "libcurl_imp.lib")
-#pragma comment(lib, "expat.lib")
+#include "CGetBookInfoUsingUrl.h"
 
 typedef struct StreamInfo {
 	UINT nChar;
@@ -41,8 +33,10 @@ public:
 	~GetBookInfo();
 
 	std::string GetISBNInfo(const UINT nChar);
-	StreamInfo GetInfo(const std::string isbn);
+	BookInfo GetInfo(const std::string isbn);
 private:
 	std::deque<StreamInfo> m_strem;
+
+	CGetBookInfoUsingUrl m_cls_get_bookinfo_using_url;
 };
 

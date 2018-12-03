@@ -70,9 +70,13 @@ std::string GetBookInfo::GetISBNInfo(const UINT nChar)
 	return str_isbn;
 }
 
-StreamInfo GetBookInfo::GetInfo(const std::string isbn)
+BookInfo GetBookInfo::GetInfo(const std::string isbn)
 {
-	StreamInfo info;
+	BookInfo info;
+
+	info = m_cls_get_bookinfo_using_url.Run(isbn);
 
 	return info;
 }
+
+///
