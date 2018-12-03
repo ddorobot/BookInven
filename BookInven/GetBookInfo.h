@@ -18,6 +18,16 @@
 
 #include "Utility.h"
 
+#include <expat.h>
+#include <curl/curl.h>
+
+#include <wininet.h>
+
+#pragma comment(lib, "wldap32.lib")
+#pragma comment(lib, "expat.lib")
+#pragma comment(lib, "libcurl_imp.lib")
+#pragma comment(lib, "wininet.lib")
+
 typedef struct StreamInfo {
 	UINT nChar;
 	boost::posix_time::ptime gettime;
