@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\tests\libtest\lib1552.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\tests\libtest\first.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\tests\libtest\testutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\tests\libtest\test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\tests\libtest\testutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\tests\libtest\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{A72A5417-1D8F-3BB6-BA36-CA9651BE226D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{74937564-A497-32BB-BC6B-DDF7685E75B7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

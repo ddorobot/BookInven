@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2F96D7BF-1A49-389A-A0E2-895D771487F2}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>curl</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">curl.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">curl</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">curl.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">curl</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">curl.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">curl</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">curl.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">curl</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_WIN32_WINNT=0x0600;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;CURL_EMBED_MANIFEST;_DEBUG;_WINDOWS;_WIN32_WINNT=0x0600;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\lib\Debug\libcurl-d_imp.lib;wldap32.lib;winmm.lib;ws2_32.lib;advapi32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/src/Debug/curl.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/src/Debug/curl.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0600;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;CURL_EMBED_MANIFEST;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0600;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\lib\Release\libcurl_imp.lib;wldap32.lib;winmm.lib;ws2_32.lib;advapi32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/src/Release/curl.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/src/Release/curl.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0600;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;CURL_EMBED_MANIFEST;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0600;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\lib\MinSizeRel\libcurl_imp.lib;wldap32.lib;winmm.lib;ws2_32.lib;advapi32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/src/MinSizeRel/curl.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/src/MinSizeRel/curl.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0600;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;CURL_EMBED_MANIFEST;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0600;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\lib;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include;C:\Users\박주홍\Desktop\BookInven\lib\curl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\lib\RelWithDebInfo\libcurl_imp.lib;wldap32.lib;winmm.lib;ws2_32.lib;advapi32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/src/RelWithDebInfo/curl.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/src/RelWithDebInfo/curl.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\c6a394d5ec34abc3b8f5debbd0cf88fe\tool_hugehelp.c.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating tool_hugehelp.c</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "/* built-in manual is disabled, blank function */" &gt; tool_hugehelp.c
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "#include \"tool_hugehelp.h\"" &gt;&gt; tool_hugehelp.c
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "void hugehelp(void) {}" &gt;&gt; tool_hugehelp.c
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/CMakeFiles/c6a394d5ec34abc3b8f5debbd0cf88fe/tool_hugehelp.c.rule;C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_hugehelp.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\tool_hugehelp.c</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating tool_hugehelp.c</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "/* built-in manual is disabled, blank function */" &gt; tool_hugehelp.c
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "#include \"tool_hugehelp.h\"" &gt;&gt; tool_hugehelp.c
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "void hugehelp(void) {}" &gt;&gt; tool_hugehelp.c
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/CMakeFiles/c6a394d5ec34abc3b8f5debbd0cf88fe/tool_hugehelp.c.rule;C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_hugehelp.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\tool_hugehelp.c</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Generating tool_hugehelp.c</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "/* built-in manual is disabled, blank function */" &gt; tool_hugehelp.c
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "#include \"tool_hugehelp.h\"" &gt;&gt; tool_hugehelp.c
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "void hugehelp(void) {}" &gt;&gt; tool_hugehelp.c
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/CMakeFiles/c6a394d5ec34abc3b8f5debbd0cf88fe/tool_hugehelp.c.rule;C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_hugehelp.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\tool_hugehelp.c</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating tool_hugehelp.c</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "/* built-in manual is disabled, blank function */" &gt; tool_hugehelp.c
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "#include \"tool_hugehelp.h\"" &gt;&gt; tool_hugehelp.c
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "void hugehelp(void) {}" &gt;&gt; tool_hugehelp.c
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/CMakeFiles/c6a394d5ec34abc3b8f5debbd0cf88fe/tool_hugehelp.c.rule;C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_hugehelp.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\tool_hugehelp.c</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/박주홍/Desktop/BookInven/lib/curl/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/박주홍/Desktop/BookInven/lib/curl -BC:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild --check-stamp-file C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/curl/src/CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\curl\src\CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\Makefile.inc.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/박주홍/Desktop/BookInven/lib/curl/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/박주홍/Desktop/BookInven/lib/curl -BC:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild --check-stamp-file C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/curl/src/CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\curl\src\CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\Makefile.inc.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/박주홍/Desktop/BookInven/lib/curl/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/박주홍/Desktop/BookInven/lib/curl -BC:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild --check-stamp-file C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/curl/src/CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\curl\src\CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\Makefile.inc.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/박주홍/Desktop/BookInven/lib/curl/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/박주홍/Desktop/BookInven/lib/curl -BC:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild --check-stamp-file C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/curl/src/CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\curl\src\CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\Makefile.inc.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\slist_wc.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_binmode.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_bname.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_cb_dbg.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_cb_hdr.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_cb_prg.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_cb_rea.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_cb_see.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_cb_wrt.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_cfgable.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_convert.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_dirhie.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_doswin.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_easysrc.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_filetime.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_formparse.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_getparam.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_getpass.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_help.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_helpers.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_homedir.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\tool_hugehelp.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_libinfo.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_main.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_metalink.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_msgs.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_operate.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_operhlp.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_panykey.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_paramhlp.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_parsecfg.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_strdup.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_setopt.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_sleep.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_urlglob.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_util.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_vms.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_writeout.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_xattr.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\lib\strtoofft.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\lib\nonblock.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\lib\warnless.c" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\lib\curl_ctype.c" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\slist_wc.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_binmode.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_bname.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_cb_dbg.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_cb_hdr.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_cb_prg.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_cb_rea.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_cb_see.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_cb_wrt.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_cfgable.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_convert.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_dirhie.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_doswin.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_easysrc.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_filetime.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_formparse.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_getparam.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_getpass.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_help.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_helpers.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_homedir.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_hugehelp.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_libinfo.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_main.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_metalink.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_msgs.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_operate.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_operhlp.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_panykey.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_paramhlp.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_parsecfg.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_sdecls.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_setopt.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_setup.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_sleep.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_strdup.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_urlglob.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_util.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_version.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_vms.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_writeout.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\tool_xattr.h" />
+    <ResourceCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\src\curl.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\ZERO_CHECK.vcxproj">
+      <Project>{1C0BBC0D-779F-3AE3-8115-09DE2F1A1E56}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\lib\libcurl.vcxproj">
+      <Project>{3045A7D4-BDC7-3C17-A2F4-3DF3132469CF}</Project>
+      <Name>libcurl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,4 @@
+# CMake generation dependency list for this directory.
+C:/Users/박주홍/Desktop/BookInven/lib/curl/lib/CMakeLists.txt
+C:/Users/박주홍/Desktop/BookInven/lib/curl/lib/curl_config.h.cmake
+C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/lib/Makefile.inc.cmake

@@ -1,0 +1,763 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FEC24C20-BCC2-33C7-8B5F-2F28AE10FBE3}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\include\curl;C:\Users\박주홍\Desktop\BookInven\lib\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/박주홍/Desktop/BookInven/lib/curl/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/박주홍/Desktop/BookInven/lib/curl -BC:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild --check-stamp-file C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/curl/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeConfigurableFile.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckStructHasMember.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckTypeSize.c.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.12\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.12\Modules\FindCygwin.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPerl.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\CurlSymbolHiding.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\CurlTests.c;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\FindLibSSH2.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\Macros.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\OtherTests.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\Platforms\WindowsCache.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\Utilities.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\cmake_uninstall.cmake.in;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\curl-config.cmake.in;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\curl\curl-config.in;C:\Users\박주홍\Desktop\BookInven\lib\curl\libcurl.pc.in;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\3.12.1\CMakeCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\3.12.1\CMakeRCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\3.12.1\CMakeSystem.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ARPA_TFTP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ASSERT_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_CRYPTO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_DES_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ERRNO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ERR_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_IDN2_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_IFADDRS_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_KRB_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LDAPSSL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LDAP_SSL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LIBGEN_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LOCALE_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_NETINET_TCP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_PEM_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_POLL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_RSA_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SSL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STDBOOL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STDDEF_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STDIO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STROPTS_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_FILIO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_IOCTL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_RESOURCE_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_UIO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_UN_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_UTSNAME_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_XATTR_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINBER_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINDOWS_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINLDAP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINSOCK2_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINSOCK_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WS2TCPIP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_CURL_OFF_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_LONG.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_LONG_LONG.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_OFF_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SIG_ATOMIC_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SIZE_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_STRUCT_SOCKADDR_STORAGE.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_TIME_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF___INT64.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\feature_tests.c;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/박주홍/Desktop/BookInven/lib/curl/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/박주홍/Desktop/BookInven/lib/curl -BC:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild --check-stamp-file C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/curl/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeConfigurableFile.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckStructHasMember.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckTypeSize.c.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.12\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.12\Modules\FindCygwin.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPerl.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\CurlSymbolHiding.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\CurlTests.c;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\FindLibSSH2.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\Macros.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\OtherTests.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\Platforms\WindowsCache.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\Utilities.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\cmake_uninstall.cmake.in;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\curl-config.cmake.in;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\curl\curl-config.in;C:\Users\박주홍\Desktop\BookInven\lib\curl\libcurl.pc.in;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\3.12.1\CMakeCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\3.12.1\CMakeRCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\3.12.1\CMakeSystem.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ARPA_TFTP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ASSERT_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_CRYPTO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_DES_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ERRNO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ERR_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_IDN2_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_IFADDRS_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_KRB_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LDAPSSL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LDAP_SSL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LIBGEN_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LOCALE_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_NETINET_TCP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_PEM_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_POLL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_RSA_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SSL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STDBOOL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STDDEF_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STDIO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STROPTS_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_FILIO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_IOCTL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_RESOURCE_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_UIO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_UN_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_UTSNAME_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_XATTR_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINBER_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINDOWS_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINLDAP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINSOCK2_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINSOCK_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WS2TCPIP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_CURL_OFF_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_LONG.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_LONG_LONG.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_OFF_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SIG_ATOMIC_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SIZE_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_STRUCT_SOCKADDR_STORAGE.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_TIME_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF___INT64.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\feature_tests.c;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/박주홍/Desktop/BookInven/lib/curl/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/박주홍/Desktop/BookInven/lib/curl -BC:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild --check-stamp-file C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/curl/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeConfigurableFile.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckStructHasMember.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckTypeSize.c.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.12\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.12\Modules\FindCygwin.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPerl.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\CurlSymbolHiding.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\CurlTests.c;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\FindLibSSH2.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\Macros.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\OtherTests.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\Platforms\WindowsCache.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\Utilities.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\cmake_uninstall.cmake.in;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\curl-config.cmake.in;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\curl\curl-config.in;C:\Users\박주홍\Desktop\BookInven\lib\curl\libcurl.pc.in;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\3.12.1\CMakeCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\3.12.1\CMakeRCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\3.12.1\CMakeSystem.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ARPA_TFTP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ASSERT_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_CRYPTO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_DES_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ERRNO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ERR_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_IDN2_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_IFADDRS_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_KRB_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LDAPSSL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LDAP_SSL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LIBGEN_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LOCALE_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_NETINET_TCP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_PEM_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_POLL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_RSA_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SSL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STDBOOL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STDDEF_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STDIO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STROPTS_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_FILIO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_IOCTL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_RESOURCE_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_UIO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_UN_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_UTSNAME_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_XATTR_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINBER_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINDOWS_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINLDAP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINSOCK2_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINSOCK_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WS2TCPIP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_CURL_OFF_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_LONG.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_LONG_LONG.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_OFF_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SIG_ATOMIC_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SIZE_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_STRUCT_SOCKADDR_STORAGE.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_TIME_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF___INT64.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\feature_tests.c;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/박주홍/Desktop/BookInven/lib/curl/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/박주홍/Desktop/BookInven/lib/curl -BC:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild --check-stamp-file C:/Users/박주홍/Desktop/BookInven/lib/curl_mybuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/curl/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeConfigurableFile.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckStructHasMember.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckTypeSize.c.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.12\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.12\Modules\FindCygwin.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPerl.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\CurlSymbolHiding.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\CurlTests.c;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\FindLibSSH2.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\Macros.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\OtherTests.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\Platforms\WindowsCache.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\Utilities.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\cmake_uninstall.cmake.in;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMake\curl-config.cmake.in;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\curl\curl-config.in;C:\Users\박주홍\Desktop\BookInven\lib\curl\libcurl.pc.in;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\3.12.1\CMakeCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\3.12.1\CMakeRCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\3.12.1\CMakeSystem.cmake;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ARPA_TFTP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ASSERT_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_CRYPTO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_DES_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ERRNO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_ERR_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_IDN2_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_IFADDRS_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_KRB_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LDAPSSL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LDAP_SSL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LIBGEN_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_LOCALE_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_NETINET_TCP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_PEM_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_POLL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_RSA_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SSL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STDBOOL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STDDEF_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STDIO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_STROPTS_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_FILIO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_IOCTL_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_RESOURCE_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_UIO_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_UN_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_UTSNAME_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_SYS_XATTR_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINBER_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINDOWS_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINLDAP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINSOCK2_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WINSOCK_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckIncludeFiles\HAVE_WS2TCPIP_H.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_CURL_OFF_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_LONG.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_LONG_LONG.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_OFF_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SIG_ATOMIC_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SIZE_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_STRUCT_SOCKADDR_STORAGE.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF_TIME_T.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\CheckTypeSize\SIZEOF___INT64.c;C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\feature_tests.c;C:\Users\박주홍\Desktop\BookInven\lib\curl\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\ZERO_CHECK.vcxproj">
+      <Project>{1C0BBC0D-779F-3AE3-8115-09DE2F1A1E56}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\chkdecimalpoint.vcxproj">
+      <Project>{84C88FFF-9B18-3A16-9142-21E4A19D16D2}</Project>
+      <Name>chkdecimalpoint</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\chkhostname.vcxproj">
+      <Project>{E06605FE-79BD-37F7-9F79-B3B325EBBCE9}</Project>
+      <Name>chkhostname</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\src\curl.vcxproj">
+      <Project>{2F96D7BF-1A49-389A-A0E2-895D771487F2}</Project>
+      <Name>curl</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\server\fake_ntlm.vcxproj">
+      <Project>{7EDD3633-02B9-3FB9-9A2B-2D753FD6724D}</Project>
+      <Name>fake_ntlm</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\server\getpart.vcxproj">
+      <Project>{DF6E06B1-8E30-33C5-A612-45BBE1CE6A1C}</Project>
+      <Name>getpart</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1156.vcxproj">
+      <Project>{2A353458-7808-398C-87EA-60353820B025}</Project>
+      <Name>lib1156</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1500.vcxproj">
+      <Project>{8AF6ECFA-36E2-3F1A-B1C5-C7E60D53FA3E}</Project>
+      <Name>lib1500</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1501.vcxproj">
+      <Project>{A6F90A87-D872-3816-B6C4-27AA7D06E148}</Project>
+      <Name>lib1501</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1502.vcxproj">
+      <Project>{48A15DE2-191B-3CD3-8C15-67E492AEB897}</Project>
+      <Name>lib1502</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1503.vcxproj">
+      <Project>{A6AADDF2-4BB8-3C1F-8215-D35ACCAABF94}</Project>
+      <Name>lib1503</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1504.vcxproj">
+      <Project>{56B113F1-3420-34B4-AB16-EF3C60405FCB}</Project>
+      <Name>lib1504</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1505.vcxproj">
+      <Project>{ABDEA189-7266-35BB-98B6-28172D4855F2}</Project>
+      <Name>lib1505</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1506.vcxproj">
+      <Project>{C999BB9F-4540-3BDC-859C-057817A1C6C2}</Project>
+      <Name>lib1506</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1507.vcxproj">
+      <Project>{2EB0C7F8-7BA1-3355-827A-CCA07AFD719A}</Project>
+      <Name>lib1507</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1508.vcxproj">
+      <Project>{8EA04FFB-DB69-3BE1-8E29-D8D92EB9020E}</Project>
+      <Name>lib1508</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1509.vcxproj">
+      <Project>{72A2CCEB-25D2-3C01-A56A-C22AFEB11A84}</Project>
+      <Name>lib1509</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1510.vcxproj">
+      <Project>{FFF5155B-C181-37DE-81F9-12DD4BC3616C}</Project>
+      <Name>lib1510</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1511.vcxproj">
+      <Project>{409AD7E8-BE5F-3D1E-9123-A1A4C14B994F}</Project>
+      <Name>lib1511</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1512.vcxproj">
+      <Project>{4DBD68C6-CB0F-35B3-BC4A-76727D0EF6AA}</Project>
+      <Name>lib1512</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1513.vcxproj">
+      <Project>{6CF12023-4104-33FC-85E2-F41782B51257}</Project>
+      <Name>lib1513</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1514.vcxproj">
+      <Project>{C123404B-6D1F-360C-82CD-08408C3452AF}</Project>
+      <Name>lib1514</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1515.vcxproj">
+      <Project>{343E11AA-A8D7-3432-B76A-5C76F613E818}</Project>
+      <Name>lib1515</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1517.vcxproj">
+      <Project>{6C7C6D98-F200-38C4-ABCC-4A63665CD3AE}</Project>
+      <Name>lib1517</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1520.vcxproj">
+      <Project>{F096D2EC-8FA5-3F41-89A1-5F216D785304}</Project>
+      <Name>lib1520</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1521.vcxproj">
+      <Project>{DC697EF0-FDF9-368F-BBD2-DBAAE6A24202}</Project>
+      <Name>lib1521</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1522.vcxproj">
+      <Project>{777F98EF-4115-378A-BEF5-E49CCFF6B5EF}</Project>
+      <Name>lib1522</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1525.vcxproj">
+      <Project>{DFCFAF0F-D7EB-3AEA-BC08-C24F33DD9939}</Project>
+      <Name>lib1525</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1526.vcxproj">
+      <Project>{9F44F82D-0704-383A-9221-19F5724D1A51}</Project>
+      <Name>lib1526</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1527.vcxproj">
+      <Project>{6061FEC0-688B-350D-9CFC-72C6B8950B0B}</Project>
+      <Name>lib1527</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1528.vcxproj">
+      <Project>{85AF38DD-6972-33AA-924F-431387EF5594}</Project>
+      <Name>lib1528</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1529.vcxproj">
+      <Project>{3443E494-A4AE-3AD3-8BC9-8390733F2A99}</Project>
+      <Name>lib1529</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1530.vcxproj">
+      <Project>{1F663350-9FDD-34B9-BB4D-EDFDCE48F0C8}</Project>
+      <Name>lib1530</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1531.vcxproj">
+      <Project>{9E06B692-1BDC-3D8E-9C9B-C891208725D6}</Project>
+      <Name>lib1531</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1532.vcxproj">
+      <Project>{3193EAF0-818D-3F56-A3F6-EF9612AC56CC}</Project>
+      <Name>lib1532</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1533.vcxproj">
+      <Project>{A6EE4201-E015-3B0A-8E82-159A0D77B321}</Project>
+      <Name>lib1533</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1534.vcxproj">
+      <Project>{1F4A51B3-229F-35E5-864E-30AC4A8CD413}</Project>
+      <Name>lib1534</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1535.vcxproj">
+      <Project>{2905CF73-7BBD-3EAC-82F2-6F1BBB0F275A}</Project>
+      <Name>lib1535</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1536.vcxproj">
+      <Project>{EF78F3EE-A897-399D-805D-BAB63E952AA6}</Project>
+      <Name>lib1536</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1537.vcxproj">
+      <Project>{88056E89-9651-3DC3-9E95-9CB752FEDAC6}</Project>
+      <Name>lib1537</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1538.vcxproj">
+      <Project>{C39401E8-6065-390D-85AF-D833DB5A2201}</Project>
+      <Name>lib1538</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1540.vcxproj">
+      <Project>{86781ED2-5399-3AD9-B4BF-DE9DF34E2701}</Project>
+      <Name>lib1540</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1550.vcxproj">
+      <Project>{32E74A37-FBEE-37D9-A7F9-F9E7FD8351F5}</Project>
+      <Name>lib1550</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1551.vcxproj">
+      <Project>{DCD46055-D8ED-3B61-AE19-226FF2C16721}</Project>
+      <Name>lib1551</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1552.vcxproj">
+      <Project>{8B2DB2F0-0EEE-38C9-9B05-350CB12BAFC7}</Project>
+      <Name>lib1552</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1553.vcxproj">
+      <Project>{15EAAA10-6657-3589-93E4-A94A157ADDF4}</Project>
+      <Name>lib1553</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1554.vcxproj">
+      <Project>{92F7B6D9-7902-3488-87C5-3DE7FFFD52A8}</Project>
+      <Name>lib1554</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1555.vcxproj">
+      <Project>{7FDFAA77-8387-3F9C-ABC9-CAE8DA728C2E}</Project>
+      <Name>lib1555</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1556.vcxproj">
+      <Project>{AC214FED-174E-39B2-A2B5-0B352393F51A}</Project>
+      <Name>lib1556</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1557.vcxproj">
+      <Project>{9EB3EE12-7B3F-39FE-8BD0-DB47AA697994}</Project>
+      <Name>lib1557</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1560.vcxproj">
+      <Project>{F9FDE019-0B5E-3CA0-9E2F-5613E01C6F90}</Project>
+      <Name>lib1560</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib1900.vcxproj">
+      <Project>{95DBA7E6-E49E-3771-AED9-276841F0EF6D}</Project>
+      <Name>lib1900</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib2033.vcxproj">
+      <Project>{6C8860E7-34A8-3C4A-A172-8320FD520DA8}</Project>
+      <Name>lib2033</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib500.vcxproj">
+      <Project>{7A751276-2252-3CCE-AB28-3EED564AC549}</Project>
+      <Name>lib500</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib501.vcxproj">
+      <Project>{5F791335-EDF3-3256-8EEB-10C2F2FF9F09}</Project>
+      <Name>lib501</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib502.vcxproj">
+      <Project>{4D1250CE-E538-3549-8991-1CEE515F6BDC}</Project>
+      <Name>lib502</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib503.vcxproj">
+      <Project>{94E33544-097B-3364-8B59-92C5AED4C7A4}</Project>
+      <Name>lib503</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib504.vcxproj">
+      <Project>{9186C663-9B30-3844-80F9-83024565787F}</Project>
+      <Name>lib504</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib505.vcxproj">
+      <Project>{CF36DB03-F892-3D42-95A4-C783A578524F}</Project>
+      <Name>lib505</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib506.vcxproj">
+      <Project>{095FD49F-7C19-3B53-A6B4-9E96713FF565}</Project>
+      <Name>lib506</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib507.vcxproj">
+      <Project>{E5BFE6AD-C3B0-3155-81C6-48298C8B5B23}</Project>
+      <Name>lib507</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib508.vcxproj">
+      <Project>{A54BE26A-EC45-35FF-A20F-12448246A4AE}</Project>
+      <Name>lib508</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib509.vcxproj">
+      <Project>{F4DE6C95-9858-3916-88E0-ABCC543401FF}</Project>
+      <Name>lib509</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib510.vcxproj">
+      <Project>{58F42058-526E-305D-9778-D642A4E49402}</Project>
+      <Name>lib510</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib511.vcxproj">
+      <Project>{B5835F6F-715B-3C81-9154-9189242AEB03}</Project>
+      <Name>lib511</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib512.vcxproj">
+      <Project>{07D49C89-F65C-3BD5-B61A-2ED7B7C4B43F}</Project>
+      <Name>lib512</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib513.vcxproj">
+      <Project>{C680C616-31CB-334D-9721-9B6A5A641124}</Project>
+      <Name>lib513</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib514.vcxproj">
+      <Project>{F12499F6-173F-37B8-AA0A-0A893944D3B8}</Project>
+      <Name>lib514</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib515.vcxproj">
+      <Project>{4660E74B-E9B8-39CA-94AD-3D8417C26DDF}</Project>
+      <Name>lib515</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib516.vcxproj">
+      <Project>{0EA965F9-D5E4-32C9-9D22-272AE863634C}</Project>
+      <Name>lib516</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib517.vcxproj">
+      <Project>{D557014A-8710-3D4D-B5BA-11CDA19EDC0E}</Project>
+      <Name>lib517</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib518.vcxproj">
+      <Project>{A02515B1-BEBF-3CCB-917A-C869A313705E}</Project>
+      <Name>lib518</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib519.vcxproj">
+      <Project>{EEE86A9E-612B-30D8-A1BC-386CF610055A}</Project>
+      <Name>lib519</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib520.vcxproj">
+      <Project>{A9771A37-54B4-340A-9CFE-459A98983B7F}</Project>
+      <Name>lib520</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib521.vcxproj">
+      <Project>{98DDD6A7-CD30-3184-8CFE-CAA04B09B1EA}</Project>
+      <Name>lib521</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib523.vcxproj">
+      <Project>{EA0FF496-024B-327D-895C-5AF99CAF292A}</Project>
+      <Name>lib523</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib524.vcxproj">
+      <Project>{02FCD61F-E74C-3A33-839C-0A22D7F0D7E3}</Project>
+      <Name>lib524</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib525.vcxproj">
+      <Project>{D314A654-1DD4-3CF9-B45F-2C5128AE0AE8}</Project>
+      <Name>lib525</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib526.vcxproj">
+      <Project>{E58AABED-21DA-34D0-82D1-D65F8A467C1C}</Project>
+      <Name>lib526</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib527.vcxproj">
+      <Project>{2EE0F32D-BE31-3E28-B972-598E0E0DBCD1}</Project>
+      <Name>lib527</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib529.vcxproj">
+      <Project>{2FDD7170-8BE3-38D8-BCBF-938BB958AEB5}</Project>
+      <Name>lib529</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib530.vcxproj">
+      <Project>{3C09A6C4-BF54-317C-BC2C-57C2895086BD}</Project>
+      <Name>lib530</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib532.vcxproj">
+      <Project>{7CB81F48-2DF4-3E3F-A9CA-BD615EB9BF78}</Project>
+      <Name>lib532</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib533.vcxproj">
+      <Project>{BE338071-E0C7-3317-997E-D0597E90501D}</Project>
+      <Name>lib533</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib536.vcxproj">
+      <Project>{73B4095A-E9C9-34F8-A614-3CFB7D810A43}</Project>
+      <Name>lib536</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib537.vcxproj">
+      <Project>{AC8E6CF8-9D4A-3ABB-AF25-858666F4754C}</Project>
+      <Name>lib537</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib539.vcxproj">
+      <Project>{AE9DFBCB-026F-31D2-9EDA-D076802B477A}</Project>
+      <Name>lib539</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib540.vcxproj">
+      <Project>{344A567C-1737-3AA2-A5C3-25FE95CA2A40}</Project>
+      <Name>lib540</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib541.vcxproj">
+      <Project>{06AFEA2D-1E0D-313F-BFD3-07A2EDEBD5B1}</Project>
+      <Name>lib541</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib542.vcxproj">
+      <Project>{308ECD8C-B39B-350A-B02C-8383B903A0F9}</Project>
+      <Name>lib542</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib543.vcxproj">
+      <Project>{D4221122-0F4C-3960-857F-B18A7D82B7EC}</Project>
+      <Name>lib543</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib544.vcxproj">
+      <Project>{622FB648-3404-3C2B-B70D-5D06A2626F1E}</Project>
+      <Name>lib544</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib545.vcxproj">
+      <Project>{24F2B8FC-98CA-38D1-BFE9-929B3EA99303}</Project>
+      <Name>lib545</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib547.vcxproj">
+      <Project>{51D77F92-D8E4-32FF-8B08-D1151E17476A}</Project>
+      <Name>lib547</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib548.vcxproj">
+      <Project>{3A64E18E-526C-3DC0-9A2E-6C574173DB30}</Project>
+      <Name>lib548</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib549.vcxproj">
+      <Project>{357AFFD7-5751-3A6D-8817-A0173A97E049}</Project>
+      <Name>lib549</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib552.vcxproj">
+      <Project>{93B35AE4-47C3-3762-9358-694ADDCA2F3A}</Project>
+      <Name>lib552</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib553.vcxproj">
+      <Project>{02906EE6-7398-39E7-91A8-6110A23C9083}</Project>
+      <Name>lib553</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib554.vcxproj">
+      <Project>{D9B221BE-7382-3379-A67F-6EF2C9B73E59}</Project>
+      <Name>lib554</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib555.vcxproj">
+      <Project>{1A36CE0F-A447-3A12-9B69-EC8752469F8C}</Project>
+      <Name>lib555</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib556.vcxproj">
+      <Project>{68CAB702-7D5B-3201-AD62-FD934BE12E45}</Project>
+      <Name>lib556</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib557.vcxproj">
+      <Project>{3B1BF34B-CD96-3415-A273-C1904CE76479}</Project>
+      <Name>lib557</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib558.vcxproj">
+      <Project>{11E982A7-39D5-3AD0-B9E1-D37872493658}</Project>
+      <Name>lib558</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib559.vcxproj">
+      <Project>{4AD2EF8A-575C-36F8-B6C0-81A5E85857EC}</Project>
+      <Name>lib559</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib560.vcxproj">
+      <Project>{45EB8B16-5512-3537-85AC-4C546752B605}</Project>
+      <Name>lib560</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib562.vcxproj">
+      <Project>{806D99A2-99ED-326C-8213-3FB54950509B}</Project>
+      <Name>lib562</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib564.vcxproj">
+      <Project>{6C1FD4F7-3F2C-36E1-89BF-2A639E496F03}</Project>
+      <Name>lib564</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib565.vcxproj">
+      <Project>{2A63A003-16FC-3D32-89D0-D9C858A75737}</Project>
+      <Name>lib565</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib566.vcxproj">
+      <Project>{C31204D7-8FD5-34F4-AFFC-D8F5BB45E546}</Project>
+      <Name>lib566</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib567.vcxproj">
+      <Project>{D3E7C7ED-4C98-3576-A350-E7DF8A119D09}</Project>
+      <Name>lib567</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib568.vcxproj">
+      <Project>{6CF04A73-FBBC-3C4B-B647-4538B966E494}</Project>
+      <Name>lib568</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib569.vcxproj">
+      <Project>{090B654B-C9E6-3FB3-B08B-13559AB24504}</Project>
+      <Name>lib569</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib570.vcxproj">
+      <Project>{367CFFBE-53E2-3F54-80CB-A88568796EAD}</Project>
+      <Name>lib570</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib571.vcxproj">
+      <Project>{05337DE9-9A30-3A81-B41C-0D982E9DF729}</Project>
+      <Name>lib571</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib572.vcxproj">
+      <Project>{2EBD671F-6065-38F1-AFC9-DF354B698901}</Project>
+      <Name>lib572</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib573.vcxproj">
+      <Project>{F0A8BF0E-87A9-3646-A969-E6C9469FCD72}</Project>
+      <Name>lib573</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib574.vcxproj">
+      <Project>{A4DEFDBE-FC6A-3247-B0DB-3712F308F63D}</Project>
+      <Name>lib574</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib575.vcxproj">
+      <Project>{3FBF4E89-60C7-3B62-8C88-5F203392F978}</Project>
+      <Name>lib575</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib576.vcxproj">
+      <Project>{24F2D139-D859-32BA-BE96-8A324C940853}</Project>
+      <Name>lib576</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib578.vcxproj">
+      <Project>{CCA2468C-ABBF-3D92-97C0-A1E55D838BF8}</Project>
+      <Name>lib578</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib579.vcxproj">
+      <Project>{FFCF4ED6-98D7-3D6A-9EE4-CBB79D860D51}</Project>
+      <Name>lib579</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib582.vcxproj">
+      <Project>{90A49274-36A8-3C9E-8AC3-3875795C95CD}</Project>
+      <Name>lib582</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib583.vcxproj">
+      <Project>{4FE024EA-D8E5-3EF7-AEA8-FB7C655CEC6B}</Project>
+      <Name>lib583</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib585.vcxproj">
+      <Project>{D4D7B2F3-C706-3AB0-B73B-32C69F5B2DD9}</Project>
+      <Name>lib585</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib586.vcxproj">
+      <Project>{9AC16DBF-71E9-3D3E-9482-7D4DA48AEFBC}</Project>
+      <Name>lib586</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib587.vcxproj">
+      <Project>{31953BD2-2083-3F8E-B106-ACC6D67E41BA}</Project>
+      <Name>lib587</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib589.vcxproj">
+      <Project>{8CB5C2CB-F1E6-3314-8244-C433CCFA47E7}</Project>
+      <Name>lib589</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib590.vcxproj">
+      <Project>{C79E61FD-198A-3DB8-9B73-4EDD181052DD}</Project>
+      <Name>lib590</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib591.vcxproj">
+      <Project>{F92022B3-64E5-315F-AA7B-B8434011A1D2}</Project>
+      <Name>lib591</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib597.vcxproj">
+      <Project>{67337E63-BD86-310B-AE3F-289067537234}</Project>
+      <Name>lib597</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib598.vcxproj">
+      <Project>{0390BBA9-2157-3BC3-8058-FDC0CDCCDE7E}</Project>
+      <Name>lib598</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib599.vcxproj">
+      <Project>{11D1361B-4641-32B2-B403-2B5B3A41719C}</Project>
+      <Name>lib599</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib643.vcxproj">
+      <Project>{3E2F19CA-02A6-3067-AC8B-EDE10C967BCE}</Project>
+      <Name>lib643</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib644.vcxproj">
+      <Project>{BEE9A8E6-42E7-3F02-BA17-940B52A5B100}</Project>
+      <Name>lib644</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib645.vcxproj">
+      <Project>{B0341BBD-4559-373F-8447-8A3ABC62E75B}</Project>
+      <Name>lib645</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib650.vcxproj">
+      <Project>{8C8412E7-292F-3D59-9888-DA53BE206F3E}</Project>
+      <Name>lib650</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib651.vcxproj">
+      <Project>{6ADAD415-9F97-39EA-8A4B-8350D59A0FB4}</Project>
+      <Name>lib651</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib652.vcxproj">
+      <Project>{21F939FA-58AD-320C-B94E-7D7E31062BEC}</Project>
+      <Name>lib652</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib653.vcxproj">
+      <Project>{51B7B961-D8C1-399F-9A02-166CAB8A292E}</Project>
+      <Name>lib653</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib654.vcxproj">
+      <Project>{5750E0BA-7197-3CC7-930F-94D137BFCDA4}</Project>
+      <Name>lib654</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\lib655.vcxproj">
+      <Project>{C860C566-9911-3547-B082-1BBFF7F506BB}</Project>
+      <Name>lib655</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\libauthretry.vcxproj">
+      <Project>{1C2D752F-5A45-39C4-AA1A-029D7DA6FA78}</Project>
+      <Name>libauthretry</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\lib\libcurl.vcxproj">
+      <Project>{3045A7D4-BDC7-3C17-A2F4-3DF3132469CF}</Project>
+      <Name>libcurl</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\libtest\libntlmconnect.vcxproj">
+      <Project>{4A56B405-FC58-3452-BDDD-FA5A2E7A89A6}</Project>
+      <Name>libntlmconnect</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\server\resolve.vcxproj">
+      <Project>{CA5896E0-74CA-3EF4-8385-602F068CB611}</Project>
+      <Name>resolve</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\server\rtspd.vcxproj">
+      <Project>{C582BEFC-398E-330A-AB35-D9A320C8520C}</Project>
+      <Name>rtspd</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\server\sockfilt.vcxproj">
+      <Project>{CE59DC78-A0F1-364E-9B12-4CC73C3C7205}</Project>
+      <Name>sockfilt</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\server\sws.vcxproj">
+      <Project>{54FBDCEE-15BE-3CDB-B5E1-15E5B3E079A2}</Project>
+      <Name>sws</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\tests\server\tftpd.vcxproj">
+      <Project>{E640E646-FE2E-3672-A5C2-AB2FA494C8C0}</Project>
+      <Name>tftpd</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

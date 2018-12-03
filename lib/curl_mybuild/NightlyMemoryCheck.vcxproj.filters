@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\2e866a8361a658809056b99d0da9b18d\NightlyMemoryCheck.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\박주홍\Desktop\BookInven\lib\curl\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\박주홍\Desktop\BookInven\lib\curl_mybuild\CMakeFiles\NightlyMemoryCheck" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{38B7C126-5BB9-388B-AB09-A68AF63E3087}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
