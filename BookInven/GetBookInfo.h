@@ -31,7 +31,7 @@ public:
 	~GetBookInfo();
 
 	std::string GetISBNInfo(const UINT nChar);
-
+	StreamInfo GetInfo(const std::string isbn);
 private:
 	std::deque<StreamInfo> m_strem;
 };

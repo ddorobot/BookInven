@@ -69,3 +69,10 @@ std::string GetBookInfo::GetISBNInfo(const UINT nChar)
 
 	return str_isbn;
 }
+
+StreamInfo GetBookInfo::GetInfo(const std::string isbn)
+{
+	StreamInfo info;
+
+	return info;
+}
