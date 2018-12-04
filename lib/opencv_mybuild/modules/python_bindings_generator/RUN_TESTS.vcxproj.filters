@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\work\BookInven\lib\opencv_mybuild\CMakeFiles\4c1ad8052dc4c8a6d822f95bc083ca42\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{D0AC041A-396E-315E-9EAF-6DBEF40FA22F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

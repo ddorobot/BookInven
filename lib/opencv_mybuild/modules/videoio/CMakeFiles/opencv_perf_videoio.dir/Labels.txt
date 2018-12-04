@@ -1,0 +1,25 @@
+# Target labels
+ Main
+ opencv_videoio
+ PerfTest
+# Source files and their labels
+C:/work/BookInven/lib/opencv/modules/videoio/perf/perf_input.cpp
+ Main
+ opencv_videoio
+ PerfTest
+C:/work/BookInven/lib/opencv/modules/videoio/perf/perf_main.cpp
+ Main
+ opencv_videoio
+ PerfTest
+C:/work/BookInven/lib/opencv/modules/videoio/perf/perf_output.cpp
+ Main
+ opencv_videoio
+ PerfTest
+C:/work/BookInven/lib/opencv/modules/videoio/perf/perf_precomp.hpp
+ Main
+ opencv_videoio
+ PerfTest
+C:/work/BookInven/lib/opencv_mybuild/modules/videoio/opencv_perf_videoio_pch.cpp
+ Main
+ opencv_videoio
+ PerfTest

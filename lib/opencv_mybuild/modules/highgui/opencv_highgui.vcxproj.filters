@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\highgui\src\window.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\highgui\src\roiSelector.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\highgui\src\window_w32.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_mybuild\modules\highgui\opencv_highgui_pch.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\highgui\include\opencv2\highgui.hpp">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\highgui\include\opencv2\highgui\highgui.hpp">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\highgui\include\opencv2\highgui\highgui_c.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\highgui\src\precomp.hpp">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_mybuild\cvconfig.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_mybuild\opencv2\opencv_modules.hpp">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\work\BookInven\lib\opencv\modules\highgui\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{854D7D7F-04C7-3C19-8B92-39EC03CF29DD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{3E81CF47-BFC6-3B85-BDCB-2F92B0B97BC6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

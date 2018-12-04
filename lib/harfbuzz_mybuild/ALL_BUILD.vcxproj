@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DC3DB1D5-D1F9-3936-91BF-C8C0352C58E1}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\ZERO_CHECK.vcxproj">
+      <Project>{43058396-50BC-31E8-A1AA-B6B57030FD14}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\harfbuzz.vcxproj">
+      <Project>{A335BAFA-05EE-37AA-AC2A-747931A85800}</Project>
+      <Name>harfbuzz</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\harfbuzz-subset.vcxproj">
+      <Project>{05CF61A4-A9E1-3112-BDCA-348B05CF9D48}</Project>
+      <Name>harfbuzz-subset</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\hb-ot-tag.vcxproj">
+      <Project>{3D640764-1711-3A38-9413-4D2FF42D0CD5}</Project>
+      <Name>hb-ot-tag</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\main.vcxproj">
+      <Project>{981C728E-85BE-391F-8A01-CD04CCA5636F}</Project>
+      <Name>main</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\test-buffer-serialize.vcxproj">
+      <Project>{B423C97A-E4A1-3B9D-9CFF-BD38414FB968}</Project>
+      <Name>test-buffer-serialize</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\test-size-params.vcxproj">
+      <Project>{73089DA6-6A96-3916-8785-43E0266F8520}</Project>
+      <Name>test-size-params</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\test-test.vcxproj">
+      <Project>{025B24E9-D704-3DB4-A3A7-6F1C26EBC166}</Project>
+      <Name>test-test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\test-unicode-ranges.vcxproj">
+      <Project>{5E200407-8B97-3645-A57B-C9E981C12CA8}</Project>
+      <Name>test-unicode-ranges</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\test-would-substitute.vcxproj">
+      <Project>{B99068A0-E173-3187-B0C6-372CD05C8C16}</Project>
+      <Name>test-would-substitute</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

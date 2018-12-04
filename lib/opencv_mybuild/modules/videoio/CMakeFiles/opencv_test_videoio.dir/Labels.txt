@@ -1,0 +1,45 @@
+# Target labels
+ Main
+ opencv_videoio
+ AccuracyTest
+# Source files and their labels
+C:/work/BookInven/lib/opencv/modules/videoio/test/test_camera.cpp
+ Main
+ opencv_videoio
+ AccuracyTest
+C:/work/BookInven/lib/opencv/modules/videoio/test/test_container_avi.cpp
+ Main
+ opencv_videoio
+ AccuracyTest
+C:/work/BookInven/lib/opencv/modules/videoio/test/test_ffmpeg.cpp
+ Main
+ opencv_videoio
+ AccuracyTest
+C:/work/BookInven/lib/opencv/modules/videoio/test/test_fourcc.cpp
+ Main
+ opencv_videoio
+ AccuracyTest
+C:/work/BookInven/lib/opencv/modules/videoio/test/test_gstreamer.cpp
+ Main
+ opencv_videoio
+ AccuracyTest
+C:/work/BookInven/lib/opencv/modules/videoio/test/test_main.cpp
+ Main
+ opencv_videoio
+ AccuracyTest
+C:/work/BookInven/lib/opencv/modules/videoio/test/test_mfx.cpp
+ Main
+ opencv_videoio
+ AccuracyTest
+C:/work/BookInven/lib/opencv/modules/videoio/test/test_video_io.cpp
+ Main
+ opencv_videoio
+ AccuracyTest
+C:/work/BookInven/lib/opencv/modules/videoio/test/test_precomp.hpp
+ Main
+ opencv_videoio
+ AccuracyTest
+C:/work/BookInven/lib/opencv_mybuild/modules/videoio/opencv_test_videoio_pch.cpp
+ Main
+ opencv_videoio
+ AccuracyTest

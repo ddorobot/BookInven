@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B9548C70-8770-3872-A402-9653864F8FAB}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>opencv_test_flann</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\work\BookInven\lib\opencv_mybuild\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">opencv_test_flann.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">opencv_test_flannd</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\work\BookInven\lib\opencv_mybuild\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">opencv_test_flann.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">opencv_test_flann</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv\modules\ts\include;C:\work\BookInven\lib\opencv\modules\flann\include;C:\work\BookInven\lib\opencv\modules\imgcodecs\include;C:\work\BookInven\lib\opencv\modules\videoio\include;C:\work\BookInven\lib\opencv\modules\core\include;C:\work\BookInven\lib\opencv\modules\imgproc\include;C:\work\BookInven\lib\opencv\modules\highgui\include;C:\work\BookInven\lib\opencv\modules\flann\test;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4127;4251;4324;4275;4512;4589</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ProcessorNumber>8</ProcessorNumber>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;__OPENCV_TESTS=1;_VARIADIC_MAX=10;__OPENCV_BUILD=1;_USE_MATH_DEFINES;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;__OPENCV_TESTS=1;_VARIADIC_MAX=10;__OPENCV_BUILD=1;_USE_MATH_DEFINES;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv\modules\ts\include;C:\work\BookInven\lib\opencv\modules\flann\include;C:\work\BookInven\lib\opencv\modules\imgcodecs\include;C:\work\BookInven\lib\opencv\modules\videoio\include;C:\work\BookInven\lib\opencv\modules\core\include;C:\work\BookInven\lib\opencv\modules\imgproc\include;C:\work\BookInven\lib\opencv\modules\highgui\include;C:\work\BookInven\lib\opencv\modules\flann\test;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv\modules\ts\include;C:\work\BookInven\lib\opencv\modules\flann\include;C:\work\BookInven\lib\opencv\modules\imgcodecs\include;C:\work\BookInven\lib\opencv\modules\videoio\include;C:\work\BookInven\lib\opencv\modules\core\include;C:\work\BookInven\lib\opencv\modules\imgproc\include;C:\work\BookInven\lib\opencv\modules\highgui\include;C:\work\BookInven\lib\opencv\modules\flann\test;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\lib\Debug\opencv_ts400d.lib;..\..\lib\Debug\opencv_flann400d.lib;..\..\lib\Debug\opencv_imgcodecs400d.lib;..\..\lib\Debug\opencv_videoio400d.lib;..\..\lib\Debug\opencv_core400d.lib;..\..\lib\Debug\opencv_core400d.lib;..\..\lib\Debug\opencv_imgproc400d.lib;..\..\lib\Debug\opencv_imgcodecs400d.lib;..\..\lib\Debug\opencv_videoio400d.lib;..\..\lib\Debug\opencv_highgui400d.lib;..\..\lib\Debug\opencv_core400d.lib;..\..\3rdparty\lib\Debug\ippiwd.lib;..\..\3rdparty\ippicv\ippicv_win\icv\lib\ia32\ippicvmt.lib;..\..\lib\Debug\opencv_videoio400d.lib;..\..\lib\Debug\opencv_imgcodecs400d.lib;..\..\3rdparty\lib\Debug\libjpeg-turbod.lib;..\..\3rdparty\lib\Debug\libwebpd.lib;..\..\3rdparty\lib\Debug\libpngd.lib;..\..\3rdparty\lib\Debug\libtiffd.lib;..\..\3rdparty\lib\Debug\libjasperd.lib;..\..\3rdparty\lib\Debug\IlmImfd.lib;..\..\lib\Debug\opencv_imgproc400d.lib;comctl32.lib;gdi32.lib;ole32.lib;setupapi.lib;ws2_32.lib;..\..\lib\Debug\opencv_core400d.lib;..\..\3rdparty\lib\Debug\zlibd.lib;..\..\3rdparty\lib\Debug\ittnotifyd.lib;..\..\3rdparty\lib\Debug\ippiwd.lib;..\..\3rdparty\ippicv\ippicv_win\icv\lib\ia32\ippicvmt.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>atlthunk.lib;libcmt.lib;libcpmt.lib;msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/work/BookInven/lib/opencv_mybuild/bin/Debug/opencv_test_flannd.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/work/BookInven/lib/opencv_mybuild/bin/Debug/opencv_test_flannd.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv\modules\ts\include;C:\work\BookInven\lib\opencv\modules\flann\include;C:\work\BookInven\lib\opencv\modules\imgcodecs\include;C:\work\BookInven\lib\opencv\modules\videoio\include;C:\work\BookInven\lib\opencv\modules\core\include;C:\work\BookInven\lib\opencv\modules\imgproc\include;C:\work\BookInven\lib\opencv\modules\highgui\include;C:\work\BookInven\lib\opencv\modules\flann\test;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4127;4251;4324;4275;4512;4589</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ProcessorNumber>8</ProcessorNumber>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;NDEBUG;__OPENCV_TESTS=1;_VARIADIC_MAX=10;__OPENCV_BUILD=1;_USE_MATH_DEFINES;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;NDEBUG;__OPENCV_TESTS=1;_VARIADIC_MAX=10;__OPENCV_BUILD=1;_USE_MATH_DEFINES;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv\modules\ts\include;C:\work\BookInven\lib\opencv\modules\flann\include;C:\work\BookInven\lib\opencv\modules\imgcodecs\include;C:\work\BookInven\lib\opencv\modules\videoio\include;C:\work\BookInven\lib\opencv\modules\core\include;C:\work\BookInven\lib\opencv\modules\imgproc\include;C:\work\BookInven\lib\opencv\modules\highgui\include;C:\work\BookInven\lib\opencv\modules\flann\test;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv\modules\ts\include;C:\work\BookInven\lib\opencv\modules\flann\include;C:\work\BookInven\lib\opencv\modules\imgcodecs\include;C:\work\BookInven\lib\opencv\modules\videoio\include;C:\work\BookInven\lib\opencv\modules\core\include;C:\work\BookInven\lib\opencv\modules\imgproc\include;C:\work\BookInven\lib\opencv\modules\highgui\include;C:\work\BookInven\lib\opencv\modules\flann\test;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\lib\Release\opencv_ts400.lib;..\..\lib\Release\opencv_flann400.lib;..\..\lib\Release\opencv_imgcodecs400.lib;..\..\lib\Release\opencv_videoio400.lib;..\..\lib\Release\opencv_core400.lib;..\..\lib\Release\opencv_core400.lib;..\..\lib\Release\opencv_imgproc400.lib;..\..\lib\Release\opencv_imgcodecs400.lib;..\..\lib\Release\opencv_videoio400.lib;..\..\lib\Release\opencv_highgui400.lib;..\..\lib\Release\opencv_core400.lib;..\..\3rdparty\lib\Release\ippiw.lib;..\..\3rdparty\ippicv\ippicv_win\icv\lib\ia32\ippicvmt.lib;..\..\lib\Release\opencv_videoio400.lib;..\..\lib\Release\opencv_imgcodecs400.lib;..\..\3rdparty\lib\Release\libjpeg-turbo.lib;..\..\3rdparty\lib\Release\libwebp.lib;..\..\3rdparty\lib\Release\libpng.lib;..\..\3rdparty\lib\Release\libtiff.lib;..\..\3rdparty\lib\Release\libjasper.lib;..\..\3rdparty\lib\Release\IlmImf.lib;..\..\lib\Release\opencv_imgproc400.lib;comctl32.lib;gdi32.lib;ole32.lib;setupapi.lib;ws2_32.lib;..\..\lib\Release\opencv_core400.lib;..\..\3rdparty\lib\Release\zlib.lib;..\..\3rdparty\lib\Release\ittnotify.lib;..\..\3rdparty\lib\Release\ippiw.lib;..\..\3rdparty\ippicv\ippicv_win\icv\lib\ia32\ippicvmt.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>atlthunk.lib;libcmtd.lib;libcpmtd.lib;msvcrtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/work/BookInven/lib/opencv_mybuild/bin/Release/opencv_test_flann.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/work/BookInven/lib/opencv_mybuild/bin/Release/opencv_test_flann.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\flann\test\test_lshtable_badarg.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/flann/test/test_precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/flann/test/test_precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/flann/test/test_precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/flann/test/test_precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\flann\test\test_main.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/flann/test/test_precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/flann/test/test_precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/flann/test/test_precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/flann/test/test_precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\flann\test\test_precomp.hpp" />
+    <ClCompile Include="C:\work\BookInven\lib\opencv_mybuild\modules\flann\opencv_test_flann_pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/flann/test/test_precomp.hpp</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/flann/test/test_precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\ZERO_CHECK.vcxproj">
+      <Project>{94610170-CFC8-30E6-9DFD-A8441A76D3A5}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\3rdparty\openexr\IlmImf.vcxproj">
+      <Project>{85008B62-D442-37BB-9CF7-21DCE3DD8CD1}</Project>
+      <Name>IlmImf</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippiw\ippiw.vcxproj">
+      <Project>{1E568DFD-99D8-3526-BFB4-726B8B14E9D6}</Project>
+      <Name>ippiw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\3rdparty\ittnotify\ittnotify.vcxproj">
+      <Project>{2D0F0565-EAAB-3A80-A1C7-7229D01D00AE}</Project>
+      <Name>ittnotify</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\3rdparty\libjasper\libjasper.vcxproj">
+      <Project>{A03B38DA-CF64-31BF-BBF4-295F8E554CD4}</Project>
+      <Name>libjasper</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\3rdparty\libjpeg-turbo\libjpeg-turbo.vcxproj">
+      <Project>{707D080F-F9F2-3252-BE74-8A18EEAB943F}</Project>
+      <Name>libjpeg-turbo</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\3rdparty\libpng\libpng.vcxproj">
+      <Project>{360BD21A-47CC-3C8A-9293-8CEF277EDAE0}</Project>
+      <Name>libpng</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\3rdparty\libtiff\libtiff.vcxproj">
+      <Project>{4435B34E-88A8-3886-A33B-D955544E7084}</Project>
+      <Name>libtiff</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\3rdparty\libwebp\libwebp.vcxproj">
+      <Project>{AFBAD8F0-D9C0-3C26-8DCC-26A25BF4C6B4}</Project>
+      <Name>libwebp</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_core.vcxproj">
+      <Project>{9EF61061-2861-33EE-B4CC-01B77F0E7BD4}</Project>
+      <Name>opencv_core</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\flann\opencv_flann.vcxproj">
+      <Project>{EEECCD8B-D7E5-3754-883B-27303CB951F6}</Project>
+      <Name>opencv_flann</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\highgui\opencv_highgui.vcxproj">
+      <Project>{0FBE9D6C-6E43-321E-BCBA-D716DFA05793}</Project>
+      <Name>opencv_highgui</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\imgcodecs\opencv_imgcodecs.vcxproj">
+      <Project>{8403838D-15C7-3603-BB02-6BDED3E35338}</Project>
+      <Name>opencv_imgcodecs</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\imgproc\opencv_imgproc.vcxproj">
+      <Project>{E7467DF7-BFF3-3E29-AC85-8437168AED24}</Project>
+      <Name>opencv_imgproc</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\ts\opencv_ts.vcxproj">
+      <Project>{C647192C-9F0F-37E6-B3C5-12A9E12054AB}</Project>
+      <Name>opencv_ts</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\videoio\opencv_videoio.vcxproj">
+      <Project>{706C0431-BC69-3927-BD04-CB6A0BE5A6E3}</Project>
+      <Name>opencv_videoio</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\3rdparty\zlib\zlib.vcxproj">
+      <Project>{0141798A-28E6-3DA5-8A80-F670A770DEFF}</Project>
+      <Name>zlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

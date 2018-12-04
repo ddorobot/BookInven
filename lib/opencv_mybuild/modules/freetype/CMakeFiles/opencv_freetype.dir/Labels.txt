@@ -1,0 +1,23 @@
+# Target labels
+ Extra
+ opencv_freetype
+ Module
+# Source files and their labels
+C:/work/BookInven/lib/opencv_contrib/modules/freetype/include/opencv2/freetype.hpp
+ Extra
+ opencv_freetype
+ Module
+C:/work/BookInven/lib/opencv_contrib/modules/freetype/src/freetype.cpp
+ Extra
+ opencv_freetype
+ Module
+C:/work/BookInven/lib/opencv_contrib/modules/freetype/src/precomp.hpp
+ Extra
+ opencv_freetype
+ Module
+C:/work/BookInven/lib/opencv_mybuild/cvconfig.h
+C:/work/BookInven/lib/opencv_mybuild/opencv2/opencv_modules.hpp
+C:/work/BookInven/lib/opencv_mybuild/modules/freetype/opencv_freetype_pch.cpp
+ Extra
+ opencv_freetype
+ Module

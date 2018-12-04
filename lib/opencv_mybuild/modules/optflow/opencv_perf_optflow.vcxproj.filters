@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_contrib\modules\optflow\perf\opencl\perf_optflow_dualTVL1.cpp">
+      <Filter>Src\opencl</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_contrib\modules\optflow\perf\perf_deepflow.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_contrib\modules\optflow\perf\perf_main.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_contrib\modules\optflow\perf\perf_tvl1optflow.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_mybuild\modules\optflow\opencv_perf_optflow_pch.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_contrib\modules\optflow\perf\perf_precomp.hpp">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{854D7D7F-04C7-3C19-8B92-39EC03CF29DD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{3E81CF47-BFC6-3B85-BDCB-2F92B0B97BC6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\opencl">
+      <UniqueIdentifier>{1A0BB520-2577-3981-9277-632C0C1B2620}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

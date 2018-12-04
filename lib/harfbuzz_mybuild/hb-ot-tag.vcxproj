@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3D640764-1711-3A38-9413-4D2FF42D0CD5}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>hb-ot-tag</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">hb-ot-tag.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">hb-ot-tag</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">hb-ot-tag.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">hb-ot-tag</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">hb-ot-tag.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">hb-ot-tag</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">hb-ot-tag.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">hb-ot-tag</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;MAIN;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;MAIN;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>Debug\harfbuzz.lib;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mybuild\Debug\freetyped.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild/Debug/hb-ot-tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild/Debug/hb-ot-tag.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;MAIN;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;MAIN;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>Release\harfbuzz.lib;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mybuild\Release\freetype.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild/Release/hb-ot-tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild/Release/hb-ot-tag.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;MAIN;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;MAIN;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>MinSizeRel\harfbuzz.lib;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mybuild\Release\freetype.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild/MinSizeRel/hb-ot-tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild/MinSizeRel/hb-ot-tag.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;MAIN;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;MAIN;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>RelWithDebInfo\harfbuzz.lib;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mybuild\Release\freetype.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild/RelWithDebInfo/hb-ot-tag.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild/RelWithDebInfo/hb-ot-tag.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-tag.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\ZERO_CHECK.vcxproj">
+      <Project>{43058396-50BC-31E8-A1AA-B6B57030FD14}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\harfbuzz.vcxproj">
+      <Project>{A335BAFA-05EE-37AA-AC2A-747931A85800}</Project>
+      <Name>harfbuzz</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

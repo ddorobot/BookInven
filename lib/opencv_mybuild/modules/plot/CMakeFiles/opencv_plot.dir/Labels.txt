@@ -1,0 +1,23 @@
+# Target labels
+ Extra
+ opencv_plot
+ Module
+# Source files and their labels
+C:/work/BookInven/lib/opencv_contrib/modules/plot/include/opencv2/plot.hpp
+ Extra
+ opencv_plot
+ Module
+C:/work/BookInven/lib/opencv_contrib/modules/plot/src/plot.cpp
+ Extra
+ opencv_plot
+ Module
+C:/work/BookInven/lib/opencv_contrib/modules/plot/src/precomp.hpp
+ Extra
+ opencv_plot
+ Module
+C:/work/BookInven/lib/opencv_mybuild/cvconfig.h
+C:/work/BookInven/lib/opencv_mybuild/opencv2/opencv_modules.hpp
+C:/work/BookInven/lib/opencv_mybuild/modules/plot/opencv_plot_pch.cpp
+ Extra
+ opencv_plot
+ Module

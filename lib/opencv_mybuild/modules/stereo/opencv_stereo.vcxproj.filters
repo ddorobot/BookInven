@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_contrib\modules\stereo\src\descriptor.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_contrib\modules\stereo\src\stereo_binary_bm.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_contrib\modules\stereo\src\stereo_binary_sgbm.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_mybuild\modules\stereo\opencv_stereo_pch.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_contrib\modules\stereo\include\opencv2\stereo.hpp">
+      <Filter>Include\opencv2</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_contrib\modules\stereo\include\opencv2\stereo\descriptor.hpp">
+      <Filter>Include\opencv2\stereo</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_contrib\modules\stereo\include\opencv2\stereo\matching.hpp">
+      <Filter>Include\opencv2\stereo</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_contrib\modules\stereo\include\opencv2\stereo\stereo.hpp">
+      <Filter>Include\opencv2\stereo</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_contrib\modules\stereo\src\precomp.hpp">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_mybuild\cvconfig.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_mybuild\opencv2\opencv_modules.hpp">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\work\BookInven\lib\opencv_contrib\modules\stereo\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{854D7D7F-04C7-3C19-8B92-39EC03CF29DD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\opencv2">
+      <UniqueIdentifier>{D169A01F-1A0E-380B-813B-864C91F6B259}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\opencv2\stereo">
+      <UniqueIdentifier>{206B2AD6-650B-3A82-9D5F-6D7673AF3476}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{3E81CF47-BFC6-3B85-BDCB-2F92B0B97BC6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

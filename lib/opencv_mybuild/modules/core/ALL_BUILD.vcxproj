@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EDA9022A-99B0-3D3A-A976-B9D236B85267}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\ZERO_CHECK.vcxproj">
+      <Project>{94610170-CFC8-30E6-9DFD-A8441A76D3A5}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_core.vcxproj">
+      <Project>{9EF61061-2861-33EE-B4CC-01B77F0E7BD4}</Project>
+      <Name>opencv_core</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_core_AVX.vcxproj">
+      <Project>{EB78E336-0F48-3488-B08C-33F28232DF96}</Project>
+      <Name>opencv_core_AVX</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_core_SSE4_1.vcxproj">
+      <Project>{A0B3FD18-1FD3-3225-BB9E-7BB910A78CCA}</Project>
+      <Name>opencv_core_SSE4_1</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_core_SSE4_2.vcxproj">
+      <Project>{63D780E6-9526-34CB-AE17-F0600F6E22EC}</Project>
+      <Name>opencv_core_SSE4_2</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_perf_core.vcxproj">
+      <Project>{9899E1BF-8DB1-33D6-B3CD-75968791C0E8}</Project>
+      <Name>opencv_perf_core</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_test_core.vcxproj">
+      <Project>{7C21A13E-7B0B-3832-B2D2-BBCE0122DC95}</Project>
+      <Name>opencv_test_core</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_test_core_AVX.vcxproj">
+      <Project>{47B22120-9360-3DBC-A795-4C375933E1B8}</Project>
+      <Name>opencv_test_core_AVX</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_test_core_FP16.vcxproj">
+      <Project>{93788273-B4B4-39B8-927D-9D564B2132A2}</Project>
+      <Name>opencv_test_core_FP16</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_test_core_SSE4_1.vcxproj">
+      <Project>{8F5FA3CD-5EBC-34DA-97E3-679F3D51EFBF}</Project>
+      <Name>opencv_test_core_SSE4_1</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_test_core_SSE4_2.vcxproj">
+      <Project>{7053413C-4FB8-352B-AF47-39D373F7DA2C}</Project>
+      <Name>opencv_test_core_SSE4_2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

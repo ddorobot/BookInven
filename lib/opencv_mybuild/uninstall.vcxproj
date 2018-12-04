@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3FEB035B-C06E-3C00-AC7F-3DCF8A9DB328}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>uninstall</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\work\BookInven\lib\opencv_mybuild\CMakeFiles\498fb01778e5a040b4cd2b6ce9cd9ecb\uninstall.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/work/BookInven/lib/opencv_mybuild/cmake_uninstall.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv_mybuild/CMakeFiles/498fb01778e5a040b4cd2b6ce9cd9ecb/uninstall.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\work\BookInven\lib\opencv_mybuild\CMakeFiles\uninstall</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/work/BookInven/lib/opencv_mybuild/cmake_uninstall.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv_mybuild/CMakeFiles/498fb01778e5a040b4cd2b6ce9cd9ecb/uninstall.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\work\BookInven\lib\opencv_mybuild\CMakeFiles\uninstall</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\work\BookInven\lib\opencv\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/work/BookInven/lib/opencv/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/work/BookInven/lib/opencv -BC:/work/BookInven/lib/opencv_mybuild --check-stamp-file C:/work/BookInven/lib/opencv_mybuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeFindJavaCommon.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFortranFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindBLAS.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindJNI.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindLAPACK.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPythonInterp.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\ProcessorCount.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\TestBigEndian.cmake;C:\Program Files\CMake\share\cmake-3.12\Templates\CPackConfig.cmake.in;C:\work\BookInven\lib\opencv\3rdparty\ffmpeg\ffmpeg.cmake;C:\work\BookInven\lib\opencv\3rdparty\ippicv\ippicv.cmake;C:\work\BookInven\lib\opencv\CMakeLists.txt;C:\work\BookInven\lib\opencv\cmake\FindGstreamerWindows.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVCRTLinkage.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVCompilerOptimizations.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVCompilerOptions.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDetectApacheAnt.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDetectCXXCompiler.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDetectDirectX.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDetectOpenCL.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDetectPython.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDetectTrace.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDetectVTK.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDownload.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVExtraTargets.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindFrameworks.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindIPP.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindIPPIW.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindLAPACK.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindLibsGUI.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindLibsGrfmt.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindLibsPerf.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindLibsVideo.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindMKL.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindOpenBLAS.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindProtobuf.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVGenABI.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVGenAndroidMK.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVGenConfig.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVGenHeaders.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVGenSetupVars.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVMinDepVersions.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVModule.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVPCHSupport.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVPackaging.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVUtils.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVVersion.cmake;C:\work\BookInven\lib\opencv\cmake\checks\directx.cpp;C:\work\BookInven\lib\opencv\cmake\checks\opencl.cpp;C:\work\BookInven\lib\opencv\cmake\checks\win32uitest.cpp;C:\work\BookInven\lib\opencv\cmake\templates\OpenCVConfig-version.cmake.in;C:\work\BookInven\lib\opencv\cmake\templates\OpenCVConfig.cmake.in;C:\work\BookInven\lib\opencv\cmake\templates\OpenCVConfig.root-WIN32.cmake.in;C:\work\BookInven\lib\opencv\cmake\templates\cmake_uninstall.cmake.in;C:\work\BookInven\lib\opencv\cmake\templates\custom_hal.hpp.in;C:\work\BookInven\lib\opencv\cmake\templates\cv_cpu_config.h.in;C:\work\BookInven\lib\opencv\cmake\templates\cvconfig.h.in;C:\work\BookInven\lib\opencv\cmake\templates\opencv_modules.hpp.in;C:\work\BookInven\lib\opencv\cmake\templates\setup_vars_win32.cmd.in;C:\work\BookInven\lib\opencv\modules\core\include\opencv2\core\version.hpp;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ffmpeg\ffmpeg_version.cmake;C:\work\BookInven\lib\opencv_mybuild\CMakeFiles\3.12.1\CMakeCCompiler.cmake;C:\work\BookInven\lib\opencv_mybuild\CMakeFiles\3.12.1\CMakeCXXCompiler.cmake;C:\work\BookInven\lib\opencv_mybuild\CMakeFiles\3.12.1\CMakeRCCompiler.cmake;C:\work\BookInven\lib\opencv_mybuild\CMakeFiles\3.12.1\CMakeSystem.cmake;C:\work\BookInven\lib\opencv\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\work\BookInven\lib\opencv_mybuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/work/BookInven/lib/opencv/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/work/BookInven/lib/opencv -BC:/work/BookInven/lib/opencv_mybuild --check-stamp-file C:/work/BookInven/lib/opencv_mybuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeFindJavaCommon.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFortranFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindBLAS.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindJNI.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindLAPACK.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPythonInterp.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\ProcessorCount.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\TestBigEndian.cmake;C:\Program Files\CMake\share\cmake-3.12\Templates\CPackConfig.cmake.in;C:\work\BookInven\lib\opencv\3rdparty\ffmpeg\ffmpeg.cmake;C:\work\BookInven\lib\opencv\3rdparty\ippicv\ippicv.cmake;C:\work\BookInven\lib\opencv\CMakeLists.txt;C:\work\BookInven\lib\opencv\cmake\FindGstreamerWindows.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVCRTLinkage.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVCompilerOptimizations.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVCompilerOptions.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDetectApacheAnt.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDetectCXXCompiler.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDetectDirectX.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDetectOpenCL.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDetectPython.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDetectTrace.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDetectVTK.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVDownload.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVExtraTargets.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindFrameworks.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindIPP.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindIPPIW.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindLAPACK.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindLibsGUI.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindLibsGrfmt.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindLibsPerf.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindLibsVideo.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindMKL.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindOpenBLAS.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVFindProtobuf.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVGenABI.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVGenAndroidMK.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVGenConfig.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVGenHeaders.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVGenSetupVars.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVMinDepVersions.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVModule.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVPCHSupport.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVPackaging.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVUtils.cmake;C:\work\BookInven\lib\opencv\cmake\OpenCVVersion.cmake;C:\work\BookInven\lib\opencv\cmake\checks\directx.cpp;C:\work\BookInven\lib\opencv\cmake\checks\opencl.cpp;C:\work\BookInven\lib\opencv\cmake\checks\win32uitest.cpp;C:\work\BookInven\lib\opencv\cmake\templates\OpenCVConfig-version.cmake.in;C:\work\BookInven\lib\opencv\cmake\templates\OpenCVConfig.cmake.in;C:\work\BookInven\lib\opencv\cmake\templates\OpenCVConfig.root-WIN32.cmake.in;C:\work\BookInven\lib\opencv\cmake\templates\cmake_uninstall.cmake.in;C:\work\BookInven\lib\opencv\cmake\templates\custom_hal.hpp.in;C:\work\BookInven\lib\opencv\cmake\templates\cv_cpu_config.h.in;C:\work\BookInven\lib\opencv\cmake\templates\cvconfig.h.in;C:\work\BookInven\lib\opencv\cmake\templates\opencv_modules.hpp.in;C:\work\BookInven\lib\opencv\cmake\templates\setup_vars_win32.cmd.in;C:\work\BookInven\lib\opencv\modules\core\include\opencv2\core\version.hpp;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ffmpeg\ffmpeg_version.cmake;C:\work\BookInven\lib\opencv_mybuild\CMakeFiles\3.12.1\CMakeCCompiler.cmake;C:\work\BookInven\lib\opencv_mybuild\CMakeFiles\3.12.1\CMakeCXXCompiler.cmake;C:\work\BookInven\lib\opencv_mybuild\CMakeFiles\3.12.1\CMakeRCCompiler.cmake;C:\work\BookInven\lib\opencv_mybuild\CMakeFiles\3.12.1\CMakeSystem.cmake;C:\work\BookInven\lib\opencv\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\work\BookInven\lib\opencv_mybuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\work\BookInven\lib\opencv_mybuild\CMakeFiles\uninstall" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\ZERO_CHECK.vcxproj">
+      <Project>{94610170-CFC8-30E6-9DFD-A8441A76D3A5}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

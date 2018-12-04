@@ -1,0 +1,4 @@
+# CMake generation dependency list for this directory.
+C:/work/BookInven/lib/opencv/modules/python/CMakeLists.txt
+C:/work/BookInven/lib/opencv/modules/python/package/template/config.py.in
+C:/work/BookInven/lib/opencv/modules/python/python_loader.cmake

@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A335BAFA-05EE-37AA-AC2A-747931A85800}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>harfbuzz</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">harfbuzz.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">harfbuzz</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">harfbuzz.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">harfbuzz</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">harfbuzz.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">harfbuzz</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">harfbuzz.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">harfbuzz</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4244;4267</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;HAVE_FALLBACK;HAVE_ATEXIT;HAVE_ISATTY;HAVE_ROUND;HAVE_STDBOOL_H;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;HAVE_FREETYPE=1;HAVE_FT_GET_VAR_BLEND_COORDINATES;HAVE_FT_SET_VAR_BLEND_COORDINATES;HAVE_FT_DONE_MM_VAR;HAVE_UCDN;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\src;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include;C:\Users\박주홍\Desktop\BookInven\lib\freetype_mirror\include\freetype;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/박주홍/Desktop/BookInven/lib/harfbuzz -BC:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild --check-stamp-file C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindFreetype.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPythonInterp.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\SelectLibraryConfigurations.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeCXXCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeRCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeSystem.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\try_compile_intel_atomic_primitives.c;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\try_compile_solaris_atomic_ops.c;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/박주홍/Desktop/BookInven/lib/harfbuzz -BC:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild --check-stamp-file C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindFreetype.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPythonInterp.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\SelectLibraryConfigurations.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeCXXCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeRCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeSystem.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\try_compile_intel_atomic_primitives.c;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\try_compile_solaris_atomic_ops.c;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/박주홍/Desktop/BookInven/lib/harfbuzz -BC:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild --check-stamp-file C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindFreetype.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPythonInterp.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\SelectLibraryConfigurations.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeCXXCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeRCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeSystem.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\try_compile_intel_atomic_primitives.c;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\try_compile_solaris_atomic_ops.c;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/박주홍/Desktop/BookInven/lib/harfbuzz -BC:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild --check-stamp-file C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz_mybuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/박주홍/Desktop/BookInven/lib/harfbuzz/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindFreetype.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\FindPythonInterp.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\SelectLibraryConfigurations.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\CMakeLists.txt;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeCXXCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeRCCompiler.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\3.12.1\CMakeSystem.cmake;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\try_compile_intel_atomic_primitives.c;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\try_compile_solaris_atomic_ops.c;C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat-layout-ankr-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat-layout-bsln-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat-layout-common.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat-layout-feat-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat-layout-just-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat-layout-kerx-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat-layout-lcar-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat-layout-morx-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat-layout-trak-table.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat-layout.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat-layout.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat-ltag-table.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat-map.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat-map.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-atomic.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-blob.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-blob.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-buffer-serialize.cc" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-buffer.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-buffer.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-cache.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-cff-interp-common.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-cff-interp-cs-common.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-cff-interp-dict-common.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-cff1-interp-cs.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-cff2-interp-cs.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-common.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-debug.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-dsalgs.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-face.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-face.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-font.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-font.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-iter.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-kern.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-machinery.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-map.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-map.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-mutex.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-null.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-object.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-open-file.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-open-type.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-cff-common.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-cff1-table.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-cff1-table.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-cff2-table.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-cff2-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-cmap-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-color-cbdt-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-color-colr-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-color-cpal-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-color-sbix-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-color-svg-table.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-color.cc" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-face.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-face.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-font.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-glyf-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-hdmx-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-head-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-hhea-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-hmtx-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-kern-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-layout-base-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-layout-common.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-layout-gdef-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-layout-gpos-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-layout-gsub-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-layout-gsubgpos.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-layout-jstf-table.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-layout.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-layout.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-map.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-map.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-math-table.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-math.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-maxp-table.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-name-language.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-name-language.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-name-table.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-name.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-os2-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-os2-unicode-ranges.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-post-macroman.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-post-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-arabic-fallback.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-arabic-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-arabic-win1256.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-arabic.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-arabic.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-default.cc" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-hangul.cc" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-hebrew.cc" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-indic-table.cc" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-indic.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-indic.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-khmer.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-khmer.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-myanmar.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-myanmar.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-thai.cc" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-use-table.cc" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-use.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-use.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-vowel-constraints.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-vowel-constraints.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-fallback.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-fallback.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-normalize.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-normalize.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-stat-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-tag-table.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-tag.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-var-avar-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-var-fvar-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-var-hvar-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-var-mvar-table.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-var.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-vorg-table.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-set-digest.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-set.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-set.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-shape-plan.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-shape-plan.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-shape.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-shaper-impl.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-shaper-list.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-shaper.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-shaper.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-static.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-string-array.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-unicode-emoji-table.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-unicode.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-unicode.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-utf.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-vector.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-warning.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-buffer-deserialize-json.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-buffer-deserialize-text.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-indic-machine.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-khmer-machine.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-myanmar-machine.hh" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape-complex-use-machine.hh" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-fallback-shape.cc" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ft.cc" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn.cc" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn\ucdn.h" />
+    <ClCompile Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn\ucdn.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ucdn\ucdn_db.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat-layout.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-aat.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-blob.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-buffer.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-common.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-deprecated.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-face.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-font.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-map.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-color.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-deprecated.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-font.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-layout.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-math.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-name.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-shape.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot-var.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ot.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-set.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-shape-plan.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-shape.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-unicode.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-version.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb.h" />
+    <ClInclude Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz\src\hb-ft.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\박주홍\Desktop\BookInven\lib\harfbuzz_mybuild\ZERO_CHECK.vcxproj">
+      <Project>{43058396-50BC-31E8-A1AA-B6B57030FD14}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

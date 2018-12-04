@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_contrib\modules\ccalib\src\ccalib.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_contrib\modules\ccalib\src\multicalib.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_contrib\modules\ccalib\src\omnidir.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_contrib\modules\ccalib\src\randpattern.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_mybuild\modules\ccalib\opencv_ccalib_pch.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_contrib\modules\ccalib\include\opencv2\ccalib.hpp">
+      <Filter>Include\opencv2</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_contrib\modules\ccalib\include\opencv2\ccalib\multicalib.hpp">
+      <Filter>Include\opencv2\ccalib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_contrib\modules\ccalib\include\opencv2\ccalib\omnidir.hpp">
+      <Filter>Include\opencv2\ccalib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_contrib\modules\ccalib\include\opencv2\ccalib\randpattern.hpp">
+      <Filter>Include\opencv2\ccalib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_contrib\modules\ccalib\src\precomp.hpp">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_mybuild\cvconfig.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv_mybuild\opencv2\opencv_modules.hpp">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\work\BookInven\lib\opencv_contrib\modules\ccalib\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{854D7D7F-04C7-3C19-8B92-39EC03CF29DD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\opencv2">
+      <UniqueIdentifier>{D169A01F-1A0E-380B-813B-864C91F6B259}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\opencv2\ccalib">
+      <UniqueIdentifier>{D698B16A-2329-3FAC-B89D-D2F2DEBDEA57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{3E81CF47-BFC6-3B85-BDCB-2F92B0B97BC6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

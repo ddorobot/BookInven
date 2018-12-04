@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+C:/work/BookInven/lib/opencv/modules/CMakeLists.txt
+C:/work/BookInven/lib/opencv/modules/gapi/cmake/DownloadADE.cmake
+C:/work/BookInven/lib/opencv/modules/gapi/cmake/init.cmake
+C:/work/BookInven/lib/opencv_contrib/modules/matlab/cmake/init.cmake

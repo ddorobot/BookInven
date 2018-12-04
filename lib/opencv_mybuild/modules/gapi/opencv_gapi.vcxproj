@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{45EB5653-C7BE-3EF4-939D-9E6AC2CE16F3}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>opencv_gapi</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\work\BookInven\lib\opencv_mybuild\lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">opencv_gapi.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">opencv_gapi400d</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\work\BookInven\lib\opencv_mybuild\lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">opencv_gapi.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">opencv_gapi400</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv\modules\gapi\src;C:\work\BookInven\lib\opencv\modules\gapi\include;C:\work\BookInven\lib\opencv_mybuild\modules\gapi;C:\work\BookInven\lib\opencv\modules\core\include;C:\work\BookInven\lib\opencv\modules\imgproc\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ade\ade-0.1.1d\sources\ade\include;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4127;4251;4324;4275;4512;4589</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ProcessorNumber>8</ProcessorNumber>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;_VARIADIC_MAX=10;__OPENCV_BUILD=1;_USE_MATH_DEFINES;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>C:\work\BookInven\lib\opencv_mybuild\lib\Debug\opencv_gapi400d.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;_VARIADIC_MAX=10;__OPENCV_BUILD=1;_USE_MATH_DEFINES;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv\modules\gapi\src;C:\work\BookInven\lib\opencv\modules\gapi\include;C:\work\BookInven\lib\opencv_mybuild\modules\gapi;C:\work\BookInven\lib\opencv\modules\core\include;C:\work\BookInven\lib\opencv\modules\imgproc\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ade\ade-0.1.1d\sources\ade\include;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv\modules\gapi\src;C:\work\BookInven\lib\opencv\modules\gapi\include;C:\work\BookInven\lib\opencv_mybuild\modules\gapi;C:\work\BookInven\lib\opencv\modules\core\include;C:\work\BookInven\lib\opencv\modules\imgproc\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ade\ade-0.1.1d\sources\ade\include;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86 /IGNORE:4221</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv\modules\gapi\src;C:\work\BookInven\lib\opencv\modules\gapi\include;C:\work\BookInven\lib\opencv_mybuild\modules\gapi;C:\work\BookInven\lib\opencv\modules\core\include;C:\work\BookInven\lib\opencv\modules\imgproc\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ade\ade-0.1.1d\sources\ade\include;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4127;4251;4324;4275;4512;4589</DisableSpecificWarnings>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ProcessorNumber>8</ProcessorNumber>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;NDEBUG;_VARIADIC_MAX=10;__OPENCV_BUILD=1;_USE_MATH_DEFINES;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ProgramDataBaseFileName>C:\work\BookInven\lib\opencv_mybuild\lib\Release\opencv_gapi400.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;NDEBUG;_VARIADIC_MAX=10;__OPENCV_BUILD=1;_USE_MATH_DEFINES;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv\modules\gapi\src;C:\work\BookInven\lib\opencv\modules\gapi\include;C:\work\BookInven\lib\opencv_mybuild\modules\gapi;C:\work\BookInven\lib\opencv\modules\core\include;C:\work\BookInven\lib\opencv\modules\imgproc\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ade\ade-0.1.1d\sources\ade\include;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\icv\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippicv\ippicv_win\iw\include;C:\work\BookInven\lib\opencv\modules\gapi\src;C:\work\BookInven\lib\opencv\modules\gapi\include;C:\work\BookInven\lib\opencv_mybuild\modules\gapi;C:\work\BookInven\lib\opencv\modules\core\include;C:\work\BookInven\lib\opencv\modules\imgproc\include;C:\work\BookInven\lib\opencv_mybuild\3rdparty\ade\ade-0.1.1d\sources\ade\include;C:\work\BookInven\lib\opencv_mybuild;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86 /IGNORE:4221</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\core.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\cpu\core.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\cpu\gcpukernel.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\cpu\imgproc.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\fluid\core.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\fluid\gfluidbuffer.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\fluid\gfluidkernel.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\fluid\imgproc.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\garg.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\garray.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\gcall.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\gcommon.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\gcompiled.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\gcompoundkernel.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\gcomputation.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\gkernel.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\gmat.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\gmetaarg.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\gproto.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\gpu\core.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\gpu\ggpukernel.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\gpu\imgproc.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\gscalar.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\gtype_traits.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\gtyped.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\imgproc.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\opencv_includes.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\operators.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\own\assert.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\own\convert.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\own\cvdefs.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\own\exports.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\own\mat.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\own\saturate.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\own\scalar.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\own\types.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\util\any.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\util\compiler_hints.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\util\optional.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\util\throw.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\util\util.hpp" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\gapi\include\opencv2\gapi\util\variant.hpp" />
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\api\gapi_priv.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\api\gmat.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\api\garray.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\api\gscalar.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\api\gkernel.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\api\gbackend.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\api\gproto.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\api\gnode.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\api\gcall.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\api\gcomputation.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\api\operators.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\api\kernels_core.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\api\kernels_imgproc.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\compiler\gmodel.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\compiler\gmodelbuilder.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\compiler\gislandmodel.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\compiler\gcompiler.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\compiler\gcompiled.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\compiler\passes\helpers.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\compiler\passes\dump_dot.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\compiler\passes\islands.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\compiler\passes\meta.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\compiler\passes\kernels.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\compiler\passes\exec.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\executor\gexecutor.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\backends\cpu\gcpubackend.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\backends\cpu\gcpukernel.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\backends\cpu\gcpuimgproc.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\backends\cpu\gcpucore.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\backends\fluid\gfluidbuffer.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\backends\fluid\gfluidbackend.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\backends\fluid\gfluidimgproc.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\backends\fluid\gfluidimgproc_func.dispatch.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\backends\fluid\gfluidcore.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\backends\gpu\ggpubackend.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\backends\gpu\ggpukernel.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\backends\gpu\ggpuimgproc.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\backends\gpu\ggpucore.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\backends\common\gcompoundbackend.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\gapi\src\backends\common\gcompoundkernel.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+    <Object Include="C:\work\BookInven\lib\opencv_mybuild\modules\gapi\opencv_gapi_SSE4_1.dir\$(Configuration)\gfluidimgproc_func.sse4_1.obj" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv_mybuild\cvconfig.h" />
+    <ClInclude Include="C:\work\BookInven\lib\opencv_mybuild\opencv2\opencv_modules.hpp" />
+    <ClCompile Include="C:\work\BookInven\lib\opencv_mybuild\modules\gapi\opencv_gapi_pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/work/BookInven/lib/opencv/modules/gapi/src/precomp.hpp</PrecompiledHeaderFile>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\ZERO_CHECK.vcxproj">
+      <Project>{94610170-CFC8-30E6-9DFD-A8441A76D3A5}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\ade.vcxproj">
+      <Project>{D684748D-6B96-3695-96AE-3179355EB84E}</Project>
+      <Name>ade</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\3rdparty\ippiw\ippiw.vcxproj">
+      <Project>{1E568DFD-99D8-3526-BFB4-726B8B14E9D6}</Project>
+      <Name>ippiw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\3rdparty\ittnotify\ittnotify.vcxproj">
+      <Project>{2D0F0565-EAAB-3A80-A1C7-7229D01D00AE}</Project>
+      <Name>ittnotify</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_core.vcxproj">
+      <Project>{9EF61061-2861-33EE-B4CC-01B77F0E7BD4}</Project>
+      <Name>opencv_core</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\gapi\opencv_gapi_SSE4_1.vcxproj">
+      <Project>{15E032D2-70C6-3E91-A482-1C39B72B399B}</Project>
+      <Name>opencv_gapi_SSE4_1</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\modules\imgproc\opencv_imgproc.vcxproj">
+      <Project>{E7467DF7-BFF3-3E29-AC85-8437168AED24}</Project>
+      <Name>opencv_imgproc</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\work\BookInven\lib\opencv_mybuild\3rdparty\zlib\zlib.vcxproj">
+      <Project>{0141798A-28E6-3DA5-8A80-F670A770DEFF}</Project>
+      <Name>zlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

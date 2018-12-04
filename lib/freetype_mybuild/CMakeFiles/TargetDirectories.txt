@@ -1,0 +1,5 @@
+C:/Users/박주홍/Desktop/BookInven/lib/freetype_mybuild/CMakeFiles/PACKAGE.dir
+C:/Users/박주홍/Desktop/BookInven/lib/freetype_mybuild/CMakeFiles/freetype.dir
+C:/Users/박주홍/Desktop/BookInven/lib/freetype_mybuild/CMakeFiles/INSTALL.dir
+C:/Users/박주홍/Desktop/BookInven/lib/freetype_mybuild/CMakeFiles/ALL_BUILD.dir
+C:/Users/박주홍/Desktop/BookInven/lib/freetype_mybuild/CMakeFiles/ZERO_CHECK.dir

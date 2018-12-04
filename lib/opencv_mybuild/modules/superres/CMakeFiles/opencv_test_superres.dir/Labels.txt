@@ -1,0 +1,21 @@
+# Target labels
+ Extra
+ opencv_superres
+ AccuracyTest
+# Source files and their labels
+C:/work/BookInven/lib/opencv_contrib/modules/superres/test/test_main.cpp
+ Extra
+ opencv_superres
+ AccuracyTest
+C:/work/BookInven/lib/opencv_contrib/modules/superres/test/test_superres.cpp
+ Extra
+ opencv_superres
+ AccuracyTest
+C:/work/BookInven/lib/opencv_contrib/modules/superres/test/test_precomp.hpp
+ Extra
+ opencv_superres
+ AccuracyTest
+C:/work/BookInven/lib/opencv_mybuild/modules/superres/opencv_test_superres_pch.cpp
+ Extra
+ opencv_superres
+ AccuracyTest

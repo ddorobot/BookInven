@@ -1,0 +1,25 @@
+# Target labels
+ Extra
+ opencv_stereo
+ PerfTest
+# Source files and their labels
+C:/work/BookInven/lib/opencv_contrib/modules/stereo/perf/perf_bm.cpp
+ Extra
+ opencv_stereo
+ PerfTest
+C:/work/BookInven/lib/opencv_contrib/modules/stereo/perf/perf_descriptor.cpp
+ Extra
+ opencv_stereo
+ PerfTest
+C:/work/BookInven/lib/opencv_contrib/modules/stereo/perf/perf_main.cpp
+ Extra
+ opencv_stereo
+ PerfTest
+C:/work/BookInven/lib/opencv_contrib/modules/stereo/perf/perf_precomp.hpp
+ Extra
+ opencv_stereo
+ PerfTest
+C:/work/BookInven/lib/opencv_mybuild/modules/stereo/opencv_perf_stereo_pch.cpp
+ Extra
+ opencv_stereo
+ PerfTest

@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\ocl\test_arithm.cpp">
+      <Filter>Src\ocl</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\ocl\test_channels.cpp">
+      <Filter>Src\ocl</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\ocl\test_dft.cpp">
+      <Filter>Src\ocl</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\ocl\test_gemm.cpp">
+      <Filter>Src\ocl</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\ocl\test_image2d.cpp">
+      <Filter>Src\ocl</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\ocl\test_matrix_expr.cpp">
+      <Filter>Src\ocl</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\ocl\test_matrix_operation.cpp">
+      <Filter>Src\ocl</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\ocl\test_opencl.cpp">
+      <Filter>Src\ocl</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_arithm.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_concatenation.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_conjugate_gradient.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_countnonzero.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_downhill_simplex.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_ds.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_dxt.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_eigen.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_hal_core.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_intrin.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_io.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_lpsolver.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_main.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_mat.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_math.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_misc.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_operations.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_ptr.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_rand.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_rotatedrect.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_umat.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv\modules\core\test\test_utils.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\test\test_intrin128.sse2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_test_core_pch.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\core\test\test_intrin128.simd.hpp">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\core\test\test_intrin256.simd.hpp">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\core\test\test_intrin_utils.hpp">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\work\BookInven\lib\opencv\modules\core\test\test_precomp.hpp">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_test_core_SSE4_1.dir\$(Configuration)\test_intrin128.sse3.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_test_core_SSE4_1.dir\$(Configuration)\test_intrin128.ssse3.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_test_core_SSE4_1.dir\$(Configuration)\test_intrin128.sse4_1.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_test_core_SSE4_2.dir\$(Configuration)\test_intrin128.sse4_2.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_test_core_FP16.dir\$(Configuration)\test_intrin128.fp16.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+    <Object Include="C:\work\BookInven\lib\opencv_mybuild\modules\core\opencv_test_core_AVX.dir\$(Configuration)\test_intrin128.avx.obj">
+      <Filter>Object Libraries</Filter>
+    </Object>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{854D7D7F-04C7-3C19-8B92-39EC03CF29DD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object Libraries">
+      <UniqueIdentifier>{A6D00B59-6BE8-33F7-AB66-D003C8791B73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B073DC1B-997F-3FD6-8D91-460431EF0267}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{3E81CF47-BFC6-3B85-BDCB-2F92B0B97BC6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\ocl">
+      <UniqueIdentifier>{288E1504-42A6-3E53-B8BE-DDC73B18D20D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

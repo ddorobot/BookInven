@@ -1,0 +1,23 @@
+# Target labels
+ Extra
+ opencv_dnn_objdetect
+ Module
+# Source files and their labels
+C:/work/BookInven/lib/opencv_contrib/modules/dnn_objdetect/include/opencv2/core_detect.hpp
+ Extra
+ opencv_dnn_objdetect
+ Module
+C:/work/BookInven/lib/opencv_contrib/modules/dnn_objdetect/src/core_detect.cpp
+ Extra
+ opencv_dnn_objdetect
+ Module
+C:/work/BookInven/lib/opencv_contrib/modules/dnn_objdetect/src/precomp.hpp
+ Extra
+ opencv_dnn_objdetect
+ Module
+C:/work/BookInven/lib/opencv_mybuild/cvconfig.h
+C:/work/BookInven/lib/opencv_mybuild/opencv2/opencv_modules.hpp
+C:/work/BookInven/lib/opencv_mybuild/modules/dnn_objdetect/opencv_dnn_objdetect_pch.cpp
+ Extra
+ opencv_dnn_objdetect
+ Module

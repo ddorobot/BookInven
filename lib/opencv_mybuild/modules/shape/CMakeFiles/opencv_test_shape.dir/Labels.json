@@ -1,0 +1,51 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/work/BookInven/lib/opencv_contrib/modules/shape/test/test_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_shape",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "C:/work/BookInven/lib/opencv_contrib/modules/shape/test/test_shape.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_shape",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "C:/work/BookInven/lib/opencv_contrib/modules/shape/test/test_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_shape",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "C:/work/BookInven/lib/opencv_mybuild/modules/shape/opencv_test_shape_pch.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_shape",
+				"AccuracyTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_shape",
+			"AccuracyTest"
+		],
+		"name" : "opencv_test_shape"
+	}
+}
