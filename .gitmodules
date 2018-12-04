@@ -10,3 +10,15 @@
 [submodule "lib/sqlite_static"]
 	path = lib/sqlite_static
 	url = https://github.com/ddorobot/sqlite_static
+[submodule "lib/opencv_contrib"]
+	path = lib/opencv_contrib
+	url = https://github.com/opencv/opencv_contrib
+[submodule "lib/freetype_mirror"]
+	path = lib/freetype_mirror
+	url = https://github.com/ddorobot/freetype_mirror
+[submodule "lib/harfbuzz"]
+	path = lib/harfbuzz
+	url = https://github.com/harfbuzz/harfbuzz
+[submodule "lib/opencv"]
+	path = lib/opencv
+	url = https://github.com/opencv/opencv
