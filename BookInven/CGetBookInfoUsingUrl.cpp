@@ -107,11 +107,19 @@ void CGetBookInfoUsingUrl::endElement(void *userData, const XML_Char *name)
 		else if (tag_name == "TITLE_URL")
 		{
 			char * data = NULL;
+
+			printf("TITLE_URL = %s\n", state->characters.memory);
+
 			data = g_p_me->UTF8toANSI(g_p_me->UTF8toANSI(state->characters.memory));
 
-			g_p_me->m_book_title_url = data;
+			if (data != NULL)
+			{
+				g_p_me->m_book_title_url = data;
 
-			if (data != NULL) delete[] data;
+				delete[] data;
+
+				data = NULL;
+			}
 		}
 	}
 }
@@ -136,6 +144,8 @@ size_t CGetBookInfoUsingUrl::parseStreamCallback(void *contents, size_t length, 
 
 char* CGetBookInfoUsingUrl::UTF8toANSI(char *pszCode)
 {
+	if (pszCode == NULL)	return NULL;
+
 	BSTR    bstrWide;
 	char*   pszAnsi;
 	int     nLength;

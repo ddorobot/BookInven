@@ -48,6 +48,9 @@
     <ClInclude Include="use_opencv_lib.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CImageLoadUrl.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BookInven.cpp">
@@ -69,6 +72,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CDataBase.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageLoadUrl.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
