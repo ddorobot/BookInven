@@ -104,6 +104,15 @@ void CGetBookInfoUsingUrl::endElement(void *userData, const XML_Char *name)
 
 			if (data != NULL) delete[] data;
 		}
+		else if (tag_name == "TITLE_URL")
+		{
+			char * data = NULL;
+			data = g_p_me->UTF8toANSI(g_p_me->UTF8toANSI(state->characters.memory));
+
+			g_p_me->m_book_title_url = data;
+
+			if (data != NULL) delete[] data;
+		}
 	}
 }
 
@@ -159,6 +168,7 @@ void CGetBookInfoUsingUrl::Clear(void)
 	m_book_publisher = "";
 	m_book_price = "0";
 	m_book_publish_date = "";
+	m_book_title_url = "";
 }
 
 BookInfo CGetBookInfoUsingUrl::Run(const std::string isbn)
@@ -174,6 +184,8 @@ BookInfo CGetBookInfoUsingUrl::Run(const std::string isbn)
 	BOOL bInternet = ::InternetGetConnectedStateEx(&dwFlag, szName, 256, 0);
 
 	bool b_get_data = false;
+
+	//more information : http://www.nl.go.kr/nl/service/open/api_util_isbn.jsp
 
 	if (bInternet)
 	{
@@ -276,6 +288,7 @@ BookInfo CGetBookInfoUsingUrl::Run(const std::string isbn)
 	info.price = std::stoi(m_book_price);
 	info.publisher = m_book_publisher;
 	info.publish_date = m_book_publish_date;
+	info.title_url = m_book_title_url;
 
 	return info;
 		

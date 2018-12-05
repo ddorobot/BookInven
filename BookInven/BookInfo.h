@@ -11,4 +11,5 @@ typedef struct BookInfo {
 	std::string publisher;
 	unsigned int price;
 	std::string publish_date;
+	std::string title_url;
 } BookInfo;

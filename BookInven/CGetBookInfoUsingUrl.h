@@ -64,5 +64,6 @@ private:
 	std::string m_book_publisher;
 	std::string m_book_price;
 	std::string m_book_publish_date;
+	std::string m_book_title_url;
 };
 
