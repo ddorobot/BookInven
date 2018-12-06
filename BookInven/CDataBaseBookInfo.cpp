@@ -257,3 +257,51 @@ bool CDataBaseBookInfo::CheckDataSameValue(const BookInfo bookinfo)
 		return true;
 	}
 }
+
+void CDataBaseBookInfo::Print(void)
+{
+	printf("%s Table DB print\n", TABLE_NAME_BOOK_INFO);
+
+	DB_BookInfo retBookInfo;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_BOOK_INFO), std::string(TABLE_DATA_BOOK_INFO));
+
+	if (check_db)
+	{
+		char* pErr, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		//같은 정보가 있는지 확인
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_INFO) ;
+
+		std::vector<DB_BookInfo> vec_bookinfo;
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), sql_callback_get_bookinfo, &vec_bookinfo, &pErr);
+
+		if (nResult)
+		{
+			sqlite3_free(&pErr);
+		}
+		else
+		{
+			int vec_size = vec_bookinfo.size();
+
+			printf("data size = %d\n", vec_size);
+
+			if (vec_size > 0)
+			{
+				//print
+				for (int i = 0; i < vec_size; i++)
+				{
+					printf(" - [%04d] (%d) %s,%s,%s,%s,%d,%s,%s,%s\n", i, vec_bookinfo[i].idx, vec_bookinfo[i].reg_date.c_str(), vec_bookinfo[i].book_info.isbn.c_str(), vec_bookinfo[i].book_info.name.c_str(), vec_bookinfo[i].book_info.author.c_str(), vec_bookinfo[i].book_info.price, vec_bookinfo[i].book_info.publisher.c_str(), vec_bookinfo[i].book_info.publish_date.c_str(), vec_bookinfo[i].book_info.title_url.c_str());
+				}
+			}
+			printf("end\n");
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+}

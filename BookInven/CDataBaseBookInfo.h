@@ -32,6 +32,7 @@ public:
 	int GetBookInfo(const std::string isbn, BookInfo *bookinfo);
 	void AddBookInfo(const BookInfo bookinfo);
 	DB_BookInfo GetLastInfo(void);
+	void Print(void);
 
 private:
 	static int sql_callback_get_bookinfo(void *NotUsed, int argc, char **argv, char **azColName);
