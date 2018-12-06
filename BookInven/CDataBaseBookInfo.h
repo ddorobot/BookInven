@@ -6,11 +6,12 @@
 //table name
 #define TABLE_NAME_BOOK_INFO		"TBookInfo"
 #define TABLE_DATA_BOOK_INFO		"'idx'	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, \
-									'id' TEXT, \
+									'isbn' TEXT, \
 									'name' TEXT, \
 									'author' TEXT, \
 									'publisher' TEXT, \
 									'price' TEXT, \
+									'title_url' TEXT, \
 									'publish_date' TEXT, \
 									'reg_date' DATE"
 

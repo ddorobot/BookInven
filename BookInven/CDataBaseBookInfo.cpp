@@ -47,6 +47,10 @@ int CDataBaseBookInfo::sql_callback_get_bookinfo(void *NotUsed, int argc, char *
 			{
 				bookinfo.book_info.price = argv[i] ? atoi(argv[i]) : 0;
 			}
+			else if (name == "title_url")
+			{
+				bookinfo.book_info.title_url = argv[i] ? argv[i] : "NULL";
+			}
 			else if (name == "reg_date")
 			{
 				bookinfo.reg_date = argv[i] ? argv[i] : "NULL";
@@ -78,7 +82,7 @@ int CDataBaseBookInfo::GetBookInfo(const std::string isbn, BookInfo *bookinfo)
 	//기존에 정보가 있는지 DB에서 검색
 	std::vector<DB_BookInfo> vec_info;
 
-	std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_INFO) + " WHERE id='" + isbn + "' ORDER BY idx DESC LIMIT 1";		//Book 테이블에서 Code의 필드값만 불러 옴.
+	std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_INFO) + " WHERE isbn='" + isbn + "' ORDER BY idx DESC LIMIT 1";		//Book 테이블에서 Code의 필드값만 불러 옴.
 
 	/* Execute SQL statement */
 	nResult = sqlite3_exec(pDB, sql_command.c_str(), sql_callback_get_bookinfo, &vec_info, &pErr);
@@ -136,6 +140,9 @@ bool CDataBaseBookInfo::CheckData(const BookInfo bookinfo)
 	//check_data = cls_check_string.CheckString(bookinfo.price);
 	//if (check_data)	goto EXIT_CHECKDATA;
 
+	check_data = cls_check_string.CheckString(bookinfo.title_url);
+	if (check_data)	goto EXIT_CHECKDATA;
+
 	//publish_date
 	check_data = cls_check_string.CheckString(bookinfo.publish_date);
 	if (check_data)	goto EXIT_CHECKDATA;
@@ -166,13 +173,14 @@ void CDataBaseBookInfo::AddBookInfo(const BookInfo bookinfo)
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
 		//Tablek Book
-		std::string sql_command = "INSERT INTO Book_Info (id, name, author, publisher, price, publish_date, reg_date) VALUES (";
+		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_BOOK_INFO) + " (isbn, name, author, publisher, price, publish_date, title_url, reg_date) VALUES (";
 		sql_command += "'" + bookinfo.isbn + "', ";
 		sql_command += "'" + bookinfo.name + "', ";
 		sql_command += "'" + bookinfo.author + "', ";
 		sql_command += "'" + bookinfo.publisher + "', ";
 		sql_command += "'" + std::to_string(bookinfo.price) + "', ";
 		sql_command += "'" + bookinfo.publish_date + "', ";
+		sql_command += "'" + bookinfo.title_url + "', ";
 		sql_command += "DATE()";
 		sql_command += "); ";
 
@@ -239,7 +247,8 @@ bool CDataBaseBookInfo::CheckDataSameValue(const BookInfo bookinfo)
 		bookinfo.author == bookinfo_db.book_info.author &&
 		bookinfo.publisher == bookinfo_db.book_info.publisher &&
 		bookinfo.price == bookinfo_db.book_info.price &&
-		bookinfo.publish_date == bookinfo_db.book_info.publish_date)
+		bookinfo.publish_date == bookinfo_db.book_info.publish_date && 
+		bookinfo.title_url == bookinfo_db.book_info.title_url )
 	{
 		return false;
 	}
