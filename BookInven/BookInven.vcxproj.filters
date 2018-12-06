@@ -51,6 +51,12 @@
     <ClInclude Include="CImageLoadUrl.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CDataBaseBookInfo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CCheckString.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BookInven.cpp">
@@ -75,6 +81,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CImageLoadUrl.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CDataBaseBookInfo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CCheckString.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

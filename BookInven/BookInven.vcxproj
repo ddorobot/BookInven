@@ -190,7 +190,9 @@
     <ClInclude Include="BookInfo.h" />
     <ClInclude Include="BookInven.h" />
     <ClInclude Include="BookInvenDlg.h" />
+    <ClInclude Include="CCheckString.h" />
     <ClInclude Include="CDataBase.h" />
+    <ClInclude Include="CDataBaseBookInfo.h" />
     <ClInclude Include="CGetBookInfoUsingUrl.h" />
     <ClInclude Include="CImageLoadUrl.h" />
     <ClInclude Include="GetBookInfo.h" />
@@ -203,7 +205,9 @@
   <ItemGroup>
     <ClCompile Include="BookInven.cpp" />
     <ClCompile Include="BookInvenDlg.cpp" />
+    <ClCompile Include="CCheckString.cpp" />
     <ClCompile Include="CDataBase.cpp" />
+    <ClCompile Include="CDataBaseBookInfo.cpp" />
     <ClCompile Include="CGetBookInfoUsingUrl.cpp" />
     <ClCompile Include="CImageLoadUrl.cpp" />
     <ClCompile Include="GetBookInfo.cpp" />
