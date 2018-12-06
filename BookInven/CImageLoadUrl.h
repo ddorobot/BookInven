@@ -1,6 +1,6 @@
 #pragma once
 
-#include "opencv2/opencv.hpp"													//eyedea - opencv lib.
+#include "opencv2/opencv.hpp"
 #include "use_opencv_lib.h"
 
 #include <curl/curl.h>
