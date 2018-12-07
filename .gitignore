@@ -339,3 +339,9 @@ ASALocalRun/
 
 
 # End of https://www.gitignore.io/api/visualstudio
+
+#data base
+modo.db
+
+#image file
+data/

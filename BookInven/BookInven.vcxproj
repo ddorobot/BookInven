@@ -193,6 +193,7 @@
     <ClInclude Include="CCheckString.h" />
     <ClInclude Include="CDataBase.h" />
     <ClInclude Include="CDataBaseBookInfo.h" />
+    <ClInclude Include="CDataBaseImageSave.h" />
     <ClInclude Include="CGetBookInfoUsingUrl.h" />
     <ClInclude Include="CImageLoadUrl.h" />
     <ClInclude Include="GetBookInfo.h" />
@@ -208,6 +209,7 @@
     <ClCompile Include="CCheckString.cpp" />
     <ClCompile Include="CDataBase.cpp" />
     <ClCompile Include="CDataBaseBookInfo.cpp" />
+    <ClCompile Include="CDataBaseImageSave.cpp" />
     <ClCompile Include="CGetBookInfoUsingUrl.cpp" />
     <ClCompile Include="CImageLoadUrl.cpp" />
     <ClCompile Include="GetBookInfo.cpp" />

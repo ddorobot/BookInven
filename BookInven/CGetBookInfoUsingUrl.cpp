@@ -181,9 +181,9 @@ void CGetBookInfoUsingUrl::Clear(void)
 	m_book_title_url = "";
 }
 
-BookInfo CGetBookInfoUsingUrl::Run(const std::string isbn)
+int CGetBookInfoUsingUrl::GetBookInfo(const std::string isbn, BookInfo* bookinfo)
 {
-	BookInfo info;
+	int ret = 0;
 
 	//Data Clear
 	Clear();
@@ -292,14 +292,19 @@ BookInfo CGetBookInfoUsingUrl::Run(const std::string isbn)
 		curl_global_cleanup();
 	}
 
-	info.isbn = isbn;
-	info.name = m_book_title;
-	info.author = m_book_author;
-	info.price = std::stoi(m_book_price);
-	info.publisher = m_book_publisher;
-	info.publish_date = m_book_publish_date;
-	info.title_url = m_book_title_url;
+	if (bookinfo != NULL)
+	{
+		bookinfo->isbn = isbn;
+		bookinfo->name = m_book_title;
+		bookinfo->author = m_book_author;
+		bookinfo->price = std::stoi(m_book_price);
+		bookinfo->publisher = m_book_publisher;
+		bookinfo->publish_date = m_book_publish_date;
+		bookinfo->title_url = m_book_title_url;
 
-	return info;
+		ret = 1;
+	}
+
+	return ret;
 		
 }

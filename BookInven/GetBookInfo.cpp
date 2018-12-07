@@ -74,7 +74,37 @@ BookInfo GetBookInfo::GetInfo(const std::string isbn)
 { 
 	BookInfo info; 
 
-	info = m_cls_get_bookinfo_using_url.Run(isbn);
+	//DB에 정보가 있는지 확인
+	int ret = m_cls_get_bookinfo_using_db.GetBookInfo(isbn, &info);
+
+	if (ret <= 0)		//DB에 정보가 없다면 서지정보를 인터넷을 통하여 얻는다.
+	{
+		ret = m_cls_get_bookinfo_using_url.GetBookInfo(isbn, &info);
+
+		if (ret > 0)
+		{
+			//DB에 저장.
+			if (!info.title_url.empty())
+			{
+				CImageLoadUrl cls_image_load_url;
+				cv::Mat read_title_image = cls_image_load_url.Load(info.title_url.c_str());
+
+				if (!read_title_image.empty())
+				{
+					CDataBaseImageSave cls_image_save;
+					std::string image_save_file_name = info.isbn;
+					image_save_file_name += ".png";
+
+					std::string str_save_file_path = cls_image_save.Save(read_title_image, image_save_file_name);
+
+					//url의 주소를 실제로 local에 저장한 path로 변경 한다.
+					info.title_url = str_save_file_path;
+				}
+			}
+
+			m_cls_get_bookinfo_using_db.AddBookInfo(info);
+		}
+	}
 
 	return info;
 }

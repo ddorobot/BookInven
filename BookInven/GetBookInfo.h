@@ -19,6 +19,12 @@
 #include "Utility.h"
 
 #include "CGetBookInfoUsingUrl.h"
+#include "CDataBaseBookInfo.h"
+#include "CImageLoadUrl.h"
+#include "CDataBaseImageSave.h"
+
+#include "opencv2/opencv.hpp"
+#include "use_opencv_lib.h"
 
 typedef struct StreamInfo {
 	UINT nChar;
@@ -38,5 +44,6 @@ private:
 	std::deque<StreamInfo> m_strem;
 
 	CGetBookInfoUsingUrl m_cls_get_bookinfo_using_url;
+	CDataBaseBookInfo m_cls_get_bookinfo_using_db;
 };
 

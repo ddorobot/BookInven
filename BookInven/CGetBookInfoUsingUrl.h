@@ -46,7 +46,7 @@ public:
 	CGetBookInfoUsingUrl();
 	~CGetBookInfoUsingUrl();
 
-	BookInfo Run(const std::string isbn);
+	int GetBookInfo(const std::string isbn, BookInfo* bookinfo);
 
 private:
 	void Clear(void);
