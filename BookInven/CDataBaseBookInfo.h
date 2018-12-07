@@ -2,6 +2,7 @@
 
 #include "CDataBase.h"
 #include "CCheckString.h"
+#include "CMyTime.h"
 
 //table name
 #define TABLE_NAME_BOOK_INFO		"TBookInfo"
@@ -13,7 +14,7 @@
 									'price' TEXT, \
 									'title_url' TEXT, \
 									'publish_date' TEXT, \
-									'reg_date' DATE"
+									'reg_date' TEXT"
 
 typedef struct DB_BookInfo {
 	int idx;

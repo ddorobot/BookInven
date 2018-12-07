@@ -172,6 +172,9 @@ void CDataBaseBookInfo::AddBookInfo(const BookInfo bookinfo)
 		char* pErr, *pDBFile = DB_PATH;
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
+		CMyTime cls_mytime;
+		std::string str_cur_time = cls_mytime.GetNow();
+
 		//Tablek Book
 		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_BOOK_INFO) + " (isbn, name, author, publisher, price, publish_date, title_url, reg_date) VALUES (";
 		sql_command += "'" + bookinfo.isbn + "', ";
@@ -181,8 +184,10 @@ void CDataBaseBookInfo::AddBookInfo(const BookInfo bookinfo)
 		sql_command += "'" + std::to_string(bookinfo.price) + "', ";
 		sql_command += "'" + bookinfo.publish_date + "', ";
 		sql_command += "'" + bookinfo.title_url + "', ";
-		sql_command += "DATE()";
+		sql_command += "'" + str_cur_time + "'";
 		sql_command += "); ";
+
+		//printf("AddBookInfo sql = %s\n", sql_command.c_str());
 
 		nResult = sqlite3_exec(pDB, sql_command.c_str(), NULL, NULL, &pErr);
 

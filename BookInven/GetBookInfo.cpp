@@ -79,6 +79,8 @@ BookInfo GetBookInfo::GetInfo(const std::string isbn)
 
 	if (ret <= 0)		//DB에 정보가 없다면 서지정보를 인터넷을 통하여 얻는다.
 	{
+		printf("Search From Internet\n");
+
 		ret = m_cls_get_bookinfo_using_url.GetBookInfo(isbn, &info);
 
 		if (ret > 0)
@@ -103,7 +105,13 @@ BookInfo GetBookInfo::GetInfo(const std::string isbn)
 			}
 
 			m_cls_get_bookinfo_using_db.AddBookInfo(info);
+
+			m_cls_get_bookinfo_using_db.Print();		//test
 		}
+	}
+	else
+	{
+		printf("Search From DB\n");
 	}
 
 	return info;
