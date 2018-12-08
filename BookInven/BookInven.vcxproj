@@ -194,9 +194,11 @@
     <ClInclude Include="CDataBase.h" />
     <ClInclude Include="CDataBaseBookInfo.h" />
     <ClInclude Include="CDataBaseImageSave.h" />
+    <ClInclude Include="CDlgBookIn.h" />
     <ClInclude Include="CGetBookInfoUsingUrl.h" />
     <ClInclude Include="CImageLoadUrl.h" />
     <ClInclude Include="CMyTime.h" />
+    <ClInclude Include="CTabCtrlEx.h" />
     <ClInclude Include="GetBookInfo.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -211,9 +213,11 @@
     <ClCompile Include="CDataBase.cpp" />
     <ClCompile Include="CDataBaseBookInfo.cpp" />
     <ClCompile Include="CDataBaseImageSave.cpp" />
+    <ClCompile Include="CDlgBookIn.cpp" />
     <ClCompile Include="CGetBookInfoUsingUrl.cpp" />
     <ClCompile Include="CImageLoadUrl.cpp" />
     <ClCompile Include="CMyTime.cpp" />
+    <ClCompile Include="CTabCtrlEx.cpp" />
     <ClCompile Include="GetBookInfo.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
