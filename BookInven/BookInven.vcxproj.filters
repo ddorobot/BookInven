@@ -63,9 +63,6 @@
     <ClInclude Include="CMyTime.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="CDlgBookIn.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="CTabCtrlEx.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -79,6 +76,15 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="CDlgStoreInfo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CDrawToHDC.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgBookSale.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgBookIn.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -119,9 +125,6 @@
     <ClCompile Include="CMyTime.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CDlgBookIn.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="CTabCtrlEx.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -135,6 +138,15 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CDlgStoreInfo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CDrawToHDC.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgBookSale.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgBookIn.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
