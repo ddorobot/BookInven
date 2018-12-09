@@ -36,5 +36,7 @@ cv::Mat CImageLoadUrl::Load(const char *img_url, int timeout)
 	CURLcode res = curl_easy_perform(curl); // start curl
 	curl_easy_cleanup(curl); // cleanup
 
-	return cv::imdecode(stream, -1); // 'keep-as-is'
+	cv::Mat decode_mat = cv::imdecode(stream, -1);
+
+	return decode_mat; // 'keep-as-is'
 }

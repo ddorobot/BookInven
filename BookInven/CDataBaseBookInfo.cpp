@@ -51,6 +51,10 @@ int CDataBaseBookInfo::sql_callback_get_bookinfo(void *NotUsed, int argc, char *
 			{
 				bookinfo.book_info.title_url = argv[i] ? argv[i] : "NULL";
 			}
+			else if (name == "publish_date")
+			{
+				bookinfo.book_info.publish_date = argv[i] ? argv[i] : "NULL";
+			}
 			else if (name == "reg_date")
 			{
 				bookinfo.reg_date = argv[i] ? argv[i] : "NULL";
@@ -176,14 +180,14 @@ void CDataBaseBookInfo::AddBookInfo(const BookInfo bookinfo)
 		std::string str_cur_time = cls_mytime.GetNow();
 
 		//Tablek Book
-		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_BOOK_INFO) + " (isbn, name, author, publisher, price, publish_date, title_url, reg_date) VALUES (";
+		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_BOOK_INFO) + " (isbn, name, author, publisher, price, title_url, publish_date, reg_date) VALUES (";
 		sql_command += "'" + bookinfo.isbn + "', ";
 		sql_command += "'" + bookinfo.name + "', ";
 		sql_command += "'" + bookinfo.author + "', ";
 		sql_command += "'" + bookinfo.publisher + "', ";
 		sql_command += "'" + std::to_string(bookinfo.price) + "', ";
-		sql_command += "'" + bookinfo.publish_date + "', ";
 		sql_command += "'" + bookinfo.title_url + "', ";
+		sql_command += "'" + bookinfo.publish_date + "', ";
 		sql_command += "'" + str_cur_time + "'";
 		sql_command += "); ";
 

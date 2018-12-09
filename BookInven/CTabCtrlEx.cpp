@@ -53,8 +53,8 @@ void CTabCtrlEx::DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct)
 	if (nTabIndex < 0) return;
 	BOOL bSelected = (nTabIndex == GetCurSel());
 
-	//char label[64];
-	wchar_t label[64];
+	char label[64];
+	//wchar_t label[64];
 	TC_ITEM tci;
 	tci.mask = TCIF_TEXT | TCIF_IMAGE;
 	tci.pszText = label;
