@@ -195,6 +195,10 @@
     <ClInclude Include="CDataBaseBookInfo.h" />
     <ClInclude Include="CDataBaseImageSave.h" />
     <ClInclude Include="CDlgBookIn.h" />
+    <ClInclude Include="CDlgBookManage.h" />
+    <ClInclude Include="CDlgCustomManage.h" />
+    <ClInclude Include="CDlgSaleManage.h" />
+    <ClInclude Include="CDlgStoreInfo.h" />
     <ClInclude Include="CGetBookInfoUsingUrl.h" />
     <ClInclude Include="CImageLoadUrl.h" />
     <ClInclude Include="CMyTime.h" />
@@ -214,6 +218,10 @@
     <ClCompile Include="CDataBaseBookInfo.cpp" />
     <ClCompile Include="CDataBaseImageSave.cpp" />
     <ClCompile Include="CDlgBookIn.cpp" />
+    <ClCompile Include="CDlgBookManage.cpp" />
+    <ClCompile Include="CDlgCustomManage.cpp" />
+    <ClCompile Include="CDlgSaleManage.cpp" />
+    <ClCompile Include="CDlgStoreInfo.cpp" />
     <ClCompile Include="CGetBookInfoUsingUrl.cpp" />
     <ClCompile Include="CImageLoadUrl.cpp" />
     <ClCompile Include="CMyTime.cpp" />
