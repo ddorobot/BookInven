@@ -203,6 +203,7 @@
     <ClInclude Include="CDrawToHDC.h" />
     <ClInclude Include="CGetBookInfoUsingUrl.h" />
     <ClInclude Include="CImageLoadUrl.h" />
+    <ClInclude Include="CLoadBitmap.h" />
     <ClInclude Include="CMyTime.h" />
     <ClInclude Include="CTabCtrlEx.h" />
     <ClInclude Include="GetBookInfo.h" />
@@ -228,6 +229,7 @@
     <ClCompile Include="CDrawToHDC.cpp" />
     <ClCompile Include="CGetBookInfoUsingUrl.cpp" />
     <ClCompile Include="CImageLoadUrl.cpp" />
+    <ClCompile Include="CLoadBitmap.cpp" />
     <ClCompile Include="CMyTime.cpp" />
     <ClCompile Include="CTabCtrlEx.cpp" />
     <ClCompile Include="GetBookInfo.cpp" />
@@ -246,6 +248,7 @@
     <None Include="res\BookInven.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\image\book.bmp" />
     <Image Include="res\BookInven.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

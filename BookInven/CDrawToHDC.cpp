@@ -85,8 +85,11 @@ void  CDrawToHDC::Show(cv::Mat image, HDC dc, int x, int y, int w, int h, int fr
 
 void CDrawToHDC::DrawToHDC(cv::Mat image, HDC hDCDst, RECT* pDstRect)
 {
+	//printf("empty = %d\n", (int)image.empty());
+	//printf("depth = %d\n", (int)image.depth());
+
 	if (pDstRect && !image.empty() && image.depth() == CV_8U)
-	{
+	{ 
 		uchar buffer[sizeof(BITMAPINFOHEADER) + 1024];
 		BITMAPINFO* bmi = (BITMAPINFO*)buffer;
 		int bmp_w = image.cols, bmp_h = image.rows;
@@ -111,6 +114,10 @@ void CDrawToHDC::DrawToHDC(cv::Mat image, HDC hDCDst, RECT* pDstRect)
 		}
 
 		FillBitmapInfo(bmi, bmp_w, bmp_h, Bpp(image), 0);
+
+		//cv::imshow("ggg", image);
+		//cv::waitKey(1);
+
 		::StretchDIBits(
 			hDCDst,
 			dst.x, dst.y, dst.width, dst.height,

@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="LoadBitmap">
+      <UniqueIdentifier>{bdcd6361-3d6c-4052-b06a-3993fa5003c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BookInven.h">
@@ -87,6 +90,9 @@
     <ClInclude Include="CDlgBookIn.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CLoadBitmap.h">
+      <Filter>LoadBitmap</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BookInven.cpp">
@@ -149,6 +155,9 @@
     <ClCompile Include="CDlgBookIn.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="CLoadBitmap.cpp">
+      <Filter>LoadBitmap</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BookInven.rc">
@@ -162,6 +171,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\BookInven.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\image\book.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>
