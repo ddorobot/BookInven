@@ -11,10 +11,18 @@ CBookInCandidate::CBookInCandidate(CListCtrl* p_list_ctrl) :
 	// 리스트 스타일 설정
 	m_p_list_ctrl->SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES | LVS_EX_CHECKBOXES);
 	// 타이틀 삽입
-	for (int index = 0; index < i_candidate_data_item_size; index++)
-	{
-		m_p_list_ctrl->InsertColumn(index, arr_str_candidate_data_item[index].c_str(), LVCFMT_CENTER, arr_i_candidate_data_item_size[index], -1);
-	}
+	m_p_list_ctrl->InsertColumn(0, _T(""), LVCFMT_CENTER, 20, -1);
+	m_p_list_ctrl->InsertColumn(1, _T("CODE"), LVCFMT_CENTER, 110, -1);
+	m_p_list_ctrl->InsertColumn(2, _T("이름"), LVCFMT_CENTER, 200, -1);
+	m_p_list_ctrl->InsertColumn(3, _T("저자"), LVCFMT_CENTER, 100, -1);
+	m_p_list_ctrl->InsertColumn(4, _T("출판사"), LVCFMT_CENTER, 100, -1);
+	m_p_list_ctrl->InsertColumn(5, _T("가격"), LVCFMT_CENTER, 70, -1);
+	m_p_list_ctrl->InsertColumn(6, _T("수량"), LVCFMT_CENTER, 50, -1);
+	m_p_list_ctrl->InsertColumn(7, _T("공급사"), LVCFMT_CENTER, 50, -1);
+	m_p_list_ctrl->InsertColumn(8, _T("공급방식"), LVCFMT_CENTER, 60, -1);
+	m_p_list_ctrl->InsertColumn(9, _T("공급률"), LVCFMT_CENTER, 50, -1);
+	m_p_list_ctrl->InsertColumn(10, _T("공급가"), LVCFMT_CENTER, 70, -1);
+	m_p_list_ctrl->InsertColumn(11, _T("판매가"), LVCFMT_CENTER, 70, -1);
 }
 
 
@@ -31,7 +39,7 @@ void CBookInCandidate::SetListCtrl(CListCtrl* p_list_ctrl)
 
 void CBookInCandidate::AddCandidate(const Candidate_BookInfo candidate)
 {
-	mutex_candidate.lock();
+	//mutex_candidate.lock();
 
 	//find
 	int candidate_size = m_candidate.size();
@@ -57,14 +65,14 @@ void CBookInCandidate::AddCandidate(const Candidate_BookInfo candidate)
 		m_candidate.push_back(candidate);
 	}
 
-	mutex_candidate.unlock();
+	//mutex_candidate.unlock();
 }
 
 void CBookInCandidate::UpdateList(void)
 {
 	if (m_p_list_ctrl == NULL) return;
 
-	mutex_candidate.lock();
+	//mutex_candidate.lock();
 
 	int count = m_p_list_ctrl->GetItemCount();
 
@@ -83,8 +91,9 @@ void CBookInCandidate::UpdateList(void)
 		CString str_count = m_p_list_ctrl->GetItemText(i, 6);
 		CString str_provider = m_p_list_ctrl->GetItemText(i, 7);
 		CString str_provide_type = m_p_list_ctrl->GetItemText(i, 8);
-		CString str_provide_price = m_p_list_ctrl->GetItemText(i, 9);
-		CString str_sale_price = m_p_list_ctrl->GetItemText(i, 10);
+		CString str_provide_rate = m_p_list_ctrl->GetItemText(i, 9);
+		CString str_provide_price = m_p_list_ctrl->GetItemText(i, 10);
+		CString str_sale_price = m_p_list_ctrl->GetItemText(i, 11);
 
 		if (i < candidate_size)
 		{
@@ -139,17 +148,23 @@ void CBookInCandidate::UpdateList(void)
 				m_p_list_ctrl->SetItemText(i, 8, cstr_data);
 			}
 
+			if (atof(str_provide_rate) != candidate.provider_info.provide_rate)
+			{
+				cstr_data.Format(_T("%.2f"), candidate.provider_info.provide_rate);
+				m_p_list_ctrl->SetItemText(i, 9, cstr_data);
+			}
+
 			int provide_price = (int)((float)candidate.book_info.price * (candidate.provider_info.provide_rate / 100.0));
 			if (std::string(str_provide_price) != std::to_string(provide_price) )
 			{
 				cstr_data.Format(_T("%d"), provide_price);
-				m_p_list_ctrl->SetItemText(i, 9, cstr_data);
+				m_p_list_ctrl->SetItemText(i, 10, cstr_data);
 			}
 
 			if (std::string(str_sale_price) != std::to_string(candidate.book_info.price))
 			{
 				cstr_data.Format(_T("%d"), candidate.book_info.price);
-				m_p_list_ctrl->SetItemText(i, 10, cstr_data);
+				m_p_list_ctrl->SetItemText(i, 11, cstr_data);
 			}
 		}
 	}
@@ -197,14 +212,18 @@ void CBookInCandidate::UpdateList(void)
 			cstr_data.Format(_T("%s"), candidate.provider_info.type);
 			m_p_list_ctrl->SetItem(index, 8, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
+			//공급률
+			cstr_data.Format(_T("%.2f"), candidate.provider_info.provide_rate);
+			m_p_list_ctrl->SetItem(index, 9, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+
 			//공급가
 			int provide_price = (int)((float)candidate.book_info.price * (candidate.provider_info.provide_rate/100.0));
 			cstr_data.Format(_T("%d"), provide_price);
-			m_p_list_ctrl->SetItem(index, 9, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+			m_p_list_ctrl->SetItem(index, 10, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//판매가
 			cstr_data.Format(_T("%d"), candidate.book_info.price);
-			m_p_list_ctrl->SetItem(index, 10, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+			m_p_list_ctrl->SetItem(index, 11, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 		}
 	}
 	else if (count > candidate_size)
@@ -215,5 +234,5 @@ void CBookInCandidate::UpdateList(void)
 		}
 	}
 
-	mutex_candidate.unlock();
+	//mutex_candidate.unlock();
 }
