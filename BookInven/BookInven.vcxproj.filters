@@ -93,6 +93,12 @@
     <ClInclude Include="CLoadBitmap.h">
       <Filter>LoadBitmap</Filter>
     </ClInclude>
+    <ClInclude Include="CBookInCandidate.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ProviderInfo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BookInven.cpp">
@@ -157,6 +163,9 @@
     </ClCompile>
     <ClCompile Include="CLoadBitmap.cpp">
       <Filter>LoadBitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="CBookInCandidate.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
