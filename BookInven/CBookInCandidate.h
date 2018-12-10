@@ -26,6 +26,37 @@ typedef struct Candidate_BookInfo {
 	int salce_cost = 0;
 } Candidate_BookInfo;
 
+const int i_candidate_data_item_size = 12;
+const std::string arr_str_candidate_data_item[] = {
+"",
+"CODE",
+"이름",
+"저자",
+"출판사",
+"가격",
+"수량",
+"공급사",
+"공급방식",
+"공급률",
+"공급가",
+"판매가"
+};
+
+const int arr_i_candidate_data_item_size[] = {
+20,
+110,
+200,
+100,
+100,
+70,
+50,
+50,
+60,
+50,
+70,
+70
+};
+
 class CBookInCandidate
 {
 public:
@@ -35,6 +66,8 @@ public:
 	void SetListCtrl(CListCtrl* p_list_ctrl);
 
 	void AddCandidate(const Candidate_BookInfo candidate);
+
+	void UpdateList(void);
 private:
 
 	boost::mutex mutex_list_ctrl;
