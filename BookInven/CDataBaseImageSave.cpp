@@ -48,7 +48,7 @@ std::string CDataBaseImageSave::Save(cv::Mat image, const std::string name)
 
 	if (b_image_file_exist)
 	{
-		const int result = MessageBox(NULL, L"같은 이름의 이미지가 이미 저장되어 있습니다. 덮어쓰시겠습니까?", L"이미지 저장", MB_YESNO);
+		const int result = MessageBox(NULL, "같은 이름의 이미지가 이미 저장되어 있습니다. 덮어쓰시겠습니까?", "이미지 저장", MB_YESNO);
 
 		switch (result)
 		{

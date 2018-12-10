@@ -92,12 +92,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;CURL_STATICLIB;XML_STATIC;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;CURL_STATICLIB;XML_STATIC;_CRT_SECURE_NO_WARNINGS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\lib\modular-boost;..\lib\curl\include;..\lib\libexpat\expat\lib;..\lib\sqlite_static\sqlite-preprocessed-3220000;..\lib\opencv_mybuild\install\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>..\lib\modular-boost\stage\lib;..\lib\libexpat_mybuild\Release;..\lib\curl_mybuild\lib\Release;%(AdditionalLibraryDirectories);..\lib\opencv_mybuild\install\x86\vc15\staticlib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\lib\modular-boost\stage\lib;..\lib\libexpat_mybuild\Release;..\lib\curl_mybuild\lib\Release;%(AdditionalLibraryDirectories);..\lib\opencv_mybuild\install\x86\vc15\staticlib;..\lib\freetype_mybuild\Release</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -140,14 +140,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;CURL_STATICLIB;XML_STATIC;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;CURL_STATICLIB;XML_STATIC;_CRT_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\lib\modular-boost;..\lib\curl\include;..\lib\libexpat\expat\lib;..\lib\sqlite_static\sqlite-preprocessed-3220000;..\lib\opencv_mybuild\install\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\lib\modular-boost\stage\lib;..\lib\libexpat_mybuild\Release;..\lib\curl_mybuild\lib\Release;..\lib\sqlite_static\Release;%(AdditionalLibraryDirectories);..\lib\opencv_mybuild\install\x86\vc15\staticlib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\lib\modular-boost\stage\lib;..\lib\libexpat_mybuild\Release;..\lib\curl_mybuild\lib\Release;..\lib\sqlite_static\Release;%(AdditionalLibraryDirectories);..\lib\opencv_mybuild\install\x86\vc15\staticlib;..\lib\freetype_mybuild\Release;..\lib\harfbuzz_mybuild\Release</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
