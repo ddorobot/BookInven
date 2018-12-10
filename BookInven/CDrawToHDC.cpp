@@ -36,7 +36,7 @@ void CDrawToHDC::DrawToHDC(cv::Mat image, HDC hDCDst, RECT* pDstRect)
 			tmpImg = image;
 
 		}
-		printf("bpp = %d\n", bpp);
+		//printf("bpp = %d\n", bpp);
 
 		uchar buffer[sizeof(BITMAPINFO) + 256 * 4];
 		BITMAPINFO* bmi = (BITMAPINFO*)buffer;
