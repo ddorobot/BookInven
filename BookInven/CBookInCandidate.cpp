@@ -39,5 +39,31 @@ void CBookInCandidate::SetListCtrl(CListCtrl* p_list_ctrl)
 
 void CBookInCandidate::AddCandidate(const Candidate_BookInfo candidate)
 {
-	m_candidate.push_back(candidate);
+	mutex_candidate.lock();
+
+	//find
+	int candidate_size = m_candidate.size();
+
+	int exist_same_data_index = -1;
+
+	for (int i = 0; i < candidate_size; i++)
+	{
+		if (candidate.book_info.isbn == m_candidate[i].book_info.isbn)
+		{
+			exist_same_data_index = i;
+			break;
+		}
+	}
+
+	if (exist_same_data_index >= 0)
+	{
+		//수량 수정
+		m_candidate[exist_same_data_index].count += candidate.count;
+	}
+	else
+	{
+		m_candidate.push_back(candidate);
+	}
+
+	mutex_candidate.unlock();
 }

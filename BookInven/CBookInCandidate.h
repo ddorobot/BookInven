@@ -40,6 +40,7 @@ private:
 	boost::mutex mutex_list_ctrl;
 	CListCtrl* m_p_list_ctrl;
 
+	boost::mutex mutex_candidate;
 	std::deque<Candidate_BookInfo> m_candidate;
 };
 
