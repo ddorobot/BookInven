@@ -22,3 +22,6 @@
 [submodule "lib/opencv"]
 	path = lib/opencv
 	url = https://github.com/opencv/opencv
+[submodule "lib/cgridlistctrlex"]
+	path = lib/cgridlistctrlex
+	url = https://github.com/ddorobot/cgridlistctrlex
