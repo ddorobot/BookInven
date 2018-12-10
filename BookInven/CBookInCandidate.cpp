@@ -36,3 +36,8 @@ void CBookInCandidate::SetListCtrl(CListCtrl* p_list_ctrl)
 	m_p_list_ctrl = p_list_ctrl;
 	mutex_list_ctrl.unlock();
 }
+
+void CBookInCandidate::AddCandidate(const Candidate_BookInfo candidate)
+{
+	m_candidate.push_back(candidate);
+}

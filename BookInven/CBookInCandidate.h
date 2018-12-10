@@ -20,7 +20,7 @@
 
 typedef struct Candidate_BookInfo {
 	BookInfo book_info;
-	int count = 0;
+	int count = 1;
 	ProviderInfo provider_info;
 	float sale_rate = 0.0;
 	int salce_cost = 0;
@@ -33,6 +33,8 @@ public:
 	~CBookInCandidate();
 
 	void SetListCtrl(CListCtrl* p_list_ctrl);
+
+	void AddCandidate(const Candidate_BookInfo candidate);
 private:
 
 	boost::mutex mutex_list_ctrl;
