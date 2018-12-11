@@ -205,11 +205,11 @@ void CBookInCandidate::UpdateList(void)
 			m_p_list_ctrl->SetItem(index, 6, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급사
-			cstr_data.Format(_T("%s"), candidate.provider_info.name);
+			cstr_data.Format(_T("%s"), candidate.provider_info.name.c_str());
 			m_p_list_ctrl->SetItem(index, 7, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급방식
-			cstr_data.Format(_T("%s"), candidate.provider_info.type);
+			cstr_data.Format(_T("%s"), candidate.provider_info.type.c_str());
 			m_p_list_ctrl->SetItem(index, 8, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급률
