@@ -227,6 +227,9 @@ void CBookInCandidate::UpdateList(void)
 			//판매가
 			cstr_data.Format(_T("%d"), candidate.sale_cost);
 			m_p_list_ctrl->SetItem(index, 11, LVIF_TEXT, cstr_data, 0, 0, 0, NULL); 
+
+			//checkbox 기본 체크
+			m_p_list_ctrl->SetCheck(index, TRUE);
 		}
 	}
 	else if (count > candidate_size)
