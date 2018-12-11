@@ -38,6 +38,7 @@ public:
 	void UpdateItem(const int index, const int col_index, const std::string data);
 	void UpdateList(void);
 	int GetTotalBookCount(void);
+	void DelCheckedItem(void);
 private:
 
 	boost::mutex mutex_list_ctrl;

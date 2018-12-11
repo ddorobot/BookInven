@@ -247,10 +247,21 @@ int CBookInCandidate::GetTotalBookCount(void)
 {
 	int ret = 0;
 
-	const int candidate_size = m_candidate.size();
-	for (int i = 0; i < candidate_size; i++)
+	if (m_p_list_ctrl != NULL)
 	{
-		ret += m_candidate[i].count;
+		int count = m_p_list_ctrl->GetItemCount();
+
+		const int candidate_size = m_candidate.size();
+		for (int i = 0; i < candidate_size; i++)
+		{
+			if (i < count)
+			{
+				if (m_p_list_ctrl->GetCheck(i))
+				{
+					ret += m_candidate[i].count;
+				}
+			}
+		}
 	}
 
 	return ret;
@@ -320,3 +331,54 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 	}
 }
 
+void CBookInCandidate::DelCheckedItem(void)
+{
+	if (m_p_list_ctrl != NULL)
+	{
+		int count = m_p_list_ctrl->GetItemCount();
+		const int candidate_size = m_candidate.size();
+
+		std::deque<int> deque_del_index;
+		for (int i = 0; i < count; i++)
+		{
+			// 체크상태 확인
+
+			if (m_p_list_ctrl->GetCheck(i))
+			{
+				if (i < candidate_size)
+				{
+					deque_del_index.push_back(i);
+				}
+			}
+		}
+
+		int iter_count = 0;
+		for (auto it = m_candidate.begin(); it != m_candidate.end(); ) 
+		{
+			int deque_del_size = deque_del_index.size();
+			if (deque_del_size <= 0) break;
+
+			int del_index = deque_del_index[0];
+
+			if (del_index == iter_count)
+			{
+				it = m_candidate.erase(it);
+
+				deque_del_index.pop_front();
+			}
+			else
+			{
+				++it;
+			}
+
+			iter_count++;
+		}
+
+		//삭제 되지 않은 아이템은 Checked가 FALSE여야 한다.
+		count = m_p_list_ctrl->GetItemCount();
+		for (int i = 0; i < count; i++)
+		{
+			m_p_list_ctrl->SetCheck(i, FALSE);
+		}
+	}
+}
