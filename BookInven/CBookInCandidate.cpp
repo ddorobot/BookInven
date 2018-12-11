@@ -37,7 +37,7 @@ void CBookInCandidate::SetListCtrl(CListCtrl* p_list_ctrl)
 	mutex_list_ctrl.unlock();
 }
 
-void CBookInCandidate::AddCandidate(const Candidate_BookInfo candidate)
+void CBookInCandidate::AddCandidate(Candidate_BookInfo candidate)
 {
 	//mutex_candidate.lock();
 
@@ -62,6 +62,7 @@ void CBookInCandidate::AddCandidate(const Candidate_BookInfo candidate)
 	}
 	else
 	{
+		candidate.sale_cost = candidate.book_info.price;
 		m_candidate.push_back(candidate);
 	}
 
@@ -163,9 +164,9 @@ void CBookInCandidate::UpdateList(void)
 				m_p_list_ctrl->SetItemText(i, 10, cstr_data);
 			}
 
-			if (std::string(str_sale_price) != std::to_string(candidate.book_info.price))
+			if (std::string(str_sale_price) != std::to_string(candidate.sale_cost))
 			{
-				cstr_data.Format(_T("%d"), candidate.book_info.price);
+				cstr_data.Format(_T("%d"), candidate.sale_cost);
 				m_p_list_ctrl->SetItemText(i, 11, cstr_data);
 			}
 		}
@@ -224,8 +225,8 @@ void CBookInCandidate::UpdateList(void)
 			m_p_list_ctrl->SetItem(index, 10, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//판매가
-			cstr_data.Format(_T("%d"), candidate.book_info.price);
-			m_p_list_ctrl->SetItem(index, 11, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+			cstr_data.Format(_T("%d"), candidate.sale_cost);
+			m_p_list_ctrl->SetItem(index, 11, LVIF_TEXT, cstr_data, 0, 0, 0, NULL); 
 		}
 	}
 	else if (count > candidate_size)
@@ -288,12 +289,16 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 			//int price = (int)((float)(m_candidate[index].book_info.price) * (m_candidate[index].provider_info.provide_rate / 100.0));
 			break;
 		case 10:
-			//공급가 가 변경 되면 공급률이 변경
-			m_candidate[index].provider_info.provide_rate = std::stof(data) / (float)(m_candidate[index].book_info.price) * 100.0;
+			//공급가 가 변경 되면 공급률을 반영한 가격이 변경 된다.
+			//가격 = 공급가  / 공급률
+			m_candidate[index].book_info.price = (int)roundf(std::stof(data) / (m_candidate[index].provider_info.provide_rate/100.0));
+			//m_candidate[index].provider_info.provide_rate =   / (float)(m_candidate[index].book_info.price) * 100.0; 
+			//가격도 변경 된다.
+			
 			break;
 		case 11:
 			//판매가
-			m_candidate[index].salce_cost = std::stoi(data);
+			m_candidate[index].sale_cost = std::stoi(data);
 			break;
 		}
 	}

@@ -23,7 +23,7 @@ typedef struct Candidate_BookInfo {
 	int count = 1;
 	ProviderInfo provider_info;
 	float sale_rate = 0.0;
-	int salce_cost = 0;
+	int sale_cost = 0;
 } Candidate_BookInfo;
 
 class CBookInCandidate
@@ -34,7 +34,7 @@ public:
 
 	void SetListCtrl(CListCtrl* p_list_ctrl);
 
-	void AddCandidate(const Candidate_BookInfo candidate);
+	void AddCandidate(Candidate_BookInfo candidate);
 	void UpdateItem(const int index, const int col_index, const std::string data);
 	void UpdateList(void);
 private:
