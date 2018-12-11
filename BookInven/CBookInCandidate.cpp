@@ -143,9 +143,11 @@ void CBookInCandidate::UpdateList(void)
 				m_p_list_ctrl->SetItemText(i, 7, cstr_data);
 			}
 
-			if (std::string(str_provide_type) != candidate.provider_info.type)
+			std::string provide_type = "Çö¸Å";
+			if(candidate.provider_info.provide_type == credit ) provide_type = "À§Å¹";
+			if (std::string(str_provide_type) != provide_type)
 			{
-				cstr_data.Format(_T("%s"), candidate.provider_info.type.c_str());
+				cstr_data.Format(_T("%d"), provide_type);
 				m_p_list_ctrl->SetItemText(i, 8, cstr_data);
 			}
 
@@ -212,7 +214,9 @@ void CBookInCandidate::UpdateList(void)
 			m_p_list_ctrl->SetItem(index, 7, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//°ø±Þ¹æ½Ä
-			cstr_data.Format(_T("%s"), candidate.provider_info.type.c_str());
+			std::string provide_type = "Çö¸Å";
+			if (candidate.provider_info.provide_type == credit) provide_type = "À§Å¹";
+			cstr_data.Format(_T("%s"), provide_type.c_str());
 			m_p_list_ctrl->SetItem(index, 8, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//°ø±Þ·ü
@@ -306,9 +310,13 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 			m_candidate[index].provider_info.name = data;
 			break;
 		case 8:
+		{
 			//°ø±Þ¹æ½Ä
-			m_candidate[index].provider_info.type = data;
+			int provide_type = 0;
+			if (data == "À§Å¹") provide_type = 1;
+			m_candidate[index].provider_info.provide_type = provide_type;
 			break;
+		}
 		case 9:
 			//°ø±Þ·ü
 			m_candidate[index].provider_info.provide_rate = std::stof(data);
@@ -381,4 +389,8 @@ void CBookInCandidate::DelCheckedItem(void)
 			m_p_list_ctrl->SetCheck(i, FALSE);
 		}
 	}
+}
+
+void CBookInCandidate::AddDataBase(void)
+{
 }
