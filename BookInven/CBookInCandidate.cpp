@@ -243,6 +243,19 @@ void CBookInCandidate::UpdateList(void)
 	//mutex_candidate.unlock();
 }
 
+int CBookInCandidate::GetTotalBookCount(void)
+{
+	int ret = 0;
+
+	const int candidate_size = m_candidate.size();
+	for (int i = 0; i < candidate_size; i++)
+	{
+		ret += m_candidate[i].count;
+	}
+
+	return ret;
+}
+
 void CBookInCandidate::UpdateItem(const int index, const int col_index, const std::string data)
 {
 	const int candidate_size = m_candidate.size();
@@ -306,3 +319,4 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 		}
 	}
 }
+
