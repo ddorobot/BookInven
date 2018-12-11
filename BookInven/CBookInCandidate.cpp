@@ -148,13 +148,15 @@ void CBookInCandidate::UpdateList(void)
 				m_p_list_ctrl->SetItemText(i, 8, cstr_data);
 			}
 
-			if (atof(str_provide_rate) != candidate.provider_info.provide_rate)
+			CString str_candidate_provide_rate; 
+			str_candidate_provide_rate.Format(_T("%.2f"), candidate.provider_info.provide_rate);
+			if (str_provide_rate != str_candidate_provide_rate)
 			{
-				cstr_data.Format(_T("%.2f"), candidate.provider_info.provide_rate);
-				m_p_list_ctrl->SetItemText(i, 9, cstr_data);
+				//cstr_data.Format(_T("%.2f"), candidate.provider_info.provide_rate);
+				m_p_list_ctrl->SetItemText(i, 9, str_candidate_provide_rate);
 			}
 
-			int provide_price = (int)((float)candidate.book_info.price * (candidate.provider_info.provide_rate / 100.0));
+			int provide_price = (int)roundf((float)candidate.book_info.price * (candidate.provider_info.provide_rate / 100.0));
 			if (std::string(str_provide_price) != std::to_string(provide_price) )
 			{
 				cstr_data.Format(_T("%d"), provide_price);
@@ -235,4 +237,64 @@ void CBookInCandidate::UpdateList(void)
 	}
 
 	//mutex_candidate.unlock();
+}
+
+void CBookInCandidate::UpdateItem(const int index, const int col_index, const std::string data)
+{
+	const int candidate_size = m_candidate.size();
+
+	if (index >= 0 && index < candidate_size)
+	{
+		switch(col_index)
+		{
+		case 0 : 
+			//checkbox
+			break;
+		case 1:
+			//code
+			break;
+		case 2:
+			//이름
+			m_candidate[index].book_info.name = data;
+			break;
+		case 3:
+			//저자
+			m_candidate[index].book_info.author = data;
+			break;
+		case 4:
+			//출판사
+			m_candidate[index].book_info.publisher = data;
+			break;
+		case 5:
+			//가격
+			m_candidate[index].book_info.price = std::stoi(data);
+			break;
+		case 6:
+			//수량
+			m_candidate[index].count = std::stoi(data);
+			break;
+		case 7:
+			//공급사
+			m_candidate[index].provider_info.name = data;
+			break;
+		case 8:
+			//공급방식
+			m_candidate[index].provider_info.type = data;
+			break;
+		case 9:
+			//공급률
+			m_candidate[index].provider_info.provide_rate = std::stof(data);
+			//공급가도 변경
+			//int price = (int)((float)(m_candidate[index].book_info.price) * (m_candidate[index].provider_info.provide_rate / 100.0));
+			break;
+		case 10:
+			//공급가 가 변경 되면 공급률이 변경
+			m_candidate[index].provider_info.provide_rate = std::stof(data) / (float)(m_candidate[index].book_info.price) * 100.0;
+			break;
+		case 11:
+			//판매가
+			m_candidate[index].salce_cost = std::stoi(data);
+			break;
+		}
+	}
 }
