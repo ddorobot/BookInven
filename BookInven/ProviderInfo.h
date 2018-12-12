@@ -27,11 +27,13 @@ enum ReceiptAngle
 #define PROVIDE_BASE_RECEIPT_ABLE	0
 
 typedef struct ProviderInfoBase {
+	int idx = -1;
 	std::string name = "";
 	std::string lic = "";
 } ProviderInfoBase;
 
 typedef struct ProviderInfoDetail {
+	int idx = -1;
 	std::string tel = "";
 	std::string email = "";
 	std::string address = "";

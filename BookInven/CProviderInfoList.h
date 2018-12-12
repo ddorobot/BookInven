@@ -28,9 +28,13 @@ public:
 
 	void UpdateList(void);
 	void DelCheckedItem(void);
+	ProviderInfo GetProviderInfoInList(const int index);
+
 private:
 
 	boost::mutex mutex_list_ctrl;
 	CListCtrl* m_p_list_ctrl;
+
+	std::vector<ProviderInfo> m_vec_provider;
 };
 

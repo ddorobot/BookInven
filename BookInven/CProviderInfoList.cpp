@@ -12,7 +12,7 @@ CProviderInfoList::CProviderInfoList(CListCtrl* p_list_ctrl) :
 	m_p_list_ctrl->SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES | LVS_EX_CHECKBOXES);
 	// 타이틀 삽입
 	m_p_list_ctrl->InsertColumn(0, _T(""), LVCFMT_CENTER, 20, -1);
-	m_p_list_ctrl->InsertColumn(1, _T("이름"), LVCFMT_CENTER, 80, -1);
+	m_p_list_ctrl->InsertColumn(1, _T("이름"), LVCFMT_CENTER, 150, -1);
 	m_p_list_ctrl->InsertColumn(2, _T("사업자등록번호"), LVCFMT_CENTER, 100, -1);
 	m_p_list_ctrl->InsertColumn(3, _T("전화번호"), LVCFMT_CENTER, 100, -1);
 	m_p_list_ctrl->InsertColumn(4, _T("email"), LVCFMT_CENTER, 160, -1);
@@ -46,8 +46,8 @@ void CProviderInfoList::UpdateList(void)
 
 	//데이타 베이스로부터 정보를 얻어온다.
 	CDataBaseProvider cls_db_provider;
-	std::vector<ProviderInfo> vec_provider = cls_db_provider.GetInfo();
-	int provider_size = vec_provider.size();
+	m_vec_provider = cls_db_provider.GetInfo();
+	int provider_size = m_vec_provider.size();
 
 	for (int i = 0; i < count; i++)
 	{
@@ -65,7 +65,7 @@ void CProviderInfoList::UpdateList(void)
 
 		if (i < provider_size)
 		{
-			ProviderInfo provider = vec_provider[i];
+			ProviderInfo provider = m_vec_provider[i];
 
 			CString cstr_data;
 
@@ -115,7 +115,7 @@ void CProviderInfoList::UpdateList(void)
 
 			if (std::string(str_base_calc_day) != std::to_string(provider.detail.calc_day))
 			{
-				cstr_data.Format(_T("%d 일"), provider.detail.calc_day);
+				cstr_data.Format(_T("%d일"), provider.detail.calc_day);
 				m_p_list_ctrl->SetItemText(i, 8, cstr_data);
 			}
 
@@ -144,7 +144,7 @@ void CProviderInfoList::UpdateList(void)
 	{
 		for (int index = count; index < provider_size; index++)
 		{
-			ProviderInfo provider = vec_provider[index];
+			ProviderInfo provider = m_vec_provider[index];
 
 			//데이타 추가
 			/*
@@ -195,7 +195,7 @@ void CProviderInfoList::UpdateList(void)
 			m_p_list_ctrl->SetItem(index, 7, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//기본정산일
-			cstr_data.Format(_T("%d 일"), provider.detail.calc_day);
+			cstr_data.Format(_T("%d일"), provider.detail.calc_day);
 			m_p_list_ctrl->SetItem(index, 8, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//계산서 발급 여부
@@ -276,4 +276,17 @@ void CProviderInfoList::DelCheckedItem(void)
 		}
 	}
 #endif
+}
+
+ProviderInfo CProviderInfoList::GetProviderInfoInList(const int index)
+{
+	ProviderInfo ret_provider_info;
+	int provider_size = m_vec_provider.size();
+
+	if (index >= 0 && index < provider_size)
+	{
+		ret_provider_info = m_vec_provider[index];
+	}
+
+	return ret_provider_info;
 }
