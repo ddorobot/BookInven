@@ -95,13 +95,13 @@ void CProviderInfoList::UpdateList(void)
 
 			if (std::string(str_address) != provider.detail.address)
 			{
-				cstr_data.Format(_T("%s"), provider.detail.address);
+				cstr_data.Format(_T("%s"), provider.detail.address.c_str());
 				m_p_list_ctrl->SetItemText(i, 5, cstr_data);
 			}
 
 			if (atof(str_base_provide_rate) != provider.detail.provide_rate)
 			{
-				cstr_data.Format(_T("%.2f"), provider.detail.provide_rate);
+				cstr_data.Format(_T("%.2f %%"), provider.detail.provide_rate);
 				m_p_list_ctrl->SetItemText(i, 6, cstr_data);
 			}
 
@@ -115,7 +115,7 @@ void CProviderInfoList::UpdateList(void)
 
 			if (std::string(str_base_calc_day) != std::to_string(provider.detail.calc_day))
 			{
-				cstr_data.Format(_T("%d"), provider.detail.calc_day);
+				cstr_data.Format(_T("%d 일"), provider.detail.calc_day);
 				m_p_list_ctrl->SetItemText(i, 8, cstr_data);
 			}
 
@@ -134,7 +134,7 @@ void CProviderInfoList::UpdateList(void)
 			//[] (예금주:)
 			if (str_bank != str_bank_)
 			{
-				str_bank = str_bank_;
+				cstr_data = str_bank_;
 				m_p_list_ctrl->SetItemText(i, 10, cstr_data);
 			}
 		}
@@ -181,11 +181,11 @@ void CProviderInfoList::UpdateList(void)
 			m_p_list_ctrl->SetItem(index, 4, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//주소
-			cstr_data.Format(_T("%d"), provider.detail.address.c_str());
+			cstr_data.Format(_T("%s"), provider.detail.address.c_str());
 			m_p_list_ctrl->SetItem(index, 5, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//기본공급률
-			cstr_data.Format(_T("%.2f"), provider.detail.provide_rate);
+			cstr_data.Format(_T("%.2f %%"), provider.detail.provide_rate);
 			m_p_list_ctrl->SetItem(index, 6, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//기본공급형태
@@ -195,7 +195,7 @@ void CProviderInfoList::UpdateList(void)
 			m_p_list_ctrl->SetItem(index, 7, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//기본정산일
-			cstr_data.Format(_T("%d"), provider.detail.calc_day);
+			cstr_data.Format(_T("%d 일"), provider.detail.calc_day);
 			m_p_list_ctrl->SetItem(index, 8, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//계산서 발급 여부
