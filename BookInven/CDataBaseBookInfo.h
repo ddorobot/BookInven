@@ -1,8 +1,6 @@
 #pragma once
 
 #include "CDataBase.h"
-#include "CCheckString.h"
-#include "CMyTime.h"
 
 //table name
 #define TABLE_NAME_BOOK_INFO		"TBookInfo"

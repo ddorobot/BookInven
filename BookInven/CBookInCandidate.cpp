@@ -137,14 +137,14 @@ void CBookInCandidate::UpdateList(void)
 				m_p_list_ctrl->SetItemText(i, 6, cstr_data);
 			}
 
-			if (std::string(str_provider) != candidate.provider_info.name)
+			if (std::string(str_provider) != candidate.provider_info.base.name)
 			{
-				cstr_data.Format(_T("%s"), candidate.provider_info.name.c_str());
+				cstr_data.Format(_T("%s"), candidate.provider_info.base.name.c_str());
 				m_p_list_ctrl->SetItemText(i, 7, cstr_data);
 			}
 
 			std::string provide_type = "현매";
-			if(candidate.provider_info.provide_type == credit ) provide_type = "위탁";
+			if(candidate.provider_info.detail.provide_type == credit ) provide_type = "위탁";
 			if (std::string(str_provide_type) != provide_type)
 			{
 				cstr_data.Format(_T("%d"), provide_type);
@@ -152,14 +152,14 @@ void CBookInCandidate::UpdateList(void)
 			}
 
 			CString str_candidate_provide_rate; 
-			str_candidate_provide_rate.Format(_T("%.2f"), candidate.provider_info.provide_rate);
+			str_candidate_provide_rate.Format(_T("%.2f"), candidate.provider_info.detail.provide_rate);
 			if (str_provide_rate != str_candidate_provide_rate)
 			{
 				//cstr_data.Format(_T("%.2f"), candidate.provider_info.provide_rate);
 				m_p_list_ctrl->SetItemText(i, 9, str_candidate_provide_rate);
 			}
 
-			int provide_price = (int)roundf((float)candidate.book_info.price * (candidate.provider_info.provide_rate / 100.0));
+			int provide_price = (int)roundf((float)candidate.book_info.price * (candidate.provider_info.detail.provide_rate / 100.0));
 			if (std::string(str_provide_price) != std::to_string(provide_price) )
 			{
 				cstr_data.Format(_T("%d"), provide_price);
@@ -210,21 +210,21 @@ void CBookInCandidate::UpdateList(void)
 			m_p_list_ctrl->SetItem(index, 6, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급사
-			cstr_data.Format(_T("%s"), candidate.provider_info.name.c_str());
+			cstr_data.Format(_T("%s"), candidate.provider_info.base.name.c_str());
 			m_p_list_ctrl->SetItem(index, 7, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급방식
 			std::string provide_type = "현매";
-			if (candidate.provider_info.provide_type == credit) provide_type = "위탁";
+			if (candidate.provider_info.detail.provide_type == credit) provide_type = "위탁";
 			cstr_data.Format(_T("%s"), provide_type.c_str());
 			m_p_list_ctrl->SetItem(index, 8, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급률
-			cstr_data.Format(_T("%.2f"), candidate.provider_info.provide_rate);
+			cstr_data.Format(_T("%.2f"), candidate.provider_info.detail.provide_rate);
 			m_p_list_ctrl->SetItem(index, 9, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급가
-			int provide_price = (int)((float)candidate.book_info.price * (candidate.provider_info.provide_rate/100.0));
+			int provide_price = (int)((float)candidate.book_info.price * (candidate.provider_info.detail.provide_rate/100.0));
 			cstr_data.Format(_T("%d"), provide_price);
 			m_p_list_ctrl->SetItem(index, 10, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
@@ -307,26 +307,26 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 			break;
 		case 7:
 			//공급사
-			m_candidate[index].provider_info.name = data;
+			m_candidate[index].provider_info.base.name = data;
 			break;
 		case 8:
 		{
 			//공급방식
 			int provide_type = 0;
 			if (data == "위탁") provide_type = 1;
-			m_candidate[index].provider_info.provide_type = provide_type;
+			m_candidate[index].provider_info.detail.provide_type = provide_type;
 			break;
 		}
 		case 9:
 			//공급률
-			m_candidate[index].provider_info.provide_rate = std::stof(data);
+			m_candidate[index].provider_info.detail.provide_rate = std::stof(data);
 			//공급가도 변경
 			//int price = (int)((float)(m_candidate[index].book_info.price) * (m_candidate[index].provider_info.provide_rate / 100.0));
 			break;
 		case 10:
 			//공급가 가 변경 되면 공급률을 반영한 가격이 변경 된다.
 			//가격 = 공급가  / 공급률
-			m_candidate[index].book_info.price = (int)roundf(std::stof(data) / (m_candidate[index].provider_info.provide_rate/100.0));
+			m_candidate[index].book_info.price = (int)roundf(std::stof(data) / (m_candidate[index].provider_info.detail.provide_rate/100.0));
 			//m_candidate[index].provider_info.provide_rate =   / (float)(m_candidate[index].book_info.price) * 100.0; 
 			//가격도 변경 된다.
 			

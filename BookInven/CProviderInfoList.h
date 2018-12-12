@@ -16,6 +16,7 @@
 #include "boost\system\error_code.hpp"
 
 #include "ProviderInfo.h"
+#include "CDataBaseProvider.h"
 
 class CProviderInfoList
 {
@@ -31,7 +32,5 @@ private:
 
 	boost::mutex mutex_list_ctrl;
 	CListCtrl* m_p_list_ctrl;
-
-	std::deque<ProviderInfo> m_provider;
 };
 

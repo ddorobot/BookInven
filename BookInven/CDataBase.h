@@ -5,6 +5,8 @@
 
 #include "BookInfo.h"
 #include "sqlite3.h"
+#include "CMyTime.h"
+#include "CCheckString.h"
 
 #pragma comment(lib, "Sqlite_static.lib")
 

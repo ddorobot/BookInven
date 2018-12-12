@@ -108,6 +108,9 @@
     <ClInclude Include="CProviderInfoList.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CDataBaseProviderDetail.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BookInven.cpp">
@@ -183,6 +186,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CProviderInfoList.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CDataBaseProviderDetail.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
