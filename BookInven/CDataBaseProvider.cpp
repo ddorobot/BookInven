@@ -236,6 +236,7 @@ std::vector<ProviderInfo> CDataBaseProvider::GetInfo(void)
 						ProviderInfo provider_info;
 						provider_info.base = vec_provider[i].base;
 						provider_info.detail = provider_detail;
+						provider_info.base.idx = vec_provider[i].idx;
 						ret_vec_provider_info.push_back(provider_info);
 					}
 				}
@@ -292,6 +293,7 @@ std::vector<ProviderInfo> CDataBaseProvider::GetInfo(const std::string name, con
 						ProviderInfo provider_info;
 						provider_info.base = vec_provider[i].base;
 						provider_info.detail = provider_detail;
+						provider_info.base.idx = vec_provider[i].idx;
 						ret_vec_provider_info.push_back(provider_info);
 					}
 				}
