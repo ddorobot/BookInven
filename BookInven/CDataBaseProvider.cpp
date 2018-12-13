@@ -44,6 +44,63 @@ void CDataBaseProvider::SetDetailIndex(const int base_idx, const int detail_idx)
 	if (pDB != NULL) sqlite3_close(pDB);
 }
 
+//Update
+void CDataBaseProvider::UpdateProviderInfo(const int base_index, const ProviderInfo provider)
+{
+	int ret = -1;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_PROVIDER), std::string(TABLE_DATA_PROVIDER));
+	bool check_data = CheckData(provider.base);
+
+	if (check_db && check_data)
+	{
+		printf("provider Insert\n");
+
+		// 1 : Base 저장
+		char* pErr, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		CMyTime cls_mytime;
+		std::string str_cur_time = cls_mytime.GetNow();
+
+		//Tablek Book
+		std::string sql_command = "UPDATE " + std::string(TABLE_NAME_PROVIDER);
+		sql_command += " SET name='" + provider.base.name + "', lic='" + provider.base.lic + "', reg_date='" + str_cur_time + "' WHERE idx=" + std::to_string(base_index) + ";" ;
+
+		//printf("AddBookInfo sql = %s\n", sql_command.c_str());
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), NULL, NULL, &pErr);
+
+		if (nResult)
+		{
+			printf("%s 데이터 (%d) UPDATE 실패!\n", TABLE_NAME_PROVIDER, base_index);
+			sqlite3_free(pErr);
+		}
+		else
+		{
+			//Detail Update
+			//Detail은 Update가 아니라 데이타를 계속 쌓는걸로 합시다.
+			CDataBaseProviderDetail cls_db_provider_detail;
+			int detail_index = cls_db_provider_detail.AddProviderDetailInfo(base_index, provider.detail);
+
+			//printf("%s : detail_index=%d\n", __func__, detail_index);
+
+			if (detail_index >= 0)
+			{
+				//update detail index
+				SetDetailIndex(base_index, detail_index);
+			}
+
+
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+}
+
 //Set
 void CDataBaseProvider::AddProviderInfo(const ProviderInfo provider)
 {
