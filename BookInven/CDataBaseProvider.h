@@ -28,6 +28,7 @@ public:
 	void AddProviderInfo(const ProviderInfo provider);
 	std::vector<ProviderInfo> GetInfo(const std::string name, const std::string lic);
 	std::vector<ProviderInfo> GetInfo(void);
+	std::vector<ProviderInfoBase> GetBaseInfo(void);
 	void SetDetailIndex(const int base_idx, const int detail_idx);
 	DB_ProviderInfo GetLastInfo(void);
 

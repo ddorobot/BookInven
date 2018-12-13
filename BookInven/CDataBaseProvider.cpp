@@ -250,6 +250,53 @@ bool CDataBaseProvider::CheckDataSameValue(const ProviderInfo provider)
 	return ret;
 }
 
+std::vector<ProviderInfoBase> CDataBaseProvider::GetBaseInfo(void)
+{
+	std::vector<ProviderInfoBase> ret_vec_provider_info;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_PROVIDER), std::string(TABLE_DATA_PROVIDER));
+
+	if (check_db)
+	{
+		char* pErr, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		//같은 정보가 있는지 확인
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_PROVIDER) + " ORDER BY idx DESC";		//
+
+		std::vector<DB_ProviderInfo> vec_provider;
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), sql_callback_get_provider, &vec_provider, &pErr);
+
+		if (nResult)
+		{
+			sqlite3_free(&pErr);
+		}
+		else
+		{
+			int provider_size = vec_provider.size();
+
+			if (provider_size > 0)
+			{
+				for (int i = 0; i < provider_size; i++)
+				{
+					//push
+					ProviderInfoBase provider_base_info;
+					provider_base_info = vec_provider[i].base;
+					ret_vec_provider_info.push_back(provider_base_info);
+				}
+			}
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+
+	return ret_vec_provider_info;
+}
+
 std::vector<ProviderInfo> CDataBaseProvider::GetInfo(void)
 {
 	std::vector<ProviderInfo> ret_vec_provider_info;
