@@ -26,6 +26,7 @@ int CDataBaseBookInfo::sql_callback_get_bookinfo(void *NotUsed, int argc, char *
 			if (name == "idx")
 			{
 				bookinfo.idx = argv[i] ? std::stoi(argv[i]) : -1;
+				bookinfo.book_info.idx = bookinfo.idx;
 			}
 			else if (name == "isbn")
 			{
