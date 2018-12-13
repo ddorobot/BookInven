@@ -36,6 +36,8 @@ public:
 
 	void AddCandidate(Candidate_BookInfo candidate);
 	void UpdateItem(const int index, const int col_index, const std::string data);
+	void ChangeProviderBaseIndex(const int index, const int provider_index);
+	void ChangeProvideType(const int index, const int provide_type);
 	void UpdateList(void);
 	int GetTotalBookCount(void);
 	void DelCheckedItem(void);

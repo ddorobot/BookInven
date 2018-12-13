@@ -271,6 +271,27 @@ int CBookInCandidate::GetTotalBookCount(void)
 	return ret;
 }
 
+void CBookInCandidate::ChangeProviderBaseIndex(const int index, const int provider_index)
+{
+	const int candidate_size = m_candidate.size();
+
+	if (index >= 0 && index < candidate_size)
+	{
+		m_candidate[index].provider_info.base.idx = index;
+	}
+}
+
+void CBookInCandidate::ChangeProvideType(const int index, const int provide_type)
+{
+	const int candidate_size = m_candidate.size();
+
+	if (index >= 0 && index < candidate_size)
+	{
+		m_candidate[index].provider_info.detail.provide_type = index;
+	}
+}
+
+
 void CBookInCandidate::UpdateItem(const int index, const int col_index, const std::string data)
 {
 	const int candidate_size = m_candidate.size();
@@ -306,17 +327,21 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 			m_candidate[index].count = std::stoi(data);
 			break;
 		case 7:
+#if 0
 			//공급사
 			m_candidate[index].provider_info.base.name = data;
+#endif
 			break;
 		case 8:
-		{
-			//공급방식
-			int provide_type = 0;
-			if (data == "위탁") provide_type = 1;
-			m_candidate[index].provider_info.detail.provide_type = provide_type;
+#if 0
+			{
+				//공급방식
+				int provide_type = 0;
+				if (data == "위탁") provide_type = 1;
+				m_candidate[index].provider_info.detail.provide_type = provide_type;
+			}
+#endif
 			break;
-		}
 		case 9:
 			//공급률
 			m_candidate[index].provider_info.detail.provide_rate = std::stof(data);
