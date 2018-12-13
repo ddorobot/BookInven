@@ -11,6 +11,16 @@ CDataBaseProvider::~CDataBaseProvider()
 {
 }
 
+void CDataBaseProvider::Delete(const int base_index)
+{
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_PROVIDER), std::string(TABLE_DATA_PROVIDER));
+
+	if (check_db)
+	{
+		DeleteItem(std::string(TABLE_NAME_PROVIDER), base_index);
+	}
+}
+
 void CDataBaseProvider::SetDetailIndex(const int base_idx, const int detail_idx)
 {
 	sqlite3* pDB = NULL;

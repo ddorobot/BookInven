@@ -19,5 +19,6 @@ public:
 	~CDataBase();
 
 	int CheckExistAndCreate(const std::string str_table_name, const std::string str_table_data);
+	int DeleteItem(const std::string str_table_name, const int index);
 };
 

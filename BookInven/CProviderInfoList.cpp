@@ -318,55 +318,34 @@ void CProviderInfoList::UpdateList(void)
 
 void CProviderInfoList::DelCheckedItem(void)
 {
-#if 0
+#if 1
 	if (m_p_list_ctrl != NULL)
 	{
 		int count = m_p_list_ctrl->GetItemCount();
-		const int candidate_size = m_candidate.size();
+		const int provider_size = m_vec_provider.size();
 
-		std::deque<int> deque_del_index;
-		for (int i = 0; i < count; i++)
+		if (count > 0)
 		{
-			// 체크상태 확인
+			CDataBaseProvider cls_db_provider;
 
-			if (m_p_list_ctrl->GetCheck(i))
+			for (int i = 0; i < count; i++)
 			{
-				if (i < candidate_size)
+				// 체크상태 확인
+
+				if (m_p_list_ctrl->GetCheck(i))
 				{
-					deque_del_index.push_back(i);
+					if (i < provider_size)
+					{
+						//DB의 정보 삭제
+						cls_db_provider.Delete(m_vec_provider[i].base.idx);
+					}
 				}
 			}
 		}
-
-		int iter_count = 0;
-		for (auto it = m_candidate.begin(); it != m_candidate.end(); ) 
-		{
-			int deque_del_size = deque_del_index.size();
-			if (deque_del_size <= 0) break;
-
-			int del_index = deque_del_index[0];
-
-			if (del_index == iter_count)
-			{
-				it = m_candidate.erase(it);
-
-				deque_del_index.pop_front();
-			}
-			else
-			{
-				++it;
-			}
-
-			iter_count++;
-		}
-
-		//삭제 되지 않은 아이템은 Checked가 FALSE여야 한다.
-		count = m_p_list_ctrl->GetItemCount();
-		for (int i = 0; i < count; i++)
-		{
-			m_p_list_ctrl->SetCheck(i, FALSE);
-		}
 	}
+
+	//Update List
+
 #endif
 }
 
