@@ -40,5 +40,7 @@ private:
 	CListCtrl* m_p_list_ctrl;
 
 	std::vector<ProviderInfo> m_vec_provider;
+
+	std::string m_str_search;
 };
 

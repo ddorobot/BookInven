@@ -38,6 +38,8 @@ void CProviderInfoList::SetListCtrl(CListCtrl* p_list_ctrl)
 
 void CProviderInfoList::Search(const std::string keyword)
 {
+	m_str_search = keyword;
+
 	CDataBaseProvider cls_db_provider;
 	std::vector<ProviderInfo> vec_provider = cls_db_provider.GetInfo();
 	int provider_size = vec_provider.size();
@@ -342,9 +344,17 @@ void CProviderInfoList::DelCheckedItem(void)
 				}
 			}
 		}
-	}
 
-	//Update List
+		//Update List
+		Search(m_str_search);
+
+		//삭제 되지 않은 아이템은 Checked가 FALSE여야 한다.
+		count = m_p_list_ctrl->GetItemCount();
+		for (int i = 0; i < count; i++)
+		{
+			m_p_list_ctrl->SetCheck(i, FALSE);
+		}
+	}
 
 #endif
 }
