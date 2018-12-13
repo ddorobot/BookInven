@@ -34,7 +34,6 @@ public:
 	int GetProviderSize(void);
 
 	void UpdateProviderInfo(const int base_index, const ProviderInfo provider);
-
 private:
 	bool CheckData(const ProviderInfoBase provider);
 	bool CheckDataSameValue(const ProviderInfo provider);

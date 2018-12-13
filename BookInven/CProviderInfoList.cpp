@@ -36,6 +36,89 @@ void CProviderInfoList::SetListCtrl(CListCtrl* p_list_ctrl)
 	mutex_list_ctrl.unlock();
 }
 
+void CProviderInfoList::Search(const std::string keyword)
+{
+	CDataBaseProvider cls_db_provider;
+	std::vector<ProviderInfo> vec_provider = cls_db_provider.GetInfo();
+	int provider_size = vec_provider.size();
+
+	std::vector<ProviderInfo> vec_search_provider;
+
+	//std::cout << boost::algorithm::contains("책방모도", "책") << std::endl;
+
+	for (int i = 0; i < provider_size; i++)
+	{
+		ProviderInfo provider = vec_provider[i];
+
+		bool search = false;
+		
+		if (keyword.empty() || keyword == "*")
+		{
+			search = true;
+		}
+
+		//name
+		size_t pos = -1;
+		std::string find_string = provider.base.name;
+		if (boost::algorithm::contains(find_string, keyword) && search == false && !find_string.empty())
+		{
+			search = true;
+		}
+
+		//std::cout << "test : " << find_string  << " vs " << keyword << " = " << boost::algorithm::contains(find_string, keyword) << std::endl;
+
+		//lic
+		pos = -1;
+		find_string = provider.base.lic;
+		if (boost::algorithm::contains(find_string, keyword) && search == false && !find_string.empty())
+		{
+			search = true;
+		}
+
+		//std::cout << "test : " << find_string << " vs " << keyword << " = " << boost::algorithm::contains(find_string, keyword) << std::endl;
+
+		//tel
+		pos = -1;
+		find_string = provider.detail.tel;
+		if (boost::algorithm::contains(find_string, keyword) && search == false && !find_string.empty())
+		{
+			search = true;
+		}
+
+		//std::cout << "test : " << find_string << " vs " << keyword << " = " << boost::algorithm::contains(find_string, keyword) << std::endl;
+
+		//adree
+		pos = -1;
+		find_string = provider.detail.address;
+		if (boost::algorithm::contains(find_string, keyword) && search == false && !find_string.empty())
+		{
+			search = true;
+		}
+
+		//std::cout << "test : " << find_string << " vs " << keyword << " = " << boost::algorithm::contains(find_string, keyword) << std::endl;
+
+		//email
+		pos = -1;
+		find_string = provider.detail.email;
+		if (boost::algorithm::contains(find_string, keyword) && search == false && !find_string.empty())
+		{
+			search = true;
+		}
+
+		//std::cout << "test : " << find_string << " vs " << keyword << " = " << boost::algorithm::contains(find_string, keyword) << std::endl;
+
+		if (search)
+		{
+			vec_search_provider.push_back(vec_provider[i]);
+		}
+	}
+
+	m_vec_provider.clear();
+	m_vec_provider = vec_search_provider;
+
+	UpdateList();
+}
+
 void CProviderInfoList::UpdateList(void)
 {
 	if (m_p_list_ctrl == NULL) return;
@@ -45,8 +128,8 @@ void CProviderInfoList::UpdateList(void)
 	int count = m_p_list_ctrl->GetItemCount();
 
 	//데이타 베이스로부터 정보를 얻어온다.
-	CDataBaseProvider cls_db_provider;
-	m_vec_provider = cls_db_provider.GetInfo();
+	//CDataBaseProvider cls_db_provider;
+	//m_vec_provider = cls_db_provider.GetInfo();
 	int provider_size = m_vec_provider.size();
 
 	for (int i = 0; i < count; i++)
@@ -215,11 +298,20 @@ void CProviderInfoList::UpdateList(void)
 	}
 	else if (count > provider_size)
 	{
-		for (int index = provider_size; index < count; index++)
+		//printf("del list : provider_size=%d, count=%d\n", provider_size, count);
+
+		for (int index = count-1; index >= provider_size; index--)	//list indexing을 뒤에서부터 뺀다
 		{
+			//printf(" - del index : %d\n", index);
+
 			m_p_list_ctrl->DeleteItem(index);
 		}
+
+		//int re_count = m_p_list_ctrl->GetItemCount();
+		//printf(" - re_count : %d\n", re_count);
 	}
+
+	m_p_list_ctrl->Invalidate(TRUE);
 
 	//mutex_candidate.unlock();
 }

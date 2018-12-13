@@ -15,6 +15,9 @@
 
 #include "boost\system\error_code.hpp"
 
+#include "boost/algorithm/string.hpp"
+
+
 #include "ProviderInfo.h"
 #include "CDataBaseProvider.h"
 
@@ -25,14 +28,14 @@ public:
 	~CProviderInfoList();
 
 	void SetListCtrl(CListCtrl* p_list_ctrl);
-
-	void UpdateList(void);
 	void DelCheckedItem(void);
 	ProviderInfo GetProviderInfoInList(const int index);
 	int GetProviderInfoIndexInList(const int list_index);		//provider 정보에 DB index번호를 리턴
+	void Search(const std::string keyword);
 
 private:
-
+	void UpdateList(void);
+	 
 	boost::mutex mutex_list_ctrl;
 	CListCtrl* m_p_list_ctrl;
 
