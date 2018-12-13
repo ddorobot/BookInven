@@ -318,6 +318,26 @@ void CProviderInfoList::UpdateList(void)
 	//mutex_candidate.unlock();
 }
 
+int CProviderInfoList::GetCheckedCount(void)
+{
+	int ret = 0;
+
+	if (m_p_list_ctrl != NULL)
+	{
+		//삭제 되지 않은 아이템은 Checked가 FALSE여야 한다.
+		int count = m_p_list_ctrl->GetItemCount();
+		for (int i = 0; i < count; i++)
+		{
+			if (m_p_list_ctrl->GetCheck(i))
+			{
+				ret++;
+			}
+		}
+	}
+
+	return ret;
+}
+
 void CProviderInfoList::DelCheckedItem(void)
 {
 #if 1
