@@ -29,6 +29,7 @@ public:
 	void UpdateList(void);
 	void DelCheckedItem(void);
 	ProviderInfo GetProviderInfoInList(const int index);
+	int GetProviderInfoIndexInList(const int list_index);		//provider 정보에 DB index번호를 리턴
 
 private:
 
