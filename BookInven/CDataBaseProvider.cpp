@@ -260,6 +260,47 @@ bool CDataBaseProvider::CheckDataSameValue(const ProviderInfo provider)
 	return ret;
 }
 
+ProviderInfoBase CDataBaseProvider::GetBaseInfo(const int index)
+{
+	ProviderInfoBase ret_provider_info;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_PROVIDER), std::string(TABLE_DATA_PROVIDER));
+
+	if (check_db)
+	{
+		char* pErr, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		//같은 정보가 있는지 확인
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_PROVIDER) + " WHERE idx=" + std::to_string(index) + " ORDER BY idx DESC";		//
+
+		std::vector<DB_ProviderInfo> vec_provider;
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), sql_callback_get_provider, &vec_provider, &pErr);
+
+		if (nResult)
+		{
+			sqlite3_free(&pErr);
+		}
+		else
+		{
+			int provider_size = vec_provider.size();
+
+			if (provider_size > 0)
+			{
+				ret_provider_info = vec_provider[0].base;
+			}
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+
+	return ret_provider_info;
+}
+
 std::vector<ProviderInfoBase> CDataBaseProvider::GetBaseInfo(void)
 {
 	std::vector<ProviderInfoBase> ret_vec_provider_info;
@@ -523,6 +564,7 @@ int CDataBaseProvider::sql_callback_get_provider(void *NotUsed, int argc, char *
 			if (name == "idx")
 			{
 				provider.idx = argv[i] ? std::stoi(argv[i]) : -1;
+				provider.base.idx = provider.idx;
 			}
 			else if (name == "detail_idx")
 			{

@@ -17,6 +17,7 @@
 
 #include "BookInfo.h"
 #include "ProviderInfo.h"
+#include "CDataBaseProvider.h"
 
 typedef struct Candidate_BookInfo {
 	BookInfo book_info;

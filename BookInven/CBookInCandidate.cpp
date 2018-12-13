@@ -278,6 +278,15 @@ void CBookInCandidate::ChangeProviderBaseIndex(const int index, const int provid
 	if (index >= 0 && index < candidate_size)
 	{
 		m_candidate[index].provider_info.base.idx = index;
+
+		//DB로부터 정보를 가지고와서 base정보를 변경 한다.
+		CDataBaseProvider cls_db_provider;
+		ProviderInfoBase provider_info_base = cls_db_provider.GetBaseInfo(index);
+
+		if (m_candidate[index].provider_info.base.idx == provider_info_base.idx)
+		{
+			m_candidate[index].provider_info.base = provider_info_base;
+		}
 	}
 }
 
