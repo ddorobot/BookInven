@@ -63,6 +63,9 @@ void CBookInCandidate::AddCandidate(BookIn_Info candidate)
 	else
 	{
 		candidate.sale_cost = candidate.book_info.price;
+		int provide_price = (int)((float)candidate.book_info.price * (candidate.provider_info.detail.provide_rate / 100.0));
+		candidate.provider_info.detail.provide_cost = provide_price;
+
 		m_candidate.push_back(candidate);
 	}
 
@@ -155,14 +158,12 @@ void CBookInCandidate::UpdateList(void)
 			str_candidate_provide_rate.Format(_T("%.2f"), candidate.provider_info.detail.provide_rate);
 			if (str_provide_rate != str_candidate_provide_rate)
 			{
-				//cstr_data.Format(_T("%.2f"), candidate.provider_info.provide_rate);
 				m_p_list_ctrl->SetItemText(i, 9, str_candidate_provide_rate);
 			}
 
-			int provide_price = (int)roundf((float)candidate.book_info.price * (candidate.provider_info.detail.provide_rate / 100.0));
-			if (std::string(str_provide_price) != std::to_string(provide_price) )
+			if (std::string(str_provide_price) != std::to_string(candidate.provider_info.detail.provide_cost) )
 			{
-				cstr_data.Format(_T("%d"), provide_price);
+				cstr_data.Format(_T("%d"), candidate.provider_info.detail.provide_cost);
 				m_p_list_ctrl->SetItemText(i, 10, cstr_data);
 			}
 
@@ -224,8 +225,7 @@ void CBookInCandidate::UpdateList(void)
 			m_p_list_ctrl->SetItem(index, 9, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급가
-			int provide_price = (int)((float)candidate.book_info.price * (candidate.provider_info.detail.provide_rate/100.0));
-			cstr_data.Format(_T("%d"), provide_price);
+			cstr_data.Format(_T("%d"), candidate.provider_info.detail.provide_cost);
 			m_p_list_ctrl->SetItem(index, 10, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//판매가
@@ -305,9 +305,9 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 
 	if (index >= 0 && index < candidate_size)
 	{
-		switch(col_index)
+		switch (col_index)
 		{
-		case 0 : 
+		case 0:
 			//checkbox
 			break;
 		case 1:
@@ -328,6 +328,8 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 		case 5:
 			//가격
 			m_candidate[index].book_info.price = std::stoi(data);
+			//공급가도 변경
+			m_candidate[index].provider_info.detail.provide_cost = (int)roundf((float)(m_candidate[index].book_info.price) * (m_candidate[index].provider_info.detail.provide_rate / 100.0));
 			break;
 		case 6:
 			//수량
@@ -341,27 +343,46 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 			break;
 		case 8:
 #if 0
-			{
-				//공급방식
-				int provide_type = 0;
-				if (data == "위탁") provide_type = 1;
-				m_candidate[index].provider_info.detail.provide_type = provide_type;
-			}
+		{
+			//공급방식
+			int provide_type = 0;
+			if (data == "위탁") provide_type = 1;
+			m_candidate[index].provider_info.detail.provide_type = provide_type;
+		}
 #endif
-			break;
+		break;
 		case 9:
 			//공급률
 			m_candidate[index].provider_info.detail.provide_rate = std::stof(data);
 			//공급가도 변경
-			//int price = (int)((float)(m_candidate[index].book_info.price) * (m_candidate[index].provider_info.provide_rate / 100.0));
+			m_candidate[index].provider_info.detail.provide_cost = (int)roundf((float)(m_candidate[index].book_info.price) * (m_candidate[index].provider_info.detail.provide_rate / 100.0));
 			break;
 		case 10:
+		{
 			//공급가 가 변경 되면 공급률을 반영한 가격이 변경 된다.
-			//가격 = 공급가  / 공급률
-			m_candidate[index].book_info.price = (int)roundf(std::stof(data) / (m_candidate[index].provider_info.detail.provide_rate/100.0));
-			//m_candidate[index].provider_info.provide_rate =   / (float)(m_candidate[index].book_info.price) * 100.0; 
-			//가격도 변경 된다.
-			
+			int provide_cost = std::stoi(data);
+
+			if (provide_cost < m_candidate[index].book_info.price && provide_cost >= 0)
+			{
+				m_candidate[index].provider_info.detail.provide_cost = provide_cost;
+
+#if 1		//가격을 변경하는게 아니라 공급률을 변경 해야 한다.
+				if (m_candidate[index].book_info.price == m_candidate[index].provider_info.detail.provide_cost)
+				{
+					m_candidate[index].provider_info.detail.provide_rate = 0.0;
+				}
+				else
+				{
+					m_candidate[index].provider_info.detail.provide_rate = 100.0 - ((float)(m_candidate[index].book_info.price - m_candidate[index].provider_info.detail.provide_cost) / (float)(m_candidate[index].book_info.price)) * 100.0;
+				}
+			}
+#else 
+				//가격 = 공급가  / 공급률
+				m_candidate[index].book_info.price = (int)roundf(m_candidate[index].provider_info.detail.provide_cost / (m_candidate[index].provider_info.detail.provide_rate / 100.0));
+				//m_candidate[index].provider_info.provide_rate =   / (float)(m_candidate[index].book_info.price) * 100.0; 
+				//가격도 변경 된다.
+#endif
+		}
 			break;
 		case 11:
 			//판매가

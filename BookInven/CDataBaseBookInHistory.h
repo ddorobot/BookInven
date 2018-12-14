@@ -1,24 +1,35 @@
 #pragma once
 
+#include <string>
+
 #include "CDataBase.h"
+#include "BookInInfo.h"
 
 //table name
-#define TABLE_NAME_BOOK_INFO		"TBookIn"
-#define TABLE_DATA_BOOK_INFO		"'idx'	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, \
-									'isbn' TEXT, \
-									'name' TEXT, \
-									'author' TEXT, \
-									'publisher' TEXT, \
-									'price' TEXT, \
-									'title_url' TEXT, \
-									'publish_date' TEXT, \
-									'reg_date' TEXT"
+#define TABLE_NAME_BOOK_IN_HISTORY		"TBookInHistory"
+#define TABLE_DATA_BOOK_IN_HISTORY		"'idx'	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, \
+										'book_info_idx' INTEGER, \
+										'book_cost' INTEGER, \
+										'provider_base_info_idx' INTEGER, \
+										'provie_type' INTEGER, \
+										'provie_rate' FLOAT, \
+										'provie_cost' INTEGER, \
+										'sale_cost' INTEGER, \
+										'reg_date' TEXT"
 
-typedef struct DB_BookInfo {
-	int idx;
-	std::string reg_date;
-	BookInfo book_info;
-} DB_BookInfo;
+
+typedef struct DB_BookInHistory {
+	int idx=-1;
+	int book_info_idx = -1;
+	int book_cost = 0;
+	int provider_base_info_idx = -1;
+	int provie_type = -1;
+	int provie_rate = 0.0;
+	int provie_cost = 0.0;
+	int sale_cost = 0.0;
+	std::string reg_date = "";
+
+} DB_BookInHistory;
 
 
 class CDataBaseBookInHistory : CDataBase
@@ -28,15 +39,9 @@ public:
 	~CDataBaseBookInHistory();
 
 	//Book Info
-	int GetBookInfo(const std::string isbn, BookInfo *bookinfo);
-	void AddBookInfo(const BookInfo bookinfo);
-	DB_BookInfo GetLastInfo(void);
-	void Print(void);
+	void AddBookInInfo(const BookIn_Info bookinfo);
 
 private:
 	static int sql_callback_get_bookinfo(void *NotUsed, int argc, char **argv, char **azColName);
-
-	bool CheckData(const BookInfo bookinfo);
-	bool CheckDataSameValue(const BookInfo bookinfo);
 };
 

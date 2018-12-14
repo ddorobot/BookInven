@@ -39,6 +39,7 @@ typedef struct ProviderInfoDetail {
 	std::string address = "";
 	float provide_rate = PROVIDE_BASE_RATE;
 	int provide_type = PROVIDE_BASE_TYPE;
+	int provide_cost = 0;
 	int calc_day = PROVIDE_BASE_CALC_DAY;
 	bool receipt_able = (bool)PROVIDE_BASE_RECEIPT_ABLE;
 	std::string bank_name = "";
