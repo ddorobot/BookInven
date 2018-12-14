@@ -196,8 +196,8 @@
     <ClInclude Include="CCheckString.h" />
     <ClInclude Include="CDataBase.h" />
     <ClInclude Include="CDataBaseBookInfo.h" />
+    <ClInclude Include="CDataBaseBookInHistory.h" />
     <ClInclude Include="CDataBaseImageSave.h" />
-    <ClInclude Include="CDataBaseIn.h" />
     <ClInclude Include="CDataBaseProvider.h" />
     <ClInclude Include="CDataBaseProviderDetail.h" />
     <ClInclude Include="CDlgBookIn.h" />
@@ -229,8 +229,8 @@
     <ClCompile Include="CCheckString.cpp" />
     <ClCompile Include="CDataBase.cpp" />
     <ClCompile Include="CDataBaseBookInfo.cpp" />
+    <ClCompile Include="CDataBaseBookInHistory.cpp" />
     <ClCompile Include="CDataBaseImageSave.cpp" />
-    <ClCompile Include="CDataBaseIn.cpp" />
     <ClCompile Include="CDataBaseProvider.cpp" />
     <ClCompile Include="CDataBaseProviderDetail.cpp" />
     <ClCompile Include="CDlgBookIn.cpp" />

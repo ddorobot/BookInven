@@ -99,9 +99,6 @@
     <ClInclude Include="ProviderInfo.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="CDataBaseIn.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="CDataBaseProvider.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -115,6 +112,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="BookInInfo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CDataBaseBookInHistory.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -185,9 +185,6 @@
     <ClCompile Include="CBookInCandidate.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CDataBaseIn.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="CDataBaseProvider.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -198,6 +195,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CBookInList.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CDataBaseBookInHistory.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
