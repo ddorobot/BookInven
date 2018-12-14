@@ -38,7 +38,7 @@ public:
 	void SetListCtrl(CListCtrl* p_list_ctrl);
 
 	int AddInfo(BookIn_Info candidate);
-	void UpdateList(void);
+	void UpdateList(std::string str_date_start="", std::string str_date_end="");
 	void DelCheckedItem(void);
 	int GetCheckedItemCount(void);
 private:

@@ -69,7 +69,7 @@ int CBookInList::AddInfo(BookIn_Info info)
 	return ret;
 }
  
-void CBookInList::UpdateList(void)
+void CBookInList::UpdateList(std::string str_date_start, std::string str_date_end)
 {
 	if (m_p_list_ctrl == NULL) return;
 
