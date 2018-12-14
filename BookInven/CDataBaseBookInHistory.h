@@ -38,6 +38,7 @@ typedef struct DB_BookInHistory {
 } DB_BookInHistory;
 
 typedef struct BookInHistory {
+	int db_idx = -1;
 	BookIn_Info bookin_info;
 	std::string reg_date = "";
 } BookInHistory;
@@ -52,6 +53,7 @@ public:
 	int AddBookInInfo(const BookIn_Info bookinfo);
 	BookInHistory GetLastInfo(void);
 	std::vector<BookInHistory> GetAllInfo(void);
+	void Delete(const int index);
 
 private:
 	static int sql_callback_get_bookinfo(void *NotUsed, int argc, char **argv, char **azColName);

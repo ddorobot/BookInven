@@ -60,6 +60,7 @@ int CBookInList::AddInfo(BookIn_Info info)
 
 		if (!last_info.reg_date.empty())
 		{
+			list_info.db_idx = last_info.db_idx;
 			list_info.bookin_info = last_info.bookin_info;
 			list_info.reg_date = last_info.reg_date;
 
@@ -90,6 +91,7 @@ void CBookInList::UpdateList(void)
 		if (!vec_bookin_info[i].reg_date.empty())
 		{
 			BookIn_List_Info list_info;
+			list_info.db_idx = vec_bookin_info[i].db_idx;
 			list_info.bookin_info = vec_bookin_info[i].bookin_info;
 			list_info.reg_date = vec_bookin_info[i].reg_date;
 
@@ -329,41 +331,22 @@ void CBookInList::DelCheckedItem(void)
 		int count = m_p_list_ctrl->GetItemCount();
 		const int book_in_size = m_book_in.size();
 
-		std::deque<int> deque_del_index;
 		for (int i = 0; i < count; i++)
 		{
 			// 체크상태 확인
-
 			if (m_p_list_ctrl->GetCheck(i))
 			{
 				if (i < book_in_size)
 				{
-					deque_del_index.push_back(i);
+					//DB Delete
+					CDataBaseBookInHistory cls_db_bookin_history;
+					cls_db_bookin_history.Delete(m_book_in[i].db_idx);
 				}
 			}
 		}
 
-		int iter_count = 0;
-		for (auto it = m_book_in.begin(); it != m_book_in.end(); ) 
-		{
-			int deque_del_size = deque_del_index.size();
-			if (deque_del_size <= 0) break;
-
-			int del_index = deque_del_index[0];
-
-			if (del_index == iter_count)
-			{
-				it = m_book_in.erase(it);
-
-				deque_del_index.pop_front();
-			}
-			else
-			{
-				++it;
-			}
-
-			iter_count++;
-		}
+		//Update
+		UpdateList();
 
 		//삭제 되지 않은 아이템은 Checked가 FALSE여야 한다.
 		count = m_p_list_ctrl->GetItemCount();

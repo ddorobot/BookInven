@@ -74,6 +74,16 @@ int CDataBaseBookInHistory::sql_callback_get_bookinfo(void *NotUsed, int argc, c
 	return 0;
 }
 
+void CDataBaseBookInHistory::Delete(const int index)
+{
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_BOOK_IN_HISTORY), std::string(TABLE_DATA_BOOK_IN_HISTORY));
+
+	if (check_db)
+	{
+		DeleteItem(std::string(TABLE_NAME_BOOK_IN_HISTORY), index);
+	}
+}
+
 std::vector<BookInHistory> CDataBaseBookInHistory::GetAllInfo(void)
 {
 	std::vector<BookInHistory> retProviderInfo;
@@ -116,7 +126,7 @@ std::vector<BookInHistory> CDataBaseBookInHistory::GetAllInfo(void)
 				ProviderInfoBase provider_base = cls_db_provider.GetBaseInfo(db_history.provider_base_info_idx);
 
 				int detail_index = cls_db_provider.GetDetailIndex(db_history.provider_base_info_idx);
-
+				 
 				CDataBaseProviderDetail cls_db_provider_detail;
 				int out_base_index = -1;
 				ProviderInfoDetail provider_detail = cls_db_provider_detail.GetProviderDetailInfo(detail_index, &out_base_index);
@@ -126,6 +136,7 @@ std::vector<BookInHistory> CDataBaseBookInHistory::GetAllInfo(void)
 				provider_info.detail = provider_detail;
 
 				BookInHistory bookin_history;
+				bookin_history.db_idx = db_history.idx;
 				bookin_history.bookin_info.book_info = book;
 				bookin_history.bookin_info.book_info.price = db_history.book_cost;
 				bookin_history.bookin_info.count = db_history.book_count;
@@ -149,7 +160,7 @@ std::vector<BookInHistory> CDataBaseBookInHistory::GetAllInfo(void)
 
 BookInHistory CDataBaseBookInHistory::GetLastInfo(void)
 {
-	BookInHistory retProviderInfo;
+	BookInHistory retBookHistory;
 
 	sqlite3* pDB = NULL;
 
@@ -194,15 +205,16 @@ BookInHistory CDataBaseBookInHistory::GetLastInfo(void)
 				provider_info.base = provider_base;
 				provider_info.detail = provider_detail;
 
-				retProviderInfo.bookin_info.book_info = book;
-				retProviderInfo.bookin_info.book_info.price = vec_history[0].book_cost;
-				retProviderInfo.bookin_info.count = vec_history[0].book_count;
-				retProviderInfo.bookin_info.provider_info = provider_info;
-				retProviderInfo.bookin_info.provider_info.detail.provide_cost = vec_history[0].provie_cost;
-				retProviderInfo.bookin_info.provider_info.detail.provide_rate = vec_history[0].provie_rate;
-				retProviderInfo.bookin_info.provider_info.detail.provide_type = vec_history[0].provie_type;
-				retProviderInfo.bookin_info.sale_cost = vec_history[0].sale_cost;
-				retProviderInfo.reg_date = vec_history[0].reg_date;
+				retBookHistory.db_idx = vec_history[0].idx;
+				retBookHistory.bookin_info.book_info = book;
+				retBookHistory.bookin_info.book_info.price = vec_history[0].book_cost;
+				retBookHistory.bookin_info.count = vec_history[0].book_count;
+				retBookHistory.bookin_info.provider_info = provider_info;
+				retBookHistory.bookin_info.provider_info.detail.provide_cost = vec_history[0].provie_cost;
+				retBookHistory.bookin_info.provider_info.detail.provide_rate = vec_history[0].provie_rate;
+				retBookHistory.bookin_info.provider_info.detail.provide_type = vec_history[0].provie_type;
+				retBookHistory.bookin_info.sale_cost = vec_history[0].sale_cost;
+				retBookHistory.reg_date = vec_history[0].reg_date;
 			}
 		}
 	}
@@ -210,7 +222,7 @@ BookInHistory CDataBaseBookInHistory::GetLastInfo(void)
 	//db close
 	if (pDB != NULL) sqlite3_close(pDB);
 
-	return retProviderInfo;
+	return retBookHistory;
 }
 
 //Set

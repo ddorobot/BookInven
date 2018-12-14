@@ -24,6 +24,7 @@
 #include "CDataBaseBookInHistory.h"
 
 typedef struct BookIn_List_Info {
+	int db_idx = -1;
 	BookIn_Info bookin_info;
 	std::string reg_date = "";
 } BookIn_List_Info;
