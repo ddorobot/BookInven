@@ -243,9 +243,6 @@ int CDataBaseBookInHistory::AddBookInInfo(const BookIn_Info bookinfo)
 		char* pErr, *pDBFile = DB_PATH;
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
-		CMyTime cls_mytime;
-		std::string str_cur_time = cls_mytime.GetNow();
-
 		//Tablek Book
 		/*
 #define TABLE_DATA_BOOK_IN_HISTORY		"'idx'	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, \
@@ -269,7 +266,7 @@ int CDataBaseBookInHistory::AddBookInInfo(const BookIn_Info bookinfo)
 		sql_command += "'" + std::to_string(bookinfo.provider_info.detail.provide_rate) + "', ";
 		sql_command += "'" + std::to_string(bookinfo.provider_info.detail.provide_cost) + "', ";
 		sql_command += "'" + std::to_string(bookinfo.sale_cost) + "', ";
-		sql_command += "'" + str_cur_time + "'";
+		sql_command += "CURRENT_TIMESTAMP";
 		sql_command += "); ";
 
 		//printf("AddBookInfo sql = %s\n", sql_command.c_str());

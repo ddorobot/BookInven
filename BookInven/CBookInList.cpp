@@ -46,10 +46,6 @@ int CBookInList::AddInfo(BookIn_Info info)
 	BookIn_List_Info list_info;
 	list_info.bookin_info = info;
 
-	//time
-	CMyTime cls_mytime;
-	list_info.reg_date = cls_mytime.GetNow();
-
 	//DBø° ¿˙¿Â
 	CDataBaseBookInHistory cls_db_bookin_history;
 	if (cls_db_bookin_history.AddBookInInfo(info))

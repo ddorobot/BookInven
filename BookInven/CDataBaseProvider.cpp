@@ -35,9 +35,6 @@ void CDataBaseProvider::SetDetailIndex(const int base_idx, const int detail_idx)
 		char* pErr, *pDBFile = DB_PATH;
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
-		CMyTime cls_mytime;
-		std::string str_cur_time = cls_mytime.GetNow();
-
 		//Tablek Book
 		std::string sql_command = "UPDATE " + std::string(TABLE_NAME_PROVIDER) + " SET detail_idx=" + std::to_string(detail_idx) + " WHERE idx=" + std::to_string(base_idx);
 
@@ -71,9 +68,6 @@ void CDataBaseProvider::UpdateProviderInfo(const int base_index, const ProviderI
 		// 1 : Base 저장
 		char* pErr, *pDBFile = DB_PATH;
 		int nResult = sqlite3_open(pDBFile, &pDB);
-
-		CMyTime cls_mytime;
-		std::string str_cur_time = cls_mytime.GetNow();
 
 		//Tablek Book
 		std::string sql_command = "UPDATE " + std::string(TABLE_NAME_PROVIDER);
@@ -187,9 +181,6 @@ int CDataBaseProvider::AddProviderBaseInfo(ProviderInfoBase provider)
 		// 1 : Base 저장
 		char* pErr, *pDBFile = DB_PATH;
 		int nResult = sqlite3_open(pDBFile, &pDB);
-
-		CMyTime cls_mytime;
-		std::string str_cur_time = cls_mytime.GetNow();
 
 		//Tablek Book
 		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_PROVIDER) + " (name, lic, reg_date) VALUES (";

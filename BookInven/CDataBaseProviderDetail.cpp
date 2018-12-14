@@ -35,9 +35,6 @@ int CDataBaseProviderDetail::AddProviderDetailInfo(const int base_idx, const Pro
 		char* pErr, *pDBFile = DB_PATH;
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
-		CMyTime cls_mytime;
-		std::string str_cur_time = cls_mytime.GetNow();
-
 		//Tablek Book
 		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_PROVIDER_DETAIL) + " (base_idx, tel, email, address, base_provide_rate, base_provide_type, base_calc_day, receipt_able, bank_name, bank_num, bank_author, memo, reg_date) VALUES (";
 		sql_command += "" + std::to_string(base_idx) + ", ";
@@ -52,7 +49,7 @@ int CDataBaseProviderDetail::AddProviderDetailInfo(const int base_idx, const Pro
 		sql_command += "'" + provider.bank_num + "', ";
 		sql_command += "'" + provider.bank_author + "', ";
 		sql_command += "'" + provider.memo + "', ";
-		sql_command += "'" + str_cur_time + "'";
+		sql_command += "CURRENT_TIMESTAMP";
 		sql_command += "); ";
 
 		//printf("AddBookInfo sql = %s\n", sql_command.c_str());
