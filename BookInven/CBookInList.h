@@ -21,28 +21,27 @@
 
 #include "CDataBaseProvider.h"
 
-class CBookInCandidate
+typedef struct BookIn_List_Info {
+	BookIn_Info bookin_info;
+	std::string reg_date = "";
+} BookIn_List_Info;
+
+class CBookInList
 {
 public:
-	CBookInCandidate(CListCtrl* p_list_ctrl);
-	~CBookInCandidate();
+	CBookInList(CListCtrl* p_list_ctrl);
+	~CBookInList();
 
 	void SetListCtrl(CListCtrl* p_list_ctrl);
 
-	void AddCandidate(BookIn_Info candidate);
-	void UpdateItem(const int index, const int col_index, const std::string data);
-	void ChangeProviderBaseIndex(const int index, const int provider_index);
-	void ChangeProvideType(const int index, const int provide_type);
+	void AddInfo(BookIn_Info candidate);
 	void UpdateList(void);
-	int GetTotalBookCount(void);
 	void DelCheckedItem(void);
-	void AddDataBase(void);
 private:
 
 	boost::mutex mutex_list_ctrl;
 	CListCtrl* m_p_list_ctrl;
 
-	boost::mutex mutex_candidate;
-	std::deque<BookIn_Info> m_candidate;
+	std::deque<BookIn_List_Info> m_book_in;
 };
 

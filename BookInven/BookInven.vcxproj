@@ -188,9 +188,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BookInfo.h" />
+    <ClInclude Include="BookInInfo.h" />
     <ClInclude Include="BookInven.h" />
     <ClInclude Include="BookInvenDlg.h" />
     <ClInclude Include="CBookInCandidate.h" />
+    <ClInclude Include="CBookInList.h" />
     <ClInclude Include="CCheckString.h" />
     <ClInclude Include="CDataBase.h" />
     <ClInclude Include="CDataBaseBookInfo.h" />
@@ -223,6 +225,7 @@
     <ClCompile Include="BookInven.cpp" />
     <ClCompile Include="BookInvenDlg.cpp" />
     <ClCompile Include="CBookInCandidate.cpp" />
+    <ClCompile Include="CBookInList.cpp" />
     <ClCompile Include="CCheckString.cpp" />
     <ClCompile Include="CDataBase.cpp" />
     <ClCompile Include="CDataBaseBookInfo.cpp" />

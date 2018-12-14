@@ -37,7 +37,7 @@ void CBookInCandidate::SetListCtrl(CListCtrl* p_list_ctrl)
 	mutex_list_ctrl.unlock();
 }
 
-void CBookInCandidate::AddCandidate(Candidate_BookInfo candidate)
+void CBookInCandidate::AddCandidate(BookIn_Info candidate)
 {
 	//mutex_candidate.lock();
 
@@ -98,7 +98,7 @@ void CBookInCandidate::UpdateList(void)
 
 		if (i < candidate_size)
 		{
-			Candidate_BookInfo candidate = m_candidate[i];
+			BookIn_Info candidate = m_candidate[i];
 
 			CString cstr_data;
 			if (std::string(str_isbn) != candidate.book_info.isbn)
@@ -178,7 +178,7 @@ void CBookInCandidate::UpdateList(void)
 	{
 		for (int index = count; index < candidate_size; index++)
 		{
-			Candidate_BookInfo candidate = m_candidate[index];
+			BookIn_Info candidate = m_candidate[index];
 
 			//데이타 추가
 			//날짜
