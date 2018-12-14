@@ -84,6 +84,91 @@ void CDataBaseBookInHistory::Delete(const int index)
 	}
 }
 
+std::vector<BookInHistory> CDataBaseBookInHistory::GetPeriodInfo(const std::string str_date_start, const std::string str_date_end)
+{
+	std::vector<BookInHistory> retProviderInfo;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_BOOK_IN_HISTORY), std::string(TABLE_DATA_BOOK_IN_HISTORY));
+
+	if (check_db)
+	{
+		char* pErr, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		//같은 정보가 있는지 확인
+		std::string sql_command;
+
+#if 0
+		if (str_date_start == str_date_end)
+		{
+			sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " WHERE DATE(reg_date)=DATE('" + str_date_start + "') ORDER BY idx DESC";
+		}
+		else
+#endif
+		{
+			sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " WHERE reg_date BETWEEN DATE('" + str_date_start + "') AND DATE('" + str_date_end + "') ORDER BY idx DESC";		//가장 최근의 정보를 얻어옴.
+		}
+
+		std::vector<DB_BookInHistory> vec_history;
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), sql_callback_get_bookinfo, &vec_history, &pErr);
+
+		if (nResult)
+		{
+			sqlite3_free(&pErr);
+		}
+		else
+		{
+			int history_size = vec_history.size();
+
+			for (int i = 0; i < history_size; i++)
+			{
+				DB_BookInHistory db_history = vec_history[i];
+
+				//Get Book Info. from DB
+				CDataBaseBookInfo cls_db_book_info;
+				BookInfo book;
+				cls_db_book_info.GetBookInfo(db_history.book_info_isbn, &book);
+
+				//Get Provider Info. from DB
+				CDataBaseProvider cls_db_provider;
+				ProviderInfoBase provider_base = cls_db_provider.GetBaseInfo(db_history.provider_base_info_idx);
+
+				int detail_index = cls_db_provider.GetDetailIndex(db_history.provider_base_info_idx);
+
+				CDataBaseProviderDetail cls_db_provider_detail;
+				int out_base_index = -1;
+				ProviderInfoDetail provider_detail = cls_db_provider_detail.GetProviderDetailInfo(detail_index, &out_base_index);
+
+				ProviderInfo provider_info;
+				provider_info.base = provider_base;
+				provider_info.detail = provider_detail;
+
+				BookInHistory bookin_history;
+				bookin_history.db_idx = db_history.idx;
+				bookin_history.bookin_info.book_info = book;
+				bookin_history.bookin_info.book_info.price = db_history.book_cost;
+				bookin_history.bookin_info.count = db_history.book_count;
+				bookin_history.bookin_info.provider_info = provider_info;
+				bookin_history.bookin_info.provider_info.detail.provide_cost = db_history.provie_cost;
+				bookin_history.bookin_info.provider_info.detail.provide_rate = db_history.provie_rate;
+				bookin_history.bookin_info.provider_info.detail.provide_type = db_history.provie_type;
+				bookin_history.bookin_info.sale_cost = db_history.sale_cost;
+				bookin_history.reg_date = db_history.reg_date;
+
+				retProviderInfo.push_back(bookin_history);
+			}
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+
+	return retProviderInfo;
+}
+
 std::vector<BookInHistory> CDataBaseBookInHistory::GetAllInfo(void)
 {
 	std::vector<BookInHistory> retProviderInfo;

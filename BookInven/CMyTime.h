@@ -14,6 +14,7 @@
 #include "boost/format.hpp"
 #include "boost/date_time/posix_time/posix_time.hpp"
 #include "boost/date_time/posix_time/posix_time_io.hpp"
+#include "boost\date_time\gregorian\gregorian.hpp"
 #include "boost\regex.hpp"
 
 class CMyTime
@@ -23,5 +24,7 @@ public:
 	~CMyTime();
 
 	std::string GetNow(void);
+	std::string GetNowDate(void);
+	std::string GetPeriodDate(const int pre_days);
 };
 

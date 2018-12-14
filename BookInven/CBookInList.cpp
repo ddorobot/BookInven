@@ -76,11 +76,19 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 	//mutex_candidate.lock();
 
 	//-----
-	//입고 히스토리를 DB에서 모두 가지고 온다.
 	m_book_in.clear();
 
 	CDataBaseBookInHistory cls_db_bookin_history;
-	std::vector<BookInHistory> vec_bookin_info = cls_db_bookin_history.GetAllInfo();
+	std::vector<BookInHistory> vec_bookin_info;
+	if (str_date_start.empty() || str_date_end.empty())		//입고 히스토리를 DB에서 모두 가지고 온다.
+	{
+		vec_bookin_info = cls_db_bookin_history.GetAllInfo();
+	}
+	else
+	{
+		vec_bookin_info = cls_db_bookin_history.GetPeriodInfo(str_date_start, str_date_end);
+	}
+
 	int history_size = vec_bookin_info.size();
 	for (int i = 0; i < history_size; i++)
 	{

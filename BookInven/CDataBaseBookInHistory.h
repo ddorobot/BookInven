@@ -52,6 +52,7 @@ public:
 	//Book Info
 	int AddBookInInfo(const BookIn_Info bookinfo);
 	BookInHistory GetLastInfo(void);
+	std::vector<BookInHistory> GetPeriodInfo(const std::string str_date_start, const std::string str_date_end);
 	std::vector<BookInHistory> GetAllInfo(void);
 	void Delete(const int index);
 
