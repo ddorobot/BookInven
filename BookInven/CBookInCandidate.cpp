@@ -371,6 +371,31 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 	}
 }
 
+std::vector<BookIn_Info> CBookInCandidate::GetCheckedItem(void)
+{
+	std::vector<BookIn_Info> ret_vec_info;
+
+	if (m_p_list_ctrl != NULL)
+	{
+		int count = m_p_list_ctrl->GetItemCount();
+		const int candidate_size = m_candidate.size();
+
+		for (int i = 0; i < count; i++)
+		{
+			// 체크상태 확인
+			if (m_p_list_ctrl->GetCheck(i))
+			{
+				if (i < candidate_size)
+				{
+					ret_vec_info.push_back(m_candidate[i]);
+				}
+			}
+		}
+	}
+
+	return ret_vec_info;
+}
+
 void CBookInCandidate::DelCheckedItem(void)
 {
 	if (m_p_list_ctrl != NULL)

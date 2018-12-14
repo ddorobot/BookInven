@@ -36,6 +36,7 @@ public:
 	void UpdateList(void);
 	int GetTotalBookCount(void);
 	void DelCheckedItem(void);
+	std::vector<BookIn_Info> GetCheckedItem(void);
 	void AddDataBase(void);
 private:
 

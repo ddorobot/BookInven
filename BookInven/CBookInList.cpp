@@ -13,7 +13,7 @@ CBookInList::CBookInList(CListCtrl* p_list_ctrl) :
 	// 타이틀 삽입
 	int list_index = 0;
 	m_p_list_ctrl->InsertColumn(list_index++, _T(""), LVCFMT_CENTER, 20, -1);
-	m_p_list_ctrl->InsertColumn(list_index++, _T("입고날짜"), LVCFMT_CENTER, 110, -1);
+	m_p_list_ctrl->InsertColumn(list_index++, _T("입고날짜"), LVCFMT_CENTER, 130, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("CODE"), LVCFMT_CENTER, 110, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("이름"), LVCFMT_CENTER, 150, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("저자"), LVCFMT_CENTER, 100, -1);
@@ -43,6 +43,10 @@ void CBookInList::AddInfo(BookIn_Info info)
 {
 	BookIn_List_Info list_info;
 	list_info.bookin_info = info;
+
+	//time
+	CMyTime cls_mytime;
+	list_info.reg_date = cls_mytime.GetNow();
 
 	m_book_in.push_back(list_info);
 }
@@ -83,82 +87,95 @@ void CBookInList::UpdateList(void)
 			BookIn_List_Info bookin_info = m_book_in[i];
 
 			CString cstr_data;
+
 			if (std::string(str_date) != bookin_info.reg_date)
 			{
 				cstr_data.Format(_T("%s"), bookin_info.reg_date.c_str());
-				m_p_list_ctrl->SetItemText(i, list_index++, cstr_data);
+				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
+			list_index++;
 
 			if (std::string(str_isbn) != bookin_info.bookin_info.book_info.isbn)
 			{
 				cstr_data.Format(_T("%s"), bookin_info.bookin_info.book_info.isbn.c_str());
-				m_p_list_ctrl->SetItemText(i, list_index++, cstr_data);
+				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
+			list_index++;
 
 			if (std::string(str_name) != bookin_info.bookin_info.book_info.name)
 			{
 				cstr_data.Format(_T("%s"), bookin_info.bookin_info.book_info.name.c_str());
-				m_p_list_ctrl->SetItemText(i, list_index++, cstr_data);
+				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
+			list_index++;
 
 			if (std::string(str_author) != bookin_info.bookin_info.book_info.author)
 			{
 				cstr_data.Format(_T("%s"), bookin_info.bookin_info.book_info.author.c_str());
-				m_p_list_ctrl->SetItemText(i, list_index++, cstr_data);
+				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
+			list_index++;
 
 			if (std::string(str_publisher) != bookin_info.bookin_info.book_info.publisher)
 			{
 				cstr_data.Format(_T("%s"), bookin_info.bookin_info.book_info.publisher.c_str());
-				m_p_list_ctrl->SetItemText(i, list_index++, cstr_data);
+				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
+			list_index++;
 
 			if (std::string(str_price) != std::to_string(bookin_info.bookin_info.book_info.price))
 			{
 				cstr_data.Format(_T("%d"), bookin_info.bookin_info.book_info.price);
-				m_p_list_ctrl->SetItemText(i, list_index++, cstr_data);
+				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
+			list_index++;
 
 			if (std::string(str_count) != std::to_string(bookin_info.bookin_info.count))
 			{
 				cstr_data.Format(_T("%d"), bookin_info.bookin_info.count);
-				m_p_list_ctrl->SetItemText(i, list_index++, cstr_data);
+				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
+			list_index++;
 
 			if (std::string(str_provider) != bookin_info.bookin_info.provider_info.base.name)
 			{
 				cstr_data.Format(_T("%s"), bookin_info.bookin_info.provider_info.base.name.c_str());
-				m_p_list_ctrl->SetItemText(i, list_index++, cstr_data);
+				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
+			list_index++;
 
 			std::string provide_type = "현매";
 			if(bookin_info.bookin_info.provider_info.detail.provide_type == credit ) provide_type = "위탁";
 			if (std::string(str_provide_type) != provide_type)
 			{
 				cstr_data.Format(_T("%s"), provide_type.c_str());
-				m_p_list_ctrl->SetItemText(i, list_index++, cstr_data);
+				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
+			list_index++;
 
 			CString str_bookin_info_provide_rate;
 			str_bookin_info_provide_rate.Format(_T("%.2f"), bookin_info.bookin_info.provider_info.detail.provide_rate);
 			if (str_provide_rate != str_bookin_info_provide_rate)
 			{
 				//cstr_data.Format(_T("%.2f"), candidate.provider_info.provide_rate);
-				m_p_list_ctrl->SetItemText(i, list_index++, str_bookin_info_provide_rate);
+				m_p_list_ctrl->SetItemText(i, list_index, str_bookin_info_provide_rate);
 			}
+			list_index++;
 
 			int provide_price = (int)roundf((float)bookin_info.bookin_info.book_info.price * (bookin_info.bookin_info.provider_info.detail.provide_rate / 100.0));
 			if (std::string(str_provide_price) != std::to_string(provide_price) )
 			{
 				cstr_data.Format(_T("%d"), provide_price);
-				m_p_list_ctrl->SetItemText(i, list_index++, cstr_data);
+				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
+			list_index++;
 
 			if (std::string(str_sale_price) != std::to_string(bookin_info.bookin_info.sale_cost))
 			{
 				cstr_data.Format(_T("%d"), bookin_info.bookin_info.sale_cost);
-				m_p_list_ctrl->SetItemText(i, list_index++, cstr_data);
+				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
+			list_index++;
 		}
 	}
 
@@ -239,6 +256,26 @@ void CBookInList::UpdateList(void)
 	}
 
 	//mutex_candidate.unlock();
+}
+
+int CBookInList::GetCheckedItemCount(void)
+{
+	int ret = 0;
+
+	if (m_p_list_ctrl != NULL)
+	{
+		int count = m_p_list_ctrl->GetItemCount();
+		for (int i = 0; i < count; i++)
+		{
+			// 체크상태 확인
+			if (m_p_list_ctrl->GetCheck(i))
+			{
+				ret++;
+			}
+		}
+	}
+
+	return ret;
 }
 
 void CBookInList::DelCheckedItem(void)

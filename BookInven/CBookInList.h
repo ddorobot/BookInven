@@ -18,6 +18,7 @@
 #include "BookInfo.h"
 #include "ProviderInfo.h"
 #include "BookInInfo.h"
+#include "CMyTime.h"
 
 #include "CDataBaseProvider.h"
 
@@ -37,6 +38,7 @@ public:
 	void AddInfo(BookIn_Info candidate);
 	void UpdateList(void);
 	void DelCheckedItem(void);
+	int GetCheckedItemCount(void);
 private:
 
 	boost::mutex mutex_list_ctrl;
