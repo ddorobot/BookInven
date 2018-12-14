@@ -39,8 +39,10 @@ void CBookInList::SetListCtrl(CListCtrl* p_list_ctrl)
 	mutex_list_ctrl.unlock();
 }
 
-void CBookInList::AddInfo(BookIn_Info info)
+int CBookInList::AddInfo(BookIn_Info info)
 {
+	int ret = 0;
+
 	BookIn_List_Info list_info;
 	list_info.bookin_info = info;
 
@@ -48,14 +50,54 @@ void CBookInList::AddInfo(BookIn_Info info)
 	CMyTime cls_mytime;
 	list_info.reg_date = cls_mytime.GetNow();
 
-	m_book_in.push_back(list_info);
-}
+	//DB에 저장
+	CDataBaseBookInHistory cls_db_bookin_history;
+	if (cls_db_bookin_history.AddBookInInfo(info))
+	{
+		//m_book_in.push_front(list_info);
+		//DB에서 최근의 데이타를 얻어와 리스트에 출력 할 수 있도록 리스트에 push_front한다.
+		BookInHistory last_info = cls_db_bookin_history.GetLastInfo();
 
+		if (!last_info.reg_date.empty())
+		{
+			list_info.bookin_info = last_info.bookin_info;
+			list_info.reg_date = last_info.reg_date;
+
+			m_book_in.push_front(list_info);
+		}
+
+		ret = 1;
+	}
+
+	return ret;
+}
+ 
 void CBookInList::UpdateList(void)
 {
 	if (m_p_list_ctrl == NULL) return;
 
 	//mutex_candidate.lock();
+
+	//-----
+	//입고 히스토리를 DB에서 모두 가지고 온다.
+	m_book_in.clear();
+
+	CDataBaseBookInHistory cls_db_bookin_history;
+	std::vector<BookInHistory> vec_bookin_info = cls_db_bookin_history.GetAllInfo();
+	int history_size = vec_bookin_info.size();
+	for (int i = 0; i < history_size; i++)
+	{
+		if (!vec_bookin_info[i].reg_date.empty())
+		{
+			BookIn_List_Info list_info;
+			list_info.bookin_info = vec_bookin_info[i].bookin_info;
+			list_info.reg_date = vec_bookin_info[i].reg_date;
+
+			m_book_in.push_back(list_info);
+		}
+	}
+	//입고 히스토리를 DB에서 모두 가지고 온다.
+	//-----
 
 	int count = m_p_list_ctrl->GetItemCount();
 
@@ -254,6 +296,8 @@ void CBookInList::UpdateList(void)
 			m_p_list_ctrl->DeleteItem(index);
 		}
 	}
+
+	m_p_list_ctrl->Invalidate(TRUE);
 
 	//mutex_candidate.unlock();
 }

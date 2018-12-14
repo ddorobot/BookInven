@@ -35,6 +35,7 @@ public:
 	void ChangeProvideType(const int index, const int provide_type);
 	void UpdateList(void);
 	int GetTotalBookCount(void);
+	void DelItem(const int index);
 	void DelCheckedItem(void);
 	std::vector<BookIn_Info> GetCheckedItem(void);
 	void AddDataBase(void);

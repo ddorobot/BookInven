@@ -30,6 +30,7 @@ public:
 	std::vector<ProviderInfo> GetInfo(void);
 	std::vector<ProviderInfoBase> GetBaseInfo(void);
 	ProviderInfoBase GetBaseInfo(const int index);
+	int GetDetailIndex(const int index);
 	void SetDetailIndex(const int base_idx, const int detail_idx);
 	DB_ProviderInfo GetLastInfo(void);
 

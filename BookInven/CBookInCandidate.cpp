@@ -417,6 +417,27 @@ std::vector<BookIn_Info> CBookInCandidate::GetCheckedItem(void)
 	return ret_vec_info;
 }
 
+void CBookInCandidate::DelItem(const int index)
+{
+	if (m_p_list_ctrl != NULL)
+	{
+		int iter_count = 0;
+		for (auto it = m_candidate.begin(); it != m_candidate.end(); )
+		{
+			if (index == iter_count)
+			{
+				it = m_candidate.erase(it);
+			}
+			else
+			{
+				++it;
+			}
+
+			iter_count++;
+		}
+	}
+}
+
 void CBookInCandidate::DelCheckedItem(void)
 {
 	if (m_p_list_ctrl != NULL)

@@ -21,6 +21,7 @@
 #include "CMyTime.h"
 
 #include "CDataBaseProvider.h"
+#include "CDataBaseBookInHistory.h"
 
 typedef struct BookIn_List_Info {
 	BookIn_Info bookin_info;
@@ -35,7 +36,7 @@ public:
 
 	void SetListCtrl(CListCtrl* p_list_ctrl);
 
-	void AddInfo(BookIn_Info candidate);
+	int AddInfo(BookIn_Info candidate);
 	void UpdateList(void);
 	void DelCheckedItem(void);
 	int GetCheckedItemCount(void);
