@@ -77,7 +77,8 @@ void CDataBaseProvider::UpdateProviderInfo(const int base_index, const ProviderI
 
 		//Tablek Book
 		std::string sql_command = "UPDATE " + std::string(TABLE_NAME_PROVIDER);
-		sql_command += " SET name='" + provider.base.name + "', lic='" + provider.base.lic + "', reg_date='" + str_cur_time + "' WHERE idx=" + std::to_string(base_index) + ";" ;
+		//sql_command += " SET name='" + provider.base.name + "', lic='" + provider.base.lic + "', reg_date='" + str_cur_time + "' WHERE idx=" + std::to_string(base_index) + ";" ;
+		sql_command += " SET name='" + provider.base.name + "', lic='" + provider.base.lic + "', reg_date=CURRENT_TIMESTAMP WHERE idx=" + std::to_string(base_index) + ";";
 
 		//printf("AddBookInfo sql = %s\n", sql_command.c_str());
 
@@ -194,7 +195,8 @@ int CDataBaseProvider::AddProviderBaseInfo(ProviderInfoBase provider)
 		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_PROVIDER) + " (name, lic, reg_date) VALUES (";
 		sql_command += "'" + provider.name + "', ";
 		sql_command += "'" + provider.lic + "', ";
-		sql_command += "'" + str_cur_time + "'";
+		//sql_command += "'" + str_cur_time + "'";
+		sql_command += "CURRENT_TIMESTAMP";
 		sql_command += "); ";
 
 		//printf("AddBookInfo sql = %s\n", sql_command.c_str());
