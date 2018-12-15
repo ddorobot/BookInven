@@ -10,7 +10,7 @@ typedef struct BookInfo {
 	std::string name;
 	std::string author;
 	std::string publisher;
-	unsigned int price;
+	unsigned int price=0;
 	std::string publish_date;
 	std::string title_url;
 } BookInfo;
