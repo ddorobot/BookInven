@@ -39,6 +39,15 @@ void CMyBooksList::UpdateList(int min_count)
 	//-----
 	m_mybook.clear();
 
+	CDataBaseBookInfo cls_db_book_info;
+	std::vector<BookInfo> vec_book_info = cls_db_book_info.GetAllInfo();
+
+	int book_info_size = vec_book_info.size();
+
+	for (int i = 0; i < book_info_size; i++)
+	{
+		m_mybook.push_back(vec_book_info[i]);
+	}
 #if 0
 	CDataBaseBookInHistory cls_db_bookin_history;
 	std::vector<BookInHistory> vec_bookin_info;

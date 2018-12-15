@@ -17,6 +17,7 @@
 
 #include "BookInfo.h"
 #include "CMyTime.h"
+#include "CDataBaseBookInfo.h"
 
 class CMyBooksList
 {
