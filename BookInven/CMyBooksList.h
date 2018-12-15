@@ -19,6 +19,11 @@
 #include "CMyTime.h"
 #include "CDataBaseBookInfo.h"
 
+typedef struct BookInfoList {
+	BookInfo book_info;
+	int count = 0;
+} BookInfoList;
+
 class CMyBooksList
 {
 public:
@@ -33,6 +38,6 @@ private:
 	boost::mutex mutex_list_ctrl;
 	CListCtrl* m_p_list_ctrl;
 
-	std::deque<BookInfo> m_mybook;
+	std::deque<BookInfoList> m_mybook;
 };
 

@@ -46,23 +46,27 @@ void CMyBooksList::UpdateList(int min_count)
 
 	for (int i = 0; i < book_info_size; i++)
 	{
-		m_mybook.push_back(vec_book_info[i]);
+		BookInfoList bookinfolist;
+		bookinfolist.book_info = vec_book_info[i];
+		bookinfolist.count = 0;
+
+		m_mybook.push_back(bookinfolist);
 	}
 #if 0
 	CDataBaseBookInHistory cls_db_bookin_history;
-	std::vector<BookInHistory> vec_bookin_info;
+	std::vector<BookInHistory> vec_book_info;
 		
-	vec_bookin_info = cls_db_bookin_history.GetInfo(str_date_start, str_date_end);
+	vec_book_info = cls_db_bookin_history.GetInfo(str_date_start, str_date_end);
 
-	int history_size = vec_bookin_info.size();
+	int history_size = vec_book_info.size();
 	for (int i = 0; i < history_size; i++)
 	{
-		if (!vec_bookin_info[i].reg_date.empty())
+		if (!vec_book_info[i].reg_date.empty())
 		{
 			BookIn_List_Info list_info;
-			list_info.db_idx = vec_bookin_info[i].db_idx;
-			list_info.bookin_info = vec_bookin_info[i].bookin_info;
-			list_info.reg_date = vec_bookin_info[i].reg_date;
+			list_info.db_idx = vec_book_info[i].db_idx;
+			list_info.book_info = vec_book_info[i].book_info;
+			list_info.reg_date = vec_book_info[i].reg_date;
 
 			m_mybook.push_back(list_info);
 		}
@@ -90,32 +94,32 @@ void CMyBooksList::UpdateList(int min_count)
 		{
 			int list_index = 0;
 
-			BookInfo bookin_info = m_mybook[i];
+			BookInfo book_info = m_mybook[i].book_info;
+			int book_count = m_mybook[i].count;
 
 			CString cstr_data;
 
-			if (std::string(str_isbn) != bookin_info.isbn)
+			if (std::string(str_isbn) != book_info.isbn)
 			{
-				cstr_data.Format(_T("%s"), bookin_info.isbn.c_str());
+				cstr_data.Format(_T("%s"), book_info.isbn.c_str());
 				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
 			list_index++;
 
-			if (std::string(str_name) != bookin_info.name)
+			if (std::string(str_name) != book_info.name)
 			{
-				cstr_data.Format(_T("%s"), bookin_info.name.c_str());
+				cstr_data.Format(_T("%s"), book_info.name.c_str());
 				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
 			list_index++;
 
-			if (std::string(str_author) != bookin_info.author)
+			if (std::string(str_author) != book_info.author)
 			{
-				cstr_data.Format(_T("%s"), bookin_info.author.c_str());
+				cstr_data.Format(_T("%s"), book_info.author.c_str());
 				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
 			list_index++;
 
-			int book_count = 0;
 			if (std::string(str_count) != std::to_string(book_count))
 			{
 				cstr_data.Format(_T("%d"), book_count);
@@ -129,7 +133,8 @@ void CMyBooksList::UpdateList(int min_count)
 	{
 		for (int index = count; index < book_in_size; index++)
 		{
-			BookInfo bookin_info = m_mybook[index];
+			BookInfo book_info = m_mybook[index].book_info;
+			int book_count = m_mybook[index].count;
 
 			int list_index = 1;
 
@@ -138,19 +143,18 @@ void CMyBooksList::UpdateList(int min_count)
 			CString cstr_data;
 
 			//code
-			cstr_data.Format(_T("%s"), bookin_info.isbn.c_str());
+			cstr_data.Format(_T("%s"), book_info.isbn.c_str());
 			m_p_list_ctrl->InsertItem(index, cstr_data);
 
 			//이름
-			cstr_data.Format(_T("%s"), bookin_info.name.c_str());
+			cstr_data.Format(_T("%s"), book_info.name.c_str());
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//저자
-			cstr_data.Format(_T("%s"), bookin_info.author.c_str());
+			cstr_data.Format(_T("%s"), book_info.author.c_str());
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//수량
-			int book_count = 0;
 			cstr_data.Format(_T("%d"), book_count);
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 		}
