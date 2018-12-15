@@ -49,7 +49,7 @@ int CDataBaseProviderDetail::AddProviderDetailInfo(const int base_idx, const Pro
 		sql_command += "'" + provider.bank_num + "', ";
 		sql_command += "'" + provider.bank_author + "', ";
 		sql_command += "'" + provider.memo + "', ";
-		sql_command += "CURRENT_TIMESTAMP";
+		sql_command += "datetime('now','localtime')";
 		sql_command += "); ";
 
 		//printf("AddBookInfo sql = %s\n", sql_command.c_str());

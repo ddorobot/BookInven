@@ -187,7 +187,7 @@ std::vector<BookInHistory> CDataBaseBookInHistory::GetInfo(const std::string str
 		std::string date_where_option = "";
 		if( !str_date_start.empty() && !str_date_end.empty() )
 		{
-			date_where_option = "WHERE reg_date BETWEEN DATE('" + str_date_start + "') AND DATE('" + str_date_end + "') ";		//가장 최근의 정보를 얻어옴.
+			date_where_option = "WHERE DATE(reg_date) BETWEEN DATE('" + str_date_start + "') AND DATE('" + str_date_end + "') ";		//가장 최근의 정보를 얻어옴.
 		}
 
 		//같은 정보가 있는지 확인
@@ -359,7 +359,7 @@ int CDataBaseBookInHistory::AddBookInInfo(const BookIn_Info bookinfo)
 		sql_command += "'" + std::to_string(bookinfo.provider_info.detail.provide_rate) + "', ";
 		sql_command += "'" + std::to_string(bookinfo.provider_info.detail.provide_cost) + "', ";
 		sql_command += "'" + std::to_string(bookinfo.sale_cost) + "', ";
-		sql_command += "CURRENT_TIMESTAMP";
+		sql_command += "datetime('now','localtime')";
 		sql_command += "); ";
 
 		//printf("AddBookInfo sql = %s\n", sql_command.c_str());

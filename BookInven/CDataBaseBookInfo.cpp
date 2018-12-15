@@ -186,7 +186,7 @@ void CDataBaseBookInfo::AddBookInfo(const BookInfo bookinfo)
 		sql_command += "'" + std::to_string(bookinfo.price) + "', ";
 		sql_command += "'" + bookinfo.title_url + "', ";
 		sql_command += "'" + bookinfo.publish_date + "', ";
-		sql_command += "CURRENT_TIMESTAMP";
+		sql_command += "datetime('now','localtime')";
 		sql_command += "); ";
 
 		//printf("AddBookInfo sql = %s\n", sql_command.c_str());
