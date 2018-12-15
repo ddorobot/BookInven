@@ -210,6 +210,7 @@
     <ClInclude Include="CGetBookInfoUsingUrl.h" />
     <ClInclude Include="CImageLoadUrl.h" />
     <ClInclude Include="CLoadBitmap.h" />
+    <ClInclude Include="CMyBooksList.h" />
     <ClInclude Include="CMyTime.h" />
     <ClInclude Include="CProviderInfoList.h" />
     <ClInclude Include="CTabCtrlEx.h" />
@@ -243,6 +244,7 @@
     <ClCompile Include="CGetBookInfoUsingUrl.cpp" />
     <ClCompile Include="CImageLoadUrl.cpp" />
     <ClCompile Include="CLoadBitmap.cpp" />
+    <ClCompile Include="CMyBooksList.cpp" />
     <ClCompile Include="CMyTime.cpp" />
     <ClCompile Include="CProviderInfoList.cpp" />
     <ClCompile Include="CTabCtrlEx.cpp" />
