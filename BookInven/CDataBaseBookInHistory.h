@@ -50,6 +50,7 @@ public:
 	~CDataBaseBookInHistory();
 
 	//Book Info
+	int GetBookCount(const std::string isbn);
 	int AddBookInInfo(const BookIn_Info bookinfo);
 	BookInHistory GetLastInfo(void);
 	std::vector<BookInHistory> GetInfo(const std::string str_date_start="", const std::string str_date_end="");
@@ -57,5 +58,6 @@ public:
 
 private:
 	static int sql_callback_get_bookinfo(void *NotUsed, int argc, char **argv, char **azColName);
+	static int sql_callback_get_count(void *count, int argc, char **argv, char **azColName);
 };
 

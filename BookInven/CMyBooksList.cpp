@@ -47,8 +47,16 @@ void CMyBooksList::UpdateList(int min_count)
 	for (int i = 0; i < book_info_size; i++)
 	{
 		BookInfoList bookinfolist;
+
+		//Book정보 얻기
 		bookinfolist.book_info = vec_book_info[i];
-		bookinfolist.count = 0;
+
+		//Book정보의 isbn을 이용하여 입/출고 count를 이용하여 재고량 확인
+		//입고량
+		CDataBaseBookInHistory cls_db_book_in_history; 
+		int book_in_count = cls_db_book_in_history.GetBookCount(bookinfolist.book_info.isbn);
+
+		bookinfolist.count = book_in_count;
 
 		m_mybook.push_back(bookinfolist);
 	}

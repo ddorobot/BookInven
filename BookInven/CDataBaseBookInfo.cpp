@@ -205,6 +205,13 @@ void CDataBaseBookInfo::AddBookInfo(const BookInfo bookinfo)
 
 }
 
+int CDataBaseBookInfo::GetCount(const std::string isbn)
+{
+	int ret = 0;
+
+	return ret;
+}
+
 std::vector<BookInfo> CDataBaseBookInfo::GetAllInfo(void)
 {
 	std::vector<BookInfo> retBookInfo;

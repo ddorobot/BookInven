@@ -11,6 +11,16 @@ CDataBaseBookInHistory::~CDataBaseBookInHistory()
 {
 }
 
+//DB
+int CDataBaseBookInHistory::sql_callback_get_count(void *count, int argc, char **argv, char **azColName)
+{
+	if (count != NULL)
+	{
+		int *c = (int *)count;
+		*c = atoi(argv[0]);
+	}
+	return 0;
+}
 
 //DB
 int CDataBaseBookInHistory::sql_callback_get_bookinfo(void *NotUsed, int argc, char **argv, char **azColName)
@@ -249,6 +259,43 @@ std::vector<BookInHistory> CDataBaseBookInHistory::GetInfo(const std::string str
 	if (pDB != NULL) sqlite3_close(pDB);
 
 	return retProviderInfo;
+}
+
+int CDataBaseBookInHistory::GetBookCount(const std::string isbn)
+{
+	int ret = 0;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_BOOK_IN_HISTORY), std::string(TABLE_DATA_BOOK_IN_HISTORY));
+
+	if (check_db)
+	{
+		char* pErr, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		//같은 정보가 있는지 확인
+		//SELECT SUM(COL_VALUES) FROM myTable
+		std::string sql_command = "SELECT SUM(book_count) FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " WHERE book_info_isbn='" + isbn + "'";		//가장 최근의 정보를 얻어옴.
+
+		int book_count = 0;
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), sql_callback_get_count, &book_count, &pErr);
+
+		if (nResult)
+		{
+			sqlite3_free(&pErr);
+		}
+		else
+		{
+			ret = book_count;
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+
+	return ret;
 }
 
 BookInHistory CDataBaseBookInHistory::GetLastInfo(void)
