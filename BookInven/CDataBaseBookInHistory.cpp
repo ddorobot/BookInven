@@ -84,6 +84,7 @@ void CDataBaseBookInHistory::Delete(const int index)
 	}
 }
 
+#if 0
 std::vector<BookInHistory> CDataBaseBookInHistory::GetPeriodInfo(const std::string str_date_start, const std::string str_date_end)
 {
 	std::vector<BookInHistory> retProviderInfo;
@@ -168,8 +169,9 @@ std::vector<BookInHistory> CDataBaseBookInHistory::GetPeriodInfo(const std::stri
 
 	return retProviderInfo;
 }
+#endif
 
-std::vector<BookInHistory> CDataBaseBookInHistory::GetAllInfo(void)
+std::vector<BookInHistory> CDataBaseBookInHistory::GetInfo(const std::string str_date_start, const std::string str_date_end)
 {
 	std::vector<BookInHistory> retProviderInfo;
 
@@ -182,8 +184,14 @@ std::vector<BookInHistory> CDataBaseBookInHistory::GetAllInfo(void)
 		char* pErr, *pDBFile = DB_PATH;
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
+		std::string date_where_option = "";
+		if( !str_date_start.empty() && !str_date_end.empty() )
+		{
+			date_where_option = "WHERE reg_date BETWEEN DATE('" + str_date_start + "') AND DATE('" + str_date_end + "') ";		//가장 최근의 정보를 얻어옴.
+		}
+
 		//같은 정보가 있는지 확인
-		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " ORDER BY idx DESC";		//가장 최근의 정보를 얻어옴.
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " " + date_where_option + "ORDER BY idx DESC";		//가장 최근의 정보를 얻어옴.
 
 		std::vector<DB_BookInHistory> vec_history;
 
