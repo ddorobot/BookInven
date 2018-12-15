@@ -36,6 +36,7 @@ public:
 	void UpdateList(int min_count = 0);
 
 	BookInfo GetBookInfoInList(const int index);
+	int GetBookInfoIndexInList(const int list_index);
 
 private:
 

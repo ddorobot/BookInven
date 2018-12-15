@@ -43,6 +43,21 @@ BookInfo CMyBooksList::GetBookInfoInList(const int index)
 	return ret_book_info;
 }
 
+int CMyBooksList::GetBookInfoIndexInList(const int list_index)
+{
+	int ret = -1;
+	int provider_size = m_mybook.size();
+
+	if (list_index >= 0 && list_index < provider_size)
+	{
+		ret = m_mybook[list_index].book_info.idx;
+	}
+
+	return ret;
+}
+
+
+
 void CMyBooksList::UpdateList(int min_count)
 {
 	if (m_p_list_ctrl == NULL) return;
