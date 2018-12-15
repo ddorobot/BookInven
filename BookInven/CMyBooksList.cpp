@@ -30,6 +30,19 @@ void CMyBooksList::SetListCtrl(CListCtrl* p_list_ctrl)
 	mutex_list_ctrl.unlock();
 }
 
+BookInfo CMyBooksList::GetBookInfoInList(const int index)
+{
+	BookInfo ret_book_info;
+	int bookinfo_size = m_mybook.size();
+
+	if (index >= 0 && index < bookinfo_size)
+	{
+		ret_book_info = m_mybook[index].book_info;
+	}
+
+	return ret_book_info;
+}
+
 void CMyBooksList::UpdateList(int min_count)
 {
 	if (m_p_list_ctrl == NULL) return;

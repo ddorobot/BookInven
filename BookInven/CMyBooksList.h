@@ -34,6 +34,9 @@ public:
 	void SetListCtrl(CListCtrl* p_list_ctrl);
 
 	void UpdateList(int min_count = 0);
+
+	BookInfo GetBookInfoInList(const int index);
+
 private:
 
 	boost::mutex mutex_list_ctrl;
