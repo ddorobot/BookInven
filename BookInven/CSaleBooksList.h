@@ -37,6 +37,8 @@ public:
 	void UpdateList(void);
 
 	void AddSaleBook(SaleBooksInfo sale_book_info);
+	
+	int GetCountInListInfo(const std::string isbn);
 private:
 
 	boost::mutex mutex_list_ctrl;

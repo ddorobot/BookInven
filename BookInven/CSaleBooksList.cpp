@@ -177,6 +177,26 @@ void CSaleBooksList::UpdateList(void)
 	//mutex_candidate.unlock();
 }
 
+int CSaleBooksList::GetCountInListInfo(const std::string isbn)
+{
+	int ret = 0;
+
+	int sale_size = m_sale_books.size();
+
+	int exist_same_data_index = -1;
+
+	for (int i = 0; i < sale_size; i++)
+	{
+		if (isbn == m_sale_books[i].book_info.isbn)
+		{
+			ret = m_sale_books[i].count;
+			break;
+		}
+	}
+
+	return ret;
+}
+
 void CSaleBooksList::AddSaleBook(SaleBooksInfo sale_book_info)
 {
 	//같은 정보가 있는지 확인
