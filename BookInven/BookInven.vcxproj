@@ -214,6 +214,7 @@
     <ClInclude Include="CMyBooksList.h" />
     <ClInclude Include="CMyTime.h" />
     <ClInclude Include="CProviderInfoList.h" />
+    <ClInclude Include="CSaleBooksList.h" />
     <ClInclude Include="CTabCtrlEx.h" />
     <ClInclude Include="GetBookInfo.h" />
     <ClInclude Include="ProviderInfo.h" />
@@ -249,6 +250,7 @@
     <ClCompile Include="CMyBooksList.cpp" />
     <ClCompile Include="CMyTime.cpp" />
     <ClCompile Include="CProviderInfoList.cpp" />
+    <ClCompile Include="CSaleBooksList.cpp" />
     <ClCompile Include="CTabCtrlEx.cpp" />
     <ClCompile Include="GetBookInfo.cpp" />
     <ClCompile Include="stdafx.cpp">
