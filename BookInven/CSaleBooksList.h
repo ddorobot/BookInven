@@ -39,6 +39,8 @@ public:
 	void AddSaleBook(SaleBooksInfo sale_book_info);
 	
 	int GetCountInListInfo(const std::string isbn);
+
+	void DelCheckedItem(void);
 private:
 
 	boost::mutex mutex_list_ctrl;

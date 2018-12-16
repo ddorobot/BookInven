@@ -225,3 +225,55 @@ void CSaleBooksList::AddSaleBook(SaleBooksInfo sale_book_info)
 		m_sale_books.push_back(sale_book_info);
 	}
 }
+
+void CSaleBooksList::DelCheckedItem(void)
+{
+	if (m_p_list_ctrl != NULL)
+	{
+		int count = m_p_list_ctrl->GetItemCount();
+		const int candidate_size = m_sale_books.size();
+
+		std::deque<int> deque_del_index;
+		for (int i = 0; i < count; i++)
+		{
+			// 체크상태 확인
+
+			if (m_p_list_ctrl->GetCheck(i))
+			{
+				if (i < candidate_size)
+				{
+					deque_del_index.push_back(i);
+				}
+			}
+		}
+
+		int iter_count = 0;
+		for (auto it = m_sale_books.begin(); it != m_sale_books.end(); )
+		{
+			int deque_del_size = deque_del_index.size();
+			if (deque_del_size <= 0) break;
+
+			int del_index = deque_del_index[0];
+
+			if (del_index == iter_count)
+			{
+				it = m_sale_books.erase(it);
+
+				deque_del_index.pop_front();
+			}
+			else
+			{
+				++it;
+			}
+
+			iter_count++;
+		}
+
+		//삭제 되지 않은 아이템은 Checked가 FALSE여야 한다.
+		count = m_p_list_ctrl->GetItemCount();
+		for (int i = 0; i < count; i++)
+		{
+			m_p_list_ctrl->SetCheck(i, FALSE);
+		}
+	}
+}
