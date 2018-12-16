@@ -17,7 +17,7 @@ int CDataBaseBookInHistory::sql_callback_get_count(void *count, int argc, char *
 	if (count != NULL)
 	{
 		int *c = (int *)count;
-		*c = atoi(argv[0]);
+		*c = argv[0] ? atoi(argv[0]) : 0;  //atoi(argv[0]);
 	}
 	return 0;
 }
