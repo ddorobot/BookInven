@@ -40,7 +40,7 @@ void CSaleBooksList::UpdateList(void)
 	//mutex_candidate.lock();
 
 	//-----
-	m_sale_books.clear();
+	//m_sale_books.clear();
 #if 0
 	CDataBaseBookInHistory cls_db_bookin_history;
 	std::vector<BookInHistory> vec_book_info;
@@ -175,4 +175,33 @@ void CSaleBooksList::UpdateList(void)
 	m_p_list_ctrl->Invalidate(TRUE);
 
 	//mutex_candidate.unlock();
+}
+
+void CSaleBooksList::AddSaleBook(SaleBooksInfo sale_book_info)
+{
+	//같은 정보가 있는지 확인
+	//m_sale_books
+	//find
+	int sale_size = m_sale_books.size();
+
+	int exist_same_data_index = -1;
+
+	for (int i = 0; i < sale_size; i++)
+	{
+		if (sale_book_info.book_info.isbn == m_sale_books[i].book_info.isbn)
+		{
+			exist_same_data_index = i;
+			break;
+		}
+	}
+
+	if (exist_same_data_index >= 0)
+	{
+		//수량 수정
+		m_sale_books[exist_same_data_index].count += sale_book_info.count;
+	}
+	else
+	{
+		m_sale_books.push_back(sale_book_info);
+	}
 }

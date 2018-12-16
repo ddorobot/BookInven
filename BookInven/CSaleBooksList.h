@@ -21,10 +21,10 @@
 #include "CDataBaseBookInHistory.h"
 #include "CGetGoodsCount.h"
 
-typedef struct SaleBooksList {
+typedef struct SaleBooksInfo {
 	BookInfo book_info;
 	int count = 0;
-} SaleBooksList;
+} SaleBooksInfo;
 
 class CSaleBooksList
 {
@@ -33,14 +33,15 @@ public:
 	~CSaleBooksList();
 
 	void SetListCtrl(CListCtrl* p_list_ctrl);
-
+	
 	void UpdateList(void);
 
+	void AddSaleBook(SaleBooksInfo sale_book_info);
 private:
 
 	boost::mutex mutex_list_ctrl;
 	CListCtrl* m_p_list_ctrl;
 
-	std::deque<SaleBooksList> m_sale_books;
+	std::deque<SaleBooksInfo> m_sale_books;
 };
 
