@@ -100,11 +100,10 @@ void CMyBooksList::UpdateList(int min_count)
 			bookinfolist.book_info = bookinfo;
 
 			//Book정보의 isbn을 이용하여 입/출고 count를 이용하여 재고량 확인
-			//입고량
-			CDataBaseBookInHistory cls_db_book_in_history;
-			int book_in_count = cls_db_book_in_history.GetBookCount(bookinfolist.book_info.isbn);
+			CGetGoodsCount cls_get_goods_count;
+			int goods_count = cls_get_goods_count.GetCount(bookinfolist.book_info.isbn); //cls_db_book_in_history.GetBookCount(str_isbn_);
 
-			bookinfolist.count = book_in_count;
+			bookinfolist.count = goods_count;
 
 			m_mybook.push_back(bookinfolist);
 		}

@@ -19,6 +19,7 @@
 #include "CMyTime.h"
 #include "CDataBaseBookInfo.h"
 #include "CDataBaseBookInHistory.h"
+#include "CGetGoodsCount.h"
 
 typedef struct BookInfoList {
 	BookInfo book_info;
