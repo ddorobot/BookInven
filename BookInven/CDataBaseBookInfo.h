@@ -33,6 +33,7 @@ public:
 	void AddBookInfo(const BookInfo bookinfo);
 	DB_BookInfo GetInfo(int index=0);
 	std::vector<BookInfo> GetAllInfo(void);
+	std::vector<BookInfo> GetAllInfoOnlyOne(void);		//isbn의 중복이 있더라도 최신의 1개만 가지고 온다. ;
 	void Print(void);
 
 private:

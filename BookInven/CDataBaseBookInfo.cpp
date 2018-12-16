@@ -253,6 +253,47 @@ std::vector<BookInfo> CDataBaseBookInfo::GetAllInfo(void)
 	return retBookInfo;
 }
 
+std::vector<BookInfo> CDataBaseBookInfo::GetAllInfoOnlyOne(void)		//isbn의 중복이 있더라도 최신의 1개만 가지고 온다.
+{
+	std::vector<BookInfo> retBookInfo;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_BOOK_INFO), std::string(TABLE_DATA_BOOK_INFO));
+
+	if (check_db)
+	{
+		char* pErr, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		//같은 정보가 있는지 확인
+		std::string sql_command = "SELECT DISTINCT isbn FROM " + std::string(TABLE_NAME_BOOK_INFO) + " ORDER BY idx DESC";		//가장 최근의 정보를 얻어옴.
+
+		std::vector<DB_BookInfo> vec_bookinfo;
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), sql_callback_get_bookinfo, &vec_bookinfo, &pErr);
+
+		if (nResult)
+		{
+			sqlite3_free(&pErr);
+		}
+		else
+		{
+			int bookinfo_sizse = vec_bookinfo.size();
+
+			for (int i = 0; i < bookinfo_sizse; i++)
+			{
+				retBookInfo.push_back(vec_bookinfo[i].book_info);
+			}
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+
+	return retBookInfo;
+}
+
 DB_BookInfo CDataBaseBookInfo::GetInfo(int index)
 {
 	DB_BookInfo retBookInfo;

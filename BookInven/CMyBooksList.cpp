@@ -85,25 +85,29 @@ void CMyBooksList::UpdateList(int min_count)
 	m_mybook.clear();
 
 	CDataBaseBookInfo cls_db_book_info;
-	std::vector<BookInfo> vec_book_info = cls_db_book_info.GetAllInfo();
+	std::vector<BookInfo> vec_book_info = cls_db_book_info.GetAllInfoOnlyOne();
 
 	int book_info_size = vec_book_info.size();
 
 	for (int i = 0; i < book_info_size; i++)
 	{
-		BookInfoList bookinfolist;
+		BookInfo bookinfo;
+		if (cls_db_book_info.GetBookInfo(vec_book_info[i].isbn, &bookinfo))
+		{
+			BookInfoList bookinfolist;
 
-		//Book정보 얻기
-		bookinfolist.book_info = vec_book_info[i];
+			//Book정보 얻기
+			bookinfolist.book_info = bookinfo;
 
-		//Book정보의 isbn을 이용하여 입/출고 count를 이용하여 재고량 확인
-		//입고량
-		CDataBaseBookInHistory cls_db_book_in_history; 
-		int book_in_count = cls_db_book_in_history.GetBookCount(bookinfolist.book_info.isbn);
+			//Book정보의 isbn을 이용하여 입/출고 count를 이용하여 재고량 확인
+			//입고량
+			CDataBaseBookInHistory cls_db_book_in_history;
+			int book_in_count = cls_db_book_in_history.GetBookCount(bookinfolist.book_info.isbn);
 
-		bookinfolist.count = book_in_count;
+			bookinfolist.count = book_in_count;
 
-		m_mybook.push_back(bookinfolist);
+			m_mybook.push_back(bookinfolist);
+		}
 	}
 #if 0
 	CDataBaseBookInHistory cls_db_bookin_history;
@@ -223,4 +227,10 @@ void CMyBooksList::UpdateList(int min_count)
 	m_p_list_ctrl->Invalidate(TRUE);
 
 	//mutex_candidate.unlock();
+}
+
+void CMyBooksList::AddBookInfoToDB(const BookInfo bookinfo)
+{
+	CDataBaseBookInfo cls_db_book_info;
+	cls_db_book_info.AddBookInfo(bookinfo);
 }
