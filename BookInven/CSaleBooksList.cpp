@@ -13,8 +13,8 @@ CSaleBooksList::CSaleBooksList(CListCtrl* p_list_ctrl) :
 	// 타이틀 삽입
 	int list_index = 0;
 	m_p_list_ctrl->InsertColumn(list_index++, _T(""), LVCFMT_CENTER, 20, -1);
-	m_p_list_ctrl->InsertColumn(list_index++, _T("수량"), LVCFMT_CENTER, 50, -1);
-	m_p_list_ctrl->InsertColumn(list_index++, _T("가격"), LVCFMT_CENTER, 100, -1);
+	m_p_list_ctrl->InsertColumn(list_index++, _T("수량"), LVCFMT_CENTER, 35, -1);
+	m_p_list_ctrl->InsertColumn(list_index++, _T("가격"), LVCFMT_CENTER, 60, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("이름"), LVCFMT_CENTER, 150, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("저자"), LVCFMT_CENTER, 100, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("CODE"), LVCFMT_CENTER, 110, -1);
@@ -74,11 +74,11 @@ void CSaleBooksList::UpdateList(void)
 
 		//isbn
 		int list_index = 1;
-		CString str_isbn = m_p_list_ctrl->GetItemText(i, list_index++);
-		CString str_name = m_p_list_ctrl->GetItemText(i, list_index++);
-		CString str_author = m_p_list_ctrl->GetItemText(i, list_index++);
 		CString str_count = m_p_list_ctrl->GetItemText(i, list_index++);
 		CString str_price = m_p_list_ctrl->GetItemText(i, list_index++);
+		CString str_name = m_p_list_ctrl->GetItemText(i, list_index++);
+		CString str_author = m_p_list_ctrl->GetItemText(i, list_index++);
+		CString str_isbn = m_p_list_ctrl->GetItemText(i, list_index++);
 
 		if (i < book_sale_size)
 		{
@@ -96,7 +96,7 @@ void CSaleBooksList::UpdateList(void)
 			}
 			list_index++;
 
-			int price = 0;
+			int price = book_info.price * book_count;
 			if (std::string(str_price) != std::to_string(price))
 			{
 				cstr_data.Format(_T("%d"), price);
@@ -142,8 +142,13 @@ void CSaleBooksList::UpdateList(void)
 			CString cstr_data;
 			m_p_list_ctrl->InsertItem(index, "");
 
-			//code
-			cstr_data.Format(_T(""), book_info.isbn.c_str());
+			//수량
+			cstr_data.Format(_T("%d"), book_count);
+			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+
+			//가격
+			int price = m_sale_books[index].book_info.price * book_count ;
+			cstr_data.Format(_T("%d"), price);
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//이름
@@ -154,13 +159,8 @@ void CSaleBooksList::UpdateList(void)
 			cstr_data.Format(_T("%s"), book_info.author.c_str());
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
-			//수량
-			cstr_data.Format(_T("%d"), book_count);
-			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
-
-			//가격
-			int price = 0;
-			cstr_data.Format(_T("%d"), price);
+			//code
+			cstr_data.Format(_T("%s"), book_info.isbn.c_str());
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 		}
 	}

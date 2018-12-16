@@ -18,7 +18,10 @@ bool CCheckString::CheckString(const std::string str_data)
 	//name
 	std::string str_check = str_data;
 	int str_len = str_check.length();
-	int   ch;
+
+	if (str_check.empty() || str_len <= 0) return check_data;
+
+	int   ch=0;
 	for (int ndx = 0; ndx < str_len; ndx++)
 	{
 		ch = str_check.at(ndx);

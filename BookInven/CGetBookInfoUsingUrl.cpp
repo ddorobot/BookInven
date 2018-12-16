@@ -294,15 +294,19 @@ int CGetBookInfoUsingUrl::GetBookInfo(const std::string isbn, BookInfo* bookinfo
 
 	if (bookinfo != NULL)
 	{
-		bookinfo->isbn = isbn;
-		bookinfo->name = m_book_title;
-		bookinfo->author = m_book_author;
-		bookinfo->price = std::stoi(m_book_price);
-		bookinfo->publisher = m_book_publisher;
-		bookinfo->publish_date = m_book_publish_date;
-		bookinfo->title_url = m_book_title_url;
+		if (!isbn.empty() &&
+			!m_book_title.empty())
+		{
+			bookinfo->isbn = isbn;
+			bookinfo->name = m_book_title;
+			bookinfo->author = m_book_author;
+			bookinfo->price = std::stoi(m_book_price);
+			bookinfo->publisher = m_book_publisher;
+			bookinfo->publish_date = m_book_publish_date;
+			bookinfo->title_url = m_book_title_url;
 
-		ret = 1;
+			ret = 1;
+		}
 	}
 
 	return ret;

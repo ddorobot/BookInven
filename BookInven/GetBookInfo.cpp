@@ -74,6 +74,8 @@ BookInfo GetBookInfo::GetInfo(const std::string isbn)
 { 
 	BookInfo info; 
 
+	if (isbn.empty()) return info;
+
 	//DB에 정보가 있는지 확인
 	int ret = m_cls_get_bookinfo_using_db.GetBookInfo(isbn, &info);
 

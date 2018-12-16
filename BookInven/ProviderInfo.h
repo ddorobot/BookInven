@@ -28,7 +28,7 @@ enum ReceiptAngle
 
 typedef struct ProviderInfoBase {
 	int idx = -1;
-	std::string name = "-";
+	std::string name = "";
 	std::string lic = "";
 } ProviderInfoBase;
 
