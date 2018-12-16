@@ -37,6 +37,8 @@ public:
 
 	BookInfo GetBookInfoInList(const int index);
 	int GetBookInfoIndexInList(const int list_index);
+	void ChangeBookCoverPath(const int list_index, const std::string path);
+	BookInfo GetBookInfoFromDB(const int index);
 
 private:
 

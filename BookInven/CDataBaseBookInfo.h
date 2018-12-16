@@ -31,7 +31,7 @@ public:
 	int GetBookInfo(const std::string isbn, BookInfo *bookinfo);
 	int GetCount(const std::string isbn);
 	void AddBookInfo(const BookInfo bookinfo);
-	DB_BookInfo GetLastInfo(void);
+	DB_BookInfo GetInfo(int index=0);
 	std::vector<BookInfo> GetAllInfo(void);
 	void Print(void);
 

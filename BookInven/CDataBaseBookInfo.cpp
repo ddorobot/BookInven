@@ -253,7 +253,7 @@ std::vector<BookInfo> CDataBaseBookInfo::GetAllInfo(void)
 	return retBookInfo;
 }
 
-DB_BookInfo CDataBaseBookInfo::GetLastInfo(void)
+DB_BookInfo CDataBaseBookInfo::GetInfo(int index)
 {
 	DB_BookInfo retBookInfo;
 
@@ -266,8 +266,14 @@ DB_BookInfo CDataBaseBookInfo::GetLastInfo(void)
 		char* pErr, *pDBFile = DB_PATH;
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
+		std::string sql_index_option = "";
+		if (index >= 0)
+		{
+			sql_index_option = " WHERE idx=" + std::to_string(index) ;
+		}
+
 		//같은 정보가 있는지 확인
-		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_INFO) + " ORDER BY idx DESC LIMIT 1";		//가장 최근의 정보를 얻어옴.
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_INFO) + sql_index_option + " ORDER BY idx DESC LIMIT 1";		//가장 최근의 정보를 얻어옴.
 
 		std::vector<DB_BookInfo> vec_bookinfo;
 
@@ -295,7 +301,7 @@ DB_BookInfo CDataBaseBookInfo::GetLastInfo(void)
 bool CDataBaseBookInfo::CheckDataSameValue(const BookInfo bookinfo)
 {
 	//가장 최신의 데이타와 현재 입력 데이타가 같은 데이타 인지 체크
-	DB_BookInfo bookinfo_db = GetLastInfo();
+	DB_BookInfo bookinfo_db = GetInfo();
 
 	if (bookinfo.isbn == bookinfo_db.book_info.isbn &&
 		bookinfo.name == bookinfo_db.book_info.name &&

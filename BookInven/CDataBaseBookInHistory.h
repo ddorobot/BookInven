@@ -29,10 +29,10 @@ typedef struct DB_BookInHistory {
 	int book_cost = 0;
 	int book_count = 0;
 	int provider_base_info_idx = -1;
-	int provie_type = -1;
-	int provie_rate = 0.0;
-	int provie_cost = 0.0;
-	int sale_cost = 0.0;
+	int provie_type = -1; 
+	float provie_rate = 0.0;
+	int provie_cost = 0;
+	int sale_cost = 0;
 	std::string reg_date = "";
 
 } DB_BookInHistory;

@@ -46,9 +46,9 @@ BookInfo CMyBooksList::GetBookInfoInList(const int index)
 int CMyBooksList::GetBookInfoIndexInList(const int list_index)
 {
 	int ret = -1;
-	int provider_size = m_mybook.size();
+	int bookinfo_size = m_mybook.size();
 
-	if (list_index >= 0 && list_index < provider_size)
+	if (list_index >= 0 && list_index < bookinfo_size)
 	{
 		ret = m_mybook[list_index].book_info.idx;
 	}
@@ -56,7 +56,24 @@ int CMyBooksList::GetBookInfoIndexInList(const int list_index)
 	return ret;
 }
 
+BookInfo CMyBooksList::GetBookInfoFromDB(const int index)
+{
+	CDataBaseBookInfo cls_db_book_info;
+	DB_BookInfo db_book_info = cls_db_book_info.GetInfo(index);
+	BookInfo book_info = db_book_info.book_info;
 
+	return book_info;
+}
+
+void CMyBooksList::ChangeBookCoverPath(const int list_index, const std::string path)
+{
+	int bookinfo_size = m_mybook.size();
+
+	if (list_index >= 0 && list_index < bookinfo_size)
+	{
+		m_mybook[list_index].book_info.title_url = path;
+	}
+}
 
 void CMyBooksList::UpdateList(int min_count)
 {
