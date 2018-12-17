@@ -211,6 +211,7 @@
     <ClInclude Include="CGetGoodsCount.h" />
     <ClInclude Include="CImageLoadUrl.h" />
     <ClInclude Include="CLoadBitmap.h" />
+    <ClInclude Include="CMatToBitmap.h" />
     <ClInclude Include="CMyBooksList.h" />
     <ClInclude Include="CMyTime.h" />
     <ClInclude Include="CProviderInfoList.h" />
@@ -247,6 +248,7 @@
     <ClCompile Include="CGetGoodsCount.cpp" />
     <ClCompile Include="CImageLoadUrl.cpp" />
     <ClCompile Include="CLoadBitmap.cpp" />
+    <ClCompile Include="CMatToBitmap.cpp" />
     <ClCompile Include="CMyBooksList.cpp" />
     <ClCompile Include="CMyTime.cpp" />
     <ClCompile Include="CProviderInfoList.cpp" />
