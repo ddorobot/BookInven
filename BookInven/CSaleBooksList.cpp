@@ -24,6 +24,16 @@ CSaleBooksList::CSaleBooksList(CListCtrl* p_list_ctrl) :
 
 CSaleBooksList::~CSaleBooksList()
 {
+	int book_sale_size = m_sale_books.size();
+
+	for (int i = 0; i < book_sale_size; i++)
+	{
+		if (m_sale_books[i].pBmp != NULL)
+		{
+			delete m_sale_books[i].pBmp;
+			m_sale_books[i].pBmp = NULL;
+		}
+	}
 }
 
 void CSaleBooksList::SetListCtrl(CListCtrl* p_list_ctrl)
@@ -223,6 +233,19 @@ void CSaleBooksList::AddSaleBook(SaleBooksInfo sale_book_info)
 	else
 	{
 		m_sale_books.push_back(sale_book_info);
+
+		int size = m_sale_books.size();
+		int last = size - 1;
+
+		if (last >= 0)
+		{
+			CMatToBitmap cls_mat_to_bitmap;
+			cv::Mat image = cv::imread(m_sale_books[last].book_info.title_url);
+
+			CBitmap* pBmp = cls_mat_to_bitmap.Cvt(image);
+
+			m_sale_books[last].pBmp = pBmp;
+		}
 	}
 }
 
@@ -257,6 +280,13 @@ void CSaleBooksList::DelCheckedItem(void)
 
 			if (del_index == iter_count)
 			{
+				//Release bitmap
+				if (it->pBmp != NULL)
+				{
+					delete it->pBmp;
+					it->pBmp = NULL;
+				}
+
 				it = m_sale_books.erase(it);
 
 				deque_del_index.pop_front();

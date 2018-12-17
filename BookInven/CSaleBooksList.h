@@ -21,8 +21,11 @@
 #include "CDataBaseBookInHistory.h"
 #include "CGetGoodsCount.h"
 
+#include "CMatToBitmap.h"
+
 typedef struct SaleBooksInfo {
 	BookInfo book_info;
+	CBitmap* pBmp = NULL;
 	int count = 0;
 } SaleBooksInfo;
 
