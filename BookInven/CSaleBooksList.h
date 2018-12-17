@@ -23,6 +23,8 @@
 
 #include "CMatToBitmap.h"
 
+#include"resource.h"
+
 typedef struct SaleBooksInfo {
 	BookInfo book_info;
 	CBitmap* pBmp = NULL;
@@ -50,5 +52,7 @@ private:
 	CListCtrl* m_p_list_ctrl;
 
 	std::deque<SaleBooksInfo> m_sale_books;
+
+	CImageList m_image_list;
 };
 

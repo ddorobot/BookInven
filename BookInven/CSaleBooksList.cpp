@@ -5,12 +5,21 @@ CSaleBooksList::CSaleBooksList(CListCtrl* p_list_ctrl) :
 {
 	SetListCtrl(p_list_ctrl);
 
+	//image list
+	m_image_list.Create(150, 200, ILC_COLOR24, 8, 1);
+
+	//m_p_list_ctrl->SetExtendedStyle(LVS_EX_GRIDLINES | LVS_EX_FULLROWSELECT | LVS_EX_SUBITEMIMAGES);
+
+	m_p_list_ctrl->SetImageList(&m_image_list, LVSIL_NORMAL);
+	//m_p_list_ctrl->Attach(&m_image_list);
+
+#if 0
 	//m_list_candidate
 	//Initialize list
 	m_p_list_ctrl->DeleteAllItems();
 	// 리스트 스타일 설정
 	m_p_list_ctrl->SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES | LVS_EX_CHECKBOXES);
-	// 타이틀 삽입
+	// 타이틀 삽입 
 	int list_index = 0;
 	m_p_list_ctrl->InsertColumn(list_index++, _T(""), LVCFMT_CENTER, 20, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("수량"), LVCFMT_CENTER, 35, -1);
@@ -18,7 +27,7 @@ CSaleBooksList::CSaleBooksList(CListCtrl* p_list_ctrl) :
 	m_p_list_ctrl->InsertColumn(list_index++, _T("이름"), LVCFMT_CENTER, 150, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("저자"), LVCFMT_CENTER, 100, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("CODE"), LVCFMT_CENTER, 110, -1);
-	
+#endif
 }
 
 
@@ -47,6 +56,7 @@ void CSaleBooksList::UpdateList(void)
 {
 	if (m_p_list_ctrl == NULL) return;
 
+#if 0
 	//mutex_candidate.lock();
 
 	//-----
@@ -183,6 +193,7 @@ void CSaleBooksList::UpdateList(void)
 	}
 
 	m_p_list_ctrl->Invalidate(TRUE);
+#endif
 
 	//mutex_candidate.unlock();
 }
@@ -209,6 +220,8 @@ int CSaleBooksList::GetCountInListInfo(const std::string isbn)
 
 void CSaleBooksList::AddSaleBook(SaleBooksInfo sale_book_info)
 {
+	if (m_p_list_ctrl == NULL) return;
+
 	//같은 정보가 있는지 확인
 	//m_sale_books
 	//find
@@ -244,7 +257,38 @@ void CSaleBooksList::AddSaleBook(SaleBooksInfo sale_book_info)
 
 			CBitmap* pBmp = cls_mat_to_bitmap.Cvt(image);
 
+			if (pBmp == NULL)
+			{
+				pBmp = new CBitmap;
+				pBmp->LoadBitmap(IDB_BITMAP_BOOK);
+			}
+
 			m_sale_books[last].pBmp = pBmp;
+
+#if 0
+			if (m_sale_books[last].pBmp == NULL)
+			{
+				CBitmap bm;
+				bm.LoadBitmap(IDB_BITMAP_BOOK);
+
+				m_image_list.Add(&bm, RGB(0, 0, 0));
+			}
+			else
+#endif
+			{
+				m_image_list.Add(m_sale_books[last].pBmp, RGB(0, 0, 0));
+			}
+
+			CString str;
+			str.Format(_T("%s"), m_sale_books[last].book_info.name.c_str());
+
+			LVITEM lvItem;
+			lvItem.iItem = 0;
+			lvItem.iImage = last;    // image index that refers to your image list
+			lvItem.pszText = str.GetBuffer();
+			lvItem.mask = LVIF_TEXT | LVIF_IMAGE;
+
+			m_p_list_ctrl->InsertItem(&lvItem);
 		}
 	}
 }
