@@ -260,7 +260,7 @@ void CSaleBooksList::AddSaleBook(SaleBooksInfo sale_book_info)
 			if (pBmp == NULL)
 			{
 				pBmp = new CBitmap;
-				pBmp->LoadBitmap(IDB_BITMAP_BOOK);
+				pBmp->LoadBitmap(IDB_BITMAP_BOOK2);
 			}
 
 			m_sale_books[last].pBmp = pBmp;

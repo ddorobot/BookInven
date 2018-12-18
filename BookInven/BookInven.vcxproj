@@ -271,6 +271,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\image\book.bmp" />
+    <Image Include="..\image\book2.bmp" />
     <Image Include="res\BookInven.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
