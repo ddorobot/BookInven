@@ -61,9 +61,14 @@ void CGetBookInfoUsingUrl::endElement(void *userData, const XML_Char *name)
 			char * data = NULL;
 			data = g_p_me->UTF8toANSI(state->characters.memory);
 
-			g_p_me->m_book_title = data;
+			if (data != NULL)
+			{
+				g_p_me->m_book_title = data;
 
-			if (data != NULL) delete[] data;
+				delete[] data;
+
+				data = NULL;
+			}
 		}
 		else if (tag_name == "AUTHOR")
 		{
@@ -71,9 +76,14 @@ void CGetBookInfoUsingUrl::endElement(void *userData, const XML_Char *name)
 			char * data = NULL;
 			data = g_p_me->UTF8toANSI(state->characters.memory);
 
-			g_p_me->m_book_author = data;
+			if (data != NULL)
+			{
+				g_p_me->m_book_author = data;
 
-			if (data != NULL) delete[] data;
+				delete[] data;
+
+				data = NULL;
+			}
 		}
 		else if (tag_name == "PUBLISHER")
 		{
@@ -81,9 +91,14 @@ void CGetBookInfoUsingUrl::endElement(void *userData, const XML_Char *name)
 			char * data = NULL;
 			data = g_p_me->UTF8toANSI(state->characters.memory);
 
-			g_p_me->m_book_publisher = data;
+			if (data != NULL)
+			{
+				g_p_me->m_book_publisher = data;
 
-			if (data != NULL) delete[] data;
+				delete[] data;
+
+				data = NULL;
+			}
 		}
 		else if (tag_name == "PRE_PRICE")
 		{
@@ -91,18 +106,28 @@ void CGetBookInfoUsingUrl::endElement(void *userData, const XML_Char *name)
 			char * data = NULL;
 			data = g_p_me->UTF8toANSI(g_p_me->UTF8toANSI(state->characters.memory));
 
-			g_p_me->m_book_price = data;
+			if (data != NULL)
+			{
+				g_p_me->m_book_price = data;
 
-			if (data != NULL) delete[] data;
+				delete[] data;
+
+				data = NULL;
+			}
 		}
 		else if (tag_name == "PUBLISH_PREDATE")
 		{
 			char * data = NULL;
 			data = g_p_me->UTF8toANSI(g_p_me->UTF8toANSI(state->characters.memory));
 
-			g_p_me->m_book_publish_date = data;
+			if (data != NULL)
+			{
+				g_p_me->m_book_publish_date = data;
 
-			if (data != NULL) delete[] data;
+				delete[] data;
+
+				data = NULL;
+			}
 		}
 		else if (tag_name == "TITLE_URL")
 		{
