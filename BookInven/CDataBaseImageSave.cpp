@@ -68,7 +68,7 @@ std::string CDataBaseImageSave::Save(cv::Mat image, const std::string name)
 		cv::Mat save_image;
 		if( image.cols != BOOK_COVER_WIDTH || image.rows != BOOK_COVER_HEIGHT )
 		{ 
-			cv::resize(image, save_image, cv::Size());
+			cv::resize(image, save_image, cv::Size(BOOK_COVER_WIDTH, BOOK_COVER_HEIGHT));
 		}
 		else
 		{
