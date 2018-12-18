@@ -224,12 +224,22 @@ int CSaleBooksList::GetCountInListInfo(const std::string isbn)
 
 	int exist_same_data_index = -1;
 
-	for (int i = 0; i < sale_size; i++)
+	if (isbn.empty())
 	{
-		if (isbn == m_sale_books[i].book_info.isbn)
+		for (int i = 0; i < sale_size; i++)
 		{
-			ret = m_sale_books[i].count;
-			break;
+			ret += m_sale_books[i].count;
+		}
+	}
+	else
+	{
+		for (int i = 0; i < sale_size; i++)
+		{
+			if (isbn == m_sale_books[i].book_info.isbn)
+			{
+				ret = m_sale_books[i].count;
+				break;
+			}
 		}
 	}
 

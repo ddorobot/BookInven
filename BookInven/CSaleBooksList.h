@@ -43,7 +43,7 @@ public:
 
 	void AddSaleBook(SaleBooksInfo sale_book_info);
 	
-	int GetCountInListInfo(const std::string isbn);
+	int GetCountInListInfo(const std::string isbn = "");
 
 	void DelCheckedItem(void);
 
