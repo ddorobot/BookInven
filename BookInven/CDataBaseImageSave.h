@@ -17,6 +17,8 @@
 #include "opencv2/opencv.hpp"
 #include "use_opencv_lib.h"
 
+#include "BookInfo.h"
+
 #define BASE_SAVE_PATH	"./data/"
 #define BASE_SAVE_FOLDER	"image/"
 

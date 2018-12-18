@@ -65,7 +65,17 @@ std::string CDataBaseImageSave::Save(cv::Mat image, const std::string name)
 
 	if (b_image_file_save)
 	{
-		cv::imwrite(image_full_path, image);
+		cv::Mat save_image;
+		if( image.cols != BOOK_COVER_WIDTH || image.rows != BOOK_COVER_HEIGHT )
+		{ 
+			cv::resize(image, save_image, cv::Size());
+		}
+		else
+		{
+			save_image = image;
+		}
+
+		cv::imwrite(image_full_path, save_image);
 	}
 
 	return image_full_path;
