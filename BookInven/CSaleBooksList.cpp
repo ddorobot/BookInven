@@ -56,6 +56,24 @@ void CSaleBooksList::UpdateList(void)
 {
 	if (m_p_list_ctrl == NULL) return;
 
+
+	int count = m_p_list_ctrl->GetItemCount();
+
+	int book_sale_size = m_sale_books.size();
+
+	for (int i = 0; i < count; i++)
+	{
+		CString szText = m_p_list_ctrl->GetItemText(i, 0);
+
+		CString str;
+		str.Format(_T("%s\n가격:%d x 수량:%d = %d원"), m_sale_books[i].book_info.name.c_str(), m_sale_books[i].book_info.price, m_sale_books[i].count, m_sale_books[i].book_info.price*m_sale_books[i].count);
+
+		if (szText != str)
+		{
+			m_p_list_ctrl->SetItemText(i, 0, str);
+		}
+	}
+
 #if 0
 	//mutex_candidate.lock();
 
