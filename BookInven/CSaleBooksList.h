@@ -46,6 +46,9 @@ public:
 	int GetCountInListInfo(const std::string isbn);
 
 	void DelCheckedItem(void);
+
+	int GetTotalPrice(void);
+
 private:
 
 	boost::mutex mutex_list_ctrl;

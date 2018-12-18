@@ -280,7 +280,7 @@ void CSaleBooksList::AddSaleBook(SaleBooksInfo sale_book_info)
 			}
 
 			CString str;
-			str.Format(_T("%s"), m_sale_books[last].book_info.name.c_str());
+			str.Format(_T("%s\n가격:%d x 수량:%d = %d원"), m_sale_books[last].book_info.name.c_str(), m_sale_books[last].book_info.price, m_sale_books[last].count, m_sale_books[last].book_info.price*m_sale_books[last].count);
 
 			LVITEM lvItem;
 			lvItem.iItem = 0;
@@ -350,4 +350,19 @@ void CSaleBooksList::DelCheckedItem(void)
 			m_p_list_ctrl->SetCheck(i, FALSE);
 		}
 	}
+}
+
+int CSaleBooksList::GetTotalPrice(void)
+{
+	int price = 0;
+
+	int sale_size = m_sale_books.size();
+	for (int i = 0; i < sale_size; i++)
+	{
+		int cost = m_sale_books[i].count * m_sale_books[i].book_info.price;
+
+		price += cost;
+	}
+
+	return price;
 }
