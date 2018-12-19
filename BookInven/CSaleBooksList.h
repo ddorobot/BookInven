@@ -47,6 +47,7 @@ public:
 	int GetCountInListInfo(const std::string isbn = "");
 
 	void DelCheckedItem(void);
+	void DelAllItem(void);
 
 	int GetTotalPrice(void);
 
@@ -60,5 +61,7 @@ private:
 	CImageList m_image_list;
 
 	CBitmap* m_p_book_bmp;
+
+	void ResetImageList(void);
 };
 

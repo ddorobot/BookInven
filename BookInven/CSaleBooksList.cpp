@@ -352,6 +352,47 @@ void CSaleBooksList::DelCheckedItem(void)
 		UpdateList();
 	}
 #endif
+
+	if (m_sale_books.size() == 0)
+	{
+		ResetImageList();
+	}
+}
+
+void CSaleBooksList::ResetImageList(void)
+{
+	int image_count = m_image_list.GetImageCount();
+
+	for (int i = 1; i < image_count; i++)
+	{
+		m_image_list.Remove(i);
+	}
+}
+
+void CSaleBooksList::DelAllItem(void)
+{
+	if (m_p_list_ctrl != NULL)
+	{
+		for (auto it = m_sale_books.begin(); it != m_sale_books.end(); )
+		{
+			//Release bitmap
+			if (it->pBmp != NULL)
+			{
+				delete it->pBmp;
+				it->pBmp = NULL;
+			}
+
+			it = m_sale_books.erase(it);
+
+		}
+
+		UpdateList();
+	}
+
+	if (m_sale_books.size() == 0)
+	{
+		ResetImageList();
+	}
 }
 
 int CSaleBooksList::GetTotalPrice(void)
