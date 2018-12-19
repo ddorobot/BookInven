@@ -369,6 +369,108 @@ void CSaleBooksList::ResetImageList(void)
 	}
 }
 
+void CSaleBooksList::PlusCheckedItem(void)
+{
+	if (m_p_list_ctrl != NULL)
+	{
+		int count = m_p_list_ctrl->GetItemCount();
+		const int candidate_size = m_sale_books.size();
+
+		for (int i = 0; i < count; i++)
+		{
+			// 체크상태 확인
+			if (m_p_list_ctrl->GetItemState(i, LVIS_SELECTED) == LVIS_SELECTED)
+			{
+				if (i < candidate_size)
+				{
+					CGetGoodsCount cls_get_goods_count;
+					int goods_count = cls_get_goods_count.GetCount(m_sale_books[i].book_info.isbn); //cls_db_book_in_history.GetBookCount(str_isbn_);
+					int goods_count_in_list = 0;
+					goods_count_in_list = GetCountInListInfo(m_sale_books[i].book_info.isbn);
+
+					goods_count -= goods_count_in_list;
+
+					if (goods_count <= 0)
+					{
+						CString str_info;
+						str_info.Format(_T("[%s]\n판매 가능한 수량이 없습니다."), m_sale_books[i].book_info.name.c_str());
+
+						printf("%s\n", str_info.GetBuffer());
+					}
+					else
+					{
+						m_sale_books[i].count++;
+					}
+
+				}
+			}
+		}
+
+		UpdateList();
+	}
+}
+
+void CSaleBooksList::MinusCheckedItem(void)
+{
+	if (m_p_list_ctrl != NULL)
+	{
+		int count = m_p_list_ctrl->GetItemCount();
+		const int candidate_size = m_sale_books.size();
+
+		std::deque<int> deque_del_index;
+		for (int i = 0; i < count; i++)
+		{
+			// 체크상태 확인
+			if (m_p_list_ctrl->GetItemState(i, LVIS_SELECTED) == LVIS_SELECTED)
+			{
+				if (i < candidate_size)
+				{
+					m_sale_books[i].count--;
+
+					if (m_sale_books[i].count <= 0)
+					{
+						m_sale_books[i].count = 0;
+
+						deque_del_index.push_back(i);
+					}
+				}
+			}
+		}
+
+		//수량이 0인 상품은 삭제
+		int iter_count = 0;
+		for (auto it = m_sale_books.begin(); it != m_sale_books.end(); )
+		{
+			int deque_del_size = deque_del_index.size();
+			if (deque_del_size <= 0) break;
+
+			int del_index = deque_del_index[0];
+
+			if (del_index == iter_count)
+			{
+				//Release bitmap
+				if (it->pBmp != NULL)
+				{
+					delete it->pBmp;
+					it->pBmp = NULL;
+				}
+
+				it = m_sale_books.erase(it);
+
+				deque_del_index.pop_front();
+			}
+			else
+			{
+				++it;
+			}
+
+			iter_count++;
+		}
+
+		UpdateList();
+	}
+}
+
 void CSaleBooksList::DelAllItem(void)
 {
 	if (m_p_list_ctrl != NULL)

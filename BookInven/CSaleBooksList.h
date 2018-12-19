@@ -51,6 +51,9 @@ public:
 
 	int GetTotalPrice(void);
 
+	void PlusCheckedItem(void);
+	void MinusCheckedItem(void);
+
 private:
 
 	boost::mutex mutex_list_ctrl;
