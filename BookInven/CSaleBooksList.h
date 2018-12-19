@@ -28,6 +28,7 @@
 typedef struct SaleBooksInfo {
 	BookInfo book_info;
 	CBitmap* pBmp = NULL;
+	int idxImageList = -1;
 	int count = 0;
 } SaleBooksInfo;
 
@@ -57,5 +58,7 @@ private:
 	std::deque<SaleBooksInfo> m_sale_books;
 
 	CImageList m_image_list;
+
+	CBitmap* m_p_book_bmp;
 };
 
