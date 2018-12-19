@@ -198,7 +198,7 @@ void CSaleBooksList::UpdateList(void)
 		for (int index = book_sale_size; index < count; index++)
 		{
 			//m_image_list.Remove(index);
-			m_p_list_ctrl->DeleteItem(index);
+			m_p_list_ctrl->DeleteItem(book_sale_size);
 		}
 	}
 
