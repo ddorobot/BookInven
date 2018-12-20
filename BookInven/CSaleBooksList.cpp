@@ -268,9 +268,28 @@ void CSaleBooksList::AddSaleBook(SaleBooksInfo sale_book_info)
 	UpdateList();
 }
 
-int CSaleBooksList::Pay(const bool cash)
+int CSaleBooksList::Pay(const int discount, const bool cash)
 {
 	int ret = 0;
+
+	//DB ¿˙¿Â
+	BookSaleInfo book_sale_info;
+
+	book_sale_info.discount = discount;
+	book_sale_info.cash = cash;
+
+	int sale_size = m_sale_books.size();
+	for (int i = 0; i < sale_size; i++)
+	{
+		SaleBooksInfo2 info2;
+		info2.book_info = m_sale_books[i].book_info;
+		info2.count = m_sale_books[i].count;
+
+		book_sale_info.vec_sale_books_info.push_back(info2);
+	}
+
+	CDataBaseBookSaleHistory cls_db_book_sale_history;
+	cls_db_book_sale_history.AddBookSaleInfo(book_sale_info);
 
 	return ret;
 }

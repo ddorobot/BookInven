@@ -16,6 +16,7 @@
 											'total_count' INTEGER, \
 											'discount' INTEGER, \
 											'sale_cost' INTEGER, \
+											'cash' BOOLEAN, \
 											'reg_date' TEXT"
 
 
@@ -24,14 +25,22 @@ typedef struct DB_BookSaleHistory {
 	std::string code = "";
 	int discount = 0;
 	int sale_cost = 0;
+	bool cash = false;
 	std::string reg_date = "";
 
 } DB_BookSaleHistory;
 
+typedef struct SaleBooksInfo2 {
+	BookInfo book_info;
+	int count = 0;
+} SaleBooksInfo2;
+
+
 typedef struct BookSaleInfo {
 	int idx = -1;
-	std::vector<SaleBooksInfo> vec_sale_books_info;
+	std::vector<SaleBooksInfo2> vec_sale_books_info;
 	int discount = 0;
+	bool cash = false;
 } BookSaleInfo;
 
 

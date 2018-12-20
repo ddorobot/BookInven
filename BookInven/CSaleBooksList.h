@@ -20,6 +20,7 @@
 #include "CDataBaseBookInfo.h"
 #include "CDataBaseBookInHistory.h"
 #include "CGetGoodsCount.h"
+#include "CDataBaseBookSaleHistory.h"
 
 #include "CMatToBitmap.h"
 
@@ -56,7 +57,7 @@ public:
 	void PlusCheckedItem(void);
 	void MinusCheckedItem(void);
 
-	int Pay(const bool cash=false);
+	int Pay(const int discount=0, const bool cash=false);
 
 private:
 
