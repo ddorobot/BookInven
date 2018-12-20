@@ -129,6 +129,9 @@
     <ClInclude Include="CMatToBitmap.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CDataBaseBookSaleHistory.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BookInven.cpp">
@@ -222,6 +225,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CMatToBitmap.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CDataBaseBookSaleHistory.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

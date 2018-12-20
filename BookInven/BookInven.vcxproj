@@ -197,6 +197,7 @@
     <ClInclude Include="CDataBase.h" />
     <ClInclude Include="CDataBaseBookInfo.h" />
     <ClInclude Include="CDataBaseBookInHistory.h" />
+    <ClInclude Include="CDataBaseBookSaleHistory.h" />
     <ClInclude Include="CDataBaseImageSave.h" />
     <ClInclude Include="CDataBaseProvider.h" />
     <ClInclude Include="CDataBaseProviderDetail.h" />
@@ -234,6 +235,7 @@
     <ClCompile Include="CDataBase.cpp" />
     <ClCompile Include="CDataBaseBookInfo.cpp" />
     <ClCompile Include="CDataBaseBookInHistory.cpp" />
+    <ClCompile Include="CDataBaseBookSaleHistory.cpp" />
     <ClCompile Include="CDataBaseImageSave.cpp" />
     <ClCompile Include="CDataBaseProvider.cpp" />
     <ClCompile Include="CDataBaseProviderDetail.cpp" />

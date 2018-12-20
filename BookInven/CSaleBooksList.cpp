@@ -268,6 +268,13 @@ void CSaleBooksList::AddSaleBook(SaleBooksInfo sale_book_info)
 	UpdateList();
 }
 
+int CSaleBooksList::Pay(const bool cash)
+{
+	int ret = 0;
+
+	return ret;
+}
+
 void CSaleBooksList::DelCheckedItem(void)
 {
 #if 0

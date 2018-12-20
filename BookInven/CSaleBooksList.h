@@ -56,6 +56,8 @@ public:
 	void PlusCheckedItem(void);
 	void MinusCheckedItem(void);
 
+	int Pay(const bool cash=false);
+
 private:
 
 	boost::mutex mutex_list_ctrl;
