@@ -11,6 +11,58 @@ CDataBaseBookSaleHistory::~CDataBaseBookSaleHistory()
 {
 }
 
+std::vector<BookSaleInfo> CDataBaseBookSaleHistory::GetInfo(const std::string str_date_start, const std::string str_date_end)
+{
+	std::vector<BookSaleInfo> rer_vec_book_sale_info;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_BOOK_SALE_HISTORY), std::string(TABLE_DATA_BOOK_SALE_HISTORY));
+
+	if (check_db)
+	{
+		char* pErr, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		std::string date_where_option = "";
+		if (!str_date_start.empty() && !str_date_end.empty())
+		{
+			date_where_option = "WHERE DATE(reg_date) BETWEEN DATE('" + str_date_start + "') AND DATE('" + str_date_end + "') ";		//가장 최근의 정보를 얻어옴.
+		}
+
+		//같은 정보가 있는지 확인
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_SALE_HISTORY) + " " + date_where_option + "ORDER BY idx DESC";		//가장 최근의 정보를 얻어옴.
+
+		std::vector<DB_BookSaleHistory> vec_history;
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), sql_callback_get_info, &vec_history, &pErr);
+
+		if (nResult)
+		{
+			sqlite3_free(&pErr);
+		}
+		else
+		{
+			int history_size = vec_history.size();
+
+			for (int i = 0; i < history_size; i++)
+			{
+				DB_BookSaleHistory db_history = vec_history[i];
+
+				BookSaleInfo sale_info;
+				sale_info.db_sale_book_info = db_history;
+
+				rer_vec_book_sale_info.push_back(sale_info);
+			}
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+
+	return rer_vec_book_sale_info;
+}
+
 //DB
 int CDataBaseBookSaleHistory::sql_callback_get_info(void *NotUsed, int argc, char **argv, char **azColName)
 {
@@ -36,7 +88,7 @@ int CDataBaseBookSaleHistory::sql_callback_get_info(void *NotUsed, int argc, cha
 			}
 			else if (name == "total_count")
 			{
-				sale_info.sale_cost = argv[i] ? std::stoi(argv[i]) : 0;
+				sale_info.count = argv[i] ? std::stoi(argv[i]) : 0;
 			}
 			else if (name == "sale_cost")
 			{
@@ -87,6 +139,8 @@ std::string CDataBaseBookSaleHistory::MakeCode(void)
 	std::string code = f.str();
 
 	//random char
+	srand(time(NULL));
+
 	const char alphanum[] =
 		"0123456789"
 		"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -113,7 +167,7 @@ int CDataBaseBookSaleHistory::AddBookSaleInfo(const BookSaleInfo sale_bookinfo)
 	//check data
 	if (check_db )
 	{
-		printf("BookInHistory Insert\n");
+		printf("BookSaleInfo Insert\n");
 
 		char* pErr, *pDBFile = DB_PATH;
 		int nResult = sqlite3_open(pDBFile, &pDB);
@@ -144,9 +198,9 @@ int CDataBaseBookSaleHistory::AddBookSaleInfo(const BookSaleInfo sale_bookinfo)
 		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_BOOK_SALE_HISTORY) + " (code, total_count, discount, sale_cost, cash, reg_date) VALUES (";
 		sql_command += "'" + sale_code + "', ";
 		sql_command += "'" + std::to_string(total_count) + "', ";
-		sql_command += "'" + std::to_string(sale_bookinfo.discount) + "', ";
+		sql_command += "'" + std::to_string(sale_bookinfo.db_sale_book_info.discount) + "', ";
 		sql_command += "'" + std::to_string(sale_cost) + "', ";
-		sql_command += "'" + std::to_string(sale_bookinfo.cash) + "', ";
+		sql_command += "'" + std::to_string(sale_bookinfo.db_sale_book_info.cash) + "', ";
 		sql_command += "datetime('now','localtime')";
 		sql_command += "); ";
 

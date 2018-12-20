@@ -23,6 +23,7 @@
 typedef struct DB_BookSaleHistory {
 	int idx=-1;
 	std::string code = "";
+	int count = 0;
 	int discount = 0;
 	int sale_cost = 0;
 	bool cash = false;
@@ -37,10 +38,8 @@ typedef struct SaleBooksInfo2 {
 
 
 typedef struct BookSaleInfo {
-	int idx = -1;
 	std::vector<SaleBooksInfo2> vec_sale_books_info;
-	int discount = 0;
-	bool cash = false;
+	DB_BookSaleHistory db_sale_book_info;
 } BookSaleInfo;
 
 
@@ -52,6 +51,7 @@ public:
 
 	//Book Info
 	int AddBookSaleInfo(const BookSaleInfo sale_bookinfo);
+	std::vector<BookSaleInfo> GetInfo(const std::string str_date_start, const std::string str_date_end);
 
 private:
 	static int sql_callback_get_info(void *NotUsed, int argc, char **argv, char **azColName);

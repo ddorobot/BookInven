@@ -275,8 +275,8 @@ int CSaleBooksList::Pay(const int discount, const bool cash)
 	//DB ¿˙¿Â
 	BookSaleInfo book_sale_info;
 
-	book_sale_info.discount = discount;
-	book_sale_info.cash = cash;
+	book_sale_info.db_sale_book_info.discount = discount;
+	book_sale_info.db_sale_book_info.cash = cash;
 
 	int sale_size = m_sale_books.size();
 	for (int i = 0; i < sale_size; i++)
@@ -289,7 +289,7 @@ int CSaleBooksList::Pay(const int discount, const bool cash)
 	}
 
 	CDataBaseBookSaleHistory cls_db_book_sale_history;
-	cls_db_book_sale_history.AddBookSaleInfo(book_sale_info);
+	ret = cls_db_book_sale_history.AddBookSaleInfo(book_sale_info);
 
 	return ret;
 }
