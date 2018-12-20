@@ -57,6 +57,36 @@ int CDataBaseBookSaleHistory::sql_callback_get_info(void *NotUsed, int argc, cha
 	return 0;
 }
 
+std::string CDataBaseBookSaleHistory::MakeCode(void)
+{
+	//날짜와 시간, 랜덤숫자을 조합
+	boost::posix_time::ptime now = boost::posix_time::second_clock::local_time();
+
+	//boost::format f = boost::format("%s-%02d-%02d %02d:%02d:%02d")
+	boost::format f = boost::format("%s%02d%02d%02d%02d%02d_")
+		% now.date().year_month_day().year
+		% now.date().year_month_day().month.as_number()
+		% now.date().year_month_day().day.as_number()
+		% now.time_of_day().hours()
+		% now.time_of_day().minutes()
+		% now.time_of_day().seconds();
+
+	std::string code = f.str();
+
+	//random char
+	const char alphanum[] =
+		"0123456789"
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+		"abcdefghijklmnopqrstuvwxyz";
+
+	const int random_str_size = 4;
+	for (int i = 0; i < random_str_size; ++i) {
+		code += alphanum[rand() % (sizeof(alphanum) - 1)];
+	}
+
+	return code;
+}
+
 //Set
 int CDataBaseBookSaleHistory::AddBookSaleInfo(const BookSaleInfo sale_bookinfo)
 {
@@ -86,9 +116,17 @@ int CDataBaseBookSaleHistory::AddBookSaleInfo(const BookSaleInfo sale_bookinfo)
 											'reg_date' TEXT"
 */
 
-		std::string sale_code = "codedfdfsdfsadfsadf";
-		int sale_cost = 100;
-		int total_count = 100;
+		std::string sale_code = MakeCode();
+
+		int sale_book_count = sale_bookinfo.vec_sale_books_info.size();
+
+		int sale_cost = 0;
+		int total_count = 0;
+		for (int i = 0; i < sale_book_count; i++)
+		{
+			sale_cost += sale_bookinfo.vec_sale_books_info[i].book_info.price;
+			total_count += sale_bookinfo.vec_sale_books_info[i].count;
+		}
 
 		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_BOOK_SALE_HISTORY) + " (code, total_count, discount, sale_cost, reg_date) VALUES (";
 		sql_command += "'" + sale_code + "', ";
@@ -110,8 +148,6 @@ int CDataBaseBookSaleHistory::AddBookSaleInfo(const BookSaleInfo sale_bookinfo)
 		else
 		{
 			//Detail 저장
-			int sale_book_count = sale_bookinfo.vec_sale_books_info.size();
-
 			for (int i = 0; i < sale_book_count; i++)
 			{
 			}

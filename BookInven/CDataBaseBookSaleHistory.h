@@ -46,5 +46,6 @@ public:
 
 private:
 	static int sql_callback_get_info(void *NotUsed, int argc, char **argv, char **azColName);
+	std::string MakeCode(void);
 };
 
