@@ -369,6 +369,27 @@ void CSaleBooksList::ResetImageList(void)
 	}
 }
 
+int CSaleBooksList::GetCheckedItemCount(void)
+{
+	int ret = 0;
+
+	if (m_p_list_ctrl != NULL)
+	{
+		int count = m_p_list_ctrl->GetItemCount();
+
+		for (int i = 0; i < count; i++)
+		{
+			// 체크상태 확인
+			if (m_p_list_ctrl->GetItemState(i, LVIS_SELECTED) == LVIS_SELECTED)
+			{
+				ret++;
+			}
+		}
+	}
+
+	return ret;
+}
+
 void CSaleBooksList::PlusCheckedItem(void)
 {
 	if (m_p_list_ctrl != NULL)

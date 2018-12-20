@@ -49,6 +49,8 @@ public:
 	void DelCheckedItem(void);
 	void DelAllItem(void);
 
+	int GetCheckedItemCount(void);
+
 	int GetTotalPrice(void);
 
 	void PlusCheckedItem(void);
