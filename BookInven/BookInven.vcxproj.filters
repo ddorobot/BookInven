@@ -132,6 +132,9 @@
     <ClInclude Include="CDataBaseBookSaleHistory.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CBookSaleList.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BookInven.cpp">
@@ -228,6 +231,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CDataBaseBookSaleHistory.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CBookSaleList.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
