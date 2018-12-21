@@ -230,9 +230,57 @@ std::vector<BookInHistory> CDataBaseBookInHistory::GetInfo(const std::string str
 	return retProviderInfo;
 }
 
-std::vector<int> CDataBaseBookInHistory::GetAbleInCartIndex(const std::string isbn)
+int CDataBaseBookInHistory::PopCount(const int index)
 {
-	std::vector<int> retIndex;
+	int ret = 0;
+
+	DB_BookInHistory pre_data = GetInfoBookInfoHistory(index);
+	int new_count = pre_data.book_count - 1;
+	if (new_count < 0) return ret;
+
+	//check
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_BOOK_IN_HISTORY), std::string(TABLE_DATA_BOOK_IN_HISTORY));
+
+	//check data
+	if (check_db)
+	{
+		printf("BookInHistory Update\n");
+
+		char* pErr, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+		
+		//Update
+		//Tablek Book
+		std::string sql_command = "UPDATE " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " SET book_count=book_count-1 WHERE idx=" + std::to_string(index);
+
+		//printf("AddBookInfo sql = %s\n", sql_command.c_str());
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), NULL, NULL, &pErr);
+
+		if (nResult)
+		{
+			printf("%s 데이터 저장 실패!\n", TABLE_NAME_BOOK_IN_HISTORY);
+			sqlite3_free(pErr);
+		}
+		else
+		{
+			//검증
+			ret = 1;
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+
+	return ret;
+}
+
+int CDataBaseBookInHistory::GetAbleInCartIndex(const std::string isbn)
+{
+	//가장 과거에 추가 가능한 index번호를 확인하여 리턴
+	int retIndex = -1 ;
 
 	sqlite3* pDB = NULL;
 
@@ -244,7 +292,7 @@ std::vector<int> CDataBaseBookInHistory::GetAbleInCartIndex(const std::string is
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
 		//같은 정보가 있는지 확인
-		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " WHERE book_info_isbn='" + isbn + " AND book_count>0 ORDER BY idx DESC";		//가장 최근의 정보를 얻어옴.
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " WHERE book_info_isbn='" + isbn + " AND book_count>0 ORDER BY idx ASC LIMIT 1";		//가장 과거의 정보 부터
 
 		std::vector<DB_BookInHistory> vec_history;
 
@@ -258,11 +306,11 @@ std::vector<int> CDataBaseBookInHistory::GetAbleInCartIndex(const std::string is
 		{
 			int history_size = vec_history.size();
 
-			for (int i = 0; i < history_size; i++)
+			if (history_size > 0)
 			{
-				DB_BookInHistory db_history = vec_history[i];
+				DB_BookInHistory db_history = vec_history[0];
 
-				retIndex.push_back(db_history.idx);
+				retIndex = db_history.idx;
 			}
 		}
 	}
@@ -346,6 +394,45 @@ BookInHistory CDataBaseBookInHistory::CvtDB_BookInHistoryToBookInHistory(const D
 	data.reg_date = db_data.reg_date;
 
 	return data;
+}
+
+DB_BookInHistory CDataBaseBookInHistory::GetInfoBookInfoHistory(const int idx)
+{
+	DB_BookInHistory retBookHistory;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_BOOK_IN_HISTORY), std::string(TABLE_DATA_BOOK_IN_HISTORY));
+
+	if (check_db)
+	{
+		char* pErr, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		//같은 정보가 있는지 확인
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " WHERE idx='" + std::to_string(idx) + "' ORDER BY idx DESC LIMIT 1";		//가장 최근의 정보를 얻어옴.
+
+		std::vector<DB_BookInHistory> vec_history;
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), sql_callback_get_bookinfo, &vec_history, &pErr);
+
+		if (nResult)
+		{
+			sqlite3_free(&pErr);
+		}
+		else
+		{
+			if (vec_history.size() > 0)
+			{
+				retBookHistory = vec_history[0];
+			}
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+
+	return retBookHistory;
 }
 
 BookInHistory CDataBaseBookInHistory::GetInfo(const int idx)

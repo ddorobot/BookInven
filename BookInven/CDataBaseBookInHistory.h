@@ -54,14 +54,17 @@ public:
 	int AddBookInInfo(const DB_BookInHistory bookinfo);
 	BookInHistory GetLastInfo(void);
 	BookInHistory GetInfo(const int idx);
+	
 	std::vector<BookInHistory> GetInfo(const std::string str_date_start="", const std::string str_date_end="");
 	void Delete(const int index);
-	std::vector<int> GetAbleInCartIndex(const std::string isbn);
+	int GetAbleInCartIndex(const std::string isbn);
+	int PopCount(const int index);
 
 private:
 	static int sql_callback_get_bookinfo(void *NotUsed, int argc, char **argv, char **azColName);
 	static int sql_callback_get_count(void *count, int argc, char **argv, char **azColName);
 
+	DB_BookInHistory GetInfoBookInfoHistory(const int idx);
 	BookInHistory CvtDB_BookInHistoryToBookInHistory(const DB_BookInHistory db_data);
 };
 
