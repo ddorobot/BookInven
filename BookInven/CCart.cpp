@@ -37,3 +37,85 @@ int CCart::AddCart(const std::string isbn)
 	return ret;
 }
 
+//카트에 담긴 총 수량을 리턴
+int CCart::GetCartCount(void)
+{
+	CDataBaseCart cls_db_cart;
+
+	int ret = cls_db_cart.GetCount();
+
+	return ret;
+}
+
+std::vector<int> CCart::GetCartAllIndex(void)
+{
+	CDataBaseCart cls_db_cart;
+
+	std::vector<int> ret = cls_db_cart.GetAllInfo();
+
+	return ret;
+}
+
+//BookInHistory GetInfo(const int idx);
+std::vector<CartInfo> CCart::GetCartData(void)
+{
+	CDataBaseCart cls_db_cart;
+	std::vector<int> vec_cart_index_info = cls_db_cart.GetAllInfo();
+
+	int cart_size = vec_cart_index_info.size();
+
+	std::deque<BookInHistory> books_data;
+	for (int i = 0; i < cart_size; i++)
+	{
+		int book_in_index = vec_cart_index_info[i];
+
+		CDataBaseBookInHistory cls_db_book_in_history;
+		BookInHistory book_in_data = cls_db_book_in_history.GetInfo(book_in_index);
+
+		if (book_in_data.db_idx >= 0)
+		{
+			books_data.push_back(book_in_data);
+		}
+	}
+
+	//같은 정보 합치기
+	std::vector<CartInfo> vec_cart_info;
+	CartInfo cart_info;
+	int books_data_size = books_data.size();
+
+	for (int i = 0; i < books_data_size; i++)
+	{
+		//기존 cart정보와 비교
+		int cart_info_size = vec_cart_info.size();
+
+		bool b_same = false;
+		int i_same = -1;
+		for (int j = 0; j < cart_info_size; j++)
+		{
+			//isbn과 판매가격이 같으면 같은 제품으로 본다.
+			if (vec_cart_info[j].bookin_info.book_info.isbn == books_data[i].bookin_info.book_info.isbn && 
+				vec_cart_info[j].bookin_info.sale_cost == books_data[i].bookin_info.sale_cost )
+			{
+				b_same = true;
+				i_same = j;
+				break;
+			}
+		}
+
+		if (b_same)
+		{
+			vec_cart_info[i_same].count++ ;
+		}
+		else
+		{
+			CartInfo cart_info;
+			cart_info.bookin_info = books_data[i].bookin_info;
+			cart_info.count = 1;
+			cart_info.db_idx = books_data[i].db_idx;
+
+			vec_cart_info.push_back(cart_info);
+		}
+	}
+
+	return vec_cart_info;
+}

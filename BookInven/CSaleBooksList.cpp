@@ -86,30 +86,30 @@ void CSaleBooksList::UpdateList(void)
 	}
 #endif
 
+#if 1		
 	//-----
-	//m_sale_books.clear();
-#if 0			//Data from DB
-	CDataBaseBookInHistory cls_db_bookin_history;
-	std::vector<BookInHistory> vec_book_info;
-		
-	vec_book_info = cls_db_bookin_history.GetInfo(str_date_start, str_date_end);
+	//Data from Cart DB
+	DelAllItem();
+	m_p_list_ctrl->DeleteAllItems();
 
-	int history_size = vec_book_info.size();
-	for (int i = 0; i < history_size; i++)
+
+	//카트 정보
+	CCart cls_cart;
+	std::vector<CartInfo> vec_cart_info = cls_cart.GetCartData();
+
+	//정보 변경
+	int cart_info_size = vec_cart_info.size();
+	for (int i = 0; i < cart_info_size; i++)
 	{
-		if (!vec_book_info[i].reg_date.empty())
-		{
-			BookIn_List_Info list_info;
-			list_info.db_idx = vec_book_info[i].db_idx;
-			list_info.book_info = vec_book_info[i].book_info;
-			list_info.reg_date = vec_book_info[i].reg_date;
+		SaleBooksInfo sale_info;
+		sale_info.book_info = vec_cart_info[i].bookin_info.book_info;
+		sale_info.count = vec_cart_info[i].count;
 
-			m_sale_books.push_back(list_info);
-		}
+		m_sale_books.push_back(sale_info);
 	}
-#endif
 	//DB에서 정보를 가지고 온다.
 	//-----
+#endif
 
 	int count = m_p_list_ctrl->GetItemCount();
 	int book_sale_size = m_sale_books.size();
@@ -129,7 +129,7 @@ void CSaleBooksList::UpdateList(void)
 			CString szText = m_p_list_ctrl->GetItemText(i, 0);
 
 			CString str;
-			str.Format(_T("%s\n가격:%d x 수량:%d = %d원"), m_sale_books[i].book_info.name.c_str(), m_sale_books[i].book_info.price, m_sale_books[i].vec_db_book_in_index.size(), m_sale_books[i].book_info.price*m_sale_books[i].vec_db_book_in_index.size());
+			str.Format(_T("%s\n가격:%d x 수량:%d = %d원"), m_sale_books[i].book_info.name.c_str(), m_sale_books[i].book_info.price, m_sale_books[i].count, m_sale_books[i].book_info.price*m_sale_books[i].count);
 
 			if (szText != str)
 			{
@@ -185,7 +185,7 @@ void CSaleBooksList::UpdateList(void)
 			//printf("image_list_count = %d\n", image_list_count);
 
 			CString str;
-			str.Format(_T("%s\n가격:%d x 수량:%d = %d원"), m_sale_books[index].book_info.name.c_str(), m_sale_books[index].book_info.price, m_sale_books[index].vec_db_book_in_index.size(), m_sale_books[index].book_info.price*m_sale_books[index].vec_db_book_in_index.size());
+			str.Format(_T("%s\n가격:%d x 수량:%d = %d원"), m_sale_books[index].book_info.name.c_str(), m_sale_books[index].book_info.price, m_sale_books[index].count, m_sale_books[index].book_info.price*m_sale_books[index].count);
 
 			int ret = m_p_list_ctrl->InsertItem(index, str, m_sale_books[index].idxImageList);
 			printf("insert item ret=%d\n", ret);
@@ -217,7 +217,7 @@ int CSaleBooksList::GetCountInListInfo(const std::string isbn)
 	{
 		for (int i = 0; i < sale_size; i++)
 		{
-			ret += m_sale_books[i].vec_db_book_in_index.size();
+			ret += m_sale_books[i].count;
 		}
 	}
 	else
@@ -226,57 +226,13 @@ int CSaleBooksList::GetCountInListInfo(const std::string isbn)
 		{
 			if (isbn == m_sale_books[i].book_info.isbn)
 			{
-				ret = m_sale_books[i].vec_db_book_in_index.size();
+				ret = m_sale_books[i].count;
 				break;
 			}
 		}
 	}
 
 	return ret;
-}
-
-void CSaleBooksList::AddSaleBook(const int book_in_idx)
-{
-	if (m_p_list_ctrl == NULL) return;
-	if (book_in_idx < 0) return;
-
-	//입고 DB에서 정보를 얻어 온다
-	CDataBaseBookInHistory cls_db_book_in_history;
-	BookInHistory book_in_history = cls_db_book_in_history.GetInfo(book_in_idx);
-
-
-	//같은 isbn 정보가 있는지 확인
-	//m_sale_books
-	//find
-	int sale_size = m_sale_books.size();
-
-	int exist_same_data_index = -1;
-
-	for (int i = 0; i < sale_size; i++)
-	{
-		if (book_in_history.bookin_info.book_info.isbn == m_sale_books[i].book_info.isbn)
-		{
-			exist_same_data_index = i;
-			break;
-		}
-	}
-
-	if (exist_same_data_index >= 0)
-	{
-		//수량 수정
-		m_sale_books[exist_same_data_index].vec_db_book_in_index.push_back(book_in_idx);
-	}
-	else
-	{
-		SaleBooksInfo sale_book_info;
-
-		sale_book_info.book_info = book_in_history.bookin_info.book_info;
-		sale_book_info.vec_db_book_in_index.push_back(book_in_idx);
-
-		m_sale_books.push_back(sale_book_info);
-	}
-
-	UpdateList();
 }
 
 int CSaleBooksList::Pay(const int discount, const bool cash)
@@ -294,7 +250,7 @@ int CSaleBooksList::Pay(const int discount, const bool cash)
 	{
 		SaleBooksInfo2 info2;
 		info2.book_info = m_sale_books[i].book_info;
-		info2.count = m_sale_books[i].vec_db_book_in_index.size() ;
+		info2.count = m_sale_books[i].count ;
 
 		book_sale_info.vec_sale_books_info.push_back(info2);
 	}
@@ -483,12 +439,12 @@ void CSaleBooksList::MinusCheckedItem(void)
 			{
 				if (i < candidate_size)
 				{
-					if (m_sale_books[i].vec_db_book_in_index.size() > 0)
+					if (m_sale_books[i].count > 0)
 					{
-						m_sale_books[i].vec_db_book_in_index.pop_back();
+						m_sale_books[i].count-- ;
 					}
 
-					if (m_sale_books[i].vec_db_book_in_index.size() <= 0)
+					if (m_sale_books[i].count <= 0)
 					{
 						deque_del_index.push_back(i);
 					}

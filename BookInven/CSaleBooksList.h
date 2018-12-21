@@ -23,6 +23,7 @@
 #include "CDataBaseBookSaleHistory.h"
 
 #include "CMatToBitmap.h"
+#include "CCart.h"
 
 #include"resource.h"
 
@@ -30,7 +31,7 @@ typedef struct SaleBooksInfo {
 	BookInfo book_info;
 	CBitmap* pBmp = NULL;
 	int idxImageList = -1;
-	std::vector<int> vec_db_book_in_index;
+	int count = 0;
 } SaleBooksInfo;
 
 class CSaleBooksList
@@ -43,8 +44,6 @@ public:
 	
 	void UpdateList(void);
 
-	void AddSaleBook(const int book_in_idx);
-	
 	int GetCountInListInfo(const std::string isbn = "");
 
 	void DelCheckedItem(void);
