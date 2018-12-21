@@ -46,29 +46,9 @@ int CBookInList::AddInfo(BookIn_Info info)
 	BookIn_List_Info list_info;
 	list_info.bookin_info = info;
 
-	//DB에 저장
-	CDataBaseBookInHistory cls_db_bookin_history;
-	if (cls_db_bookin_history.AddBookInInfo(info))
-	{
-		//m_book_in.push_front(list_info);
-		//DB에서 최근의 데이타를 얻어와 리스트에 출력 할 수 있도록 리스트에 push_front한다.
-		BookInHistory last_info = cls_db_bookin_history.GetLastInfo();
-
-		if (!last_info.reg_date.empty())
-		{
-			list_info.db_idx = last_info.db_idx;
-			list_info.bookin_info = last_info.bookin_info;
-			list_info.reg_date = last_info.reg_date;
-
-			m_book_in.push_front(list_info);
-		}
-
-		ret = 1;
-	}
-
-	return ret;
+	
 }
- 
+
 void CBookInList::UpdateList(std::string str_date_start, std::string str_date_end)
 {
 	if (m_p_list_ctrl == NULL) return;
@@ -172,9 +152,9 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 			}
 			list_index++;
 
-			if (std::string(str_count) != std::to_string(bookin_info.bookin_info.count))
+			if (std::string(str_count) != std::to_string(1))
 			{
-				cstr_data.Format(_T("%d"), bookin_info.bookin_info.count);
+				cstr_data.Format(_T("%d"), 1);
 				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
 			list_index++;
@@ -259,7 +239,7 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//수량
-			cstr_data.Format(_T("%d"), bookin_info.bookin_info.count);
+			cstr_data.Format(_T("%d"), 1);
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급사

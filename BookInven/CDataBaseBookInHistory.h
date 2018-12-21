@@ -6,6 +6,7 @@
 #include "CDataBaseBookInfo.h"
 #include "CDataBaseProvider.h"
 #include "CDataBaseProviderDetail.h"
+#include "CDataBaseBookInHistoryDetail.h"
 
 #include "BookInInfo.h"
 
@@ -21,7 +22,6 @@
 										'provie_cost' INTEGER, \
 										'sale_cost' INTEGER, \
 										'reg_date' TEXT"
-
 
 typedef struct DB_BookInHistory {
 	int idx=-1;
@@ -51,13 +51,17 @@ public:
 
 	//Book Info
 	int GetBookCount(const std::string isbn);
-	int AddBookInInfo(const BookIn_Info bookinfo);
+	int AddBookInInfo(const DB_BookInHistory bookinfo);
 	BookInHistory GetLastInfo(void);
+	BookInHistory GetInfo(const int idx);
 	std::vector<BookInHistory> GetInfo(const std::string str_date_start="", const std::string str_date_end="");
 	void Delete(const int index);
+	std::vector<int> GetAbleInCartIndex(const std::string isbn);
 
 private:
 	static int sql_callback_get_bookinfo(void *NotUsed, int argc, char **argv, char **azColName);
 	static int sql_callback_get_count(void *count, int argc, char **argv, char **azColName);
+
+	BookInHistory CvtDB_BookInHistoryToBookInHistory(const DB_BookInHistory db_data);
 };
 

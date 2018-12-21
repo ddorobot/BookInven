@@ -129,7 +129,7 @@ void CSaleBooksList::UpdateList(void)
 			CString szText = m_p_list_ctrl->GetItemText(i, 0);
 
 			CString str;
-			str.Format(_T("%s\n가격:%d x 수량:%d = %d원"), m_sale_books[i].book_info.name.c_str(), m_sale_books[i].book_info.price, m_sale_books[i].count, m_sale_books[i].book_info.price*m_sale_books[i].count);
+			str.Format(_T("%s\n가격:%d x 수량:%d = %d원"), m_sale_books[i].book_info.name.c_str(), m_sale_books[i].book_info.price, m_sale_books[i].vec_db_book_in_index.size(), m_sale_books[i].book_info.price*m_sale_books[i].vec_db_book_in_index.size());
 
 			if (szText != str)
 			{
@@ -185,7 +185,7 @@ void CSaleBooksList::UpdateList(void)
 			//printf("image_list_count = %d\n", image_list_count);
 
 			CString str;
-			str.Format(_T("%s\n가격:%d x 수량:%d = %d원"), m_sale_books[index].book_info.name.c_str(), m_sale_books[index].book_info.price, m_sale_books[index].count, m_sale_books[index].book_info.price*m_sale_books[index].count);
+			str.Format(_T("%s\n가격:%d x 수량:%d = %d원"), m_sale_books[index].book_info.name.c_str(), m_sale_books[index].book_info.price, m_sale_books[index].vec_db_book_in_index.size(), m_sale_books[index].book_info.price*m_sale_books[index].vec_db_book_in_index.size());
 
 			int ret = m_p_list_ctrl->InsertItem(index, str, m_sale_books[index].idxImageList);
 			printf("insert item ret=%d\n", ret);
@@ -217,7 +217,7 @@ int CSaleBooksList::GetCountInListInfo(const std::string isbn)
 	{
 		for (int i = 0; i < sale_size; i++)
 		{
-			ret += m_sale_books[i].count;
+			ret += m_sale_books[i].vec_db_book_in_index.size();
 		}
 	}
 	else
@@ -226,7 +226,7 @@ int CSaleBooksList::GetCountInListInfo(const std::string isbn)
 		{
 			if (isbn == m_sale_books[i].book_info.isbn)
 			{
-				ret = m_sale_books[i].count;
+				ret = m_sale_books[i].vec_db_book_in_index.size();
 				break;
 			}
 		}
@@ -235,11 +235,17 @@ int CSaleBooksList::GetCountInListInfo(const std::string isbn)
 	return ret;
 }
 
-void CSaleBooksList::AddSaleBook(SaleBooksInfo sale_book_info)
+void CSaleBooksList::AddSaleBook(const int book_in_idx)
 {
 	if (m_p_list_ctrl == NULL) return;
+	if (book_in_idx < 0) return;
 
-	//같은 정보가 있는지 확인
+	//입고 DB에서 정보를 얻어 온다
+	CDataBaseBookInHistory cls_db_book_in_history;
+	BookInHistory book_in_history = cls_db_book_in_history.GetInfo(book_in_idx);
+
+
+	//같은 isbn 정보가 있는지 확인
 	//m_sale_books
 	//find
 	int sale_size = m_sale_books.size();
@@ -248,7 +254,7 @@ void CSaleBooksList::AddSaleBook(SaleBooksInfo sale_book_info)
 
 	for (int i = 0; i < sale_size; i++)
 	{
-		if (sale_book_info.book_info.isbn == m_sale_books[i].book_info.isbn)
+		if (book_in_history.bookin_info.book_info.isbn == m_sale_books[i].book_info.isbn)
 		{
 			exist_same_data_index = i;
 			break;
@@ -258,10 +264,15 @@ void CSaleBooksList::AddSaleBook(SaleBooksInfo sale_book_info)
 	if (exist_same_data_index >= 0)
 	{
 		//수량 수정
-		m_sale_books[exist_same_data_index].count += sale_book_info.count;
+		m_sale_books[exist_same_data_index].vec_db_book_in_index.push_back(book_in_idx);
 	}
 	else
 	{
+		SaleBooksInfo sale_book_info;
+
+		sale_book_info.book_info = book_in_history.bookin_info.book_info;
+		sale_book_info.vec_db_book_in_index.push_back(book_in_idx);
+
 		m_sale_books.push_back(sale_book_info);
 	}
 
@@ -283,7 +294,7 @@ int CSaleBooksList::Pay(const int discount, const bool cash)
 	{
 		SaleBooksInfo2 info2;
 		info2.book_info = m_sale_books[i].book_info;
-		info2.count = m_sale_books[i].count;
+		info2.count = m_sale_books[i].vec_db_book_in_index.size() ;
 
 		book_sale_info.vec_sale_books_info.push_back(info2);
 	}
@@ -446,7 +457,7 @@ void CSaleBooksList::PlusCheckedItem(void)
 					}
 					else
 					{
-						m_sale_books[i].count++;
+						//m_sale_books[i].count++;
 					}
 
 				}
@@ -472,12 +483,13 @@ void CSaleBooksList::MinusCheckedItem(void)
 			{
 				if (i < candidate_size)
 				{
-					m_sale_books[i].count--;
-
-					if (m_sale_books[i].count <= 0)
+					if (m_sale_books[i].vec_db_book_in_index.size() > 0)
 					{
-						m_sale_books[i].count = 0;
+						m_sale_books[i].vec_db_book_in_index.pop_back();
+					}
 
+					if (m_sale_books[i].vec_db_book_in_index.size() <= 0)
+					{
 						deque_del_index.push_back(i);
 					}
 				}
@@ -551,9 +563,9 @@ int CSaleBooksList::GetTotalPrice(void)
 	int sale_size = m_sale_books.size();
 	for (int i = 0; i < sale_size; i++)
 	{
-		int cost = m_sale_books[i].count * m_sale_books[i].book_info.price;
+		//int cost = m_sale_books[i].count * m_sale_books[i].book_info.price;
 
-		price += cost;
+		//price += cost;
 	}
 
 	return price;

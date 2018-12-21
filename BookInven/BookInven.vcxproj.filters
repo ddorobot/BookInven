@@ -135,6 +135,15 @@
     <ClInclude Include="CBookSaleList.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CDataBaseBookInHistoryDetail.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CDataBaseCart.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CCart.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BookInven.cpp">
@@ -234,6 +243,15 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CBookSaleList.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CDataBaseBookInHistoryDetail.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CDataBaseCart.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CCart.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

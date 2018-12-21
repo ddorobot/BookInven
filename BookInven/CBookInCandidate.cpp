@@ -48,7 +48,7 @@ void CBookInCandidate::AddCandidate(BookIn_Info candidate)
 
 	for (int i = 0; i < candidate_size; i++)
 	{
-		if (candidate.book_info.isbn == m_candidate[i].book_info.isbn)
+		if (candidate.book_info.isbn == m_candidate[i].book_info.book_info.isbn)
 		{
 			exist_same_data_index = i;
 			break;
@@ -58,7 +58,7 @@ void CBookInCandidate::AddCandidate(BookIn_Info candidate)
 	if (exist_same_data_index >= 0)
 	{
 		//수량 수정
-		m_candidate[exist_same_data_index].count += candidate.count;
+		m_candidate[exist_same_data_index].count++;
 	}
 	else
 	{
@@ -66,7 +66,11 @@ void CBookInCandidate::AddCandidate(BookIn_Info candidate)
 		int provide_price = (int)((float)candidate.book_info.price * (candidate.provider_info.detail.provide_rate / 100.0));
 		candidate.provider_info.detail.provide_cost = provide_price;
 
-		m_candidate.push_back(candidate);
+		BookIn_Candidate_Info candidate_info;
+		candidate_info.book_info = candidate;
+		candidate_info.count = 1;
+
+		m_candidate.push_back(candidate_info);
 	}
 
 	//mutex_candidate.unlock();
@@ -101,7 +105,8 @@ void CBookInCandidate::UpdateList(void)
 
 		if (i < candidate_size)
 		{
-			BookIn_Info candidate = m_candidate[i];
+			BookIn_Info candidate = m_candidate[i].book_info;
+			int count = m_candidate[i].count;
 
 			CString cstr_data;
 			if (std::string(str_isbn) != candidate.book_info.isbn)
@@ -134,9 +139,9 @@ void CBookInCandidate::UpdateList(void)
 				m_p_list_ctrl->SetItemText(i, 5, cstr_data);
 			}
 
-			if (std::string(str_count) != std::to_string(candidate.count))
+			if (std::string(str_count) != std::to_string(count))
 			{
-				cstr_data.Format(_T("%d"), candidate.count);
+				cstr_data.Format(_T("%d"), count);
 				m_p_list_ctrl->SetItemText(i, 6, cstr_data);
 			}
 
@@ -179,7 +184,8 @@ void CBookInCandidate::UpdateList(void)
 	{
 		for (int index = count; index < candidate_size; index++)
 		{
-			BookIn_Info candidate = m_candidate[index];
+			BookIn_Info candidate = m_candidate[index].book_info;
+			int count = m_candidate[index].count;
 
 			//데이타 추가
 			//날짜
@@ -207,7 +213,7 @@ void CBookInCandidate::UpdateList(void)
 			m_p_list_ctrl->SetItem(index, 5, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//수량
-			cstr_data.Format(_T("%d"), candidate.count);
+			cstr_data.Format(_T("%d"), count);
 			m_p_list_ctrl->SetItem(index, 6, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급사
@@ -283,7 +289,7 @@ void CBookInCandidate::ChangeProviderBaseIndex(const int index, const int provid
 
 		if (provider_index == provider_info_base.idx)
 		{
-			m_candidate[index].provider_info.base = provider_info_base;
+			m_candidate[index].book_info.provider_info.base = provider_info_base;
 		}
 	}
 }
@@ -294,7 +300,7 @@ void CBookInCandidate::ChangeProvideType(const int index, const int provide_type
 
 	if (index >= 0 && index < candidate_size)
 	{
-		m_candidate[index].provider_info.detail.provide_type = provide_type;
+		m_candidate[index].book_info.provider_info.detail.provide_type = provide_type;
 	}
 }
 
@@ -315,21 +321,21 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 			break;
 		case 2:
 			//이름
-			m_candidate[index].book_info.name = data;
+			m_candidate[index].book_info.book_info.name = data;
 			break;
 		case 3:
 			//저자
-			m_candidate[index].book_info.author = data;
+			m_candidate[index].book_info.book_info.author = data;
 			break;
 		case 4:
 			//출판사
-			m_candidate[index].book_info.publisher = data;
+			m_candidate[index].book_info.book_info.publisher = data;
 			break;
 		case 5:
 			//가격
-			m_candidate[index].book_info.price = std::stoi(data);
+			m_candidate[index].book_info.book_info.price = std::stoi(data);
 			//공급가도 변경
-			m_candidate[index].provider_info.detail.provide_cost = (int)roundf((float)(m_candidate[index].book_info.price) * (m_candidate[index].provider_info.detail.provide_rate / 100.0));
+			m_candidate[index].book_info.provider_info.detail.provide_cost = (int)roundf((float)(m_candidate[index].book_info.book_info.price) * (m_candidate[index].book_info.provider_info.detail.provide_rate / 100.0));
 			break;
 		case 6:
 			//수량
@@ -353,27 +359,27 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 		break;
 		case 9:
 			//공급률
-			m_candidate[index].provider_info.detail.provide_rate = std::stof(data);
+			m_candidate[index].book_info.provider_info.detail.provide_rate = std::stof(data);
 			//공급가도 변경
-			m_candidate[index].provider_info.detail.provide_cost = (int)roundf((float)(m_candidate[index].book_info.price) * (m_candidate[index].provider_info.detail.provide_rate / 100.0));
+			m_candidate[index].book_info.provider_info.detail.provide_cost = (int)roundf((float)(m_candidate[index].book_info.book_info.price) * (m_candidate[index].book_info.provider_info.detail.provide_rate / 100.0));
 			break;
 		case 10:
 		{
 			//공급가 가 변경 되면 공급률을 반영한 가격이 변경 된다.
 			int provide_cost = std::stoi(data);
 
-			if (provide_cost < m_candidate[index].book_info.price && provide_cost >= 0)
+			if (provide_cost < m_candidate[index].book_info.book_info.price && provide_cost >= 0)
 			{
-				m_candidate[index].provider_info.detail.provide_cost = provide_cost;
+				m_candidate[index].book_info.provider_info.detail.provide_cost = provide_cost;
 
 #if 1		//가격을 변경하는게 아니라 공급률을 변경 해야 한다.
-				if (m_candidate[index].book_info.price == m_candidate[index].provider_info.detail.provide_cost)
+				if (m_candidate[index].book_info.book_info.price == m_candidate[index].book_info.provider_info.detail.provide_cost)
 				{
-					m_candidate[index].provider_info.detail.provide_rate = 0.0;
+					m_candidate[index].book_info.provider_info.detail.provide_rate = 0.0;
 				}
 				else
 				{
-					m_candidate[index].provider_info.detail.provide_rate = 100.0 - ((float)(m_candidate[index].book_info.price - m_candidate[index].provider_info.detail.provide_cost) / (float)(m_candidate[index].book_info.price)) * 100.0;
+					m_candidate[index].book_info.provider_info.detail.provide_rate = 100.0 - ((float)(m_candidate[index].book_info.book_info.price - m_candidate[index].book_info.provider_info.detail.provide_cost) / (float)(m_candidate[index].book_info.book_info.price)) * 100.0;
 				}
 			}
 #else 
@@ -386,7 +392,7 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 			break;
 		case 11:
 			//판매가
-			m_candidate[index].sale_cost = std::stoi(data);
+			m_candidate[index].book_info.sale_cost = std::stoi(data);
 			break;
 		}
 	}
@@ -408,7 +414,7 @@ std::vector<BookIn_Info> CBookInCandidate::GetCheckedItem(void)
 			{
 				if (i < candidate_size)
 				{
-					ret_vec_info.push_back(m_candidate[i]);
+					//ret_vec_info.push_back(m_candidate[i]);
 				}
 			}
 		}
@@ -490,6 +496,82 @@ void CBookInCandidate::DelCheckedItem(void)
 	}
 }
 
-void CBookInCandidate::AddDataBase(void)
+int CBookInCandidate::CheckedAddDataBase(void)
 {
+	int ret = 0;
+
+	//체크 된 Item들 DB에 저장하고 저장된 Item은 삭제 한다.
+	if (m_p_list_ctrl != NULL)
+	{
+		int count = m_p_list_ctrl->GetItemCount();
+		const int candidate_size = m_candidate.size();
+
+		std::deque<int> deque_del_index;
+		for (int i = 0; i < count; i++)
+		{
+			// 체크상태 확인
+			if (m_p_list_ctrl->GetCheck(i))
+			{
+				if (i < candidate_size)
+				{
+					BookIn_Candidate_Info candidate = m_candidate[i];
+
+					//DB에 저장
+					DB_BookInHistory db_data;
+
+					//data 변경(BookIn_Candidate_Info -> DB_BookInHistory)
+					db_data.book_info_isbn = candidate.book_info.book_info.isbn;
+					db_data.book_cost = candidate.book_info.book_info.price;
+					db_data.book_count = candidate.count;
+					db_data.provider_base_info_idx = candidate.book_info.provider_info.base.idx;
+					db_data.provie_type = candidate.book_info.provider_info.detail.provide_type;
+					db_data.provie_rate = candidate.book_info.provider_info.detail.provide_rate;
+					db_data.provie_cost = candidate.book_info.provider_info.detail.provide_cost;
+					db_data.sale_cost = candidate.book_info.sale_cost;
+
+					CDataBaseBookInHistory cls_db_bookin_history;
+					if (cls_db_bookin_history.AddBookInInfo(db_data))
+					{
+						deque_del_index.push_back(i);
+					}
+					else
+					{
+						ret++;
+					}
+				}
+			}
+		}
+
+		//candidate delete
+		int iter_count = 0;
+		for (auto it = m_candidate.begin(); it != m_candidate.end(); )
+		{
+			int deque_del_size = deque_del_index.size();
+			if (deque_del_size <= 0) break;
+
+			int del_index = deque_del_index[0];
+
+			if (del_index == iter_count)
+			{
+				it = m_candidate.erase(it);
+
+				deque_del_index.pop_front();
+			}
+			else
+			{
+				++it;
+			}
+
+			iter_count++;
+		}
+
+		//삭제 되지 않은 아이템은 Checked가 FALSE여야 한다.
+		count = m_p_list_ctrl->GetItemCount();
+		for (int i = 0; i < count; i++)
+		{
+			m_p_list_ctrl->SetCheck(i, FALSE);
+		}
+	}
+
+	return ret;
 }

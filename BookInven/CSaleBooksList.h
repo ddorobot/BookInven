@@ -30,7 +30,7 @@ typedef struct SaleBooksInfo {
 	BookInfo book_info;
 	CBitmap* pBmp = NULL;
 	int idxImageList = -1;
-	int count = 0;
+	std::vector<int> vec_db_book_in_index;
 } SaleBooksInfo;
 
 class CSaleBooksList
@@ -43,7 +43,7 @@ public:
 	
 	void UpdateList(void);
 
-	void AddSaleBook(SaleBooksInfo sale_book_info);
+	void AddSaleBook(const int book_in_idx);
 	
 	int GetCountInListInfo(const std::string isbn = "");
 

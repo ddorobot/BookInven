@@ -20,6 +20,12 @@
 #include "BookInInfo.h"
 
 #include "CDataBaseProvider.h"
+#include "CDataBaseBookInHistory.h"
+
+typedef struct BookIn_Candidate_Info {
+	BookIn_Info book_info;
+	int count = 0;
+} BookIn_Candidate_Info;
 
 class CBookInCandidate
 {
@@ -38,13 +44,13 @@ public:
 	void DelItem(const int index);
 	void DelCheckedItem(void);
 	std::vector<BookIn_Info> GetCheckedItem(void);
-	void AddDataBase(void);
+	int CheckedAddDataBase(void);
 private:
 
 	boost::mutex mutex_list_ctrl;
 	CListCtrl* m_p_list_ctrl;
 
 	boost::mutex mutex_candidate;
-	std::deque<BookIn_Info> m_candidate;
+	std::deque<BookIn_Candidate_Info> m_candidate;
 };
 
