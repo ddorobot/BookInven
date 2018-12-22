@@ -86,12 +86,11 @@ void CSaleBooksList::UpdateList(void)
 	}
 #endif
 
-#if 1		
+#if 1
 	//-----
 	//Data from Cart DB
 	DelAllItem();
 	m_p_list_ctrl->DeleteAllItems();
-
 
 	//카트 정보
 	CCart cls_cart;
@@ -490,20 +489,21 @@ void CSaleBooksList::DelAllItem(void)
 {
 	if (m_p_list_ctrl != NULL)
 	{
-		for (auto it = m_sale_books.begin(); it != m_sale_books.end(); )
+		if (m_sale_books.size() > 0)
 		{
-			//Release bitmap
-			if (it->pBmp != NULL)
+			for (auto it = m_sale_books.begin(); it != m_sale_books.end(); )
 			{
-				delete it->pBmp;
-				it->pBmp = NULL;
+				//Release bitmap
+				if (it->pBmp != NULL)
+				{
+					delete it->pBmp;
+					it->pBmp = NULL;
+				}
+
+				it = m_sale_books.erase(it);
+
 			}
-
-			it = m_sale_books.erase(it);
-
 		}
-
-		UpdateList();
 	}
 
 	if (m_sale_books.size() == 0)

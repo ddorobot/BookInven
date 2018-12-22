@@ -25,7 +25,7 @@ std::vector<int> CDataBaseCart::GetAllInfo(void)
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
 		//같은 정보가 있는지 확인
-		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_CART) + " ORDER BY idx DESC";		//가장 최근의 정보를 얻어옴.
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_CART) + " ORDER BY idx DESC";		//가장 최근의 정보를 먼저 얻어옴.
 
 		std::vector<DB_Cart> vec_cart;
 
