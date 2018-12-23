@@ -65,7 +65,7 @@ int CDataBaseCart::AddCart(const int index)
 	{
 		printf("Cart Insert\n");
 
-		char* pErr, *pDBFile = DB_PATH;
+		char* pErr=NULL, *pDBFile = DB_PATH;
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
 		//Tablek Book
@@ -85,7 +85,16 @@ int CDataBaseCart::AddCart(const int index)
 		if (nResult)
 		{
 			printf("%s 데이터 저장 실패!\n", TABLE_NAME_CART);
-			sqlite3_free(pErr);
+
+			if (pErr)
+			{
+				printf("%s Error %s\n", __func__, pErr);
+				sqlite3_free(pErr);
+			}
+		}
+		else
+		{
+			ret = 1;
 		}
 	}
 

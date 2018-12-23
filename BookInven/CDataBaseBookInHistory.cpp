@@ -288,11 +288,11 @@ int CDataBaseBookInHistory::GetAbleInCartIndex(const std::string isbn)
 
 	if (check_db)
 	{
-		char* pErr, *pDBFile = DB_PATH;
+		char* pErr=NULL, *pDBFile = DB_PATH;
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
 		//같은 정보가 있는지 확인
-		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " WHERE book_info_isbn='" + isbn + " AND book_count>0 ORDER BY idx ASC LIMIT 1";		//가장 과거의 정보 부터
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " WHERE book_info_isbn='" + isbn + "' AND book_count>0 ORDER BY idx DESC LIMIT 1";		//가장 과거의 정보 부터
 
 		std::vector<DB_BookInHistory> vec_history;
 
@@ -300,7 +300,12 @@ int CDataBaseBookInHistory::GetAbleInCartIndex(const std::string isbn)
 
 		if (nResult)
 		{
-			sqlite3_free(&pErr);
+			if (pErr)
+			{
+				printf("Error(%s) = %s\n", __func__, pErr);
+
+				sqlite3_free(&pErr);
+			}
 		}
 		else
 		{
@@ -337,7 +342,7 @@ int CDataBaseBookInHistory::GetBookCount(const std::string isbn)
 
 		//같은 정보가 있는지 확인
 		//SELECT SUM(COL_VALUES) FROM myTable
-		std::string sql_command = "SELECT SUM(book_count) FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " WHERE book_info_isbn='" + isbn + "' AND sale_code=''";		//가장 최근의 정보를 얻어옴.
+		std::string sql_command = "SELECT SUM(book_count) FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " WHERE book_info_isbn='" + isbn + "'";		//가장 최근의 정보를 얻어옴.
 
 		int book_count = 0;
 

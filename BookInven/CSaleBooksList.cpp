@@ -341,7 +341,7 @@ void CSaleBooksList::DelCheckedItem(void)
 		}
 #endif
 
-		UpdateList();
+		//UpdateList();
 	}
 #endif
 
@@ -419,7 +419,7 @@ void CSaleBooksList::PlusCheckedItem(void)
 			}
 		}
 
-		UpdateList();
+		//UpdateList();
 	}
 }
 
@@ -481,7 +481,7 @@ void CSaleBooksList::MinusCheckedItem(void)
 			iter_count++;
 		}
 
-		UpdateList();
+		//UpdateList();
 	}
 }
 
