@@ -397,6 +397,7 @@ BookInHistory CDataBaseBookInHistory::CvtDB_BookInHistoryToBookInHistory(const D
 	data.bookin_info.provider_info.detail.provide_type = db_data.provie_type;
 	data.bookin_info.sale_cost = db_data.sale_cost;
 	data.reg_date = db_data.reg_date;
+	data.bookin_info.count = db_data.book_count;
 
 	return data;
 }

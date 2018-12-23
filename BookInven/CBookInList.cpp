@@ -152,7 +152,7 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 			}
 			list_index++;
 
-			if (std::string(str_count) != std::to_string(1))
+			if (std::string(str_count) != std::to_string(bookin_info.bookin_info.count))
 			{
 				cstr_data.Format(_T("%d"), 1);
 				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
@@ -239,7 +239,7 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//수량
-			cstr_data.Format(_T("%d"), 1);
+			cstr_data.Format(_T("%d"), bookin_info.bookin_info.count);
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급사
