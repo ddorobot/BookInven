@@ -37,6 +37,39 @@ int CCart::AddCart(const std::string isbn)
 	return ret;
 }
 
+int CCart::DelCart(const std::string isbn)
+{
+	int ret = 0;
+
+	CDataBaseCart cls_db_cart;
+
+	std::vector<DB_Cart> vec_cart = cls_db_cart.GetDBInfo();
+	int cart_size = vec_cart.size();
+
+	for (int i = 0; i < cart_size; i++)
+	{
+		int book_in_index = vec_cart[i].bookin_idx;
+
+		CDataBaseBookInHistory cls_db_book_in_history;
+		BookInHistory book_in_data = cls_db_book_in_history.GetInfo(book_in_index);
+
+		if (book_in_data.bookin_info.book_info.isbn == isbn)
+		{
+			//카트 DB를 삭제(수량을 1을 줄이는 것과 같다)하고 입고수량에 1을 추가 한다. 
+			if (cls_db_cart.PopCart(vec_cart[i].idx))
+			{
+				//입고수량에 1을 추가
+				if (cls_db_book_in_history.PushPopCount(book_in_index, 1))
+				{
+					ret = 1;
+				}
+			}
+		}
+	}
+
+	return ret;
+}
+
 int CCart::PopCart(const std::string isbn)
 {
 	int ret = 0;

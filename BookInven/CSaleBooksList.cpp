@@ -89,7 +89,17 @@ void CSaleBooksList::UpdateList(void)
 #if 1
 	//-----
 	//Data from Cart DB
-	DelAllItem();
+	//DelAllItem();
+	int sale_size = m_sale_books.size();
+	for (int i = 0; i < sale_size; i++)
+	{
+		if (m_sale_books[i].pBmp != NULL)
+		{
+			delete m_sale_books[i].pBmp;
+			m_sale_books[i].pBmp = NULL;
+		}
+	}
+	m_sale_books.clear();
 	m_p_list_ctrl->DeleteAllItems();
 
 	//카트 정보
@@ -262,28 +272,6 @@ int CSaleBooksList::Pay(const int discount, const bool cash)
 
 void CSaleBooksList::DelCheckedItem(void)
 {
-#if 0
-	//우선 체크 상태를 확인하여 image 정보를 release한다.
-	if (m_p_list_ctrl != NULL)
-	{
-		int count = m_p_list_ctrl->GetItemCount();
-		for (int i = 0; i < count; i++)
-		{
-			// 체크상태 확인
-			if (m_p_list_ctrl->GetItemState(i, LVIS_SELECTED) == LVIS_SELECTED)
-			{
-			}
-		}
-	}
-
-	POSITION posItem;
-	while (posItem = m_p_list_ctrl->GetFirstSelectedItemPosition())
-	{
-		int nIndex = m_p_list_ctrl->GetNextSelectedItem(posItem);
-		m_p_list_ctrl->DeleteItem(nIndex);
-	}
-	// End code snippet
-#else
 	if (m_p_list_ctrl != NULL)
 	{
 		int count = m_p_list_ctrl->GetItemCount();
@@ -294,16 +282,21 @@ void CSaleBooksList::DelCheckedItem(void)
 		{
 			// 체크상태 확인
 			//if (m_p_list_ctrl->GetCheck(i))
-			if(m_p_list_ctrl->GetItemState(i, LVIS_SELECTED) == LVIS_SELECTED)
+			if (m_p_list_ctrl->GetItemState(i, LVIS_SELECTED) == LVIS_SELECTED)
 			{
 				if (i < candidate_size)
 				{
+					CCart cls_cart;
+					cls_cart.DelCart(m_sale_books[i].book_info.isbn);
+
 					deque_del_index.push_back(i);
 				}
 			}
 		}
 
-		int iter_count = 0; 
+#if 1
+		//상품 삭제
+		int iter_count = 0;
 		for (auto it = m_sale_books.begin(); it != m_sale_books.end(); )
 		{
 			int deque_del_size = deque_del_index.size();
@@ -332,22 +325,11 @@ void CSaleBooksList::DelCheckedItem(void)
 			iter_count++;
 		}
 
-#if 0
-		//삭제 되지 않은 아이템은 Checked가 FALSE여야 한다.
-		count = m_p_list_ctrl->GetItemCount();
-		for (int i = 0; i < count; i++)
+		if (m_sale_books.size() <= 0)
 		{
-			m_p_list_ctrl->SetCheck(i, FALSE);
+			ResetImageList();
 		}
 #endif
-
-		//UpdateList();
-	}
-#endif
-
-	if (m_sale_books.size() == 0)
-	{
-		ResetImageList();
 	}
 }
 
@@ -454,7 +436,7 @@ void CSaleBooksList::MinusCheckedItem(void)
 			}
 		}
 
-#if 0
+#if 1
 		//수량이 0인 상품은 삭제
 		int iter_count = 0;
 		for (auto it = m_sale_books.begin(); it != m_sale_books.end(); )
@@ -484,6 +466,11 @@ void CSaleBooksList::MinusCheckedItem(void)
 
 			iter_count++;
 		}
+
+		if (m_sale_books.size() <= 0)
+		{
+			ResetImageList();
+		}
 #endif
 
 		//UpdateList();
@@ -494,26 +481,16 @@ void CSaleBooksList::DelAllItem(void)
 {
 	if (m_p_list_ctrl != NULL)
 	{
-		if (m_sale_books.size() > 0)
+
+		int count = m_p_list_ctrl->GetItemCount();
+
+		for (int i = 0; i < count; i++)
 		{
-			for (auto it = m_sale_books.begin(); it != m_sale_books.end(); )
-			{
-				//Release bitmap
-				if (it->pBmp != NULL)
-				{
-					delete it->pBmp;
-					it->pBmp = NULL;
-				}
-
-				it = m_sale_books.erase(it);
-
-			}
+			//m_p_list_ctrl->SetCheck(i, TRUE);
+			m_p_list_ctrl->SetItemState(i, LVIS_SELECTED, LVIS_SELECTED);
 		}
-	}
 
-	if (m_sale_books.size() == 0)
-	{
-		ResetImageList();
+		DelCheckedItem();
 	}
 }
 
@@ -524,9 +501,9 @@ int CSaleBooksList::GetTotalPrice(void)
 	int sale_size = m_sale_books.size();
 	for (int i = 0; i < sale_size; i++)
 	{
-		//int cost = m_sale_books[i].count * m_sale_books[i].book_info.price;
+		int cost = m_sale_books[i].count * m_sale_books[i].book_info.price;
 
-		//price += cost;
+		price += cost;
 	}
 
 	return price;
