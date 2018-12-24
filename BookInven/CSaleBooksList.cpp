@@ -398,10 +398,6 @@ void CSaleBooksList::PlusCheckedItem(void)
 				{
 					CGetGoodsCount cls_get_goods_count;
 					int goods_count = cls_get_goods_count.GetCount(m_sale_books[i].book_info.isbn); //cls_db_book_in_history.GetBookCount(str_isbn_);
-					int goods_count_in_list = 0;
-					goods_count_in_list = GetCountInListInfo(m_sale_books[i].book_info.isbn);
-
-					goods_count -= goods_count_in_list;
 
 					if (goods_count <= 0)
 					{
@@ -412,6 +408,11 @@ void CSaleBooksList::PlusCheckedItem(void)
 					}
 					else
 					{
+						CCart cls_cart;
+						if (cls_cart.AddCart(m_sale_books[i].book_info.isbn))
+						{
+							
+						}
 						//m_sale_books[i].count++;
 					}
 
