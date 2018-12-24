@@ -23,7 +23,9 @@ public:
 	~CDataBaseCart();
 
 	int AddCart(const int index);
-	std::vector<int> GetAllInfo(void);
+	int PopCart(const int index);
+	std::vector<int> GetInfo(const int index=-1);
+	std::vector<DB_Cart> GetDBInfo(void);
 	int GetCount(const int index=-1);
 private:
 

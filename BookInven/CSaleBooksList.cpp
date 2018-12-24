@@ -441,7 +441,9 @@ void CSaleBooksList::MinusCheckedItem(void)
 				{
 					if (m_sale_books[i].count > 0)
 					{
-						m_sale_books[i].count-- ;
+						//m_sale_books[i].count-- ;
+						CCart cls_cart;
+						cls_cart.PopCart(m_sale_books[i].book_info.isbn);
 					}
 
 					if (m_sale_books[i].count <= 0)
@@ -452,6 +454,7 @@ void CSaleBooksList::MinusCheckedItem(void)
 			}
 		}
 
+#if 0
 		//수량이 0인 상품은 삭제
 		int iter_count = 0;
 		for (auto it = m_sale_books.begin(); it != m_sale_books.end(); )
@@ -481,6 +484,7 @@ void CSaleBooksList::MinusCheckedItem(void)
 
 			iter_count++;
 		}
+#endif
 
 		//UpdateList();
 	}

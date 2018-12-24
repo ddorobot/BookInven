@@ -11,7 +11,46 @@ CDataBaseCart::~CDataBaseCart()
 {
 }
 
-std::vector<int> CDataBaseCart::GetAllInfo(void)
+std::vector<DB_Cart> CDataBaseCart::GetDBInfo(void)
+{
+	std::vector<DB_Cart> ret_vec;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_CART), std::string(TABLE_DATA_CART));
+
+	if (check_db)
+	{
+		char* pErr=NULL, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+
+		//같은 정보가 있는지 확인
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_CART) + " ORDER BY idx ASC";		//ASC : 가장 과거의 정보를 먼저 얻어옴.
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), sql_callback_get_info, &ret_vec, &pErr);
+
+		if (nResult)
+		{
+			if (pErr)
+			{
+				printf("%s Error : %s\n", __func__, pErr);
+
+				sqlite3_free(&pErr);
+			}
+		}
+		else
+		{
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+
+	return ret_vec;
+}
+
+std::vector<int> CDataBaseCart::GetInfo(const int index)
 {
 	std::vector<int> ret_index;
 
@@ -24,8 +63,14 @@ std::vector<int> CDataBaseCart::GetAllInfo(void)
 		char* pErr, *pDBFile = DB_PATH;
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
+		std::string sql_option = "";
+		if (index >= 0)
+		{
+			sql_option = " WHERE idx=" + std::to_string(index);
+		}
+
 		//같은 정보가 있는지 확인
-		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_CART) + " ORDER BY idx DESC";		//가장 최근의 정보를 먼저 얻어옴.
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_CART) + sql_option + " ORDER BY idx DESC";		//가장 최근의 정보를 먼저 얻어옴.
 
 		std::vector<DB_Cart> vec_cart;
 
@@ -50,6 +95,55 @@ std::vector<int> CDataBaseCart::GetAllInfo(void)
 	if (pDB != NULL) sqlite3_close(pDB);
 
 	return ret_index;
+}
+
+int CDataBaseCart::PopCart(const int index)
+{
+	int ret = 0;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_CART), std::string(TABLE_DATA_CART));
+
+	//check data
+	if (check_db)
+	{
+		printf("Cart Delete\n");
+
+		char* pErr = NULL, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		//Tablek Book
+		/*
+#define TABLE_NAME_CART		"TCart"
+#define TABLE_DATA_CART		"'idx'	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, \
+							'bookin_idx' INTEGER, \
+							'reg_date' TEXT"
+		*/
+		std::string sql_command = "DELETE FROM " + std::string(TABLE_NAME_CART) + " WHERE idx=" + std::to_string(index) ;
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), NULL, NULL, &pErr);
+
+		if (nResult)
+		{
+			printf("%s 데이터 삭제 실패!\n", TABLE_NAME_CART);
+
+			if (pErr)
+			{
+				printf("%s Error %s\n", __func__, pErr);
+				sqlite3_free(pErr);
+			}
+		}
+		else
+		{
+			ret = 1;
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+
+	return ret;
 }
 
 int CDataBaseCart::AddCart(const int index)

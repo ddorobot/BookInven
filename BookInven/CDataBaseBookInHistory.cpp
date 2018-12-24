@@ -240,13 +240,9 @@ std::vector<BookInHistory> CDataBaseBookInHistory::GetInHistory(const std::strin
 	return retProviderInfo;
 }
 
-int CDataBaseBookInHistory::PopCount(const int index)
+int CDataBaseBookInHistory::PushPopCount(const int index, const int count)
 {
 	int ret = 0;
-
-	DB_BookInHistory pre_data = GetInfoBookInfoHistory(index);
-	int new_count = pre_data.book_count - 1;
-	if (new_count < 0) return ret;
 
 	//check
 	sqlite3* pDB = NULL;
@@ -258,12 +254,12 @@ int CDataBaseBookInHistory::PopCount(const int index)
 	{
 		printf("BookInHistory Update\n");
 
-		char* pErr, *pDBFile = DB_PATH;
+		char* pErr=NULL, *pDBFile = DB_PATH;
 		int nResult = sqlite3_open(pDBFile, &pDB);
 		
 		//Update
 		//Tablek Book
-		std::string sql_command = "UPDATE " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " SET book_count=book_count-1 WHERE idx=" + std::to_string(index);
+		std::string sql_command = "UPDATE " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " SET book_count=book_count+(" + std::to_string(count) + ") WHERE idx=" + std::to_string(index);
 
 		//printf("AddBookInfo sql = %s\n", sql_command.c_str());
 
@@ -271,8 +267,14 @@ int CDataBaseBookInHistory::PopCount(const int index)
 
 		if (nResult)
 		{
-			printf("%s 데이터 저장 실패!\n", TABLE_NAME_BOOK_IN_HISTORY);
-			sqlite3_free(pErr);
+			printf("%s 데이터 업데이트 실패!\n", TABLE_NAME_BOOK_IN_HISTORY);
+
+			if (pErr)
+			{
+				printf("%s Error : %s\n", __func__, pErr);
+
+				sqlite3_free(pErr);
+			}
 		}
 		else
 		{

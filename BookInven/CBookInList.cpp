@@ -152,13 +152,9 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 			}
 			list_index++;
 
-			//Cart에 담긴 수량이 있는지 확인
-			int bookin_index = bookin_info.db_idx;
-			CCart cls_cart;
-			int count_in_cart = cls_cart.GetCount(bookin_index);
 			if (std::string(str_count) != std::to_string(bookin_info.bookin_info.count))
 			{
-				cstr_data.Format(_T("%d"), 1);
+				cstr_data.Format(_T("%d"), bookin_info.bookin_info.count);
 				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
 			list_index++;

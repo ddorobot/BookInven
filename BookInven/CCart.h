@@ -18,9 +18,10 @@ public:
 	~CCart();
 
 	int AddCart(const std::string isbn);
+	int PopCart(const std::string isbn);
 	int GetCartCount(void);
 	std::vector<int> GetCartAllIndex(void);
-	std::vector<CartInfo> GetCartData(void);
+	std::vector<CartInfo> GetCartData(const std::string isbn="");
 	int GetCount(const int index);
 };
 
