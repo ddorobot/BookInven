@@ -21,5 +21,6 @@ public:
 	int GetCartCount(void);
 	std::vector<int> GetCartAllIndex(void);
 	std::vector<CartInfo> GetCartData(void);
+	int GetCount(const int index);
 };
 

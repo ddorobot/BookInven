@@ -104,7 +104,7 @@ int CDataBaseCart::AddCart(const int index)
 	return ret;
 }
 
-int CDataBaseCart::GetCount(void)
+int CDataBaseCart::GetCount(const int index)
 {
 	int ret = 0;
 
@@ -117,9 +117,15 @@ int CDataBaseCart::GetCount(void)
 		char* pErr, *pDBFile = DB_PATH;
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
+		std::string sql_option = "";
+		if (index >= 0)
+		{
+			sql_option = " WHERE idx=" + std::to_string(index);
+		}
+
 		//같은 정보가 있는지 확인
 		//SELECT SUM(COL_VALUES) FROM myTable
-		std::string sql_command = "SELECT COUNT(*) FROM " + std::string(TABLE_NAME_CART) ;
+		std::string sql_command = "SELECT COUNT(*) FROM " + std::string(TABLE_NAME_CART) + sql_option;
 
 		int count = 0;
 

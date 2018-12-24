@@ -37,6 +37,16 @@ int CCart::AddCart(const std::string isbn)
 	return ret;
 }
 
+//카트에 담긴 특정 index의 수량이 몇개 인지 확인
+int CCart::GetCount(const int index)
+{
+	CDataBaseCart cls_db_cart;
+
+	int ret = cls_db_cart.GetCount(index);
+
+	return ret;
+}
+
 //카트에 담긴 총 수량을 리턴
 int CCart::GetCartCount(void)
 {

@@ -61,7 +61,7 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 	CDataBaseBookInHistory cls_db_bookin_history;
 	std::vector<BookInHistory> vec_bookin_info;
 		
-	vec_bookin_info = cls_db_bookin_history.GetInfo(str_date_start, str_date_end);
+	vec_bookin_info = cls_db_bookin_history.GetInHistory(str_date_start, str_date_end);
 
 	int history_size = vec_bookin_info.size();
 	for (int i = 0; i < history_size; i++)
@@ -152,6 +152,10 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 			}
 			list_index++;
 
+			//Cart에 담긴 수량이 있는지 확인
+			int bookin_index = bookin_info.db_idx;
+			CCart cls_cart;
+			int count_in_cart = cls_cart.GetCount(bookin_index);
 			if (std::string(str_count) != std::to_string(bookin_info.bookin_info.count))
 			{
 				cstr_data.Format(_T("%d"), 1);

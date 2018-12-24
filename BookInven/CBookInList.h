@@ -22,6 +22,7 @@
 
 #include "CDataBaseProvider.h"
 #include "CDataBaseBookInHistory.h"
+#include "CCart.h"
 
 typedef struct BookIn_List_Info {
 	int db_idx = -1;

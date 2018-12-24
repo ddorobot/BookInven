@@ -181,7 +181,7 @@ std::vector<BookInHistory> CDataBaseBookInHistory::GetPeriodInfo(const std::stri
 }
 #endif
 
-std::vector<BookInHistory> CDataBaseBookInHistory::GetInfo(const std::string str_date_start, const std::string str_date_end)
+std::vector<BookInHistory> CDataBaseBookInHistory::GetInHistory(const std::string str_date_start, const std::string str_date_end)
 {
 	std::vector<BookInHistory> retProviderInfo;
 
@@ -219,7 +219,17 @@ std::vector<BookInHistory> CDataBaseBookInHistory::GetInfo(const std::string str
 			{
 				BookInHistory bookin_history = CvtDB_BookInHistoryToBookInHistory(vec_history[i]);
 
-				retProviderInfo.push_back(bookin_history);
+				//입고 정보를 얻는다.
+				CDataBaseBookInHistoryDetail cls_db_bookin_history_detail;
+				std::vector<BookInHistoryDetail> vec_history_detail = cls_db_bookin_history_detail.GetDetail(vec_history[i].idx, trade_in);
+				int detail_size = vec_history_detail.size();
+
+				for (int j = 0; j < detail_size; j++)
+				{
+					//입고 정보로 수량을 업데이트
+					bookin_history.bookin_info.count = vec_history_detail[j].book_count;
+					retProviderInfo.push_back(bookin_history);
+				}
 			}
 		}
 	}
@@ -577,9 +587,12 @@ int CDataBaseBookInHistory::AddBookInInfo(const DB_BookInHistory bookinfo)
 			}
 
 			//Detail정보에 입고를 입력 한다.
+			BookInHistory save_data = GetLastInfo();
 			CDataBaseBookInHistoryDetail cls_db_book_in_detail;
-
-			ret = 1;
+			if (cls_db_book_in_detail.AddDetail(save_data.db_idx, save_data.bookin_info.count, trade_in))
+			{
+				ret = 1;
+			}
 		}
 
 	}

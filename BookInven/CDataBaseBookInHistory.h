@@ -55,7 +55,7 @@ public:
 	BookInHistory GetLastInfo(void);
 	BookInHistory GetInfo(const int idx);
 	
-	std::vector<BookInHistory> GetInfo(const std::string str_date_start="", const std::string str_date_end="");
+	std::vector<BookInHistory> GetInHistory(const std::string str_date_start="", const std::string str_date_end="");
 	void Delete(const int index);
 	int GetAbleInCartIndex(const std::string isbn);
 	int PopCount(const int index);

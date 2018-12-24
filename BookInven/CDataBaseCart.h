@@ -24,7 +24,7 @@ public:
 
 	int AddCart(const int index);
 	std::vector<int> GetAllInfo(void);
-	int GetCount(void);
+	int GetCount(const int index=-1);
 private:
 
 	static int sql_callback_get_info(void *NotUsed, int argc, char **argv, char **azColName);
