@@ -20,7 +20,6 @@
 #include "CDataBaseBookSaleHistory.h"
 
 typedef struct BookSale_List_Info {
-	int db_idx = -1;
 	std::string code = "";
 	int count = 0;
 	int discount = 0;

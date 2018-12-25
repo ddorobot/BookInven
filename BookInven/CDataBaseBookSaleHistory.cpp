@@ -113,7 +113,7 @@ int CDataBaseBookSaleHistory::sql_callback_get_info(void *NotUsed, int argc, cha
 			}
 			else if (name == "reg_date")
 			{
-				sale_info.reg_date = argv[i] ? argv[i] : "NULL";
+				sale_info.sale_info.reg_date = argv[i] ? argv[i] : "NULL";
 			}
 		}
 	}

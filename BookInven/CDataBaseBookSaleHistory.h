@@ -28,13 +28,12 @@ typedef struct BookSaleHistory {
 	int sale_cost = 0;
 	std::string memo;
 	bool cash = false;
+	std::string reg_date;
 } BookSaleHistory;
 
 typedef struct DB_BookSaleHistory {
 	int idx=-1;
 	BookSaleHistory sale_info;
-	std::string reg_date = "";
-
 } DB_BookSaleHistory;
 
 class CDataBaseBookSaleHistory : CDataBase
