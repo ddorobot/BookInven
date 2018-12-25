@@ -40,6 +40,14 @@ void CBookSaleDetailList::SetListCtrl(CListCtrl* p_list_ctrl)
 	mutex_list_ctrl.unlock();
 }
 
+std::string CBookSaleDetailList::GetMemo(const std::string str_sale_code)
+{
+	CDataBaseBookSaleHistory cls_db_book_sale_history;
+	BookSaleHistory book_sale_info = cls_db_book_sale_history.GetInfo(str_sale_code);
+
+	return book_sale_info.memo;
+}
+
 void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 {
 	if (m_p_list_ctrl == NULL) return;
@@ -49,6 +57,7 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 	m_book_sale.clear();
 	if (!str_sale_code.empty())
 	{
+		
 		//입고 정보를 얻는다.
 		CDataBaseBookInHistoryDetail cls_db_bookin_history_detail;
 		std::vector<DB_BookInHistoryDetail> vec_history_detail = cls_db_bookin_history_detail.GetDetail_DB(str_sale_code);
@@ -69,7 +78,7 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 				list_info.bookin_list_info.db_idx = bookin_info.db_idx;
 				list_info.bookin_list_info.bookin_info = bookin_info.bookin_info;
 				list_info.bookin_list_info.reg_date = bookin_info.reg_date;
-				
+
 				m_book_sale.push_back(list_info);
 			}
 		}
@@ -78,7 +87,6 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 	}
 
 	int count = m_p_list_ctrl->GetItemCount();
-
 	int book_sale_size = m_book_sale.size();
 
 	for (int i = 0; i < count; i++)

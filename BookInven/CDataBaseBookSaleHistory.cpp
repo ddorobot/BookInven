@@ -11,6 +11,52 @@ CDataBaseBookSaleHistory::~CDataBaseBookSaleHistory()
 {
 }
 
+BookSaleHistory CDataBaseBookSaleHistory::GetInfo(const std::string code)
+{
+	BookSaleHistory book_sale_info;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_BOOK_SALE_HISTORY), std::string(TABLE_DATA_BOOK_SALE_HISTORY));
+
+	if (check_db)
+	{
+		char* pErr, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		//같은 정보가 있는지 확인
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_SALE_HISTORY) + " WHERE code='" + code + "' ORDER BY idx DESC LIMIT 1";		//가장 최근의 정보를 얻어옴.
+
+		std::vector<DB_BookSaleHistory> vec_history;
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), sql_callback_get_info, &vec_history, &pErr);
+
+		if (nResult)
+		{
+			sqlite3_free(&pErr);
+		}
+		else
+		{
+			int history_size = vec_history.size();
+
+			if ( history_size > 0 )
+			{
+				DB_BookSaleHistory db_history = vec_history[0];
+
+				BookSaleHistory sale_info;
+				sale_info = db_history.sale_info;
+
+				book_sale_info = sale_info;
+			}
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+
+	return book_sale_info;
+}
+
 std::vector<BookSaleHistory> CDataBaseBookSaleHistory::GetInfo(const std::string str_date_start, const std::string str_date_end)
 {
 	std::vector<BookSaleHistory> rer_vec_book_sale_info;

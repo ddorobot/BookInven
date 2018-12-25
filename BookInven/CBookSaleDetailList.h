@@ -20,6 +20,7 @@
 
 #include "CDataBaseBookInHistory.h"
 #include "CDataBaseBookInHistoryDetail.h"
+#include "CDataBaseBookSaleHistory.h"
 
 typedef struct BookSaleDetailInfo {
 	BookIn_List_Info bookin_list_info;
@@ -35,6 +36,7 @@ public:
 	void SetListCtrl(CListCtrl* p_list_ctrl);
 
 	void UpdateList(const std::string str_sale_code="");
+	std::string GetMemo(const std::string str_sale_code);
 private:
 
 	boost::mutex mutex_list_ctrl;
