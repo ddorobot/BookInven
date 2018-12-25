@@ -14,7 +14,7 @@ CBookSaleDetailList::CBookSaleDetailList(CListCtrl* p_list_ctrl) :
 	// 타이틀 삽입
 	int list_index = 0;
 	m_p_list_ctrl->InsertColumn(list_index++, _T(""), LVCFMT_CENTER, 20, -1);
-	m_p_list_ctrl->InsertColumn(list_index++, _T("입고날짜"), LVCFMT_CENTER, 130, -1);
+	m_p_list_ctrl->InsertColumn(list_index++, _T("날짜"), LVCFMT_CENTER, 130, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("CODE"), LVCFMT_CENTER, 110, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("이름"), LVCFMT_CENTER, 150, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("저자"), LVCFMT_CENTER, 100, -1); 
