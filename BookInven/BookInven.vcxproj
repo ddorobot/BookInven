@@ -193,6 +193,7 @@
     <ClInclude Include="BookInvenDlg.h" />
     <ClInclude Include="CBookInCandidate.h" />
     <ClInclude Include="CBookInList.h" />
+    <ClInclude Include="CBookSaleDetailList.h" />
     <ClInclude Include="CBookSaleList.h" />
     <ClInclude Include="CCart.h" />
     <ClInclude Include="CCheckString.h" />
@@ -236,6 +237,7 @@
     <ClCompile Include="BookInvenDlg.cpp" />
     <ClCompile Include="CBookInCandidate.cpp" />
     <ClCompile Include="CBookInList.cpp" />
+    <ClCompile Include="CBookSaleDetailList.cpp" />
     <ClCompile Include="CBookSaleList.cpp" />
     <ClCompile Include="CCart.cpp" />
     <ClCompile Include="CCheckString.cpp" />

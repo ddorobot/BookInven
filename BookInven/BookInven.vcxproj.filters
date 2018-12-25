@@ -147,6 +147,9 @@
     <ClInclude Include="CDlgMemo.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CBookSaleDetailList.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BookInven.cpp">
@@ -258,6 +261,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CDlgMemo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CBookSaleDetailList.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

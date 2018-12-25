@@ -33,6 +33,20 @@ void CBookSaleList::SetListCtrl(CListCtrl* p_list_ctrl)
 	mutex_list_ctrl.unlock();
 }
 
+std::string CBookSaleList::GetSaleCode(const int index)
+{
+	std::string str_sale_code;
+	
+	int sale_size = m_book_sale.size();
+
+	if (index < sale_size && index >= 0)
+	{
+		str_sale_code = m_book_sale[index].code;
+	}
+
+	return str_sale_code;
+}
+
 void CBookSaleList::UpdateList(std::string str_date_start, std::string str_date_end)
 {
 	if (m_p_list_ctrl == NULL) return;

@@ -16,35 +16,30 @@
 #include "boost\system\error_code.hpp"
 
 #include "BookInfo.h"
+#include "CBookInList.h"
 
-#include "CDataBaseBookSaleHistory.h"
+#include "CDataBaseBookInHistory.h"
+#include "CDataBaseBookInHistoryDetail.h"
 
-typedef struct BookSale_List_Info {
-	std::string code = "";
-	int count = 0;
-	int discount = 0;
-	int sale_cost = 0;
-	bool cash = false;
-	std::string reg_date = "";
-} BookSale_List_Info;
+typedef struct BookSaleDetailInfo {
+	BookIn_List_Info bookin_list_info;
+	std::string memo;
+} BookSaleDetailInfo;
 
-
-class CBookSaleList
+class CBookSaleDetailList
 {
 public:
-	CBookSaleList(CListCtrl* p_list_ctrl);
-	~CBookSaleList();
+	CBookSaleDetailList(CListCtrl* p_list_ctrl);
+	~CBookSaleDetailList();
 
 	void SetListCtrl(CListCtrl* p_list_ctrl);
 
-	void UpdateList(std::string str_date_start="", std::string str_date_end="");
-	std::string GetSaleCode(const int index);
-
+	void UpdateList(const std::string str_sale_code="");
 private:
 
 	boost::mutex mutex_list_ctrl;
 	CListCtrl* m_p_list_ctrl;
 
-	std::deque<BookSale_List_Info> m_book_sale;
+	std::deque<BookSaleDetailInfo> m_book_sale;
 };
 

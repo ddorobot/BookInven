@@ -129,6 +129,93 @@ int CDataBaseBookInHistoryDetail::AddDetail(const int base_idx, const int count,
 	return ret;
 }
 
+std::vector<DB_BookInHistoryDetail> CDataBaseBookInHistoryDetail::GetDetail_DB(const std::string code)
+{
+	std::vector<DB_BookInHistoryDetail> retDetail;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_BOOK_IN_HISTORY_DETAIL), std::string(TABLE_DATA_BOOK_IN_HISTORY_DETAIL));
+
+	if (check_db)
+	{
+		char* pErr = NULL, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		//같은 정보가 있는지 확인
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY_DETAIL) + " WHERE type_code='" + code + "' ORDER BY idx DESC";		//가장 최근의 정보를 얻어옴.
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), sql_callback_get_info, &retDetail, &pErr);
+
+		if (nResult)
+		{
+			if (pErr)
+			{
+				printf("%s Error : %s\n", __func__, pErr);
+
+				sqlite3_free(&pErr);
+			}
+		}
+		else
+		{
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+
+	return retDetail;
+}
+
+std::vector<BookInHistoryDetail> CDataBaseBookInHistoryDetail::GetDetail(const std::string code)
+{
+	std::vector<BookInHistoryDetail> retDetail;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_BOOK_IN_HISTORY_DETAIL), std::string(TABLE_DATA_BOOK_IN_HISTORY_DETAIL));
+
+	if (check_db)
+	{
+		char* pErr = NULL, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		//같은 정보가 있는지 확인
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY_DETAIL) + " WHERE type_code=" + code + " ORDER BY idx DESC";		//가장 최근의 정보를 얻어옴.
+
+		std::vector<DB_BookInHistoryDetail> vec_history;
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), sql_callback_get_info, &vec_history, &pErr);
+
+		if (nResult)
+		{
+			if (pErr)
+			{
+				printf("%s Error : %s\n", __func__, pErr);
+
+				sqlite3_free(&pErr);
+			}
+		}
+		else
+		{
+			int history_size = vec_history.size();
+
+			for (int i = 0; i < history_size; i++)
+			{
+				BookInHistoryDetail detail;
+				detail = vec_history[i].detail;
+
+				retDetail.push_back(detail);
+			}
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+
+	return retDetail;
+}
+
 std::vector<BookInHistoryDetail> CDataBaseBookInHistoryDetail::GetDetail(const int base_idx, const int type)
 {
 	std::vector<BookInHistoryDetail> retDetail;
