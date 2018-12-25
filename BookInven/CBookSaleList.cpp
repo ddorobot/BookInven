@@ -167,7 +167,7 @@ void CBookSaleList::UpdateList(std::string str_date_start, std::string str_date_
 		{
 			BookSale_List_Info book_sale_info = m_book_sale[index];
 
-			int list_index = 0;
+			int list_index = 1;
 
 			//데이타 추가
 			//체크박스
@@ -216,7 +216,7 @@ void CBookSaleList::UpdateList(std::string str_date_start, std::string str_date_
 	{
 		for (int index = book_in_size; index < count; index++)
 		{
-			m_p_list_ctrl->DeleteItem(index);
+			m_p_list_ctrl->DeleteItem(book_in_size);
 		}
 	}
 #endif
