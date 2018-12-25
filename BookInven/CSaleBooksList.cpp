@@ -248,24 +248,47 @@ int CSaleBooksList::Pay(const int discount, const bool cash)
 {
 	int ret = 0;
 
+	//Cart의 정보를 결제 정보로 저장!
+	//카트 정보
+	CCart cls_cart;
+	std::vector<int> vec_cart_index = cls_cart.GetCartAllIndex();
+
+	int cart_size = vec_cart_index.size();
+
 	//DB 저장
-	BookSaleInfo book_sale_info;
+	BookSaleHistory book_sale_info;
 
-	book_sale_info.db_sale_book_info.discount = discount;
-	book_sale_info.db_sale_book_info.cash = cash;
-
-	int sale_size = m_sale_books.size();
-	for (int i = 0; i < sale_size; i++)
-	{
-		SaleBooksInfo2 info2;
-		info2.book_info = m_sale_books[i].book_info;
-		info2.count = m_sale_books[i].count ;
-
-		book_sale_info.vec_sale_books_info.push_back(info2);
-	}
+	book_sale_info.count = cart_size;
+	book_sale_info.discount = discount;
+	book_sale_info.cash = cash;
+	book_sale_info.sale_cost = GetTotalPrice();
 
 	CDataBaseBookSaleHistory cls_db_book_sale_history;
-	ret = cls_db_book_sale_history.AddBookSaleInfo(book_sale_info);
+	std::string code = cls_db_book_sale_history.AddBookSaleInfo(book_sale_info);
+
+	if (!code.empty())
+	{
+		//BookInHistory의 수량 수정은 필요 없음. 이미 카트에 넣으면서 수량이 줄어 들었음
+
+		//BookInHistoryDetil에 판매 했다고 추가 해야 함.
+		for (int i = 0; i < cart_size; i++)
+		{
+			//BookIn Detail정보에 결제 정보를 전송!
+			int bookin_db_index = vec_cart_index[i];
+
+			//Detail정보에 입고를 입력 한다.
+			CDataBaseBookInHistoryDetail cls_db_book_in_detail;
+			if (cls_db_book_in_detail.AddDetail(bookin_db_index, -1, trade_sale, code))
+			{
+				ret = 1;
+			}
+			else
+			{
+				ret = 0;
+			}
+
+		}
+	}
 
 	return ret;
 }

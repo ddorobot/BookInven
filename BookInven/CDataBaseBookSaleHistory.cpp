@@ -11,9 +11,9 @@ CDataBaseBookSaleHistory::~CDataBaseBookSaleHistory()
 {
 }
 
-std::vector<BookSaleInfo> CDataBaseBookSaleHistory::GetInfo(const std::string str_date_start, const std::string str_date_end)
+std::vector<BookSaleHistory> CDataBaseBookSaleHistory::GetInfo(const std::string str_date_start, const std::string str_date_end)
 {
-	std::vector<BookSaleInfo> rer_vec_book_sale_info;
+	std::vector<BookSaleHistory> rer_vec_book_sale_info;
 
 	sqlite3* pDB = NULL;
 
@@ -49,8 +49,8 @@ std::vector<BookSaleInfo> CDataBaseBookSaleHistory::GetInfo(const std::string st
 			{
 				DB_BookSaleHistory db_history = vec_history[i];
 
-				BookSaleInfo sale_info;
-				sale_info.db_sale_book_info = db_history;
+				BookSaleHistory sale_info;
+				sale_info = db_history.sale_info;
 
 				rer_vec_book_sale_info.push_back(sale_info);
 			}
@@ -80,19 +80,19 @@ int CDataBaseBookSaleHistory::sql_callback_get_info(void *NotUsed, int argc, cha
 			}
 			else if (name == "code")
 			{
-				sale_info.code = argv[i] ? argv[i] : "";
+				sale_info.sale_info.code = argv[i] ? argv[i] : "";
 			}
 			else if (name == "discount")
 			{
-				sale_info.sale_cost = argv[i] ? std::stoi(argv[i]) : 0;
+				sale_info.sale_info.discount = argv[i] ? std::stoi(argv[i]) : 0;
 			}
 			else if (name == "total_count")
 			{
-				sale_info.count = argv[i] ? std::stoi(argv[i]) : 0;
+				sale_info.sale_info.count = argv[i] ? std::stoi(argv[i]) : 0;
 			}
 			else if (name == "sale_cost")
 			{
-				sale_info.sale_cost = argv[i] ? std::stoi(argv[i]) : 0;
+				sale_info.sale_info.sale_cost = argv[i] ? std::stoi(argv[i]) : 0;
 			}
 			else if (name == "cash")
 			{
@@ -100,11 +100,11 @@ int CDataBaseBookSaleHistory::sql_callback_get_info(void *NotUsed, int argc, cha
 
 				if (cash == 0)
 				{
-					sale_info.cash = false;
+					sale_info.sale_info.cash = false;
 				}
 				else
 				{
-					sale_info.cash = true;
+					sale_info.sale_info.cash = true;
 				}
 			}
 			else if (name == "reg_date")
@@ -155,9 +155,9 @@ std::string CDataBaseBookSaleHistory::MakeCode(void)
 }
 
 //Set
-int CDataBaseBookSaleHistory::AddBookSaleInfo(const BookSaleInfo sale_bookinfo)
+std::string CDataBaseBookSaleHistory::AddBookSaleInfo(const BookSaleHistory sale_bookinfo)
 {
-	int ret = 0;
+	std::string ret_code = "";
 
 	//check
 	sqlite3* pDB = NULL;
@@ -185,22 +185,12 @@ int CDataBaseBookSaleHistory::AddBookSaleInfo(const BookSaleInfo sale_bookinfo)
 
 		std::string sale_code = MakeCode();
 
-		int sale_book_count = sale_bookinfo.vec_sale_books_info.size();
-
-		int sale_cost = 0;
-		int total_count = 0;
-		for (int i = 0; i < sale_book_count; i++)
-		{
-			sale_cost += sale_bookinfo.vec_sale_books_info[i].book_info.price;
-			total_count += sale_bookinfo.vec_sale_books_info[i].count;
-		}
-
 		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_BOOK_SALE_HISTORY) + " (code, total_count, discount, sale_cost, cash, reg_date) VALUES (";
 		sql_command += "'" + sale_code + "', ";
-		sql_command += "'" + std::to_string(total_count) + "', ";
-		sql_command += "'" + std::to_string(sale_bookinfo.db_sale_book_info.discount) + "', ";
-		sql_command += "'" + std::to_string(sale_cost) + "', ";
-		sql_command += "'" + std::to_string(sale_bookinfo.db_sale_book_info.cash) + "', ";
+		sql_command += "'" + std::to_string(sale_bookinfo.count) + "', ";
+		sql_command += "'" + std::to_string(sale_bookinfo.discount) + "', ";
+		sql_command += "'" + std::to_string(sale_bookinfo.sale_cost) + "', ";
+		sql_command += "'" + std::to_string(sale_bookinfo.cash) + "', ";
 		sql_command += "datetime('now','localtime')";
 		sql_command += "); ";
 
@@ -215,17 +205,12 @@ int CDataBaseBookSaleHistory::AddBookSaleInfo(const BookSaleInfo sale_bookinfo)
 		}
 		else
 		{
-			//Detail ÀúÀå
-			for (int i = 0; i < sale_book_count; i++)
-			{
-			}
-
-			ret = 1;
+			ret_code = sale_code;
 		}
 	}
 
 	//db close
 	if (pDB != NULL) sqlite3_close(pDB);
 
-	return ret;
+	return ret_code;
 }

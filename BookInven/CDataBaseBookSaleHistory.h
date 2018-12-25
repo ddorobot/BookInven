@@ -20,28 +20,20 @@
 											'reg_date' TEXT"
 
 
-typedef struct DB_BookSaleHistory {
-	int idx=-1;
+typedef struct BookSaleHistory {
 	std::string code = "";
 	int count = 0;
 	int discount = 0;
 	int sale_cost = 0;
 	bool cash = false;
+} BookSaleHistory;
+
+typedef struct DB_BookSaleHistory {
+	int idx=-1;
+	BookSaleHistory sale_info;
 	std::string reg_date = "";
 
 } DB_BookSaleHistory;
-
-typedef struct SaleBooksInfo2 {
-	BookInfo book_info;
-	int count = 0;
-} SaleBooksInfo2;
-
-
-typedef struct BookSaleInfo {
-	std::vector<SaleBooksInfo2> vec_sale_books_info;
-	DB_BookSaleHistory db_sale_book_info;
-} BookSaleInfo;
-
 
 class CDataBaseBookSaleHistory : CDataBase
 {
@@ -50,8 +42,8 @@ public:
 	~CDataBaseBookSaleHistory();
 
 	//Book Info
-	int AddBookSaleInfo(const BookSaleInfo sale_bookinfo);
-	std::vector<BookSaleInfo> GetInfo(const std::string str_date_start, const std::string str_date_end);
+	std::string AddBookSaleInfo(const BookSaleHistory sale_bookinfo);
+	std::vector<BookSaleHistory> GetInfo(const std::string str_date_start, const std::string str_date_end);
 
 private:
 	static int sql_callback_get_info(void *NotUsed, int argc, char **argv, char **azColName);

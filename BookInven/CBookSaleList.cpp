@@ -38,7 +38,7 @@ void CBookSaleList::UpdateList(std::string str_date_start, std::string str_date_
 
 	//mutex_candidate.lock();
 
-#if 1
+#if 0
 	//-----
 	m_book_sale.clear();
 
