@@ -107,6 +107,10 @@ int CDataBaseBookSaleHistory::sql_callback_get_info(void *NotUsed, int argc, cha
 					sale_info.sale_info.cash = true;
 				}
 			}
+			else if (name == "memo")
+			{
+				sale_info.sale_info.memo = argv[i] ? argv[i] : "";
+			}
 			else if (name == "reg_date")
 			{
 				sale_info.reg_date = argv[i] ? argv[i] : "NULL";
@@ -185,12 +189,13 @@ std::string CDataBaseBookSaleHistory::AddBookSaleInfo(const BookSaleHistory sale
 
 		std::string sale_code = MakeCode();
 
-		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_BOOK_SALE_HISTORY) + " (code, total_count, discount, sale_cost, cash, reg_date) VALUES (";
+		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_BOOK_SALE_HISTORY) + " (code, total_count, discount, sale_cost, cash, memo, reg_date) VALUES (";
 		sql_command += "'" + sale_code + "', ";
 		sql_command += "'" + std::to_string(sale_bookinfo.count) + "', ";
 		sql_command += "'" + std::to_string(sale_bookinfo.discount) + "', ";
 		sql_command += "'" + std::to_string(sale_bookinfo.sale_cost) + "', ";
 		sql_command += "'" + std::to_string(sale_bookinfo.cash) + "', ";
+		sql_command += "'" + sale_bookinfo.memo + "', ";
 		sql_command += "datetime('now','localtime')";
 		sql_command += "); ";
 

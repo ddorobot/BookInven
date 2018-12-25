@@ -112,6 +112,7 @@ void CSaleBooksList::UpdateList(void)
 	{
 		SaleBooksInfo sale_info;
 		sale_info.book_info = vec_cart_info[i].bookin_info.book_info;
+		sale_info.book_info.price = vec_cart_info[i].bookin_info.sale_cost;
 		sale_info.count = vec_cart_info[i].count;
 
 		m_sale_books.push_back(sale_info);

@@ -17,6 +17,7 @@
 											'discount' INTEGER, \
 											'sale_cost' INTEGER, \
 											'cash' BOOLEAN, \
+											'memo' TEXT, \
 											'reg_date' TEXT"
 
 
@@ -25,6 +26,7 @@ typedef struct BookSaleHistory {
 	int count = 0;
 	int discount = 0;
 	int sale_cost = 0;
+	std::string memo;
 	bool cash = false;
 } BookSaleHistory;
 
