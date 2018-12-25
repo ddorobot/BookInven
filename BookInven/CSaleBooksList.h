@@ -46,8 +46,8 @@ public:
 
 	int GetCountInListInfo(const std::string isbn = "");
 
-	void DelCheckedItem(void);
-	void DelAllItem(void);
+	void DelCheckedItem(const bool bret = true);
+	void DelAllItem(const bool bret=true);
 
 	int GetCheckedItemCount(void);
 
@@ -56,7 +56,7 @@ public:
 	void PlusCheckedItem(void);
 	void MinusCheckedItem(void);
 
-	int Pay(const int discount=0, const bool cash=false);
+	int Pay(const std::string memo="", int discount=0, const bool cash=false);
 
 private:
 

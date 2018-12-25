@@ -37,7 +37,7 @@ int CCart::AddCart(const std::string isbn)
 	return ret;
 }
 
-int CCart::DelCart(const std::string isbn)
+int CCart::DelCart(const std::string isbn, const bool bret)
 {
 	int ret = 0;
 
@@ -58,8 +58,15 @@ int CCart::DelCart(const std::string isbn)
 			//카트 DB를 삭제(수량을 1을 줄이는 것과 같다)하고 입고수량에 1을 추가 한다. 
 			if (cls_db_cart.PopCart(vec_cart[i].idx))
 			{
-				//입고수량에 1을 추가
-				if (cls_db_book_in_history.PushPopCount(book_in_index, 1))
+				if (bret)
+				{
+					//입고수량에 1을 추가
+					if (cls_db_book_in_history.PushPopCount(book_in_index, 1))
+					{
+						ret = 1;
+					}
+				}
+				else
 				{
 					ret = 1;
 				}

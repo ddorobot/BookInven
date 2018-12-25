@@ -245,7 +245,7 @@ int CSaleBooksList::GetCountInListInfo(const std::string isbn)
 	return ret;
 }
 
-int CSaleBooksList::Pay(const int discount, const bool cash)
+int CSaleBooksList::Pay(const std::string memo, const int discount, const bool cash)
 {
 	int ret = 0;
 
@@ -263,6 +263,7 @@ int CSaleBooksList::Pay(const int discount, const bool cash)
 	book_sale_info.discount = discount;
 	book_sale_info.cash = cash;
 	book_sale_info.sale_cost = GetTotalPrice();
+	book_sale_info.memo = memo;
 
 	CDataBaseBookSaleHistory cls_db_book_sale_history;
 	std::string code = cls_db_book_sale_history.AddBookSaleInfo(book_sale_info);
@@ -294,7 +295,7 @@ int CSaleBooksList::Pay(const int discount, const bool cash)
 	return ret;
 }
 
-void CSaleBooksList::DelCheckedItem(void)
+void CSaleBooksList::DelCheckedItem(const bool bret)
 {
 	if (m_p_list_ctrl != NULL)
 	{
@@ -311,7 +312,7 @@ void CSaleBooksList::DelCheckedItem(void)
 				if (i < candidate_size)
 				{
 					CCart cls_cart;
-					cls_cart.DelCart(m_sale_books[i].book_info.isbn);
+					cls_cart.DelCart(m_sale_books[i].book_info.isbn, bret);
 
 					deque_del_index.push_back(i);
 				}
@@ -501,7 +502,7 @@ void CSaleBooksList::MinusCheckedItem(void)
 	}
 }
 
-void CSaleBooksList::DelAllItem(void)
+void CSaleBooksList::DelAllItem(const bool bret)
 {
 	if (m_p_list_ctrl != NULL)
 	{
@@ -514,7 +515,7 @@ void CSaleBooksList::DelAllItem(void)
 			m_p_list_ctrl->SetItemState(i, LVIS_SELECTED, LVIS_SELECTED);
 		}
 
-		DelCheckedItem();
+		DelCheckedItem(bret);
 	}
 }
 
