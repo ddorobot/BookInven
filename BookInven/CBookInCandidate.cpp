@@ -246,7 +246,7 @@ void CBookInCandidate::UpdateList(void)
 	{
 		for (int index = candidate_size; index < count; index++)
 		{
-			m_p_list_ctrl->DeleteItem(index);
+			m_p_list_ctrl->DeleteItem(candidate_size);
 		}
 	}
 

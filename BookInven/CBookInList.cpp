@@ -273,7 +273,7 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 	{
 		for (int index = book_in_size; index < count; index++)
 		{
-			m_p_list_ctrl->DeleteItem(index);
+			m_p_list_ctrl->DeleteItem(book_in_size);
 		}
 	}
 

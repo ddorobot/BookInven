@@ -291,7 +291,7 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 	{
 		for (int index = book_sale_size; index < count; index++)
 		{
-			m_p_list_ctrl->DeleteItem(index);
+			m_p_list_ctrl->DeleteItem(book_sale_size);
 		}
 	}
 
