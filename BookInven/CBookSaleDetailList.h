@@ -25,6 +25,7 @@
 typedef struct BookSaleDetailInfo {
 	BookIn_List_Info bookin_list_info;
 	std::string memo;
+	int trade_type=0;
 } BookSaleDetailInfo;
 
 class CBookSaleDetailList

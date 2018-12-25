@@ -17,16 +17,15 @@ CBookSaleDetailList::CBookSaleDetailList(CListCtrl* p_list_ctrl) :
 	m_p_list_ctrl->InsertColumn(list_index++, _T("입고날짜"), LVCFMT_CENTER, 130, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("CODE"), LVCFMT_CENTER, 110, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("이름"), LVCFMT_CENTER, 150, -1);
-	m_p_list_ctrl->InsertColumn(list_index++, _T("저자"), LVCFMT_CENTER, 100, -1);
+	m_p_list_ctrl->InsertColumn(list_index++, _T("저자"), LVCFMT_CENTER, 100, -1); 
 	m_p_list_ctrl->InsertColumn(list_index++, _T("출판사"), LVCFMT_CENTER, 100, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("가격"), LVCFMT_CENTER, 70, -1);
-	m_p_list_ctrl->InsertColumn(list_index++, _T("수량"), LVCFMT_CENTER, 50, -1);
+	m_p_list_ctrl->InsertColumn(list_index++, _T("거래(변동량)"), LVCFMT_CENTER, 85, -1); 
 	m_p_list_ctrl->InsertColumn(list_index++, _T("공급사"), LVCFMT_CENTER, 100, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("공급방식"), LVCFMT_CENTER, 60, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("공급률"), LVCFMT_CENTER, 50, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("공급가"), LVCFMT_CENTER, 70, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("판매가"), LVCFMT_CENTER, 70, -1);
-	m_p_list_ctrl->InsertColumn(list_index++, _T("메모"), LVCFMT_CENTER, 150, -1);
 }
 
 CBookSaleDetailList::~CBookSaleDetailList()
@@ -78,6 +77,17 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 				list_info.bookin_list_info.db_idx = bookin_info.db_idx;
 				list_info.bookin_list_info.bookin_info = bookin_info.bookin_info;
 				list_info.bookin_list_info.reg_date = bookin_info.reg_date;
+
+				//변동 수량 확인
+				list_info.trade_type = vec_history_detail[i].detail.type;
+				/*
+				trade_in,
+	trade_sale,
+	trade_refund,
+	trade_return,
+				*/
+				if (list_info.trade_type == trade_in || list_info.trade_type == trade_refund)			list_info.bookin_list_info.bookin_info.count = 1;
+				else if (list_info.trade_type == trade_sale || list_info.trade_type == trade_return)			list_info.bookin_list_info.bookin_info.count = -1;
 
 				m_book_sale.push_back(list_info);
 			}
@@ -158,9 +168,10 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 			}
 			list_index++;
 
-			if (std::string(str_count) != std::to_string(book_sale_info.bookin_list_info.bookin_info.count))
+			cstr_data.Format(_T("%s(%d)"), str_book_trade_type[book_sale_info.trade_type].c_str(), book_sale_info.bookin_list_info.bookin_info.count);
+			if (str_count != cstr_data)
 			{
-				cstr_data.Format(_T("%d"), book_sale_info.bookin_list_info.bookin_info.count);
+				//cstr_data.Format(_T("%s(%d)"), str_book_trade_type[book_sale_info.trade_type], book_sale_info.bookin_list_info.bookin_info.count);
 				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
 			}
 			list_index++;
@@ -245,7 +256,8 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//수량
-			cstr_data.Format(_T("%d"), book_sale_info.bookin_list_info.bookin_info.count);
+			//cstr_data.Format(_T("%d"), book_sale_info.bookin_list_info.bookin_info.count);
+			cstr_data.Format(_T("%s(%d)"), str_book_trade_type[book_sale_info.trade_type].c_str(), book_sale_info.bookin_list_info.bookin_info.count);
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급사
