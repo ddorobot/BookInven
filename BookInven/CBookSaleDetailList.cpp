@@ -116,7 +116,8 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 		CDataBaseBookInHistory cls_db_bookin_history;
 		BookInHistory bookin_info;
 
-		for (int i = 0; i < detail_size; i++)
+		//for (int i = 0; i < detail_size; i++)
+		for (int i = detail_size-1; i >= 0; i--)
 		{
 			bookin_info = cls_db_bookin_history.GetInfo(vec_history_detail[i].base_idx);
 
