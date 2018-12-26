@@ -521,6 +521,9 @@ int CBookInCandidate::CheckedAddDataBase(void)
 
 					int book_count = candidate.count;
 					int ret_book_count = 0;
+					CMyTime cls_mytime;
+					std::string mytime_now = cls_mytime.GetNow();
+
 					for (int iBooks = 0; iBooks < candidate.count; iBooks++)
 					{
 						//data º¯°æ(BookIn_Candidate_Info -> DB_BookInHistory)
@@ -533,9 +536,7 @@ int CBookInCandidate::CheckedAddDataBase(void)
 						db_data.provie_rate = candidate.book_info.provider_info.detail.provide_rate;
 						db_data.provie_cost = candidate.book_info.provider_info.detail.provide_cost;
 						db_data.sale_cost = candidate.book_info.sale_cost;
-
-						CMyTime cls_mytime;
-						db_data.reg_date = cls_mytime.GetNow();
+						db_data.reg_date = mytime_now;
 
 						CDataBaseBookInHistory cls_db_bookin_history;
 						if (cls_db_bookin_history.AddBookInInfo(db_data))
