@@ -126,7 +126,7 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 				list_info.db_idx = vec_history_detail[i].idx;
 				list_info.bookin_list_info.db_idx = bookin_info.db_idx;
 				list_info.bookin_list_info.bookin_info = bookin_info.bookin_info;
-				list_info.bookin_list_info.reg_date = bookin_info.reg_date;
+				list_info.bookin_list_info.reg_date = vec_history_detail[i].reg_date;
 
 				//변동 수량 확인
 				list_info.trade_type = vec_history_detail[i].detail.type;
