@@ -211,6 +211,7 @@
     <ClInclude Include="CDlgBookSale.h" />
     <ClInclude Include="CDlgCustomManage.h" />
     <ClInclude Include="CDlgMemo.h" />
+    <ClInclude Include="CDlgRefundList.h" />
     <ClInclude Include="CDlgSaleManage.h" />
     <ClInclude Include="CDlgStoreInfo.h" />
     <ClInclude Include="CDrawToHDC.h" />
@@ -255,6 +256,7 @@
     <ClCompile Include="CDlgBookSale.cpp" />
     <ClCompile Include="CDlgCustomManage.cpp" />
     <ClCompile Include="CDlgMemo.cpp" />
+    <ClCompile Include="CDlgRefundList.cpp" />
     <ClCompile Include="CDlgSaleManage.cpp" />
     <ClCompile Include="CDlgStoreInfo.cpp" />
     <ClCompile Include="CDrawToHDC.cpp" />
