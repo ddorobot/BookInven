@@ -46,6 +46,7 @@ public:
 	std::string AddBookSaleInfo(const BookSaleHistory sale_bookinfo);
 	std::vector<BookSaleHistory> GetInfo(const std::string str_date_start, const std::string str_date_end);
 	BookSaleHistory GetInfo(const std::string code);
+	BookSaleHistory GetInfo(const int idx);
 
 private:
 	static int sql_callback_get_info(void *NotUsed, int argc, char **argv, char **azColName);

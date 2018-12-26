@@ -129,6 +129,49 @@ int CDataBaseBookInHistoryDetail::AddDetail(const int base_idx, const int count,
 	return ret;
 }
 
+DB_BookInHistoryDetail CDataBaseBookInHistoryDetail::GetDetail_DB(const int idz)
+{
+	DB_BookInHistoryDetail retDetail;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_BOOK_IN_HISTORY_DETAIL), std::string(TABLE_DATA_BOOK_IN_HISTORY_DETAIL));
+
+	if (check_db)
+	{
+		char* pErr = NULL, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		//같은 정보가 있는지 확인
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY_DETAIL) + " WHERE idx=" + std::to_string(idz) ;		//가장 최근의 정보를 얻어옴.
+
+		std::vector<DB_BookInHistoryDetail> vec_detail;
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), sql_callback_get_info, &vec_detail, &pErr);
+
+		if (nResult)
+		{
+			if (pErr)
+			{
+				printf("%s Error : %s\n", __func__, pErr);
+
+				sqlite3_free(&pErr);
+			}
+		}
+		else
+		{
+			if (vec_detail.size() > 0)
+			{
+				retDetail = vec_detail[0];
+			}
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+
+	return retDetail;
+}
+
 std::vector<DB_BookInHistoryDetail> CDataBaseBookInHistoryDetail::GetDetail_DB(const std::string code)
 {
 	std::vector<DB_BookInHistoryDetail> retDetail;
@@ -230,7 +273,17 @@ std::vector<BookInHistoryDetail> CDataBaseBookInHistoryDetail::GetDetail(const i
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
 		//같은 정보가 있는지 확인
-		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY_DETAIL) + " WHERE base_idx=" + std::to_string(base_idx) + " AND type=" + std::to_string(type) + " ORDER BY idx DESC";		//가장 최근의 정보를 얻어옴.
+		std::string sql_type_option = "";
+		if (type < 0)
+		{
+			sql_type_option = " AND (type=" + std::to_string(trade_in) + " OR type=" + std::to_string(trade_refund) + ")";
+		}
+		else
+		{
+			sql_type_option = " AND type=" + std::to_string(type) ;
+		}
+
+		std::string sql_command = "SELECT * FROM " + std::string(TABLE_NAME_BOOK_IN_HISTORY_DETAIL) + " WHERE base_idx=" + std::to_string(base_idx) + sql_type_option + " ORDER BY idx DESC";		//가장 최근의 정보를 얻어옴.
 
 		std::vector<DB_BookInHistoryDetail> vec_history;
 

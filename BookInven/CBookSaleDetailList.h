@@ -23,6 +23,7 @@
 #include "CDataBaseBookSaleHistory.h"
 
 typedef struct BookSaleDetailInfo {
+	int db_idx = -1 ;
 	BookIn_List_Info bookin_list_info;
 	std::string memo;
 	int trade_type=0;
@@ -38,6 +39,8 @@ public:
 
 	void UpdateList(const std::string str_sale_code="");
 	std::string GetMemo(const std::string str_sale_code);
+
+	int SelectRefund(void);
 private:
 
 	boost::mutex mutex_list_ctrl;

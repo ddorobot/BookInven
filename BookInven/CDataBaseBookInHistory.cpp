@@ -41,9 +41,9 @@ int CDataBaseBookInHistory::sql_callback_get_bookinfo(void *NotUsed, int argc, c
 			{
 				bookinfo.book_info_isbn = argv[i] ? argv[i] : "";
 			}
-			else if (name == "book_info_copy_from_idx")
+			else if (name == "book_info_copy_from_detail_idx")
 			{
-				bookinfo.book_info_copy_from_idx = argv[i] ? std::stoi(argv[i]) : -1;
+				bookinfo.book_info_copy_from_detail_idx = argv[i] ? std::stoi(argv[i]) : -1;
 			}
 			else if (name == "book_cost")
 			{
@@ -225,7 +225,7 @@ std::vector<BookInHistory> CDataBaseBookInHistory::GetInHistory(const std::strin
 
 				//입고 정보를 얻는다.
 				CDataBaseBookInHistoryDetail cls_db_bookin_history_detail;
-				std::vector<BookInHistoryDetail> vec_history_detail = cls_db_bookin_history_detail.GetDetail(vec_history[i].idx, trade_in);
+				std::vector<BookInHistoryDetail> vec_history_detail = cls_db_bookin_history_detail.GetDetail(vec_history[i].idx);
 				int detail_size = vec_history_detail.size();
 
 				for (int j = 0; j < detail_size; j++)
@@ -414,7 +414,7 @@ BookInHistory CDataBaseBookInHistory::CvtDB_BookInHistoryToBookInHistory(const D
 	data.bookin_info.sale_cost = db_data.sale_cost;
 	data.reg_date = db_data.reg_date;
 	data.bookin_info.count = db_data.book_count;
-	data.copy_from_idx = db_data.book_info_copy_from_idx;
+	data.copy_from_detail_idx = db_data.book_info_copy_from_detail_idx;
 
 	return data;
 }
@@ -536,6 +536,38 @@ BookInHistory CDataBaseBookInHistory::GetLastInfo(void)
 	return retBookHistory;
 }
 
+int CDataBaseBookInHistory::Refund(const int copy_from_detail_index)
+{
+	int ret = 0;
+
+	//Detail 정보를 읽어 온다. 
+	CDataBaseBookInHistoryDetail cls_db_bookin_history_detail;
+	DB_BookInHistoryDetail bookin_history_detail = cls_db_bookin_history_detail.GetDetail_DB(copy_from_detail_index); 
+
+	//기존의 데이타 Detail엔 환불 정보 입력
+	// Detail정보에 환불를 입력 한다.
+	CDataBaseBookInHistoryDetail cls_db_book_in_detail;
+	if (cls_db_book_in_detail.AddDetail(bookin_history_detail.base_idx, 0/*환불로인한 수량변화는 0*/, trade_refund, bookin_history_detail.detail.type_code))
+	{
+		//기존 데이타에 환불처리가 완료 되면 재입고 처리.
+		//History 정보를 읽어 온다.
+		DB_BookInHistory bookin_history = GetInfoBookInfoHistory(bookin_history_detail.base_idx);
+
+		//어디서 복사 되었는지 데이타를 넣어 준다.
+		bookin_history.book_info_copy_from_detail_idx = bookin_history_detail.idx;
+		bookin_history.book_count = 1;		//환불로 인한 수량은 1
+
+		if (AddBookInInfo(bookin_history))
+		{
+			ret = 1;
+		}
+	}
+	//Copy(Add)
+	
+
+	return ret;
+}
+
 //Set
 int CDataBaseBookInHistory::AddBookInInfo(const DB_BookInHistory bookinfo)
 {
@@ -555,8 +587,9 @@ int CDataBaseBookInHistory::AddBookInInfo(const DB_BookInHistory bookinfo)
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
 		//Tablek Book
-		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " (book_info_isbn, book_cost, book_count, provider_base_info_idx, provie_type, provie_rate, provie_cost, sale_cost, reg_date) VALUES (";
+		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " (book_info_isbn, book_info_copy_from_detail_idx, book_cost, book_count, provider_base_info_idx, provie_type, provie_rate, provie_cost, sale_cost, reg_date) VALUES (";
 		sql_command += "'" + bookinfo.book_info_isbn + "', ";
+		sql_command += "'" + std::to_string(bookinfo.book_info_copy_from_detail_idx) + "', ";
 		sql_command += "'" + std::to_string(bookinfo.book_cost) + "', ";
 		sql_command += "'" + std::to_string(bookinfo.book_count) + "', ";
 		sql_command += "'" + std::to_string(bookinfo.provider_base_info_idx) + "', ";
@@ -596,7 +629,14 @@ int CDataBaseBookInHistory::AddBookInInfo(const DB_BookInHistory bookinfo)
 			//Detail정보에 입고를 입력 한다.
 			BookInHistory save_data = GetLastInfo();
 			CDataBaseBookInHistoryDetail cls_db_book_in_detail;
-			if (cls_db_book_in_detail.AddDetail(save_data.db_idx, save_data.bookin_info.count, trade_in))
+
+			int trade_type = trade_in;
+			if (bookinfo.book_info_copy_from_detail_idx > 0)
+			{
+				trade_type = trade_refund;
+			}
+
+			if (cls_db_book_in_detail.AddDetail(save_data.db_idx, save_data.bookin_info.count, trade_type))
 			{
 				ret = 1;
 			}

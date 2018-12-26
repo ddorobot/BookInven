@@ -22,5 +22,8 @@ public:
 	int DeleteItem(const std::string str_table_name, const int index);
 
 	int AddNewColumn(const std::string str_table_name, const std::string str_column_name, const std::string str_column_option);
+	int	ChangeColumnName(const std::string str_table_name, const std::string str_column_name, const std::string str_column_new_name);
+
+	int DropTable(const std::string str_table_name);
 };
 

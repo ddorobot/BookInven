@@ -47,6 +47,55 @@ std::string CBookSaleDetailList::GetMemo(const std::string str_sale_code)
 	return book_sale_info.memo;
 }
 
+int CBookSaleDetailList::SelectRefund(void)
+{
+	int ret = 0;
+
+	if (m_p_list_ctrl != NULL)
+	{
+		int count = m_p_list_ctrl->GetItemCount();
+		const int book_in_size = m_book_sale.size();
+
+		for (int i = 0; i < count; i++)
+		{
+			// 체크상태 확인
+			if (m_p_list_ctrl->GetCheck(i))
+			{
+				if (i < book_in_size)
+				{
+					BookSaleDetailInfo sale_detail_info = m_book_sale[i];
+
+#if 0
+					CDataBaseBookSaleHistory cls_db_book_sale_history;
+					BookSaleHistory sale_history = cls_db_book_sale_history.GetInfo(sale_detail_info.bookin_list_info.db_idx);
+
+					//History Detail에 refund 상태 추가
+					CDataBaseBookInHistoryDetail cls_db_book_in_detail;
+					if (cls_db_book_in_detail.AddDetail(sale_detail_info.bookin_list_info.db_idx, 0, trade_refund, sale_history.code))
+					{
+						//refund된 정보를 새로 입고
+						CDataBaseBookInHistory cls_db_bookin_history;
+						cls_db_bookin_history.CopyAddBookInInfo(sale_detail_info.db_idx);
+					}
+#else
+					CDataBaseBookInHistory cls_db_bookin_history;
+					cls_db_bookin_history.Refund(sale_detail_info.db_idx);
+#endif
+				}
+			}
+		}
+
+		//삭제 되지 않은 아이템은 Checked가 FALSE여야 한다.
+		count = m_p_list_ctrl->GetItemCount();
+		for (int i = 0; i < count; i++)
+		{
+			m_p_list_ctrl->SetCheck(i, FALSE);
+		}
+	}
+
+	return ret;
+}
+
 void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 {
 	if (m_p_list_ctrl == NULL) return;
@@ -74,21 +123,15 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 			if (!bookin_info.reg_date.empty())
 			{
 				BookSaleDetailInfo list_info;
+				list_info.db_idx = vec_history_detail[i].idx;
 				list_info.bookin_list_info.db_idx = bookin_info.db_idx;
 				list_info.bookin_list_info.bookin_info = bookin_info.bookin_info;
 				list_info.bookin_list_info.reg_date = bookin_info.reg_date;
 
 				//변동 수량 확인
 				list_info.trade_type = vec_history_detail[i].detail.type;
-				/*
-				trade_in,
-	trade_sale,
-	trade_refund,
-	trade_return,
-				*/
-				if (list_info.trade_type == trade_in || list_info.trade_type == trade_refund)			list_info.bookin_list_info.bookin_info.count = 1;
-				else if (list_info.trade_type == trade_sale || list_info.trade_type == trade_return)			list_info.bookin_list_info.bookin_info.count = -1;
-
+				list_info.bookin_list_info.bookin_info.count = vec_history_detail[i].detail.book_count;
+				
 				m_book_sale.push_back(list_info);
 			}
 		}

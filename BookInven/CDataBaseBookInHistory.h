@@ -14,7 +14,7 @@
 #define TABLE_NAME_BOOK_IN_HISTORY		"TBookInHistory"
 #define TABLE_DATA_BOOK_IN_HISTORY		"'idx'	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, \
 										'book_info_isbn' TEXT, \
-										'book_info_copy_from_idx' INTEGER DEFAULT -1, \
+										'book_info_copy_from_detail_idx' INTEGER DEFAULT -1, \
 										'book_cost' INTEGER, \
 										'book_count' INTEGER, \
 										'provider_base_info_idx' INTEGER, \
@@ -27,7 +27,7 @@
 typedef struct DB_BookInHistory {
 	int idx=-1;
 	std::string book_info_isbn = "";
-	int book_info_copy_from_idx = -1;
+	int book_info_copy_from_detail_idx = -1;
 	int book_cost = 0;
 	int book_count = 0;
 	int provider_base_info_idx = -1;
@@ -41,7 +41,7 @@ typedef struct DB_BookInHistory {
 
 typedef struct BookInHistory {
 	int db_idx = -1;
-	int copy_from_idx = -1;
+	int copy_from_detail_idx = -1;
 	BookIn_Info bookin_info;
 	std::string reg_date = "";
 } BookInHistory;
@@ -55,6 +55,7 @@ public:
 	//Book Info
 	int GetBookCount(const std::string isbn);
 	int AddBookInInfo(const DB_BookInHistory bookinfo);
+	int Refund(const int copy_from_detail_index);
 	BookInHistory GetLastInfo(void);
 	BookInHistory GetInfo(const int idx);
 	

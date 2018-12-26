@@ -14,7 +14,7 @@ CBookInList::CBookInList(CListCtrl* p_list_ctrl) :
 	int list_index = 0;
 	m_p_list_ctrl->InsertColumn(list_index++, _T(""), LVCFMT_CENTER, 20, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("날짜"), LVCFMT_CENTER, 130, -1);
-	m_p_list_ctrl->InsertColumn(list_index++, _T("형태"), LVCFMT_CENTER, 50, -1);
+	m_p_list_ctrl->InsertColumn(list_index++, _T("형태"), LVCFMT_CENTER, 40, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("CODE"), LVCFMT_CENTER, 110, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("이름"), LVCFMT_CENTER, 150, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("저자"), LVCFMT_CENTER, 100, -1);
@@ -73,7 +73,7 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 			list_info.db_idx = vec_bookin_info[i].db_idx;
 			list_info.bookin_info = vec_bookin_info[i].bookin_info;
 			list_info.reg_date = vec_bookin_info[i].reg_date;
-			list_info.copy_from_idx = vec_bookin_info[i].copy_from_idx;
+			list_info.copy_from_detail_idx = vec_bookin_info[i].copy_from_detail_idx;
 
 			m_book_in.push_back(list_info);
 		}
@@ -121,7 +121,7 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 			list_index++;
 			 
 			std::string str_check_type = "신규";
-			if(bookin_info.copy_from_idx >= 0)	str_check_type = "환불";
+			if(bookin_info.copy_from_detail_idx >= 0)	str_check_type = "환불";
 			if (std::string(str_type) != str_check_type)
 			{
 				cstr_data.Format(_T("%s"), str_check_type.c_str());
@@ -231,11 +231,10 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			std::string str_check_type = "신규";
-			if (bookin_info.copy_from_idx >= 0)	str_check_type = "환불";
+			if (bookin_info.copy_from_detail_idx >= 0)	str_check_type = "환불";
 			cstr_data.Format(_T("%s"), str_check_type.c_str());
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
-			list_index++;
 			//code
 			cstr_data.Format(_T("%s"), bookin_info.bookin_info.book_info.isbn.c_str());
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
