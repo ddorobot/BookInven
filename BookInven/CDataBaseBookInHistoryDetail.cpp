@@ -66,7 +66,7 @@ int CDataBaseBookInHistoryDetail::sql_callback_get_info(void *NotUsed, int argc,
 	return 0;
 }
 
-int CDataBaseBookInHistoryDetail::AddDetail(const int base_idx, const int count, const int type, const std::string reg_date, const std::string type_code)
+int CDataBaseBookInHistoryDetail::AddDetail(const int base_idx, const int count, const int type, const std::string type_code)
 {
 	int ret = 0;
 
@@ -98,17 +98,7 @@ int CDataBaseBookInHistoryDetail::AddDetail(const int base_idx, const int count,
 		sql_command += "'" + std::to_string(count) + "', ";
 		sql_command += "'" + std::to_string(type) + "', ";
 		sql_command += "'" + type_code + "', ";
-
-		if (reg_date.empty())
-		{
-			sql_command += "datetime('now','localtime')";
-		}
-		else
-		{
-			sql_command += "'" + reg_date + "'";
-		}
-
-		//sql_command += "datetime('now','localtime')";
+		sql_command += "datetime('now','localtime')";
 		sql_command += "); ";
 
 		//printf("AddBookInfo sql = %s\n", sql_command.c_str());
