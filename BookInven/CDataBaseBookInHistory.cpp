@@ -41,6 +41,10 @@ int CDataBaseBookInHistory::sql_callback_get_bookinfo(void *NotUsed, int argc, c
 			{
 				bookinfo.book_info_isbn = argv[i] ? argv[i] : "";
 			}
+			else if (name == "book_info_copy_from_idx")
+			{
+				bookinfo.book_info_copy_from_idx = argv[i] ? std::stoi(argv[i]) : -1;
+			}
 			else if (name == "book_cost")
 			{
 				bookinfo.book_cost = argv[i] ? std::stoi(argv[i]) : 0;
@@ -410,6 +414,7 @@ BookInHistory CDataBaseBookInHistory::CvtDB_BookInHistoryToBookInHistory(const D
 	data.bookin_info.sale_cost = db_data.sale_cost;
 	data.reg_date = db_data.reg_date;
 	data.bookin_info.count = db_data.book_count;
+	data.copy_from_idx = db_data.book_info_copy_from_idx;
 
 	return data;
 }
