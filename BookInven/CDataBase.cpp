@@ -75,3 +75,30 @@ int CDataBase::CheckExistAndCreate(const std::string str_table_name, const std::
 	return ret;
 
 }
+
+int CDataBase::AddNewColumn(const std::string str_table_name, const std::string str_column_name, const std::string str_column_option)
+{
+	sqlite3* pDB = NULL;
+
+	char* pErr = NULL, *pDBFile = DB_PATH;
+	int nResult = sqlite3_open(pDBFile, &pDB);
+
+	//같은 정보가 있는지 확인
+	std::string sql_command = "ALTER TABLE " + str_table_name + " ADD '" + str_column_name + "' " + str_column_option;		//
+
+	nResult = sqlite3_exec(pDB, sql_command.c_str(), NULL, NULL, &pErr);
+
+	if (nResult)
+	{
+		if (pErr)
+		{
+			printf("%s Error : %s\n", __func__, pErr);
+
+			sqlite3_free(&pErr);
+		}
+	}
+
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+}

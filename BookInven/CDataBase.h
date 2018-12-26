@@ -20,5 +20,7 @@ public:
 
 	int CheckExistAndCreate(const std::string str_table_name, const std::string str_table_data);
 	int DeleteItem(const std::string str_table_name, const int index);
+
+	int AddNewColumn(const std::string str_table_name, const std::string str_column_name, const std::string str_column_option);
 };
 
