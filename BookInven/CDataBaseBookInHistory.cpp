@@ -232,6 +232,7 @@ std::vector<BookInHistory> CDataBaseBookInHistory::GetInHistory(const std::strin
 				{
 					//입고 정보로 수량을 업데이트
 					bookin_history.bookin_info.count = vec_history_detail[j].book_count;
+					//입고 정보로 저장일을 업데이트
 					retProviderInfo.push_back(bookin_history);
 				}
 			}
@@ -556,6 +557,7 @@ int CDataBaseBookInHistory::Refund(const int copy_from_detail_index)
 		//어디서 복사 되었는지 데이타를 넣어 준다.
 		bookin_history.book_info_copy_from_detail_idx = bookin_history_detail.idx;
 		bookin_history.book_count = 1;		//환불로 인한 수량은 1
+		bookin_history.reg_date = "";		//비워두어야 현재 시간으로 업데이트가 됨.
 
 		if (AddBookInInfo(bookin_history))
 		{

@@ -50,7 +50,7 @@ public:
 	CDataBaseBookInHistoryDetail();
 	~CDataBaseBookInHistoryDetail();
 
-	int AddDetail(const int base_idx, const int count, const int type, const std::string type_code="");
+	int AddDetail(const int base_idx, const int count, const int type, const std::string reg_date = "", const std::string type_code="");
 	std::vector<BookInHistoryDetail> GetDetail(const int base_idx=-1, const int type = -1);
 	std::vector<BookInHistoryDetail> GetDetail(const std::string code);
 	std::vector<DB_BookInHistoryDetail> GetDetail_DB(const std::string code);

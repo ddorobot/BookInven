@@ -544,8 +544,15 @@ int CBookInCandidate::CheckedAddDataBase(void)
 						}
 					}
 
+					if (ret_book_count == candidate.count)
+					{
+					}
+					else
+					{
+						ret++;
+					}
+
 					deque_del_index.push_back(i);
-					ret++;
 				}
 			}
 		}
