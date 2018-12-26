@@ -9,11 +9,11 @@ CBookSaleDetailList::CBookSaleDetailList(CListCtrl* p_list_ctrl) :
 	//Initialize list
 	m_p_list_ctrl->DeleteAllItems();
 	// 리스트 스타일 설정
-	m_p_list_ctrl->SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES | LVS_EX_CHECKBOXES);
-	//m_p_list_ctrl->SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES );
+	//m_p_list_ctrl->SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES | LVS_EX_CHECKBOXES);
+	m_p_list_ctrl->SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES );
 	// 타이틀 삽입
 	int list_index = 0;
-	m_p_list_ctrl->InsertColumn(list_index++, _T(""), LVCFMT_CENTER, 20, -1);
+	//m_p_list_ctrl->InsertColumn(list_index++, _T(""), LVCFMT_CENTER, 20, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("날짜"), LVCFMT_CENTER, 130, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("CODE"), LVCFMT_CENTER, 110, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("이름"), LVCFMT_CENTER, 150, -1);
@@ -86,11 +86,13 @@ int CBookSaleDetailList::SelectRefund(void)
 		}
 
 		//삭제 되지 않은 아이템은 Checked가 FALSE여야 한다.
+		/*
 		count = m_p_list_ctrl->GetItemCount();
 		for (int i = 0; i < count; i++)
 		{
 			m_p_list_ctrl->SetCheck(i, FALSE);
 		}
+		*/
 	}
 
 	return ret;
@@ -148,7 +150,7 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 		//m_p_list_ctrl->GetItemText(i, 0);
 
 		//isbn
-		int list_index = 1;
+		int list_index = 0;
 		CString str_date = m_p_list_ctrl->GetItemText(i, list_index++);
 		CString str_isbn = m_p_list_ctrl->GetItemText(i, list_index++);
 		CString str_name = m_p_list_ctrl->GetItemText(i, list_index++);
@@ -164,7 +166,7 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 
 		if (i < book_sale_size)
 		{
-			int list_index = 1;
+			int list_index = 0;
 
 			BookSaleDetailInfo book_sale_info = m_book_sale[i];
 
@@ -273,11 +275,12 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 			//데이타 추가
 			//체크박스
 			CString cstr_data;
-			m_p_list_ctrl->InsertItem(index, "");
+			//m_p_list_ctrl->InsertItem(index, "");
 
 			//입고날짜
 			cstr_data.Format(_T("%s"), book_sale_info.bookin_list_info.reg_date.c_str());
-			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+			//m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+			m_p_list_ctrl->InsertItem(index, cstr_data);
 
 			//code
 			cstr_data.Format(_T("%s"), book_sale_info.bookin_list_info.bookin_info.book_info.isbn.c_str());
@@ -328,7 +331,7 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//checkbox 기본 체크
-			m_p_list_ctrl->SetCheck(index, TRUE);
+			//m_p_list_ctrl->SetCheck(index, TRUE);
 		}
 	}
 	else if (count > book_sale_size)
