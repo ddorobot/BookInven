@@ -4,6 +4,44 @@
 
 CDataBaseBookInHistory::CDataBaseBookInHistory()
 {
+	/*
+	//컬럼을 추가
+	*/
+#if 0
+	std::vector<BookInHistory> retProviderInfo;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_BOOK_IN_HISTORY), std::string(TABLE_DATA_BOOK_IN_HISTORY));
+
+	if (check_db)
+	{
+		char* pErr=NULL, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		//같은 정보가 있는지 확인
+		std::string sql_command = "ALTER TABLE " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " ADD 'book_info_copy_from_idx' INTEGER DEFAULT -1";		//
+
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), NULL, NULL, &pErr);
+
+		if (nResult)
+		{
+			if (pErr)
+			{
+				printf("%s Error : %s\n", __func__, pErr);
+
+				sqlite3_free(&pErr);
+			}
+		}
+		else
+		{
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+#endif
 }
 
 
