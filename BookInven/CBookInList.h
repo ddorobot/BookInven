@@ -26,6 +26,7 @@
 
 typedef struct BookIn_List_Info {
 	int db_idx = -1;
+	int copy_from_idx = -1;
 	BookIn_Info bookin_info;
 	std::string reg_date = "";
 } BookIn_List_Info;
