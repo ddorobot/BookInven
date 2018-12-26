@@ -519,25 +519,33 @@ int CBookInCandidate::CheckedAddDataBase(void)
 					//DB에 저장
 					DB_BookInHistory db_data;
 
-					//data 변경(BookIn_Candidate_Info -> DB_BookInHistory)
-					db_data.book_info_isbn = candidate.book_info.book_info.isbn;
-					db_data.book_cost = candidate.book_info.book_info.price;
-					db_data.book_count = candidate.count;
-					db_data.provider_base_info_idx = candidate.book_info.provider_info.base.idx;
-					db_data.provie_type = candidate.book_info.provider_info.detail.provide_type;
-					db_data.provie_rate = candidate.book_info.provider_info.detail.provide_rate;
-					db_data.provie_cost = candidate.book_info.provider_info.detail.provide_cost;
-					db_data.sale_cost = candidate.book_info.sale_cost;
+					int book_count = candidate.count;
+					int ret_book_count = 0;
+					for (int iBooks = 0; iBooks < candidate.count; iBooks++)
+					{
+						//data 변경(BookIn_Candidate_Info -> DB_BookInHistory)
+						db_data.book_info_isbn = candidate.book_info.book_info.isbn;
+						db_data.book_cost = candidate.book_info.book_info.price;
+						//db_data.book_count = candidate.count;
+						db_data.book_count = 1;
+						db_data.provider_base_info_idx = candidate.book_info.provider_info.base.idx;
+						db_data.provie_type = candidate.book_info.provider_info.detail.provide_type;
+						db_data.provie_rate = candidate.book_info.provider_info.detail.provide_rate;
+						db_data.provie_cost = candidate.book_info.provider_info.detail.provide_cost;
+						db_data.sale_cost = candidate.book_info.sale_cost;
 
-					CDataBaseBookInHistory cls_db_bookin_history;
-					if (cls_db_bookin_history.AddBookInInfo(db_data))
-					{
-						deque_del_index.push_back(i);
+						CMyTime cls_mytime;
+						db_data.reg_date = cls_mytime.GetNow();
+
+						CDataBaseBookInHistory cls_db_bookin_history;
+						if (cls_db_bookin_history.AddBookInInfo(db_data))
+						{
+							ret_book_count++;
+						}
 					}
-					else
-					{
-						ret++;
-					}
+
+					deque_del_index.push_back(i);
+					ret++;
 				}
 			}
 		}

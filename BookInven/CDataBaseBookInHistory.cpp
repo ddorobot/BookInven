@@ -597,7 +597,16 @@ int CDataBaseBookInHistory::AddBookInInfo(const DB_BookInHistory bookinfo)
 		sql_command += "'" + std::to_string(bookinfo.provie_rate) + "', ";
 		sql_command += "'" + std::to_string(bookinfo.provie_cost) + "', ";
 		sql_command += "'" + std::to_string(bookinfo.sale_cost) + "', ";
-		sql_command += "datetime('now','localtime')";
+
+		if (bookinfo.reg_date.empty())
+		{
+			sql_command += "datetime('now','localtime')";
+		}
+		else
+		{
+			sql_command += "'" + bookinfo.reg_date + "'";
+		}
+
 		sql_command += "); ";
 
 		//printf("AddBookInfo sql = %s\n", sql_command.c_str());

@@ -69,13 +69,33 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 	{
 		if (!vec_bookin_info[i].reg_date.empty())
 		{
-			BookIn_List_Info list_info;
-			list_info.db_idx = vec_bookin_info[i].db_idx;
-			list_info.bookin_info = vec_bookin_info[i].bookin_info;
-			list_info.reg_date = vec_bookin_info[i].reg_date;
-			list_info.copy_from_detail_idx = vec_bookin_info[i].copy_from_detail_idx;
+			//같은 정보가 있다면 기존 정보에 수량을 증가(변경)
+			bool b_exist = false;
+			int book_in_size = m_book_in.size();
+			for (int j = 0; j < book_in_size; j++)
+			{
+				if (m_book_in[j].reg_date == vec_bookin_info[i].reg_date && 
+					m_book_in[j].bookin_info.book_info.isbn == vec_bookin_info[i].bookin_info.book_info.isbn &&
+					m_book_in[j].bookin_info.provider_info.base.idx == vec_bookin_info[i].bookin_info.provider_info.base.idx && 
+					m_book_in[j].bookin_info.provider_info.detail.idx == vec_bookin_info[i].bookin_info.provider_info.detail.idx &&
+					m_book_in[j].bookin_info.sale_cost == vec_bookin_info[i].bookin_info.sale_cost )
+				{
+					m_book_in[j].bookin_info.count += vec_bookin_info[i].bookin_info.count;
+					b_exist = true;
+					break;
+				}
+			}
 
-			m_book_in.push_back(list_info);
+			if (b_exist == false)
+			{
+				BookIn_List_Info list_info;
+				list_info.db_idx = vec_bookin_info[i].db_idx;
+				list_info.bookin_info = vec_bookin_info[i].bookin_info;
+				list_info.reg_date = vec_bookin_info[i].reg_date;
+				list_info.copy_from_detail_idx = vec_bookin_info[i].copy_from_detail_idx;
+
+				m_book_in.push_back(list_info);
+			}
 		}
 	}
 	//입고 히스토리를 DB에서 모두 가지고 온다.
