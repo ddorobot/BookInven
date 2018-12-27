@@ -40,7 +40,7 @@ public:
 	void UpdateList(const std::string str_sale_code="");
 	std::string GetMemo(const std::string str_sale_code);
 
-	int SelectRefund(void);
+	int CheckedRefund(void);
 private:
 
 	boost::mutex mutex_list_ctrl;

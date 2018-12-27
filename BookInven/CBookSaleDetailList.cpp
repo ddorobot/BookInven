@@ -55,7 +55,7 @@ std::string CBookSaleDetailList::GetMemo(const std::string str_sale_code)
 	return book_sale_info.memo;
 }
 
-int CBookSaleDetailList::SelectRefund(void)
+int CBookSaleDetailList::CheckedRefund(void)
 {
 	int ret = 0;
 
@@ -64,6 +64,7 @@ int CBookSaleDetailList::SelectRefund(void)
 		int count = m_p_list_ctrl->GetItemCount();
 		const int book_in_size = m_book_sale.size();
 
+		int refund_count = 0;
 		for (int i = 0; i < count; i++)
 		{
 			// 체크상태 확인
@@ -87,10 +88,18 @@ int CBookSaleDetailList::SelectRefund(void)
 					}
 #else
 					CDataBaseBookInHistory cls_db_bookin_history;
-					cls_db_bookin_history.Refund(sale_detail_info.db_idx);
+					if (cls_db_bookin_history.Refund(sale_detail_info.db_idx))
+					{
+						refund_count++;
+					}
 #endif
 				}
 			}
+		}
+
+		if (refund_count == count)
+		{
+			ret = 1;
 		}
 
 		//삭제 되지 않은 아이템은 Checked가 FALSE여야 한다.
