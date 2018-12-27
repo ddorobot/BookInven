@@ -40,7 +40,7 @@ public:
 	void SetListCtrl(CListCtrl* p_list_ctrl);
 
 	int AddInfo(BookIn_Info candidate);
-	void UpdateList(std::string str_date_start="", std::string str_date_end="");
+	void UpdateList(std::string str_date_start="", std::string str_date_end="", const int type=0);
 	void DelCheckedItem(void);
 	int GetCheckedItemCount(void);
 private:

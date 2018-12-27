@@ -37,7 +37,7 @@ public:
 
 	void SetListCtrl(CListCtrl* p_list_ctrl);
 
-	void UpdateList(std::string str_date_start="", std::string str_date_end="");
+	void UpdateList(std::string str_date_start="", std::string str_date_end="", int* out_total_cost=NULL, int* out_total_count = NULL);
 	std::string GetSaleCode(const int index);
 
 private:

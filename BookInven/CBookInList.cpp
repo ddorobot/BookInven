@@ -50,7 +50,7 @@ int CBookInList::AddInfo(BookIn_Info info)
 	
 }
 
-void CBookInList::UpdateList(std::string str_date_start, std::string str_date_end)
+void CBookInList::UpdateList(std::string str_date_start, std::string str_date_end, const int type)
 {
 	if (m_p_list_ctrl == NULL) return;
 
@@ -94,7 +94,24 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 				list_info.reg_date = vec_bookin_info[i].reg_date;
 				list_info.copy_from_detail_idx = vec_bookin_info[i].copy_from_detail_idx;
 
-				m_book_in.push_back(list_info);
+				if (type == 0)
+				{
+					m_book_in.push_back(list_info);
+				}
+				else if (type == 1 /*신규입고*/)
+				{
+					if (list_info.copy_from_detail_idx < 0)
+					{
+						m_book_in.push_back(list_info);
+					}
+				}
+				else if (type == 2 /*환불입고*/)
+				{
+					if (list_info.copy_from_detail_idx >= 0)
+					{
+						m_book_in.push_back(list_info);
+					}
+				}
 			}
 		}
 	}

@@ -47,7 +47,7 @@ std::string CBookSaleList::GetSaleCode(const int index)
 	return str_sale_code;
 }
 
-void CBookSaleList::UpdateList(std::string str_date_start, std::string str_date_end)
+void CBookSaleList::UpdateList(std::string str_date_start, std::string str_date_end, int* out_total_cost, int* out_total_count)
 {
 	if (m_p_list_ctrl == NULL) return;
 
@@ -63,6 +63,10 @@ void CBookSaleList::UpdateList(std::string str_date_start, std::string str_date_
 	vec_book_sale_info = cls_db_book_sale_history.GetInfo(str_date_start, str_date_end);
 
 	int history_size = vec_book_sale_info.size();
+
+	int total_cost = 0;
+	int total_count = 0;
+
 	for (int i = 0; i < history_size; i++)
 	{
 		if (!vec_book_sale_info[i].code.empty())
@@ -76,6 +80,17 @@ void CBookSaleList::UpdateList(std::string str_date_start, std::string str_date_
 			list_info.reg_date = vec_book_sale_info[i].reg_date;
 
 			m_book_sale.push_back(list_info);
+
+			total_cost += list_info.sale_cost;
+
+			if (list_info.sale_cost > 0)
+			{
+				total_count += list_info.count;
+			}
+			else
+			{
+				total_count -= list_info.count;
+			}
 		}
 	}
 	//입고 히스토리를 DB에서 모두 가지고 온다.
@@ -223,5 +238,15 @@ void CBookSaleList::UpdateList(std::string str_date_start, std::string str_date_
 	}
 #endif
 	m_p_list_ctrl->Invalidate(TRUE);
+
+	if (out_total_cost != NULL)
+	{
+		(*out_total_cost) = total_cost;
+	}
+
+	if (out_total_count != NULL)
+	{
+		(*out_total_count) = total_count;
+	}
 }
 
