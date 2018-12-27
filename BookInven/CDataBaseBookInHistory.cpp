@@ -537,35 +537,97 @@ BookInHistory CDataBaseBookInHistory::GetLastInfo(void)
 	return retBookHistory;
 }
 
-int CDataBaseBookInHistory::Refund(const int copy_from_detail_index)
+int CDataBaseBookInHistory::Refund(std::vector<int> vec_copy_from_detail_index)
 {
 	int ret = 0;
 
-	//Detail 정보를 읽어 온다. 
-	CDataBaseBookInHistoryDetail cls_db_bookin_history_detail;
-	DB_BookInHistoryDetail bookin_history_detail = cls_db_bookin_history_detail.GetDetail_DB(copy_from_detail_index); 
+	int refund_cost = 0;
+	int refund_size = vec_copy_from_detail_index.size();
 
-	//기존의 데이타 Detail엔 환불 정보 입력
-	// Detail정보에 환불를 입력 한다.
-	CDataBaseBookInHistoryDetail cls_db_book_in_detail;
-	if (cls_db_book_in_detail.AddDetail(bookin_history_detail.base_idx, 0/*환불로인한 수량변화는 0*/, trade_refund, bookin_history_detail.detail.type_code))
+	std::vector<int> vec_refund_index;
+	for (int i = 0; i < refund_size; i++)
 	{
-		//기존 데이타에 환불처리가 완료 되면 재입고 처리.
-		//History 정보를 읽어 온다.
-		DB_BookInHistory bookin_history = GetInfoBookInfoHistory(bookin_history_detail.base_idx);
+		int copy_from_detail_index = vec_copy_from_detail_index[i];
 
-		//어디서 복사 되었는지 데이타를 넣어 준다.
-		bookin_history.book_info_copy_from_detail_idx = bookin_history_detail.idx;
-		bookin_history.book_count = 1;		//환불로 인한 수량은 1
-		bookin_history.reg_date = "";		//비워두어야 현재 시간으로 업데이트가 됨.
+		//Detail 정보를 읽어 온다. 
+		CDataBaseBookInHistoryDetail cls_db_bookin_history_detail;
+		DB_BookInHistoryDetail bookin_history_detail = cls_db_bookin_history_detail.GetDetail_DB(copy_from_detail_index);
 
-		if (AddBookInInfo(bookin_history))
+		//기존의 데이타 Detail엔 환불 정보 입력
+		// Detail정보에 환불를 입력 한다.
+		CDataBaseBookInHistoryDetail cls_db_book_in_detail;
+		if (cls_db_book_in_detail.AddDetail(bookin_history_detail.base_idx, 0/*환불로인한 수량변화는 0*/, trade_refund, bookin_history_detail.detail.type_code))
 		{
-			ret = 1;
+			//기존 데이타에 환불처리가 완료 되면 재입고 처리.
+			//History 정보를 읽어 온다.
+			DB_BookInHistory bookin_history = GetInfoBookInfoHistory(bookin_history_detail.base_idx);
+
+			//어디서 복사 되었는지 데이타를 넣어 준다.
+			bookin_history.book_info_copy_from_detail_idx = bookin_history_detail.idx;
+			bookin_history.book_count = 1;		//환불로 인한 수량은 1
+			bookin_history.reg_date = "";		//비워두어야 현재 시간으로 업데이트가 됨.
+
+			if (AddBookInInfo(bookin_history))			//입고(환불) 정보에 저장
+			{
+				refund_cost -= bookin_history.sale_cost;
+				vec_refund_index.push_back(i);
+			}
 		}
 	}
 	//Copy(Add)
 	
+	//
+	//-------
+	//-----------------------------------------------------------------
+	//판매 정보에 환불로 (-가격) 정보 저장
+	refund_size = vec_refund_index.size();
+
+	BookSaleHistory book_sale_info;
+
+	book_sale_info.count = refund_size;
+	book_sale_info.discount = 0;
+	book_sale_info.cash = cash;
+	book_sale_info.sale_cost = refund_cost;
+	book_sale_info.memo = "관리자 환불 처리";
+
+	CDataBaseBookSaleHistory cls_db_book_sale_history;
+	std::string code = cls_db_book_sale_history.AddBookSaleInfo(book_sale_info);
+
+	int refunc_run_count = 0;
+	for (int i = 0; i < refund_size; i++)
+	{
+		int copy_from_detail_index = vec_copy_from_detail_index[vec_refund_index[i]];
+
+		//Detail 정보를 읽어 온다. 
+		CDataBaseBookInHistoryDetail cls_db_bookin_history_detail;
+		DB_BookInHistoryDetail bookin_history_detail = cls_db_bookin_history_detail.GetDetail_DB(copy_from_detail_index);
+
+		//기존의 데이타 Detail엔 환불 정보 입력
+		// Detail정보에 환불를 입력 한다.
+		CDataBaseBookInHistoryDetail cls_db_book_in_detail;
+		//기존 데이타에 환불처리가 완료 되면 재입고 처리.
+		//History 정보를 읽어 온다.
+		DB_BookInHistory bookin_history = GetInfoBookInfoHistory(bookin_history_detail.base_idx);
+
+		if (!code.empty())		//판매(환불)코드로 Detail 리스트 저장
+		{
+			//BookIn Detail정보에 결제 정보를 전송!
+			int bookin_db_index = bookin_history_detail.base_idx;
+			//Detail정보에 환불을 입력 한다.
+			if (cls_db_book_in_detail.AddDetail(bookin_db_index, -1, trade_refund, code))
+			{
+				refunc_run_count++;
+			}
+		}
+	}
+	//판매 정보에 환불로 (-가격) 정보 저장
+	//-----------------------------------------------------------------
+	//-------
+
+	if (refunc_run_count == vec_copy_from_detail_index.size())
+	{
+		ret = 1;
+	}
 
 	return ret;
 }

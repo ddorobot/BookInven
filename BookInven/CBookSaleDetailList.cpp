@@ -64,6 +64,8 @@ int CBookSaleDetailList::CheckedRefund(void)
 		int count = m_p_list_ctrl->GetItemCount();
 		const int book_in_size = m_book_sale.size();
 
+		std::vector<int> vec_refund_index;
+
 		int refund_count = 0;
 		for (int i = 0; i < count; i++)
 		{
@@ -74,32 +76,19 @@ int CBookSaleDetailList::CheckedRefund(void)
 				{
 					BookSaleDetailInfo sale_detail_info = m_book_sale[i];
 
-#if 0
-					CDataBaseBookSaleHistory cls_db_book_sale_history;
-					BookSaleHistory sale_history = cls_db_book_sale_history.GetInfo(sale_detail_info.bookin_list_info.db_idx);
+					vec_refund_index.push_back(sale_detail_info.db_idx);
 
-					//History Detail에 refund 상태 추가
-					CDataBaseBookInHistoryDetail cls_db_book_in_detail;
-					if (cls_db_book_in_detail.AddDetail(sale_detail_info.bookin_list_info.db_idx, 0, trade_refund, sale_history.code))
-					{
-						//refund된 정보를 새로 입고
-						CDataBaseBookInHistory cls_db_bookin_history;
-						cls_db_bookin_history.CopyAddBookInInfo(sale_detail_info.db_idx);
-					}
-#else
-					CDataBaseBookInHistory cls_db_bookin_history;
-					if (cls_db_bookin_history.Refund(sale_detail_info.db_idx))
-					{
-						refund_count++;
-					}
-#endif
 				}
 			}
 		}
 
-		if (refund_count == count)
+		if (vec_refund_index.size() > 0)
 		{
-			ret = 1;
+			CDataBaseBookInHistory cls_db_bookin_history;
+			if (cls_db_bookin_history.Refund(vec_refund_index))
+			{
+				ret = 1;
+			}
 		}
 
 		//삭제 되지 않은 아이템은 Checked가 FALSE여야 한다.

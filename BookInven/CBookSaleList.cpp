@@ -151,6 +151,7 @@ void CBookSaleList::UpdateList(std::string str_date_start, std::string str_date_
 
 			std::string str_sale_type_ = "카드";
 			if(book_sale_info.cash == true)	str_sale_type_ = "현금";
+			if(book_sale_info.sale_cost < 0 )	str_sale_type_ = "환불";
 
 			if (std::string(str_sale_type) != str_sale_type_)
 			{
@@ -204,7 +205,8 @@ void CBookSaleList::UpdateList(std::string str_date_start, std::string str_date_
 
 			//결제방법
 			std::string str_sale_type_ = "카드";
-			if (book_sale_info.cash == true)	str_sale_type_ = "현금";
+			if (book_sale_info.cash == 0)	str_sale_type_ = "현금";
+			if (book_sale_info.sale_cost < 0)	str_sale_type_ = "환불";
 			cstr_data.Format(_T("%s"), str_sale_type_.c_str());
 			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 

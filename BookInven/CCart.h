@@ -2,6 +2,7 @@
 
 #include <string>
 
+#include "BookInInfo.h"
 #include "CDataBaseBookInHistory.h"
 #include "CDataBaseCart.h"
 

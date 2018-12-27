@@ -7,6 +7,7 @@
 #include "CDataBaseProvider.h"
 #include "CDataBaseProviderDetail.h"
 #include "CDataBaseBookInHistoryDetail.h"
+#include "CDataBaseBookSaleHistory.h"
 
 #include "BookInInfo.h"
 
@@ -55,7 +56,7 @@ public:
 	//Book Info
 	int GetBookCount(const std::string isbn);
 	int AddBookInInfo(const DB_BookInHistory bookinfo);
-	int Refund(const int copy_from_detail_index);
+	int Refund(std::vector<int> vec_copy_from_detail_index);
 	BookInHistory GetLastInfo(void);
 	BookInHistory GetInfo(const int idx);
 	

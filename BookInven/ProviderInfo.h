@@ -12,7 +12,7 @@ enum ProvideType
 const std::string str_provide_type[provide_type_size] =
 {
 	"Çö¸Å",
-	"À§Å¹"
+	"À§Å¹",
 };
 
 enum ReceiptAngle
