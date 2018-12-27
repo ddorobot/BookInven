@@ -1,7 +1,8 @@
 #include "CBookSaleDetailList.h"
 
-CBookSaleDetailList::CBookSaleDetailList(CListCtrl* p_list_ctrl) :
+CBookSaleDetailList::CBookSaleDetailList(CListCtrl* p_list_ctrl, bool b_check, bool b_only_able_refund) :
 	m_p_list_ctrl(NULL)
+	, m_b_only_able_refund(b_only_able_refund)
 {
 	SetListCtrl(p_list_ctrl);
 
@@ -9,8 +10,15 @@ CBookSaleDetailList::CBookSaleDetailList(CListCtrl* p_list_ctrl) :
 	//Initialize list
 	m_p_list_ctrl->DeleteAllItems();
 	// 리스트 스타일 설정
-	//m_p_list_ctrl->SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES | LVS_EX_CHECKBOXES);
-	m_p_list_ctrl->SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES );
+	if (b_check)
+	{
+		m_p_list_ctrl->SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES | LVS_EX_CHECKBOXES);
+	}
+	else
+	{
+		m_p_list_ctrl->SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
+	}
+
 	// 타이틀 삽입
 	int list_index = 0;
 	//m_p_list_ctrl->InsertColumn(list_index++, _T(""), LVCFMT_CENTER, 20, -1);

@@ -32,7 +32,7 @@ typedef struct BookSaleDetailInfo {
 class CBookSaleDetailList
 {
 public:
-	CBookSaleDetailList(CListCtrl* p_list_ctrl);
+	CBookSaleDetailList(CListCtrl* p_list_ctrl, bool b_check=false, bool b_only_able_refund=false);
 	~CBookSaleDetailList();
 
 	void SetListCtrl(CListCtrl* p_list_ctrl);
@@ -47,5 +47,7 @@ private:
 	CListCtrl* m_p_list_ctrl;
 
 	std::deque<BookSaleDetailInfo> m_book_sale;
+
+	bool m_b_only_able_refund;
 };
 
