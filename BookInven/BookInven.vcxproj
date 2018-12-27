@@ -208,6 +208,7 @@
     <ClInclude Include="CDataBaseProviderDetail.h" />
     <ClInclude Include="CDlgBookIn.h" />
     <ClInclude Include="CDlgBookManage.h" />
+    <ClInclude Include="CDlgBookReturn.h" />
     <ClInclude Include="CDlgBookSale.h" />
     <ClInclude Include="CDlgCustomManage.h" />
     <ClInclude Include="CDlgMemo.h" />
@@ -253,6 +254,7 @@
     <ClCompile Include="CDataBaseProviderDetail.cpp" />
     <ClCompile Include="CDlgBookIn.cpp" />
     <ClCompile Include="CDlgBookManage.cpp" />
+    <ClCompile Include="CDlgBookReturn.cpp" />
     <ClCompile Include="CDlgBookSale.cpp" />
     <ClCompile Include="CDlgCustomManage.cpp" />
     <ClCompile Include="CDlgMemo.cpp" />
