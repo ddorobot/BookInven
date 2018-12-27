@@ -121,6 +121,46 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 		std::vector<DB_BookInHistoryDetail> vec_history_detail = cls_db_bookin_history_detail.GetDetail_DB(str_sale_code);
 		int detail_size = vec_history_detail.size();
 
+		std::vector<DB_BookInHistoryDetail> vec_history_detail_unit;
+		if (m_b_only_able_refund)
+		{
+			//동일한 base_idx를 갖은 정보중에 가장 최근의 (idx가 큰) 값만 갖는다.
+			//Detail 정보의 base index를 이용하여 Detail에서 재 검색. 
+			for (int i=0; i < detail_size; i++ )
+			{
+				DB_BookInHistoryDetail detail = vec_history_detail[i];
+
+				bool b_exist = false;
+				int detail_unit_size = vec_history_detail_unit.size();
+				for (int j = 0; j < detail_unit_size; j++)
+				{
+					DB_BookInHistoryDetail detail_unit = vec_history_detail_unit[j];
+
+					if (detail.base_idx == detail_unit.base_idx)
+					{
+						if (detail.idx > detail_unit.idx)
+						{
+							//최근의 정보로 변경 한다.
+							vec_history_detail_unit[j] = vec_history_detail[i];
+						}
+
+						b_exist = true;
+					}
+				}
+
+				if (b_exist == false )
+				{
+					vec_history_detail_unit.push_back(detail);
+				}
+			}
+		}
+		else
+		{
+			vec_history_detail_unit = vec_history_detail;
+		}
+		
+		detail_size = vec_history_detail_unit.size();
+		
 
 		//-----
 		CDataBaseBookInHistory cls_db_bookin_history;
@@ -129,19 +169,27 @@ void CBookSaleDetailList::UpdateList(const std::string str_sale_code)
 		//for (int i = 0; i < detail_size; i++)
 		for (int i = detail_size-1; i >= 0; i--)
 		{
-			bookin_info = cls_db_bookin_history.GetInfo(vec_history_detail[i].base_idx);
+			DB_BookInHistoryDetail detail = vec_history_detail_unit[i];
+
+			//상태가 판매 상태(trade_sale) 이어야만 환불 가능 하다.
+			if (detail.detail.type != trade_sale && m_b_only_able_refund )
+			{
+				continue;
+			}
+
+			bookin_info = cls_db_bookin_history.GetInfo(detail.base_idx);
 
 			if (!bookin_info.reg_date.empty())
 			{
 				BookSaleDetailInfo list_info;
-				list_info.db_idx = vec_history_detail[i].idx;
+				list_info.db_idx = detail.idx;
 				list_info.bookin_list_info.db_idx = bookin_info.db_idx;
 				list_info.bookin_list_info.bookin_info = bookin_info.bookin_info;
-				list_info.bookin_list_info.reg_date = vec_history_detail[i].reg_date;
+				list_info.bookin_list_info.reg_date = detail.reg_date;
 
 				//변동 수량 확인
-				list_info.trade_type = vec_history_detail[i].detail.type;
-				list_info.bookin_list_info.bookin_info.count = vec_history_detail[i].detail.book_count;
+				list_info.trade_type = detail.detail.type;
+				list_info.bookin_list_info.bookin_info.count = detail.detail.book_count;
 				
 				m_book_sale.push_back(list_info);
 			}
