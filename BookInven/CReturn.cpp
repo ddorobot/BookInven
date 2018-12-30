@@ -22,10 +22,9 @@ int CReturn::AddReturn(const std::string isbn)
 	//DB에 저장
 	if (bookin_count > 0 && bookin_candidate_index >= 0 )
 	{
-#if 0	//TODO
-		//카트 DB에 추가하고 입고수량에서는 임시적으로 1을 삭제 한다. 
-		CDataBaseCart cls_db_cart;
-		if (cls_db_cart.AddReturn(bookin_candidate_index))
+		//반품 DB에 추가하고 입고수량에서는 임시적으로 1을 삭제 한다. 
+		CDataBaseReturn cls_db_return;
+		if (cls_db_return.AddReturn(bookin_candidate_index))
 		{
 			//DB에 추가 되었으니 입고수량에서 1을 삭제한다.
 			if (cls_db_bookin.PushPopCount(bookin_candidate_index, -1))
@@ -33,7 +32,6 @@ int CReturn::AddReturn(const std::string isbn)
 				ret = 1;
 			}
 		}
-#endif
 	}
 
 	return ret;
@@ -43,10 +41,9 @@ int CReturn::DelReturn(const std::string isbn, const bool bret)
 {
 	int ret = 0;
 
-#if 0		//TODO
-	CDataBaseCart cls_db_cart;
+	CDataBaseReturn cls_db_return;
 
-	std::vector<DB_Cart> vec_cart = cls_db_cart.GetDBInfo();
+	std::vector<DB_Return> vec_cart = cls_db_return.GetDBInfo();
 	int cart_size = vec_cart.size();
 
 	for (int i = 0; i < cart_size; i++)
@@ -58,8 +55,8 @@ int CReturn::DelReturn(const std::string isbn, const bool bret)
 
 		if (book_in_data.bookin_info.book_info.isbn == isbn)
 		{
-			//카트 DB를 삭제(수량을 1을 줄이는 것과 같다)하고 입고수량에 1을 추가 한다. 
-			if (cls_db_cart.PopReturn(vec_cart[i].idx))
+			//반품 DB를 삭제(수량을 1을 줄이는 것과 같다)하고 입고수량에 1을 추가 한다. 
+			if (cls_db_return.PopReturn(vec_cart[i].idx))
 			{
 				if (bret)
 				{
@@ -76,17 +73,16 @@ int CReturn::DelReturn(const std::string isbn, const bool bret)
 			}
 		}
 	}
-#endif
 	return ret;
 }
 
 int CReturn::PopReturn(const std::string isbn)
 {
 	int ret = 0;
-#if 0		//TODO	
-	CDataBaseCart cls_db_cart;
+
+	CDataBaseReturn cls_db_return;
 	
-	std::vector<DB_Cart> vec_cart = cls_db_cart.GetDBInfo();
+	std::vector<DB_Return> vec_cart = cls_db_return.GetDBInfo();
 	int cart_size = vec_cart.size();
 
 	for (int i = 0; i < cart_size; i++)
@@ -98,8 +94,8 @@ int CReturn::PopReturn(const std::string isbn)
 
 		if (book_in_data.bookin_info.book_info.isbn == isbn)
 		{
-			//카트 DB를 삭제(수량을 1을 줄이는 것과 같다)하고 입고수량에 1을 추가 한다. 
-			if (cls_db_cart.PopReturn(vec_cart[i].idx))
+			//반품 DB를 삭제(수량을 1을 줄이는 것과 같다)하고 입고수량에 1을 추가 한다. 
+			if (cls_db_return.PopReturn(vec_cart[i].idx))
 			{
 				//입고수량에 1을 추가
 				if (cls_db_book_in_history.PushPopCount(book_in_index, 1))
@@ -111,65 +107,51 @@ int CReturn::PopReturn(const std::string isbn)
 			break;
 		}
 	}
-#endif
 
 	return ret;
 }
 
-//카트에 담긴 특정 index의 수량이 몇개 인지 확인
+//반품에 담긴 특정 index의 수량이 몇개 인지 확인
 int CReturn::GetCount(const int index)
 {
-#if 0		//TODO
-	CDataBaseCart cls_db_cart;
+	CDataBaseReturn cls_db_return;
 
-	int ret = cls_db_cart.GetCount(index);
+	int ret = cls_db_return.GetCount(index);
 
 	return ret;
-#endif
-
-	return 0;
 }
 
-//카트에 담긴 총 수량을 리턴
+//반품에 담긴 총 수량을 리턴
 int CReturn::GetReturnCount(void)
 {
-#if 0		//TODO
-	CDataBaseCart cls_db_cart;
+	CDataBaseReturn cls_db_return;
 
-	int ret = cls_db_cart.GetCount();
+	int ret = cls_db_return.GetCount();
 
 	return ret;
-#endif
-	return 0;
 }
 
 std::vector<int> CReturn::GetReturnAllIndex(void)
 {
-#if 0			//TODO
-	CDataBaseCart cls_db_cart;
+	CDataBaseReturn cls_db_return;
 
-	std::vector<int> ret = cls_db_cart.GetInfo();
+	std::vector<int> ret = cls_db_return.GetInfo();
 
 	return ret;
-#endif
-
-	std::vector<int> ret;
-	return ret ;
 }
 
 //BookInHistory GetInfo(const int idx);
 std::vector<ReturnInfo> CReturn::GetReturnData(const std::string isbn)
 {
-#if 0			//TODO
-	CDataBaseCart cls_db_cart;
-	std::vector<int> vec_cart_index_info = cls_db_cart.GetInfo();
+	CDataBaseReturn cls_db_return;
+	std::vector<int> vec_return_index_info = cls_db_return.GetInfo();
 
-	int cart_size = vec_cart_index_info.size();
+	int cart_size = vec_return_index_info.size();
 
 	std::deque<BookInHistory> books_data;
 	for (int i = 0; i < cart_size; i++)
 	{
-		int book_in_index = vec_cart_index_info[i];
+		int book_in_index = vec_return_index_info[i];
 
 		CDataBaseBookInHistory cls_db_book_in_history;
 		BookInHistory book_in_data = cls_db_book_in_history.GetInfo(book_in_index);
@@ -191,8 +173,8 @@ std::vector<ReturnInfo> CReturn::GetReturnData(const std::string isbn)
 	}
 
 	//같은 정보 합치기
-	std::vector<CartInfo> vec_cart_info;
-	CartInfo cart_info;
+	std::vector<ReturnInfo> vec_cart_info;
+	ReturnInfo cart_info;
 	int books_data_size = books_data.size();
 
 	for (int i = 0; i < books_data_size; i++)
@@ -220,7 +202,7 @@ std::vector<ReturnInfo> CReturn::GetReturnData(const std::string isbn)
 		}
 		else
 		{
-			CartInfo cart_info;
+			ReturnInfo cart_info;
 			cart_info.bookin_info = books_data[i].bookin_info;
 			cart_info.count = 1;
 			cart_info.db_idx = books_data[i].db_idx;
@@ -230,5 +212,4 @@ std::vector<ReturnInfo> CReturn::GetReturnData(const std::string isbn)
 	}
 
 	return vec_cart_info;
-#endif
 }
