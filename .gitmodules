@@ -25,3 +25,6 @@
 [submodule "lib/cgridlistctrlex"]
 	path = lib/cgridlistctrlex
 	url = https://github.com/ddorobot/cgridlistctrlex
+[submodule "lib/glog"]
+	path = lib/glog
+	url = https://github.com/ddorobot/glog.git
