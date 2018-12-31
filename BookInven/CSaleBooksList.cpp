@@ -264,33 +264,12 @@ int CSaleBooksList::Pay(const std::string memo, const int discount, const bool c
 	book_sale_info.cash = cash;
 	book_sale_info.sale_cost = GetTotalPrice();
 	book_sale_info.memo = memo;
+	book_sale_info.vec_bookin = vec_cart_index;
 
 	CDataBaseBookSaleHistory cls_db_book_sale_history;
 	std::string code = cls_db_book_sale_history.AddBookSaleInfo(book_sale_info);
 
-	if (!code.empty())
-	{
-		//BookInHistory의 수량 수정은 필요 없음. 이미 카트에 넣으면서 수량이 줄어 들었음
-
-		//BookInHistoryDetil에 판매 했다고 추가 해야 함.
-		for (int i = 0; i < cart_size; i++)
-		{
-			//BookIn Detail정보에 결제 정보를 전송!
-			int bookin_db_index = vec_cart_index[i];
-
-			//Detail정보에 입고를 입력 한다.
-			CDataBaseBookInHistoryDetail cls_db_book_in_detail;
-			if (cls_db_book_in_detail.AddDetail(bookin_db_index, -1, trade_sale, code))
-			{
-				ret = 1;
-			}
-			else
-			{
-				ret = 0;
-			}
-
-		}
-	}
+	if (!code.empty())	ret = 1;
 
 	return ret;
 }

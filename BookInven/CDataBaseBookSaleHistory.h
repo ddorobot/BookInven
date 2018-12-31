@@ -28,6 +28,7 @@ typedef struct BookSaleHistory {
 	int sale_cost = 0;
 	std::string memo;
 	bool cash = false;
+	std::vector<int> vec_bookin;
 	std::string reg_date;
 } BookSaleHistory;
 

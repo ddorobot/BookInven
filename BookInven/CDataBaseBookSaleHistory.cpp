@@ -303,6 +303,25 @@ std::string CDataBaseBookSaleHistory::AddBookSaleInfo(const BookSaleHistory sale
 		else
 		{
 			ret_code = sale_code;
+
+			int size = sale_bookinfo.vec_bookin.size();
+
+			//BookInHistoryDetil에 판매 했다고 추가 해야 함.
+			for (int i = 0; i < size; i++)
+			{
+				//BookIn Detail정보에 결제 정보를 전송!
+				int bookin_db_index = sale_bookinfo.vec_bookin[i];
+
+				//Detail정보에 판매 되었음을 입력
+				CDataBaseBookInHistoryDetail cls_db_book_in_detail;
+				if (cls_db_book_in_detail.AddDetail(bookin_db_index, -1, trade_sale, ret_code))
+				{
+				}
+				else
+				{
+					ret_code = "";
+				}
+			}
 		}
 	}
 
