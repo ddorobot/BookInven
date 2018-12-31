@@ -245,7 +245,7 @@ std::vector<BookInHistory> CDataBaseBookInHistory::GetInHistory(const std::strin
 	return retProviderInfo;
 }
 
-int CDataBaseBookInHistory::PushPopCount(const int index, const int count)
+int CDataBaseBookInHistory::PushPopCount(const int index, const int count, const int type)
 {
 	int ret = 0;
 
@@ -283,8 +283,25 @@ int CDataBaseBookInHistory::PushPopCount(const int index, const int count)
 		}
 		else
 		{
-			//검증
-			ret = 1;
+			//Detail에 저장
+			//기존의 데이타 Detail엔 환불 정보 입력
+			// Detail정보에 환불를 입력 한다.
+			int temp_count = 0;
+			if (type == trade_in)				temp_count = 1;
+			else if( type == trade_sale_add)	temp_count = -1;
+			else if( type == trade_sale_del)	temp_count = 1;
+			else if( type == trade_sale)		temp_count = -1;
+			else if( type == trade_refund)		temp_count = 0;
+			else if( type == trade_return_add)	temp_count = -1;
+			else if( type == trade_return_del)	temp_count = 1;
+			else if( type == trade_return)		temp_count = 0;
+
+			CDataBaseBookInHistoryDetail cls_db_book_in_detail;
+			if (cls_db_book_in_detail.AddDetail(index, temp_count, type, ""))
+			{
+				//검증
+				ret = 1;
+			}
 		}
 	}
 

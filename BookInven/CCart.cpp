@@ -27,7 +27,7 @@ int CCart::AddCart(const std::string isbn)
 		if (cls_db_cart.AddCart(bookin_candidate_index))
 		{
 			//DB에 추가 되었으니 입고수량에서 1을 삭제한다.
-			if (cls_db_bookin.PushPopCount(bookin_candidate_index, -1))
+			if (cls_db_bookin.PushPopCount(bookin_candidate_index, -1, trade_sale_add))
 			{
 				ret = 1;
 			}
@@ -61,7 +61,7 @@ int CCart::DelCart(const std::string isbn, const bool bret)
 				if (bret)
 				{
 					//입고수량에 1을 추가
-					if (cls_db_book_in_history.PushPopCount(book_in_index, 1))
+					if (cls_db_book_in_history.PushPopCount(book_in_index, 1, trade_sale_del))
 					{
 						ret = 1;
 					}
@@ -99,7 +99,7 @@ int CCart::PopCart(const std::string isbn)
 			if (cls_db_cart.PopCart(vec_cart[i].idx))
 			{
 				//입고수량에 1을 추가
-				if (cls_db_book_in_history.PushPopCount(book_in_index, 1))
+				if (cls_db_book_in_history.PushPopCount(book_in_index, 1, trade_sale_del))
 				{
 					ret = 1;
 				}

@@ -7,18 +7,26 @@
 enum book_trade_type
 {
 	trade_in,
+	trade_sale_add,
+	trade_sale_del,
 	trade_sale,
 	trade_refund,
+	trade_return_add,
+	trade_return_del,
 	trade_return,
 	trade_size
 };
 
 const std::string str_book_trade_type[trade_size]
 {
-	"입고",
-	"판매",
-	"환불",
-	"반품"
+	"입고완료",
+	"카트에추가",
+	"카트에서삭제	",
+	"판매완료",
+	"환불완료",
+	"반품추가",
+	"반품삭제",
+	"반품완료"
 };
 
 //table name

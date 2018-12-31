@@ -63,7 +63,7 @@ public:
 	std::vector<BookInHistory> GetInHistory(const std::string str_date_start="", const std::string str_date_end="");
 	void Delete(const int index);
 	int GetAbleInCartIndex(const std::string isbn);
-	int PushPopCount(const int index, const int count);
+	int PushPopCount(const int index, const int count, const int type);
 
 private:
 	static int sql_callback_get_bookinfo(void *NotUsed, int argc, char **argv, char **azColName);
