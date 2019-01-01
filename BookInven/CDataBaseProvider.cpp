@@ -316,7 +316,11 @@ ProviderInfoBase CDataBaseProvider::GetBaseInfo(const int index)
 
 		if (nResult)
 		{
-			sqlite3_free(&pErr);
+			if (pErr)
+			{
+				printf("%s Error : %s\n", __func__, pErr);
+				sqlite3_free(&pErr);
+			}
 		}
 		else
 		{
