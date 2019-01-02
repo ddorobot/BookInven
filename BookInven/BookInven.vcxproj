@@ -214,6 +214,7 @@
     <ClInclude Include="CDlgCustomManage.h" />
     <ClInclude Include="CDlgMemo.h" />
     <ClInclude Include="CDlgRefundList.h" />
+    <ClInclude Include="CDlgReturnPrint.h" />
     <ClInclude Include="CDlgSaleManage.h" />
     <ClInclude Include="CDlgStoreInfo.h" />
     <ClInclude Include="CDrawToHDC.h" />
@@ -228,6 +229,7 @@
     <ClInclude Include="CReturn.h" />
     <ClInclude Include="CSaleBooksList.h" />
     <ClInclude Include="CTabCtrlEx.h" />
+    <ClInclude Include="CWebBrowser2.h" />
     <ClInclude Include="GetBookInfo.h" />
     <ClInclude Include="ProviderInfo.h" />
     <ClInclude Include="Resource.h" />
@@ -262,6 +264,7 @@
     <ClCompile Include="CDlgCustomManage.cpp" />
     <ClCompile Include="CDlgMemo.cpp" />
     <ClCompile Include="CDlgRefundList.cpp" />
+    <ClCompile Include="CDlgReturnPrint.cpp" />
     <ClCompile Include="CDlgSaleManage.cpp" />
     <ClCompile Include="CDlgStoreInfo.cpp" />
     <ClCompile Include="CDrawToHDC.cpp" />
@@ -276,6 +279,7 @@
     <ClCompile Include="CReturn.cpp" />
     <ClCompile Include="CSaleBooksList.cpp" />
     <ClCompile Include="CTabCtrlEx.cpp" />
+    <ClCompile Include="CWebBrowser2.cpp" />
     <ClCompile Include="GetBookInfo.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -299,4 +303,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties _x007B_8856F961-340A-11D0-A96B-00C04FD705A2_x007D_="CWebBrowser2" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

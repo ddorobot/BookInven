@@ -162,6 +162,12 @@
     <ClInclude Include="CDataBaseReturn.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CDlgReturnPrint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CWebBrowser2.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BookInven.cpp">
@@ -288,6 +294,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CDataBaseReturn.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgReturnPrint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CWebBrowser2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
