@@ -97,6 +97,55 @@ std::vector<int> CDataBaseReturn::GetInfo(const int index)
 	return ret_index;
 }
 
+int CDataBaseReturn::DelReturn(const int bookin_index)
+{
+	int ret = 0;
+
+	sqlite3* pDB = NULL;
+
+	int check_db = CheckExistAndCreate(std::string(TABLE_NAME_RETURN), std::string(TABLE_DATA_RETURN));
+
+	//check data
+	if (check_db)
+	{
+		printf("%s\n", __func__);
+
+		char* pErr = NULL, *pDBFile = DB_PATH;
+		int nResult = sqlite3_open(pDBFile, &pDB);
+
+		//Tablek Book
+		/*
+#define TABLE_NAME_RETURN		"TReturn"
+#define TABLE_DATA_RETURN		"'idx'	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, \
+							'bookin_idx' INTEGER, \
+							'reg_date' TEXT"
+		*/
+		std::string sql_command = "DELETE FROM " + std::string(TABLE_NAME_RETURN) + " WHERE bookin_idx=" + std::to_string(bookin_index);
+
+		nResult = sqlite3_exec(pDB, sql_command.c_str(), NULL, NULL, &pErr);
+
+		if (nResult)
+		{
+			printf("%s 데이터 삭제 실패!\n", TABLE_NAME_RETURN);
+
+			if (pErr)
+			{
+				printf("%s Error %s\n", __func__, pErr);
+				sqlite3_free(pErr);
+			}
+		}
+		else
+		{
+			ret = 1;
+		}
+	}
+
+	//db close
+	if (pDB != NULL) sqlite3_close(pDB);
+
+	return ret;
+}
+
 int CDataBaseReturn::PopReturn(const int index)
 {
 	int ret = 0;

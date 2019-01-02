@@ -37,6 +37,16 @@ int CReturn::AddReturn(const std::string isbn)
 	return ret;
 }
 
+int CReturn::DelReturnItem(const int bookin_index)
+{
+	//bookin index에 대당하는 반품정보를 삭제 한다.
+	CDataBaseReturn cls_db_return;
+
+	int ret = cls_db_return.DelReturn(bookin_index);
+
+	return ret;
+}
+
 int CReturn::DelReturn(const std::string isbn, const bool bret)
 {
 	int ret = 0;
