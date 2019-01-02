@@ -120,7 +120,13 @@ int CDataBaseReturn::DelReturn(const int bookin_index)
 							'bookin_idx' INTEGER, \
 							'reg_date' TEXT"
 		*/
-		std::string sql_command = "DELETE FROM " + std::string(TABLE_NAME_RETURN) + " WHERE bookin_idx=" + std::to_string(bookin_index);
+		std::string sql_command_option = " WHERE bookin_idx=" + std::to_string(bookin_index);
+		if (bookin_index < 0 )
+		{
+			sql_command_option = "";		//delete all
+		}
+
+		std::string sql_command = "DELETE FROM " + std::string(TABLE_NAME_RETURN) + sql_command_option;
 
 		nResult = sqlite3_exec(pDB, sql_command.c_str(), NULL, NULL, &pErr);
 

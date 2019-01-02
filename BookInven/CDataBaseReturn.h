@@ -24,7 +24,7 @@ public:
 
 	int AddReturn(const int index);
 	int PopReturn(const int index);
-	int DelReturn(const int bookin_index);
+	int DelReturn(const int bookin_index=-1);
 	std::vector<int> GetInfo(const int index=-1);
 	std::vector<DB_Return> GetDBInfo(void);
 	int GetCount(const int index=-1);

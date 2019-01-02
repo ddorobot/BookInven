@@ -26,6 +26,6 @@ public:
 	std::vector<ReturnInfo> GetReturnData(const std::string isbn="");
 	int GetCount(const int index);
 
-	int DelReturnItem(const int bookin_index);
+	int DelReturnItem(const int bookin_index=-1);
 };
 

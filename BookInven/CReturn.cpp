@@ -41,8 +41,40 @@ int CReturn::DelReturnItem(const int bookin_index)
 {
 	//bookin index에 대당하는 반품정보를 삭제 한다.
 	CDataBaseReturn cls_db_return;
+	CDataBaseBookInHistory cls_db_book_in_history;
 
-	int ret = cls_db_return.DelReturn(bookin_index);
+	int ret = 0;
+
+	//int return_size = cls_db_return.GetCount();
+	std::vector<int> vec_bookin_index;
+
+	if (bookin_index < 0)
+	{
+		vec_bookin_index = cls_db_return.GetInfo();
+	}
+	else
+	{
+		vec_bookin_index.push_back(bookin_index);
+	}
+
+	int return_size = vec_bookin_index.size();
+
+	int ret_count = 0;
+	for (int i = 0; i < return_size; i++)
+	{
+
+		if (cls_db_return.DelReturn(vec_bookin_index[i]))
+		{
+			//입고수량에 1을 추가
+			if (cls_db_book_in_history.PushPopCount(vec_bookin_index[i], 1, trade_return_del))
+			{
+				//ret = 1;
+				ret_count++;
+			}
+		}
+	}
+
+	if (return_size == ret_count) ret = 1;
 
 	return ret;
 }
