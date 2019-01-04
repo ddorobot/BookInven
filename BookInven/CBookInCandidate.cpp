@@ -11,18 +11,20 @@ CBookInCandidate::CBookInCandidate(CListCtrl* p_list_ctrl) :
 	// 리스트 스타일 설정
 	m_p_list_ctrl->SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES | LVS_EX_CHECKBOXES);
 	// 타이틀 삽입
-	m_p_list_ctrl->InsertColumn(0, _T(""), LVCFMT_CENTER, 20, -1);
-	m_p_list_ctrl->InsertColumn(1, _T("CODE"), LVCFMT_CENTER, 110, -1);
-	m_p_list_ctrl->InsertColumn(2, _T("이름"), LVCFMT_CENTER, 150, -1);
-	m_p_list_ctrl->InsertColumn(3, _T("저자"), LVCFMT_CENTER, 100, -1);
-	m_p_list_ctrl->InsertColumn(4, _T("출판사"), LVCFMT_CENTER, 100, -1);
-	m_p_list_ctrl->InsertColumn(5, _T("가격"), LVCFMT_CENTER, 70, -1);
-	m_p_list_ctrl->InsertColumn(6, _T("수량"), LVCFMT_CENTER, 50, -1);
-	m_p_list_ctrl->InsertColumn(7, _T("공급사"), LVCFMT_CENTER, 100, -1);
-	m_p_list_ctrl->InsertColumn(8, _T("공급방식"), LVCFMT_CENTER, 60, -1);
-	m_p_list_ctrl->InsertColumn(9, _T("공급률"), LVCFMT_CENTER, 50, -1);
-	m_p_list_ctrl->InsertColumn(10, _T("공급가"), LVCFMT_CENTER, 70, -1);
-	m_p_list_ctrl->InsertColumn(11, _T("판매가"), LVCFMT_CENTER, 70, -1);
+	int index = 0;
+	m_p_list_ctrl->InsertColumn(index++, _T(""), LVCFMT_CENTER, 20, -1);
+	m_p_list_ctrl->InsertColumn(index++, _T("출판사배송일"), LVCFMT_CENTER, 110, -1);
+	m_p_list_ctrl->InsertColumn(index++, _T("CODE"), LVCFMT_CENTER, 110, -1);
+	m_p_list_ctrl->InsertColumn(index++, _T("이름"), LVCFMT_CENTER, 150, -1);
+	m_p_list_ctrl->InsertColumn(index++, _T("저자"), LVCFMT_CENTER, 100, -1);
+	m_p_list_ctrl->InsertColumn(index++, _T("출판사"), LVCFMT_CENTER, 100, -1);
+	m_p_list_ctrl->InsertColumn(index++, _T("가격"), LVCFMT_CENTER, 70, -1);
+	m_p_list_ctrl->InsertColumn(index++, _T("수량"), LVCFMT_CENTER, 50, -1);
+	m_p_list_ctrl->InsertColumn(index++, _T("공급사"), LVCFMT_CENTER, 100, -1);
+	m_p_list_ctrl->InsertColumn(index++, _T("공급방식"), LVCFMT_CENTER, 60, -1);
+	m_p_list_ctrl->InsertColumn(index++, _T("공급률"), LVCFMT_CENTER, 50, -1);
+	m_p_list_ctrl->InsertColumn(index++, _T("공급가"), LVCFMT_CENTER, 70, -1);
+	m_p_list_ctrl->InsertColumn(index++, _T("판매가"), LVCFMT_CENTER, 70, -1);
 }
 
 
@@ -91,92 +93,114 @@ void CBookInCandidate::UpdateList(void)
 		//m_p_list_ctrl->GetItemText(i, 0);
 
 		//isbn
-		CString str_isbn = m_p_list_ctrl->GetItemText(i, 1);
-		CString str_name = m_p_list_ctrl->GetItemText(i, 2);
-		CString str_author = m_p_list_ctrl->GetItemText(i, 3);
-		CString str_publisher = m_p_list_ctrl->GetItemText(i, 4);
-		CString str_price = m_p_list_ctrl->GetItemText(i, 5);
-		CString str_count = m_p_list_ctrl->GetItemText(i, 6);
-		CString str_provider = m_p_list_ctrl->GetItemText(i, 7);
-		CString str_provide_type = m_p_list_ctrl->GetItemText(i, 8);
-		CString str_provide_rate = m_p_list_ctrl->GetItemText(i, 9);
-		CString str_provide_price = m_p_list_ctrl->GetItemText(i, 10);
-		CString str_sale_price = m_p_list_ctrl->GetItemText(i, 11);
+		int index = 1;
+		CString str_provide_date = m_p_list_ctrl->GetItemText(i, index++);
+		CString str_isbn = m_p_list_ctrl->GetItemText(i, index++);
+		CString str_name = m_p_list_ctrl->GetItemText(i, index++);
+		CString str_author = m_p_list_ctrl->GetItemText(i, index++);
+		CString str_publisher = m_p_list_ctrl->GetItemText(i, index++);
+		CString str_price = m_p_list_ctrl->GetItemText(i, index++);
+		CString str_count = m_p_list_ctrl->GetItemText(i, index++);
+		CString str_provider = m_p_list_ctrl->GetItemText(i, index++);
+		CString str_provide_type = m_p_list_ctrl->GetItemText(i, index++);
+		CString str_provide_rate = m_p_list_ctrl->GetItemText(i, index++);
+		CString str_provide_price = m_p_list_ctrl->GetItemText(i, index++);
+		CString str_sale_price = m_p_list_ctrl->GetItemText(i, index++);
 
 		if (i < candidate_size)
 		{
 			BookIn_Info candidate = m_candidate[i].book_info;
 			int count = m_candidate[i].count;
 
+			int index = 1;
 			CString cstr_data;
+
+			if (std::string(str_provide_date) != candidate.provide_date.c_str())
+			{
+				cstr_data.Format(_T("%s"), candidate.provide_date.c_str());
+				m_p_list_ctrl->SetItemText(i, index, cstr_data);
+			}
+			index++;
+
 			if (std::string(str_isbn) != candidate.book_info.isbn)
 			{
 				cstr_data.Format(_T("%s"), candidate.book_info.isbn.c_str());
-				m_p_list_ctrl->SetItemText(i, 1, cstr_data);
+				m_p_list_ctrl->SetItemText(i, index, cstr_data);
 			}
+			index++;
 
 			if (std::string(str_name) != candidate.book_info.name)
 			{
 				cstr_data.Format(_T("%s"), candidate.book_info.name.c_str());
-				m_p_list_ctrl->SetItemText(i, 2, cstr_data);
+				m_p_list_ctrl->SetItemText(i, index, cstr_data);
 			}
+			index++;
 
 			if (std::string(str_author) != candidate.book_info.author)
 			{
 				cstr_data.Format(_T("%s"), candidate.book_info.author.c_str());
-				m_p_list_ctrl->SetItemText(i, 3, cstr_data);
+				m_p_list_ctrl->SetItemText(i, index, cstr_data);
 			}
+			index++;
 
 			if (std::string(str_publisher) != candidate.book_info.publisher)
 			{
 				cstr_data.Format(_T("%s"), candidate.book_info.publisher.c_str());
-				m_p_list_ctrl->SetItemText(i, 4, cstr_data);
+				m_p_list_ctrl->SetItemText(i, index, cstr_data);
 			}
+			index++;
 
 			if (std::string(str_price) != std::to_string(candidate.book_info.price))
 			{
 				cstr_data.Format(_T("%d"), candidate.book_info.price);
-				m_p_list_ctrl->SetItemText(i, 5, cstr_data);
+				m_p_list_ctrl->SetItemText(i, index, cstr_data);
 			}
+			index++;
 
 			if (std::string(str_count) != std::to_string(count))
 			{
 				cstr_data.Format(_T("%d"), count);
-				m_p_list_ctrl->SetItemText(i, 6, cstr_data);
+				m_p_list_ctrl->SetItemText(i, index, cstr_data);
 			}
+			index++;
 
 			if (std::string(str_provider) != candidate.provider_info.base.name)
 			{
 				cstr_data.Format(_T("%s"), candidate.provider_info.base.name.c_str());
-				m_p_list_ctrl->SetItemText(i, 7, cstr_data);
+				m_p_list_ctrl->SetItemText(i, index, cstr_data);
 			}
+			index++;
 
 			std::string provide_type = "현매";
 			if(candidate.provider_info.detail.provide_type == credit ) provide_type = "위탁";
 			if (std::string(str_provide_type) != provide_type)
 			{
 				cstr_data.Format(_T("%s"), provide_type.c_str());
-				m_p_list_ctrl->SetItemText(i, 8, cstr_data);
+				m_p_list_ctrl->SetItemText(i, index, cstr_data);
 			}
+			index++;
 
 			CString str_candidate_provide_rate; 
 			str_candidate_provide_rate.Format(_T("%.2f"), candidate.provider_info.detail.provide_rate);
 			if (str_provide_rate != str_candidate_provide_rate)
 			{
-				m_p_list_ctrl->SetItemText(i, 9, str_candidate_provide_rate);
+				m_p_list_ctrl->SetItemText(i, index, str_candidate_provide_rate);
 			}
+			index++;
 
 			if (std::string(str_provide_price) != std::to_string(candidate.provider_info.detail.provide_cost) )
 			{
 				cstr_data.Format(_T("%d"), candidate.provider_info.detail.provide_cost);
-				m_p_list_ctrl->SetItemText(i, 10, cstr_data);
+				m_p_list_ctrl->SetItemText(i, index, cstr_data);
 			}
+			index++;
 
 			if (std::string(str_sale_price) != std::to_string(candidate.sale_cost))
 			{
 				cstr_data.Format(_T("%d"), candidate.sale_cost);
-				m_p_list_ctrl->SetItemText(i, 11, cstr_data);
+				m_p_list_ctrl->SetItemText(i, index, cstr_data);
 			}
+			index++;
 		}
 	}
 
@@ -192,51 +216,57 @@ void CBookInCandidate::UpdateList(void)
 			CString cstr_data;
 			m_p_list_ctrl->InsertItem(index, "");
 
+			int sub_index = 1;
+
+			//출판사배송일
+			cstr_data.Format(_T("%s"), candidate.provide_date.c_str());
+			m_p_list_ctrl->SetItem(index, sub_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+
 			//code
 			cstr_data.Format(_T("%s"), candidate.book_info.isbn.c_str());
-			m_p_list_ctrl->SetItem(index, 1, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+			m_p_list_ctrl->SetItem(index, sub_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//이름
 			cstr_data.Format(_T("%s"), candidate.book_info.name.c_str());
-			m_p_list_ctrl->SetItem(index, 2, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+			m_p_list_ctrl->SetItem(index, sub_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//저자
 			cstr_data.Format(_T("%s"), candidate.book_info.author.c_str());
-			m_p_list_ctrl->SetItem(index, 3, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+			m_p_list_ctrl->SetItem(index, sub_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//발행처
 			cstr_data.Format(_T("%s"), candidate.book_info.publisher.c_str());
-			m_p_list_ctrl->SetItem(index, 4, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+			m_p_list_ctrl->SetItem(index, sub_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//가격
 			cstr_data.Format(_T("%d"), candidate.book_info.price);
-			m_p_list_ctrl->SetItem(index, 5, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+			m_p_list_ctrl->SetItem(index, sub_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//수량
 			cstr_data.Format(_T("%d"), count);
-			m_p_list_ctrl->SetItem(index, 6, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+			m_p_list_ctrl->SetItem(index, sub_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급사
 			cstr_data.Format(_T("%s"), candidate.provider_info.base.name.c_str());
-			m_p_list_ctrl->SetItem(index, 7, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+			m_p_list_ctrl->SetItem(index, sub_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급방식
 			std::string provide_type = "현매";
 			if (candidate.provider_info.detail.provide_type == credit) provide_type = "위탁";
 			cstr_data.Format(_T("%s"), provide_type.c_str());
-			m_p_list_ctrl->SetItem(index, 8, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+			m_p_list_ctrl->SetItem(index, sub_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급률
 			cstr_data.Format(_T("%.2f"), candidate.provider_info.detail.provide_rate);
-			m_p_list_ctrl->SetItem(index, 9, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+			m_p_list_ctrl->SetItem(index, sub_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//공급가
 			cstr_data.Format(_T("%d"), candidate.provider_info.detail.provide_cost);
-			m_p_list_ctrl->SetItem(index, 10, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
+			m_p_list_ctrl->SetItem(index, sub_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//판매가
 			cstr_data.Format(_T("%d"), candidate.sale_cost);
-			m_p_list_ctrl->SetItem(index, 11, LVIF_TEXT, cstr_data, 0, 0, 0, NULL); 
+			m_p_list_ctrl->SetItem(index, sub_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//checkbox 기본 체크
 			m_p_list_ctrl->SetCheck(index, TRUE);
@@ -317,37 +347,41 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 			//checkbox
 			break;
 		case 1:
-			//code
+			//출판사배송일
+			m_candidate[index].book_info.provide_date = data;
 			break;
 		case 2:
+			//code
+			break;
+		case 3:
 			//이름
 			m_candidate[index].book_info.book_info.name = data;
 			break;
-		case 3:
+		case 4:
 			//저자
 			m_candidate[index].book_info.book_info.author = data;
 			break;
-		case 4:
+		case 5:
 			//출판사
 			m_candidate[index].book_info.book_info.publisher = data;
 			break;
-		case 5:
+		case 6:
 			//가격
 			m_candidate[index].book_info.book_info.price = std::stoi(data);
 			//공급가도 변경
 			m_candidate[index].book_info.provider_info.detail.provide_cost = (int)roundf((float)(m_candidate[index].book_info.book_info.price) * (m_candidate[index].book_info.provider_info.detail.provide_rate / 100.0));
 			break;
-		case 6:
+		case 7:
 			//수량
 			m_candidate[index].count = std::stoi(data);
 			break;
-		case 7:
+		case 8:
 #if 0
 			//공급사
 			m_candidate[index].provider_info.base.name = data;
 #endif
 			break;
-		case 8:
+		case 9:
 #if 0
 		{
 			//공급방식
@@ -357,13 +391,13 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 		}
 #endif
 		break;
-		case 9:
+		case 10:
 			//공급률
 			m_candidate[index].book_info.provider_info.detail.provide_rate = std::stof(data);
 			//공급가도 변경
 			m_candidate[index].book_info.provider_info.detail.provide_cost = (int)roundf((float)(m_candidate[index].book_info.book_info.price) * (m_candidate[index].book_info.provider_info.detail.provide_rate / 100.0));
 			break;
-		case 10:
+		case 11:
 		{
 			//공급가 가 변경 되면 공급률을 반영한 가격이 변경 된다.
 			int provide_cost = std::stoi(data);
@@ -390,7 +424,7 @@ void CBookInCandidate::UpdateItem(const int index, const int col_index, const st
 #endif
 		}
 			break;
-		case 11:
+		case 12:
 			//판매가
 			m_candidate[index].book_info.sale_cost = std::stoi(data);
 			break;
