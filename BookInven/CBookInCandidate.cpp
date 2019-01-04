@@ -72,6 +72,10 @@ void CBookInCandidate::AddCandidate(BookIn_Info candidate)
 		candidate_info.book_info = candidate;
 		candidate_info.count = 1;
 
+		//배송일을 오늘 기준 하루 전으로 설정
+		CMyTime cls_mytime;
+		candidate_info.book_info.provide_date = cls_mytime.GetPeriodDate(1);
+		
 		m_candidate.push_back(candidate_info);
 	}
 

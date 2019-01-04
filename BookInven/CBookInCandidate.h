@@ -22,6 +22,8 @@
 #include "CDataBaseProvider.h"
 #include "CDataBaseBookInHistory.h"
 
+#include "CMyTime.h"
+
 typedef struct BookIn_Candidate_Info {
 	BookIn_Info book_info;
 	int count = 0;
