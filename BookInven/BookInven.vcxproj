@@ -191,6 +191,7 @@
     <ClInclude Include="BookInInfo.h" />
     <ClInclude Include="BookInven.h" />
     <ClInclude Include="BookInvenDlg.h" />
+    <ClInclude Include="BookReturnData.h" />
     <ClInclude Include="CBookInCandidate.h" />
     <ClInclude Include="CBookInList.h" />
     <ClInclude Include="CBookSaleDetailList.h" />
@@ -201,6 +202,7 @@
     <ClInclude Include="CDataBaseBookInfo.h" />
     <ClInclude Include="CDataBaseBookInHistory.h" />
     <ClInclude Include="CDataBaseBookInHistoryDetail.h" />
+    <ClInclude Include="CDataBaseBookReturnHistory.h" />
     <ClInclude Include="CDataBaseBookSaleHistory.h" />
     <ClInclude Include="CDataBaseCart.h" />
     <ClInclude Include="CDataBaseImageSave.h" />
@@ -252,6 +254,7 @@
     <ClCompile Include="CDataBaseBookInfo.cpp" />
     <ClCompile Include="CDataBaseBookInHistory.cpp" />
     <ClCompile Include="CDataBaseBookInHistoryDetail.cpp" />
+    <ClCompile Include="CDataBaseBookReturnHistory.cpp" />
     <ClCompile Include="CDataBaseBookSaleHistory.cpp" />
     <ClCompile Include="CDataBaseCart.cpp" />
     <ClCompile Include="CDataBaseImageSave.cpp" />

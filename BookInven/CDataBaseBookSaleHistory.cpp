@@ -224,7 +224,7 @@ std::string CDataBaseBookSaleHistory::MakeCode(void)
 	boost::posix_time::ptime now = boost::posix_time::second_clock::local_time();
 
 	//boost::format f = boost::format("%s-%02d-%02d %02d:%02d:%02d")
-	boost::format f = boost::format("%s%02d%02d%02d%02d%02d_")
+	boost::format f = boost::format("%s%02d%02d%02d%02d%02d_SAL_")
 		% now.date().year_month_day().year
 		% now.date().year_month_day().month.as_number()
 		% now.date().year_month_day().day.as_number()
