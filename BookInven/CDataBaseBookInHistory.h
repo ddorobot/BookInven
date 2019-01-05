@@ -14,6 +14,7 @@
 //table name
 #define TABLE_NAME_BOOK_IN_HISTORY		"TBookInHistory"
 #define TABLE_DATA_BOOK_IN_HISTORY		"'idx'	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, \
+										'provide_date' TEXT, \
 										'book_info_isbn' TEXT, \
 										'book_info_copy_from_detail_idx' INTEGER DEFAULT -1, \
 										'book_cost' INTEGER, \
@@ -27,6 +28,7 @@
 
 typedef struct DB_BookInHistory {
 	int idx=-1;
+	std::string provide_date = "";
 	std::string book_info_isbn = "";
 	int book_info_copy_from_detail_idx = -1;
 	int book_cost = 0;

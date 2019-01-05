@@ -13,7 +13,8 @@ CBookInList::CBookInList(CListCtrl* p_list_ctrl) :
 	// 타이틀 삽입
 	int list_index = 0;
 	m_p_list_ctrl->InsertColumn(list_index++, _T(""), LVCFMT_CENTER, 20, -1);
-	m_p_list_ctrl->InsertColumn(list_index++, _T("날짜"), LVCFMT_CENTER, 130, -1);
+	m_p_list_ctrl->InsertColumn(list_index++, _T("공급사배송일"), LVCFMT_CENTER, 90, -1);
+	m_p_list_ctrl->InsertColumn(list_index++, _T("입고입력날짜"), LVCFMT_CENTER, 130, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("형태"), LVCFMT_CENTER, 40, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("CODE"), LVCFMT_CENTER, 110, -1);
 	m_p_list_ctrl->InsertColumn(list_index++, _T("이름"), LVCFMT_CENTER, 150, -1);
@@ -75,6 +76,7 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 			for (int j = 0; j < book_in_size; j++)
 			{
 				if (m_book_in[j].reg_date == vec_bookin_info[i].reg_date && 
+					m_book_in[j].bookin_info.provide_date == vec_bookin_info[i].bookin_info.provide_date &&
 					m_book_in[j].bookin_info.book_info.isbn == vec_bookin_info[i].bookin_info.book_info.isbn &&
 					m_book_in[j].bookin_info.provider_info.base.idx == vec_bookin_info[i].bookin_info.provider_info.base.idx && 
 					m_book_in[j].bookin_info.provider_info.detail.idx == vec_bookin_info[i].bookin_info.provider_info.detail.idx &&
@@ -128,6 +130,7 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 
 		//isbn
 		int list_index = 1;
+		CString str_provide_date = m_p_list_ctrl->GetItemText(i, list_index++);
 		CString str_date = m_p_list_ctrl->GetItemText(i, list_index++);
 		CString str_type = m_p_list_ctrl->GetItemText(i, list_index++);
 		CString str_isbn = m_p_list_ctrl->GetItemText(i, list_index++);
@@ -149,6 +152,13 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 			BookIn_List_Info bookin_info = m_book_in[i];
 
 			CString cstr_data;
+
+			if (std::string(str_provide_date) != bookin_info.bookin_info.provide_date)
+			{
+				cstr_data.Format(_T("%s"), bookin_info.bookin_info.provide_date.c_str());
+				m_p_list_ctrl->SetItemText(i, list_index, cstr_data);
+			}
+			list_index++;
 
 			if (std::string(str_date) != bookin_info.reg_date)
 			{
@@ -262,6 +272,10 @@ void CBookInList::UpdateList(std::string str_date_start, std::string str_date_en
 			//체크박스
 			CString cstr_data;
 			m_p_list_ctrl->InsertItem(index, "");
+
+			//발송날짜
+			cstr_data.Format(_T("%s"), bookin_info.bookin_info.provide_date.c_str());
+			m_p_list_ctrl->SetItem(index, list_index++, LVIF_TEXT, cstr_data, 0, 0, 0, NULL);
 
 			//입고날짜
 			cstr_data.Format(_T("%s"), bookin_info.reg_date.c_str());

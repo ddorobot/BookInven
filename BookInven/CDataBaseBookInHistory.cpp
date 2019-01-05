@@ -4,6 +4,7 @@
 
 CDataBaseBookInHistory::CDataBaseBookInHistory()
 {
+	//AddNewColumn(TABLE_NAME_BOOK_IN_HISTORY, "provide_date", "TEXT");
 }
 
 
@@ -36,6 +37,10 @@ int CDataBaseBookInHistory::sql_callback_get_bookinfo(void *NotUsed, int argc, c
 			if (name == "idx")
 			{
 				bookinfo.idx = argv[i] ? std::stoi(argv[i]) : -1;
+			}
+			else if (name == "provide_date")
+			{
+				bookinfo.provide_date = argv[i] ? argv[i] : "";
 			}
 			else if (name == "book_info_isbn")
 			{
@@ -423,6 +428,7 @@ BookInHistory CDataBaseBookInHistory::CvtDB_BookInHistoryToBookInHistory(const D
 	data.reg_date = db_data.reg_date;
 	data.bookin_info.count = db_data.book_count;
 	data.copy_from_detail_idx = db_data.book_info_copy_from_detail_idx;
+	data.bookin_info.provide_date = db_data.provide_date;
 
 	return data;
 }
@@ -658,7 +664,8 @@ int CDataBaseBookInHistory::AddBookInInfo(const DB_BookInHistory bookinfo)
 		int nResult = sqlite3_open(pDBFile, &pDB);
 
 		//Tablek Book
-		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " (book_info_isbn, book_info_copy_from_detail_idx, book_cost, book_count, provider_base_info_idx, provie_type, provie_rate, provie_cost, sale_cost, reg_date) VALUES (";
+		std::string sql_command = "INSERT INTO " + std::string(TABLE_NAME_BOOK_IN_HISTORY) + " (provide_date, book_info_isbn, book_info_copy_from_detail_idx, book_cost, book_count, provider_base_info_idx, provie_type, provie_rate, provie_cost, sale_cost, reg_date) VALUES (";
+		sql_command += "'" + bookinfo.provide_date + "', ";
 		sql_command += "'" + bookinfo.book_info_isbn + "', ";
 		sql_command += "'" + std::to_string(bookinfo.book_info_copy_from_detail_idx) + "', ";
 		sql_command += "'" + std::to_string(bookinfo.book_cost) + "', ";
