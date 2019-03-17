@@ -141,7 +141,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;CURL_STATICLIB;XML_STATIC;_CRT_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\lib\modular-boost;..\lib\curl\include;..\lib\libexpat\expat\lib;..\lib\sqlite_static\sqlite-preprocessed-3220000;..\lib\opencv_mybuild\install\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\lib\boost;..\lib\curl\include;..\lib\libexpat\expat\lib;..\lib\sqlite_static\sqlite-preprocessed-3220000;..\lib\opencv_mybuild\install\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
