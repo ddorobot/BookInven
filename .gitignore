@@ -345,3 +345,6 @@ modo.db
 
 #image file
 data/
+
+#mybuild folder
+mybuild*/
