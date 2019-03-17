@@ -1,4 +1,0 @@
-# CMake generation dependency list for this directory.
-C:/work/BookInven/lib/opencv_contrib/modules/sfm/CMakeLists.txt
-C:/work/BookInven/lib/opencv_contrib/modules/sfm/cmake/FindGflags.cmake
-C:/work/BookInven/lib/opencv_contrib/modules/sfm/cmake/FindGlog.cmake

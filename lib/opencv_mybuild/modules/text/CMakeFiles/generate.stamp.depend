@@ -1,4 +1,0 @@
-# CMake generation dependency list for this directory.
-C:/work/BookInven/lib/opencv_contrib/modules/text/CMakeLists.txt
-C:/work/BookInven/lib/opencv_contrib/modules/text/cmake/FindTesseract.cmake
-C:/work/BookInven/lib/opencv_contrib/modules/text/text_config.hpp.in

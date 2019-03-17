@@ -147,7 +147,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\lib\modular-boost\stage\lib;..\lib\libexpat_mybuild\Release;..\lib\curl_mybuild\lib\Release;..\lib\sqlite_static\Release;%(AdditionalLibraryDirectories);..\lib\opencv_mybuild\install\x86\vc15\staticlib;..\lib\freetype_mybuild\Release;..\lib\harfbuzz_mybuild\Release</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\lib\boost\stage\lib;..\lib\libexpat_mybuild\Release;..\lib\curl_mybuild\lib\Release;..\lib\sqlite_static\Release;%(AdditionalLibraryDirectories);..\lib\opencv_mybuild\install\x86\vc15\staticlib;..\lib\freetype_mybuild\Release;..\lib\harfbuzz_mybuild\Release</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>

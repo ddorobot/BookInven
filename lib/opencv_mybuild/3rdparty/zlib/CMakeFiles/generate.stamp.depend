@@ -1,7 +1,0 @@
-# CMake generation dependency list for this directory.
-C:/Program Files/CMake/share/cmake-3.12/Modules/CheckCSourceCompiles.cmake
-C:/Program Files/CMake/share/cmake-3.12/Modules/CheckFunctionExists.cmake
-C:/Program Files/CMake/share/cmake-3.12/Modules/CheckIncludeFile.cmake
-C:/Program Files/CMake/share/cmake-3.12/Modules/CheckIncludeFileCXX.cmake
-C:/Program Files/CMake/share/cmake-3.12/Modules/CheckTypeSize.cmake
-C:/work/BookInven/lib/opencv/3rdparty/zlib/CMakeLists.txt
