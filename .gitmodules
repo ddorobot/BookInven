@@ -25,3 +25,6 @@
 [submodule "lib/glog"]
 	path = lib/glog
 	url = https://github.com/ddorobot/glog.git
+[submodule "lib/boost"]
+	path = lib/boost
+	url = https://github.com/boostorg/boost.git
