@@ -65,17 +65,21 @@ std::string CDataBaseImageSave::Save(cv::Mat image, const std::string name)
 
 	if (b_image_file_save)
 	{
-		cv::Mat save_image;
-		if( image.cols != BOOK_COVER_WIDTH || image.rows != BOOK_COVER_HEIGHT )
-		{ 
-			cv::resize(image, save_image, cv::Size(BOOK_COVER_WIDTH, BOOK_COVER_HEIGHT));
-		}
-		else
+		if (!image.empty())
 		{
-			save_image = image;
-		}
+			cv::Mat save_image;
 
-		cv::imwrite(image_full_path, save_image);
+			if (image.cols != BOOK_COVER_WIDTH || image.rows != BOOK_COVER_HEIGHT)
+			{
+				cv::resize(image, save_image, cv::Size(BOOK_COVER_WIDTH, BOOK_COVER_HEIGHT));
+			}
+			else
+			{
+				save_image = image;
+			}
+
+			cv::imwrite(image_full_path, save_image);
+		}
 	}
 
 	return image_full_path;
